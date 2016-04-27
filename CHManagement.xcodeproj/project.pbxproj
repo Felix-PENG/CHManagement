@@ -15,6 +15,8 @@
 		D18B470F1CCFAB8300FEA8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18B470D1CCFAB8300FEA8E8 /* LaunchScreen.storyboard */; };
 		D18B471A1CCFAB8300FEA8E8 /* CHManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47191CCFAB8300FEA8E8 /* CHManagementTests.m */; };
 		D18B47251CCFAB8400FEA8E8 /* CHManagementUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */; };
+		D19EF78C1CD05E5F0044BA84 /* AccountVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF78B1CD05E5F0044BA84 /* AccountVO.m */; };
+		D19EF7901CD062380044BA84 /* ActivityVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF78F1CD062380044BA84 /* ActivityVO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		D18B47201CCFAB8300FEA8E8 /* CHManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHManagementUITests.m; sourceTree = "<group>"; };
 		D18B47261CCFAB8400FEA8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19EF78A1CD05E5F0044BA84 /* AccountVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountVO.h; path = VO/AccountVO.h; sourceTree = "<group>"; };
+		D19EF78B1CD05E5F0044BA84 /* AccountVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountVO.m; path = VO/AccountVO.m; sourceTree = "<group>"; };
+		D19EF78E1CD062380044BA84 /* ActivityVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityVO.h; path = VO/ActivityVO.h; sourceTree = "<group>"; };
+		D19EF78F1CD062380044BA84 /* ActivityVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityVO.m; path = VO/ActivityVO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		D18B46FE1CCFAB8300FEA8E8 /* CHManagement */ = {
 			isa = PBXGroup;
 			children = (
+				D19EF78D1CD05E660044BA84 /* VO */,
 				D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */,
 				D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */,
 				D18B47051CCFAB8300FEA8E8 /* ViewController.h */,
@@ -138,6 +145,17 @@
 				D18B47261CCFAB8400FEA8E8 /* Info.plist */,
 			);
 			path = CHManagementUITests;
+			sourceTree = "<group>";
+		};
+		D19EF78D1CD05E660044BA84 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				D19EF78A1CD05E5F0044BA84 /* AccountVO.h */,
+				D19EF78B1CD05E5F0044BA84 /* AccountVO.m */,
+				D19EF78E1CD062380044BA84 /* ActivityVO.h */,
+				D19EF78F1CD062380044BA84 /* ActivityVO.m */,
+			);
+			name = VO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19EF78C1CD05E5F0044BA84 /* AccountVO.m in Sources */,
 				D18B47071CCFAB8300FEA8E8 /* ViewController.m in Sources */,
+				D19EF7901CD062380044BA84 /* ActivityVO.m in Sources */,
 				D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
 			);
@@ -496,6 +516,7 @@
 				D18B472B1CCFAB8400FEA8E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D18B472C1CCFAB8400FEA8E8 /* Build configuration list for PBXNativeTarget "CHManagementTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +525,7 @@
 				D18B472E1CCFAB8400FEA8E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D18B472F1CCFAB8400FEA8E8 /* Build configuration list for PBXNativeTarget "CHManagementUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +534,7 @@
 				D18B47311CCFAB8400FEA8E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
