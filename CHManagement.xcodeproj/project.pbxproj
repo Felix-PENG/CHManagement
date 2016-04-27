@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E2361CD0A4C400DF960B /* MainViewController.m */; };
+		C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E2391CD0ADAA00DF960B /* LeftMenuViewController.m */; };
+		C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E23C1CD0ADBA00DF960B /* ContentViewController.m */; };
+		C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E23F1CD0D9EF00DF960B /* SignInViewController.m */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -16,31 +20,6 @@
 		D18B470F1CCFAB8300FEA8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18B470D1CCFAB8300FEA8E8 /* LaunchScreen.storyboard */; };
 		D18B471A1CCFAB8300FEA8E8 /* CHManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47191CCFAB8300FEA8E8 /* CHManagementTests.m */; };
 		D18B47251CCFAB8400FEA8E8 /* CHManagementUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */; };
-		D19EF7931CD082820044BA84 /* AccountVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7921CD082820044BA84 /* AccountVO.m */; };
-		D19EF7971CD0830B0044BA84 /* ActivityVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7961CD0830B0044BA84 /* ActivityVO.m */; };
-		D19EF79A1CD083F90044BA84 /* AuditMaterialsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7991CD083F90044BA84 /* AuditMaterialsVO.m */; };
-		D19EF79D1CD084200044BA84 /* AuditOthersVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF79C1CD084200044BA84 /* AuditOthersVO.m */; };
-		D19EF7A01CD084450044BA84 /* BillBuildingVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF79F1CD084450044BA84 /* BillBuildingVO.m */; };
-		D19EF7A31CD084BA0044BA84 /* BillMaterialsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7A21CD084BA0044BA84 /* BillMaterialsVO.m */; };
-		D19EF7A61CD084D50044BA84 /* BillOthersVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7A51CD084D50044BA84 /* BillOthersVO.m */; };
-		D19EF7A91CD0859D0044BA84 /* BillVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7A81CD0859D0044BA84 /* BillVO.m */; };
-		D19EF7AC1CD085AE0044BA84 /* FileVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7AB1CD085AE0044BA84 /* FileVO.m */; };
-		D19EF7AF1CD085F80044BA84 /* MessageVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7AE1CD085F80044BA84 /* MessageVO.m */; };
-		D19EF7B21CD0860D0044BA84 /* NotifyVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7B11CD0860D0044BA84 /* NotifyVO.m */; };
-		D19EF7B51CD086350044BA84 /* QiNiuVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7B41CD086350044BA84 /* QiNiuVO.m */; };
-		D19EF7B81CD0864A0044BA84 /* ResultVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7B71CD0864A0044BA84 /* ResultVO.m */; };
-		D19EF7BB1CD0865E0044BA84 /* ScheduleVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7BA1CD0865E0044BA84 /* ScheduleVO.m */; };
-		D19EF7BE1CD086800044BA84 /* SignInResultVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7BD1CD086800044BA84 /* SignInResultVO.m */; };
-		D19EF7C11CD086A30044BA84 /* SignStatusVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7C01CD086A30044BA84 /* SignStatusVO.m */; };
-		D19EF7C41CD086BD0044BA84 /* UserShortVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7C31CD086BD0044BA84 /* UserShortVO.m */; };
-		D19EF7C71CD086D40044BA84 /* UserVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7C61CD086D40044BA84 /* UserVO.m */; };
-		D19EF7CA1CD086ED0044BA84 /* VOWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7C91CD086ED0044BA84 /* VOWrapper.m */; };
-		D19EF7CE1CD0898D0044BA84 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7CD1CD0898D0044BA84 /* NetworkManager.m */; };
-		D19EF7D41CD09DB70044BA84 /* RequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7D31CD09DB70044BA84 /* RequestParameter.m */; };
-		D19EF7D71CD09E3B0044BA84 /* NetworkFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7D61CD09E3B0044BA84 /* NetworkFile.m */; };
-		D19EF7DA1CD0A1610044BA84 /* NSDictionary+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7D91CD0A1610044BA84 /* NSDictionary+Extends.m */; };
-		D19EF7DE1CD0A79F0044BA84 /* MyGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7DD1CD0A79F0044BA84 /* MyGroup.m */; };
-		D19EF7E11CD0B1CB0044BA84 /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF7E01CD0B1CB0044BA84 /* Role.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +43,14 @@
 		2C70A178924B476A49005E9F /* Pods-CHManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHManagement.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHManagement/Pods-CHManagement.release.xcconfig"; sourceTree = "<group>"; };
 		788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHManagement.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B0AC6DBE4E10D816EC340 /* Pods-CHManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHManagement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHManagement/Pods-CHManagement.debug.xcconfig"; sourceTree = "<group>"; };
+		C500E2351CD0A4C400DF960B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/MainViewController.h; sourceTree = "<group>"; };
+		C500E2361CD0A4C400DF960B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/MainViewController.m; sourceTree = "<group>"; };
+		C500E2381CD0ADAA00DF960B /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuViewController.h; path = Controller/LeftMenuViewController.h; sourceTree = "<group>"; };
+		C500E2391CD0ADAA00DF960B /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuViewController.m; path = Controller/LeftMenuViewController.m; sourceTree = "<group>"; };
+		C500E23B1CD0ADBA00DF960B /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentViewController.h; path = Controller/ContentViewController.h; sourceTree = "<group>"; };
+		C500E23C1CD0ADBA00DF960B /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentViewController.m; path = Controller/ContentViewController.m; sourceTree = "<group>"; };
+		C500E23E1CD0D9EF00DF960B /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = Controller/SignInViewController.h; sourceTree = "<group>"; };
+		C500E23F1CD0D9EF00DF960B /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = Controller/SignInViewController.m; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,56 +67,6 @@
 		D18B47201CCFAB8300FEA8E8 /* CHManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHManagementUITests.m; sourceTree = "<group>"; };
 		D18B47261CCFAB8400FEA8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D19EF7911CD082820044BA84 /* AccountVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountVO.h; path = VO/AccountVO.h; sourceTree = "<group>"; };
-		D19EF7921CD082820044BA84 /* AccountVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountVO.m; path = VO/AccountVO.m; sourceTree = "<group>"; };
-		D19EF7951CD0830B0044BA84 /* ActivityVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityVO.h; path = VO/ActivityVO.h; sourceTree = "<group>"; };
-		D19EF7961CD0830B0044BA84 /* ActivityVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityVO.m; path = VO/ActivityVO.m; sourceTree = "<group>"; };
-		D19EF7981CD083F90044BA84 /* AuditMaterialsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuditMaterialsVO.h; path = VO/AuditMaterialsVO.h; sourceTree = "<group>"; };
-		D19EF7991CD083F90044BA84 /* AuditMaterialsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuditMaterialsVO.m; path = VO/AuditMaterialsVO.m; sourceTree = "<group>"; };
-		D19EF79B1CD084200044BA84 /* AuditOthersVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuditOthersVO.h; path = VO/AuditOthersVO.h; sourceTree = "<group>"; };
-		D19EF79C1CD084200044BA84 /* AuditOthersVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuditOthersVO.m; path = VO/AuditOthersVO.m; sourceTree = "<group>"; };
-		D19EF79E1CD084450044BA84 /* BillBuildingVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BillBuildingVO.h; path = VO/BillBuildingVO.h; sourceTree = "<group>"; };
-		D19EF79F1CD084450044BA84 /* BillBuildingVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BillBuildingVO.m; path = VO/BillBuildingVO.m; sourceTree = "<group>"; };
-		D19EF7A11CD084BA0044BA84 /* BillMaterialsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BillMaterialsVO.h; path = VO/BillMaterialsVO.h; sourceTree = "<group>"; };
-		D19EF7A21CD084BA0044BA84 /* BillMaterialsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BillMaterialsVO.m; path = VO/BillMaterialsVO.m; sourceTree = "<group>"; };
-		D19EF7A41CD084D50044BA84 /* BillOthersVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BillOthersVO.h; path = VO/BillOthersVO.h; sourceTree = "<group>"; };
-		D19EF7A51CD084D50044BA84 /* BillOthersVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BillOthersVO.m; path = VO/BillOthersVO.m; sourceTree = "<group>"; };
-		D19EF7A71CD0859D0044BA84 /* BillVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BillVO.h; path = VO/BillVO.h; sourceTree = "<group>"; };
-		D19EF7A81CD0859D0044BA84 /* BillVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BillVO.m; path = VO/BillVO.m; sourceTree = "<group>"; };
-		D19EF7AA1CD085AE0044BA84 /* FileVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileVO.h; path = VO/FileVO.h; sourceTree = "<group>"; };
-		D19EF7AB1CD085AE0044BA84 /* FileVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileVO.m; path = VO/FileVO.m; sourceTree = "<group>"; };
-		D19EF7AD1CD085F80044BA84 /* MessageVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageVO.h; path = VO/MessageVO.h; sourceTree = "<group>"; };
-		D19EF7AE1CD085F80044BA84 /* MessageVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageVO.m; path = VO/MessageVO.m; sourceTree = "<group>"; };
-		D19EF7B01CD0860D0044BA84 /* NotifyVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotifyVO.h; path = VO/NotifyVO.h; sourceTree = "<group>"; };
-		D19EF7B11CD0860D0044BA84 /* NotifyVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotifyVO.m; path = VO/NotifyVO.m; sourceTree = "<group>"; };
-		D19EF7B31CD086350044BA84 /* QiNiuVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiNiuVO.h; path = VO/QiNiuVO.h; sourceTree = "<group>"; };
-		D19EF7B41CD086350044BA84 /* QiNiuVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiNiuVO.m; path = VO/QiNiuVO.m; sourceTree = "<group>"; };
-		D19EF7B61CD0864A0044BA84 /* ResultVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultVO.h; path = VO/ResultVO.h; sourceTree = "<group>"; };
-		D19EF7B71CD0864A0044BA84 /* ResultVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultVO.m; path = VO/ResultVO.m; sourceTree = "<group>"; };
-		D19EF7B91CD0865E0044BA84 /* ScheduleVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleVO.h; path = VO/ScheduleVO.h; sourceTree = "<group>"; };
-		D19EF7BA1CD0865E0044BA84 /* ScheduleVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleVO.m; path = VO/ScheduleVO.m; sourceTree = "<group>"; };
-		D19EF7BC1CD086800044BA84 /* SignInResultVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInResultVO.h; path = VO/SignInResultVO.h; sourceTree = "<group>"; };
-		D19EF7BD1CD086800044BA84 /* SignInResultVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInResultVO.m; path = VO/SignInResultVO.m; sourceTree = "<group>"; };
-		D19EF7BF1CD086A30044BA84 /* SignStatusVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignStatusVO.h; path = VO/SignStatusVO.h; sourceTree = "<group>"; };
-		D19EF7C01CD086A30044BA84 /* SignStatusVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignStatusVO.m; path = VO/SignStatusVO.m; sourceTree = "<group>"; };
-		D19EF7C21CD086BD0044BA84 /* UserShortVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserShortVO.h; path = VO/UserShortVO.h; sourceTree = "<group>"; };
-		D19EF7C31CD086BD0044BA84 /* UserShortVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserShortVO.m; path = VO/UserShortVO.m; sourceTree = "<group>"; };
-		D19EF7C51CD086D40044BA84 /* UserVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserVO.h; path = VO/UserVO.h; sourceTree = "<group>"; };
-		D19EF7C61CD086D40044BA84 /* UserVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserVO.m; path = VO/UserVO.m; sourceTree = "<group>"; };
-		D19EF7C81CD086ED0044BA84 /* VOWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VOWrapper.h; path = VO/VOWrapper.h; sourceTree = "<group>"; };
-		D19EF7C91CD086ED0044BA84 /* VOWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VOWrapper.m; path = VO/VOWrapper.m; sourceTree = "<group>"; };
-		D19EF7CC1CD0898D0044BA84 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = NetworkService/NetworkManager.h; sourceTree = "<group>"; };
-		D19EF7CD1CD0898D0044BA84 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = NetworkService/NetworkManager.m; sourceTree = "<group>"; };
-		D19EF7D21CD09DB70044BA84 /* RequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestParameter.h; path = NetworkService/RequestParameter.h; sourceTree = "<group>"; };
-		D19EF7D31CD09DB70044BA84 /* RequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestParameter.m; path = NetworkService/RequestParameter.m; sourceTree = "<group>"; };
-		D19EF7D51CD09E3B0044BA84 /* NetworkFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkFile.h; path = NetworkService/NetworkFile.h; sourceTree = "<group>"; };
-		D19EF7D61CD09E3B0044BA84 /* NetworkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkFile.m; path = NetworkService/NetworkFile.m; sourceTree = "<group>"; };
-		D19EF7D81CD0A1610044BA84 /* NSDictionary+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Extends.h"; path = "NetworkService/NSDictionary+Extends.h"; sourceTree = "<group>"; };
-		D19EF7D91CD0A1610044BA84 /* NSDictionary+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Extends.m"; path = "NetworkService/NSDictionary+Extends.m"; sourceTree = "<group>"; };
-		D19EF7DC1CD0A79F0044BA84 /* MyGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyGroup.h; path = Entity/MyGroup.h; sourceTree = "<group>"; };
-		D19EF7DD1CD0A79F0044BA84 /* MyGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyGroup.m; path = Entity/MyGroup.m; sourceTree = "<group>"; };
-		D19EF7DF1CD0B1CB0044BA84 /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Role.h; path = Entity/Role.h; sourceTree = "<group>"; };
-		D19EF7E01CD0B1CB0044BA84 /* Role.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Role.m; path = Entity/Role.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +112,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C500E2341CD0A49200DF960B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C500E2351CD0A4C400DF960B /* MainViewController.h */,
+				C500E2361CD0A4C400DF960B /* MainViewController.m */,
+				C500E2381CD0ADAA00DF960B /* LeftMenuViewController.h */,
+				C500E2391CD0ADAA00DF960B /* LeftMenuViewController.m */,
+				C500E23B1CD0ADBA00DF960B /* ContentViewController.h */,
+				C500E23C1CD0ADBA00DF960B /* ContentViewController.m */,
+				C500E23E1CD0D9EF00DF960B /* SignInViewController.h */,
+				C500E23F1CD0D9EF00DF960B /* SignInViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		D18B46F31CCFAB8300FEA8E8 = {
 			isa = PBXGroup;
 			children = (
@@ -200,9 +152,7 @@
 		D18B46FE1CCFAB8300FEA8E8 /* CHManagement */ = {
 			isa = PBXGroup;
 			children = (
-				D19EF7DB1CD0A7810044BA84 /* Entity */,
-				D19EF7CB1CD087200044BA84 /* NetworkService */,
-				D19EF7941CD0828A0044BA84 /* VO */,
+				C500E2341CD0A49200DF960B /* Controller */,
 				D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */,
 				D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */,
 				D18B47051CCFAB8300FEA8E8 /* ViewController.h */,
@@ -240,77 +190,6 @@
 				D18B47261CCFAB8400FEA8E8 /* Info.plist */,
 			);
 			path = CHManagementUITests;
-			sourceTree = "<group>";
-		};
-		D19EF7941CD0828A0044BA84 /* VO */ = {
-			isa = PBXGroup;
-			children = (
-				D19EF7911CD082820044BA84 /* AccountVO.h */,
-				D19EF7921CD082820044BA84 /* AccountVO.m */,
-				D19EF7951CD0830B0044BA84 /* ActivityVO.h */,
-				D19EF7961CD0830B0044BA84 /* ActivityVO.m */,
-				D19EF7981CD083F90044BA84 /* AuditMaterialsVO.h */,
-				D19EF7991CD083F90044BA84 /* AuditMaterialsVO.m */,
-				D19EF79B1CD084200044BA84 /* AuditOthersVO.h */,
-				D19EF79C1CD084200044BA84 /* AuditOthersVO.m */,
-				D19EF79E1CD084450044BA84 /* BillBuildingVO.h */,
-				D19EF79F1CD084450044BA84 /* BillBuildingVO.m */,
-				D19EF7A11CD084BA0044BA84 /* BillMaterialsVO.h */,
-				D19EF7A21CD084BA0044BA84 /* BillMaterialsVO.m */,
-				D19EF7A41CD084D50044BA84 /* BillOthersVO.h */,
-				D19EF7A51CD084D50044BA84 /* BillOthersVO.m */,
-				D19EF7A71CD0859D0044BA84 /* BillVO.h */,
-				D19EF7A81CD0859D0044BA84 /* BillVO.m */,
-				D19EF7AA1CD085AE0044BA84 /* FileVO.h */,
-				D19EF7AB1CD085AE0044BA84 /* FileVO.m */,
-				D19EF7AD1CD085F80044BA84 /* MessageVO.h */,
-				D19EF7AE1CD085F80044BA84 /* MessageVO.m */,
-				D19EF7B01CD0860D0044BA84 /* NotifyVO.h */,
-				D19EF7B11CD0860D0044BA84 /* NotifyVO.m */,
-				D19EF7B31CD086350044BA84 /* QiNiuVO.h */,
-				D19EF7B41CD086350044BA84 /* QiNiuVO.m */,
-				D19EF7B61CD0864A0044BA84 /* ResultVO.h */,
-				D19EF7B71CD0864A0044BA84 /* ResultVO.m */,
-				D19EF7B91CD0865E0044BA84 /* ScheduleVO.h */,
-				D19EF7BA1CD0865E0044BA84 /* ScheduleVO.m */,
-				D19EF7BC1CD086800044BA84 /* SignInResultVO.h */,
-				D19EF7BD1CD086800044BA84 /* SignInResultVO.m */,
-				D19EF7BF1CD086A30044BA84 /* SignStatusVO.h */,
-				D19EF7C01CD086A30044BA84 /* SignStatusVO.m */,
-				D19EF7C21CD086BD0044BA84 /* UserShortVO.h */,
-				D19EF7C31CD086BD0044BA84 /* UserShortVO.m */,
-				D19EF7C51CD086D40044BA84 /* UserVO.h */,
-				D19EF7C61CD086D40044BA84 /* UserVO.m */,
-				D19EF7C81CD086ED0044BA84 /* VOWrapper.h */,
-				D19EF7C91CD086ED0044BA84 /* VOWrapper.m */,
-			);
-			name = VO;
-			sourceTree = "<group>";
-		};
-		D19EF7CB1CD087200044BA84 /* NetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				D19EF7D81CD0A1610044BA84 /* NSDictionary+Extends.h */,
-				D19EF7D91CD0A1610044BA84 /* NSDictionary+Extends.m */,
-				D19EF7CC1CD0898D0044BA84 /* NetworkManager.h */,
-				D19EF7CD1CD0898D0044BA84 /* NetworkManager.m */,
-				D19EF7D21CD09DB70044BA84 /* RequestParameter.h */,
-				D19EF7D31CD09DB70044BA84 /* RequestParameter.m */,
-				D19EF7D51CD09E3B0044BA84 /* NetworkFile.h */,
-				D19EF7D61CD09E3B0044BA84 /* NetworkFile.m */,
-			);
-			name = NetworkService;
-			sourceTree = "<group>";
-		};
-		D19EF7DB1CD0A7810044BA84 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				D19EF7DC1CD0A79F0044BA84 /* MyGroup.h */,
-				D19EF7DD1CD0A79F0044BA84 /* MyGroup.m */,
-				D19EF7DF1CD0B1CB0044BA84 /* Role.h */,
-				D19EF7E01CD0B1CB0044BA84 /* Role.m */,
-			);
-			name = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,34 +373,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D19EF7C71CD086D40044BA84 /* UserVO.m in Sources */,
-				D19EF7D71CD09E3B0044BA84 /* NetworkFile.m in Sources */,
-				D19EF7AC1CD085AE0044BA84 /* FileVO.m in Sources */,
-				D19EF7E11CD0B1CB0044BA84 /* Role.m in Sources */,
-				D19EF7CA1CD086ED0044BA84 /* VOWrapper.m in Sources */,
-				D19EF7931CD082820044BA84 /* AccountVO.m in Sources */,
-				D19EF7A01CD084450044BA84 /* BillBuildingVO.m in Sources */,
-				D19EF79A1CD083F90044BA84 /* AuditMaterialsVO.m in Sources */,
+				C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */,
 				D18B47071CCFAB8300FEA8E8 /* ViewController.m in Sources */,
-				D19EF7A61CD084D50044BA84 /* BillOthersVO.m in Sources */,
-				D19EF7C11CD086A30044BA84 /* SignStatusVO.m in Sources */,
-				D19EF7971CD0830B0044BA84 /* ActivityVO.m in Sources */,
-				D19EF7C41CD086BD0044BA84 /* UserShortVO.m in Sources */,
-				D19EF7B51CD086350044BA84 /* QiNiuVO.m in Sources */,
 				D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */,
-				D19EF7B81CD0864A0044BA84 /* ResultVO.m in Sources */,
-				D19EF7CE1CD0898D0044BA84 /* NetworkManager.m in Sources */,
-				D19EF7DA1CD0A1610044BA84 /* NSDictionary+Extends.m in Sources */,
-				D19EF7D41CD09DB70044BA84 /* RequestParameter.m in Sources */,
-				D19EF7DE1CD0A79F0044BA84 /* MyGroup.m in Sources */,
-				D19EF79D1CD084200044BA84 /* AuditOthersVO.m in Sources */,
-				D19EF7B21CD0860D0044BA84 /* NotifyVO.m in Sources */,
-				D19EF7A31CD084BA0044BA84 /* BillMaterialsVO.m in Sources */,
-				D19EF7BE1CD086800044BA84 /* SignInResultVO.m in Sources */,
-				D19EF7A91CD0859D0044BA84 /* BillVO.m in Sources */,
-				D19EF7BB1CD0865E0044BA84 /* ScheduleVO.m in Sources */,
-				D19EF7AF1CD085F80044BA84 /* MessageVO.m in Sources */,
+				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
+				C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */,
+				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
