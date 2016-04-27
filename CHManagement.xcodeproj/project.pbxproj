@@ -11,6 +11,31 @@
 		C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E2391CD0ADAA00DF960B /* LeftMenuViewController.m */; };
 		C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E23C1CD0ADBA00DF960B /* ContentViewController.m */; };
 		C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E23F1CD0D9EF00DF960B /* SignInViewController.m */; };
+		C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6A1CD0F143006EC41D /* NetworkFile.m */; };
+		C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6C1CD0F143006EC41D /* NetworkManager.m */; };
+		C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */; };
+		C5557F741CD0F143006EC41D /* RequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F701CD0F143006EC41D /* RequestParameter.m */; };
+		C5557F7A1CD0F154006EC41D /* MyGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F771CD0F154006EC41D /* MyGroup.m */; };
+		C5557F7B1CD0F154006EC41D /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F791CD0F154006EC41D /* Role.m */; };
+		C5557FA31CD0F15E006EC41D /* AccountVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F7E1CD0F15E006EC41D /* AccountVO.m */; };
+		C5557FA41CD0F15E006EC41D /* ActivityVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F801CD0F15E006EC41D /* ActivityVO.m */; };
+		C5557FA51CD0F15E006EC41D /* AuditMaterialsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F821CD0F15E006EC41D /* AuditMaterialsVO.m */; };
+		C5557FA61CD0F15E006EC41D /* AuditOthersVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F841CD0F15E006EC41D /* AuditOthersVO.m */; };
+		C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F861CD0F15E006EC41D /* BillBuildingVO.m */; };
+		C5557FA81CD0F15E006EC41D /* BillMaterialsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F881CD0F15E006EC41D /* BillMaterialsVO.m */; };
+		C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F8A1CD0F15E006EC41D /* BillOthersVO.m */; };
+		C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F8C1CD0F15E006EC41D /* BillVO.m */; };
+		C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F8E1CD0F15E006EC41D /* FileVO.m */; };
+		C5557FAC1CD0F15E006EC41D /* MessageVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F901CD0F15E006EC41D /* MessageVO.m */; };
+		C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F921CD0F15E006EC41D /* NotifyVO.m */; };
+		C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F941CD0F15E006EC41D /* QiNiuVO.m */; };
+		C5557FAF1CD0F15E006EC41D /* ResultVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F961CD0F15E006EC41D /* ResultVO.m */; };
+		C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F981CD0F15E006EC41D /* ScheduleVO.m */; };
+		C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F9A1CD0F15E006EC41D /* SignInResultVO.m */; };
+		C5557FB21CD0F15E006EC41D /* SignStatusVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F9C1CD0F15E006EC41D /* SignStatusVO.m */; };
+		C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F9E1CD0F15E006EC41D /* UserShortVO.m */; };
+		C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557FA01CD0F15E006EC41D /* UserVO.m */; };
+		C5557FB51CD0F15E006EC41D /* VOWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557FA21CD0F15E006EC41D /* VOWrapper.m */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -51,6 +76,56 @@
 		C500E23C1CD0ADBA00DF960B /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentViewController.m; path = Controller/ContentViewController.m; sourceTree = "<group>"; };
 		C500E23E1CD0D9EF00DF960B /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = Controller/SignInViewController.h; sourceTree = "<group>"; };
 		C500E23F1CD0D9EF00DF960B /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = Controller/SignInViewController.m; sourceTree = "<group>"; };
+		C5557F691CD0F143006EC41D /* NetworkFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFile.h; sourceTree = "<group>"; };
+		C5557F6A1CD0F143006EC41D /* NetworkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFile.m; sourceTree = "<group>"; };
+		C5557F6B1CD0F143006EC41D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		C5557F6C1CD0F143006EC41D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		C5557F6D1CD0F143006EC41D /* NSDictionary+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extends.h"; sourceTree = "<group>"; };
+		C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extends.m"; sourceTree = "<group>"; };
+		C5557F6F1CD0F143006EC41D /* RequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestParameter.h; sourceTree = "<group>"; };
+		C5557F701CD0F143006EC41D /* RequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestParameter.m; sourceTree = "<group>"; };
+		C5557F761CD0F154006EC41D /* MyGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroup.h; sourceTree = "<group>"; };
+		C5557F771CD0F154006EC41D /* MyGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroup.m; sourceTree = "<group>"; };
+		C5557F781CD0F154006EC41D /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
+		C5557F791CD0F154006EC41D /* Role.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Role.m; sourceTree = "<group>"; };
+		C5557F7D1CD0F15E006EC41D /* AccountVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountVO.h; sourceTree = "<group>"; };
+		C5557F7E1CD0F15E006EC41D /* AccountVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountVO.m; sourceTree = "<group>"; };
+		C5557F7F1CD0F15E006EC41D /* ActivityVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityVO.h; sourceTree = "<group>"; };
+		C5557F801CD0F15E006EC41D /* ActivityVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityVO.m; sourceTree = "<group>"; };
+		C5557F811CD0F15E006EC41D /* AuditMaterialsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditMaterialsVO.h; sourceTree = "<group>"; };
+		C5557F821CD0F15E006EC41D /* AuditMaterialsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditMaterialsVO.m; sourceTree = "<group>"; };
+		C5557F831CD0F15E006EC41D /* AuditOthersVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditOthersVO.h; sourceTree = "<group>"; };
+		C5557F841CD0F15E006EC41D /* AuditOthersVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditOthersVO.m; sourceTree = "<group>"; };
+		C5557F851CD0F15E006EC41D /* BillBuildingVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillBuildingVO.h; sourceTree = "<group>"; };
+		C5557F861CD0F15E006EC41D /* BillBuildingVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillBuildingVO.m; sourceTree = "<group>"; };
+		C5557F871CD0F15E006EC41D /* BillMaterialsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillMaterialsVO.h; sourceTree = "<group>"; };
+		C5557F881CD0F15E006EC41D /* BillMaterialsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillMaterialsVO.m; sourceTree = "<group>"; };
+		C5557F891CD0F15E006EC41D /* BillOthersVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillOthersVO.h; sourceTree = "<group>"; };
+		C5557F8A1CD0F15E006EC41D /* BillOthersVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillOthersVO.m; sourceTree = "<group>"; };
+		C5557F8B1CD0F15E006EC41D /* BillVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillVO.h; sourceTree = "<group>"; };
+		C5557F8C1CD0F15E006EC41D /* BillVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillVO.m; sourceTree = "<group>"; };
+		C5557F8D1CD0F15E006EC41D /* FileVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileVO.h; sourceTree = "<group>"; };
+		C5557F8E1CD0F15E006EC41D /* FileVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileVO.m; sourceTree = "<group>"; };
+		C5557F8F1CD0F15E006EC41D /* MessageVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVO.h; sourceTree = "<group>"; };
+		C5557F901CD0F15E006EC41D /* MessageVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVO.m; sourceTree = "<group>"; };
+		C5557F911CD0F15E006EC41D /* NotifyVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyVO.h; sourceTree = "<group>"; };
+		C5557F921CD0F15E006EC41D /* NotifyVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyVO.m; sourceTree = "<group>"; };
+		C5557F931CD0F15E006EC41D /* QiNiuVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiNiuVO.h; sourceTree = "<group>"; };
+		C5557F941CD0F15E006EC41D /* QiNiuVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiNiuVO.m; sourceTree = "<group>"; };
+		C5557F951CD0F15E006EC41D /* ResultVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultVO.h; sourceTree = "<group>"; };
+		C5557F961CD0F15E006EC41D /* ResultVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultVO.m; sourceTree = "<group>"; };
+		C5557F971CD0F15E006EC41D /* ScheduleVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleVO.h; sourceTree = "<group>"; };
+		C5557F981CD0F15E006EC41D /* ScheduleVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleVO.m; sourceTree = "<group>"; };
+		C5557F991CD0F15E006EC41D /* SignInResultVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInResultVO.h; sourceTree = "<group>"; };
+		C5557F9A1CD0F15E006EC41D /* SignInResultVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInResultVO.m; sourceTree = "<group>"; };
+		C5557F9B1CD0F15E006EC41D /* SignStatusVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignStatusVO.h; sourceTree = "<group>"; };
+		C5557F9C1CD0F15E006EC41D /* SignStatusVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignStatusVO.m; sourceTree = "<group>"; };
+		C5557F9D1CD0F15E006EC41D /* UserShortVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShortVO.h; sourceTree = "<group>"; };
+		C5557F9E1CD0F15E006EC41D /* UserShortVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShortVO.m; sourceTree = "<group>"; };
+		C5557F9F1CD0F15E006EC41D /* UserVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserVO.h; sourceTree = "<group>"; };
+		C5557FA01CD0F15E006EC41D /* UserVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserVO.m; sourceTree = "<group>"; };
+		C5557FA11CD0F15E006EC41D /* VOWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWrapper.h; sourceTree = "<group>"; };
+		C5557FA21CD0F15E006EC41D /* VOWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOWrapper.m; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +202,77 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		C5557F681CD0F143006EC41D /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				C5557F691CD0F143006EC41D /* NetworkFile.h */,
+				C5557F6A1CD0F143006EC41D /* NetworkFile.m */,
+				C5557F6B1CD0F143006EC41D /* NetworkManager.h */,
+				C5557F6C1CD0F143006EC41D /* NetworkManager.m */,
+				C5557F6D1CD0F143006EC41D /* NSDictionary+Extends.h */,
+				C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */,
+				C5557F6F1CD0F143006EC41D /* RequestParameter.h */,
+				C5557F701CD0F143006EC41D /* RequestParameter.m */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		C5557F751CD0F154006EC41D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C5557F761CD0F154006EC41D /* MyGroup.h */,
+				C5557F771CD0F154006EC41D /* MyGroup.m */,
+				C5557F781CD0F154006EC41D /* Role.h */,
+				C5557F791CD0F154006EC41D /* Role.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C5557F7C1CD0F15E006EC41D /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				C5557F7D1CD0F15E006EC41D /* AccountVO.h */,
+				C5557F7E1CD0F15E006EC41D /* AccountVO.m */,
+				C5557F7F1CD0F15E006EC41D /* ActivityVO.h */,
+				C5557F801CD0F15E006EC41D /* ActivityVO.m */,
+				C5557F811CD0F15E006EC41D /* AuditMaterialsVO.h */,
+				C5557F821CD0F15E006EC41D /* AuditMaterialsVO.m */,
+				C5557F831CD0F15E006EC41D /* AuditOthersVO.h */,
+				C5557F841CD0F15E006EC41D /* AuditOthersVO.m */,
+				C5557F851CD0F15E006EC41D /* BillBuildingVO.h */,
+				C5557F861CD0F15E006EC41D /* BillBuildingVO.m */,
+				C5557F871CD0F15E006EC41D /* BillMaterialsVO.h */,
+				C5557F881CD0F15E006EC41D /* BillMaterialsVO.m */,
+				C5557F891CD0F15E006EC41D /* BillOthersVO.h */,
+				C5557F8A1CD0F15E006EC41D /* BillOthersVO.m */,
+				C5557F8B1CD0F15E006EC41D /* BillVO.h */,
+				C5557F8C1CD0F15E006EC41D /* BillVO.m */,
+				C5557F8D1CD0F15E006EC41D /* FileVO.h */,
+				C5557F8E1CD0F15E006EC41D /* FileVO.m */,
+				C5557F8F1CD0F15E006EC41D /* MessageVO.h */,
+				C5557F901CD0F15E006EC41D /* MessageVO.m */,
+				C5557F911CD0F15E006EC41D /* NotifyVO.h */,
+				C5557F921CD0F15E006EC41D /* NotifyVO.m */,
+				C5557F931CD0F15E006EC41D /* QiNiuVO.h */,
+				C5557F941CD0F15E006EC41D /* QiNiuVO.m */,
+				C5557F951CD0F15E006EC41D /* ResultVO.h */,
+				C5557F961CD0F15E006EC41D /* ResultVO.m */,
+				C5557F971CD0F15E006EC41D /* ScheduleVO.h */,
+				C5557F981CD0F15E006EC41D /* ScheduleVO.m */,
+				C5557F991CD0F15E006EC41D /* SignInResultVO.h */,
+				C5557F9A1CD0F15E006EC41D /* SignInResultVO.m */,
+				C5557F9B1CD0F15E006EC41D /* SignStatusVO.h */,
+				C5557F9C1CD0F15E006EC41D /* SignStatusVO.m */,
+				C5557F9D1CD0F15E006EC41D /* UserShortVO.h */,
+				C5557F9E1CD0F15E006EC41D /* UserShortVO.m */,
+				C5557F9F1CD0F15E006EC41D /* UserVO.h */,
+				C5557FA01CD0F15E006EC41D /* UserVO.m */,
+				C5557FA11CD0F15E006EC41D /* VOWrapper.h */,
+				C5557FA21CD0F15E006EC41D /* VOWrapper.m */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
 		D18B46F31CCFAB8300FEA8E8 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +298,9 @@
 		D18B46FE1CCFAB8300FEA8E8 /* CHManagement */ = {
 			isa = PBXGroup;
 			children = (
+				C5557F681CD0F143006EC41D /* NetworkService */,
+				C5557F751CD0F154006EC41D /* Entity */,
+				C5557F7C1CD0F15E006EC41D /* VO */,
 				C500E2341CD0A49200DF960B /* Controller */,
 				D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */,
 				D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */,
@@ -373,12 +522,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5557F7B1CD0F154006EC41D /* Role.m in Sources */,
 				C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */,
 				D18B47071CCFAB8300FEA8E8 /* ViewController.m in Sources */,
+				C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */,
+				C5557F7A1CD0F154006EC41D /* MyGroup.m in Sources */,
 				D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */,
+				C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */,
+				C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */,
+				C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */,
+				C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */,
+				C5557FA81CD0F15E006EC41D /* BillMaterialsVO.m in Sources */,
+				C5557FA31CD0F15E006EC41D /* AccountVO.m in Sources */,
+				C5557FB51CD0F15E006EC41D /* VOWrapper.m in Sources */,
+				C5557F741CD0F143006EC41D /* RequestParameter.m in Sources */,
+				C5557FAF1CD0F15E006EC41D /* ResultVO.m in Sources */,
 				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
+				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
+				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
+				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,
+				C5557FA51CD0F15E006EC41D /* AuditMaterialsVO.m in Sources */,
+				C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */,
+				C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */,
 				C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */,
+				C5557FAC1CD0F15E006EC41D /* MessageVO.m in Sources */,
+				C5557FA61CD0F15E006EC41D /* AuditOthersVO.m in Sources */,
+				C5557FB21CD0F15E006EC41D /* SignStatusVO.m in Sources */,
+				C5557FA41CD0F15E006EC41D /* ActivityVO.m in Sources */,
+				C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */,
+				C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */,
+				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
 				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
