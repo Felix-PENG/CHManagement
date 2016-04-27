@@ -306,58 +306,40 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7g-VP-kOU">
-                                <rect key="frame" x="133" y="130" width="397" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="T9c-dV-rgY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="userNameTextField:" destination="QiX-DE-Zj4" eventType="editingDidEnd" id="R6J-OL-JgV"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpD-0C-Qzu">
-                                <rect key="frame" x="133" y="189" width="397" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="wcr-cd-qvu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-SQ-0Wn">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-SQ-0Wn">
                                 <rect key="frame" x="281" y="273" width="38" height="30"/>
                                 <state key="normal" title="登  录"/>
                                 <connections>
                                     <action selector="signInButtonPressed:" destination="QiX-DE-Zj4" eventType="touchUpInside" id="hLr-bR-FJf"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="ylU-ab-3Z9"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eug-hm-Afu">
+                                <rect key="frame" x="156" y="134" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8oI-F8-fId">
+                                <rect key="frame" x="156" y="189" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3TY-uF-gjq" firstAttribute="leading" secondItem="9gL-0e-pDe" secondAttribute="leadingMargin" constant="40" id="0CR-z6-bHh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="f7g-VP-kOU" secondAttribute="trailing" constant="50" id="7zI-y4-ZT7"/>
-                            <constraint firstItem="f7g-VP-kOU" firstAttribute="leading" secondItem="1W0-VM-vT6" secondAttribute="trailing" constant="8" id="8s1-du-A09"/>
                             <constraint firstItem="3TY-uF-gjq" firstAttribute="top" secondItem="1W0-VM-vT6" secondAttribute="bottom" constant="38" id="EZe-PX-wYe"/>
                             <constraint firstItem="a2d-SQ-0Wn" firstAttribute="centerX" secondItem="9gL-0e-pDe" secondAttribute="centerX" id="QBz-0w-CUw"/>
-                            <constraint firstItem="f7g-VP-kOU" firstAttribute="centerY" secondItem="1W0-VM-vT6" secondAttribute="centerY" id="QaN-7Z-5ir"/>
-                            <constraint firstItem="XpD-0C-Qzu" firstAttribute="leading" secondItem="3TY-uF-gjq" secondAttribute="trailing" constant="8" id="Qyk-Bf-JgG"/>
-                            <constraint firstItem="a2d-SQ-0Wn" firstAttribute="top" secondItem="XpD-0C-Qzu" secondAttribute="bottom" constant="54" id="T09-WW-Qva"/>
-                            <constraint firstItem="f7g-VP-kOU" firstAttribute="leading" secondItem="1W0-VM-vT6" secondAttribute="trailing" constant="8" id="aKL-5A-tF3"/>
-                            <constraint firstItem="XpD-0C-Qzu" firstAttribute="centerY" secondItem="3TY-uF-gjq" secondAttribute="centerY" id="c2i-f3-iSe"/>
                             <constraint firstItem="1W0-VM-vT6" firstAttribute="leading" secondItem="9gL-0e-pDe" secondAttribute="leadingMargin" constant="37" id="cUH-Dk-Ast"/>
                             <constraint firstItem="3TY-uF-gjq" firstAttribute="trailing" secondItem="1W0-VM-vT6" secondAttribute="trailing" id="dSs-O0-MTS"/>
                             <constraint firstItem="3TY-uF-gjq" firstAttribute="top" secondItem="1W0-VM-vT6" secondAttribute="bottom" constant="38" id="gPG-vF-K7E"/>
                             <constraint firstItem="1W0-VM-vT6" firstAttribute="top" secondItem="pys-2q-wgU" secondAttribute="bottom" constant="70" id="gUq-2x-uJq"/>
-                            <constraint firstItem="XpD-0C-Qzu" firstAttribute="leading" secondItem="3TY-uF-gjq" secondAttribute="trailing" constant="8" id="qPz-8N-ZXV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XpD-0C-Qzu" secondAttribute="trailing" constant="50" id="w1F-7s-i40"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="Adb-7E-OQ4"/>
                     <connections>
-                        <outlet property="passwordTextField" destination="XpD-0C-Qzu" id="qLm-pX-rau"/>
-                        <outlet property="userNameTextField" destination="f7g-VP-kOU" id="3Ec-VO-UxL"/>
+                        <outlet property="passwordTextField" destination="8oI-F8-fId" id="zWt-K6-ziQ"/>
+                        <outlet property="userNameTextField" destination="Eug-hm-Afu" id="abT-Ul-dtc"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="SignIn" id="IW3-33-nOT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ty-Jp-OOk" userLabel="First Responder" sceneMemberID="firstResponder"/>

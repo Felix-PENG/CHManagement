@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "NetworkManager.h"
-#import "ResultVO.h"
-#import "SignInResultVO.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[NetworkManager sharedInstance] registerWithEmail:@"22@qq.com" withPswd:@"111" withName:@"liuliu" withRoleId:1 withGroupId:2 completionHandler:^(NSDictionary * response) {
-        ResultVO *r = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-        NSLog(@"%@",[r message]);
-    }];
     return YES;
 }
 
