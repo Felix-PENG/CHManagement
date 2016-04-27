@@ -10,17 +10,9 @@
 #import "AFNetworking.h"
 #import "NetworkFile.h"
 #import "NSDictionary+Extends.h"
+#import "NetworkConstants.h"
 
 #define TIME_OUT_SECONDS 100
-
-#define baseUrl @"http://114.215.95.68:8080/cherp/"
-#define signInUrl @"api/signIn"
-#define signUpUrl @"api/signUp"
-#define changePswdUrl @"api/changePswd"
-#define createGroupUrl @"api/createGroup"
-#define changeGroupUrl @"api/changeGroup"
-#define getGroupsUrl @"api/getGroups"
-#define getGroupByIdUrl @"api/getGroupById"
 
 @implementation NetworkManager{
     NSOperationQueue *_queue;

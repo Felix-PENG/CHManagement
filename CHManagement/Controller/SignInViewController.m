@@ -7,6 +7,9 @@
 //
 
 #import "SignInViewController.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "SignInResultVO.h"
 
 @interface SignInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
@@ -32,10 +35,22 @@
 
 - (IBAction)signInButtonPressed:(id)sender
 {
-//    NSString *username = self.userNameTextField.text;
-//    NSString *password = self.passwordTextField.text;
+    NSString *username = self.userNameTextField.text;
+    NSString *password = self.passwordTextField.text;
+    
+    [[NetworkManager sharedInstance] signIn:username password:password completionHandler:^(NSDictionary * response) {
+        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        SignInResultVO* signResultVO = [[SignInResultVO alloc]initWithDictionary:[response objectForKey:@"signInResultVO"] error:nil];
+        NSLog(@"%@___%@",[resultVO message],[signResultVO token]);
+        if (resultVO.success == 0) {
+            [self performSegueWithIdentifier:@"SignIn" sender:nil];
+        } else {
+            
+        }
+    }];
     
 }
+
 
 /*
 #pragma mark - Navigation
