@@ -31,6 +31,7 @@
 #define getUsersUrl @"api/getUsers"
 #define getUserByIdUrl @"api/getUserById"
 #define deleteUserUrl @"api/deleteUser"
+#define changeUserUrl @"api/changeUser"
 #define signUrl @"api/sign"
 #define getSignStatusUrl @"api/getSignStatus"
 #define createFileUrl @"api/createFile"
