@@ -60,7 +60,7 @@
     } else {
         MBProgressHUD *hud = [MBProgressHUD hudWithMessage:@"登录中..." toView:self.view];
         
-        [[NetworkManager sharedInstance] signIn:username password:password completionHandler:^(NSDictionary * response) {
+        [[NetworkManager sharedInstance] signIn:username pswd:password completionHandler:^(NSDictionary * response) {
             [hud hide:YES];
             
             ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
