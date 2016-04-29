@@ -20,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+
     //NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
     
     [[NetworkManager sharedInstance] signIn:@"admin" pswd:@"123" completionHandler:^(NSDictionary * response) {
@@ -33,6 +35,7 @@
         NSString* token = [responseObject objectForKey:@"token"];
         NSLog(@"%@",[r message]);
     }];
+
     return YES;
 }
 
