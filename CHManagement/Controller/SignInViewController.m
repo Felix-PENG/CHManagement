@@ -38,7 +38,7 @@
     NSString *username = self.userNameTextField.text;
     NSString *password = self.passwordTextField.text;
     
-    [[NetworkManager sharedInstance] signIn:username password:password completionHandler:^(NSDictionary * response) {
+    [[NetworkManager sharedInstance] signIn:username pswd:password completionHandler:^(NSDictionary * response) {
         ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
         SignInResultVO* signResultVO = [[SignInResultVO alloc]initWithDictionary:[response objectForKey:@"signInResultVO"] error:nil];
         NSLog(@"%@___%@",[resultVO message],[signResultVO token]);
