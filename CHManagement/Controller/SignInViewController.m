@@ -10,10 +10,12 @@
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "SignInResultVO.h"
+#import "MBProgressHUD+Extends.h"
 
 @interface SignInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UILabel *hintLabel;
 @end
 
 @implementation SignInViewController
@@ -26,6 +28,18 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.navigationController.navigationBar setBarTintColor:[self.view tintColor]];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.passwordTextField.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,20 +49,34 @@
 
 - (IBAction)signInButtonPressed:(id)sender
 {
+    self.hintLabel.hidden = YES;
+    
     NSString *username = self.userNameTextField.text;
     NSString *password = self.passwordTextField.text;
     
-    [[NetworkManager sharedInstance] signIn:username password:password completionHandler:^(NSDictionary * response) {
-        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-        SignInResultVO* signResultVO = [[SignInResultVO alloc]initWithDictionary:[response objectForKey:@"signInResultVO"] error:nil];
-        NSLog(@"%@___%@",[resultVO message],[signResultVO token]);
-        if (resultVO.success == 0) {
-            [self performSegueWithIdentifier:@"SignIn" sender:nil];
-        } else {
+    if ([username isEqualToString:@""] || [password isEqualToString:@""]) {
+        self.hintLabel.text = @"请将信息填写完整";
+        self.hintLabel.hidden = NO;
+    } else {
+        MBProgressHUD *hud = [MBProgressHUD hudWithMessage:@"登录中..." toView:self.view];
+        
+        [[NetworkManager sharedInstance] signIn:username password:password completionHandler:^(NSDictionary * response) {
+            [hud hide:YES];
             
-        }
-    }];
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            SignInResultVO* signResultVO = [[SignInResultVO alloc]initWithDictionary:[response objectForKey:@"signInResultVO"] error:nil];
+            NSLog(@"%@___%@",[resultVO message],[signResultVO token]);
+            
+            if (resultVO.success == 0) {
+                [self performSegueWithIdentifier:@"SignIn" sender:nil];
+            } else {
+                
+                self.hintLabel.text = @"用户名或密码错误";
+                self.hintLabel.hidden = NO;
+            }
+        }];
     
+    }
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "LeftMenuViewController.h"
+#import "MainViewController.h"
 
 @interface LeftMenuViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -43,7 +44,10 @@
 
 - (IBAction)HomeButtonPressed:(id)sender
 {
-    
+    UIViewController *rootViewController = self.parentViewController;
+    if ([rootViewController isKindOfClass:[MainViewController class]]) {
+        [((MainViewController *)rootViewController) hideMenuViewController];
+    }
 }
 
 - (IBAction)modifyPasswordButtonPressed:(id)sender
