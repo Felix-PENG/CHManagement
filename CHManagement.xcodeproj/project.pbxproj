@@ -36,10 +36,15 @@
 		C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F9E1CD0F15E006EC41D /* UserShortVO.m */; };
 		C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557FA01CD0F15E006EC41D /* UserVO.m */; };
 		C5557FB51CD0F15E006EC41D /* VOWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557FA21CD0F15E006EC41D /* VOWrapper.m */; };
+		C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */; };
+		C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */; };
+		C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA01CD3B61500C6B263 /* ActivityTVC.m */; };
+		C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BA61CD3B83500C6B263 /* ActivityCell.xib */; };
+		C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA91CD3B8C500C6B263 /* ActivityCell.m */; };
+		C5971BAD1CD3C18400C6B263 /* AddActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
-		D18B47071CCFAB8300FEA8E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47061CCFAB8300FEA8E8 /* ViewController.m */; };
 		D18B470A1CCFAB8300FEA8E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18B47081CCFAB8300FEA8E8 /* Main.storyboard */; };
 		D18B470C1CCFAB8300FEA8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18B470B1CCFAB8300FEA8E8 /* Assets.xcassets */; };
 		D18B470F1CCFAB8300FEA8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18B470D1CCFAB8300FEA8E8 /* LaunchScreen.storyboard */; };
@@ -80,8 +85,8 @@
 		C5557F6A1CD0F143006EC41D /* NetworkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFile.m; sourceTree = "<group>"; };
 		C5557F6B1CD0F143006EC41D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		C5557F6C1CD0F143006EC41D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
-		C5557F6D1CD0F143006EC41D /* NSDictionary+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extends.h"; sourceTree = "<group>"; };
-		C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extends.m"; sourceTree = "<group>"; };
+		C5557F6D1CD0F143006EC41D /* NSDictionary+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Extends.h"; path = "NetworkService/NSDictionary+Extends.h"; sourceTree = "<group>"; };
+		C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Extends.m"; path = "NetworkService/NSDictionary+Extends.m"; sourceTree = "<group>"; };
 		C5557F6F1CD0F143006EC41D /* RequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestParameter.h; sourceTree = "<group>"; };
 		C5557F701CD0F143006EC41D /* RequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestParameter.m; sourceTree = "<group>"; };
 		C5557F761CD0F154006EC41D /* MyGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroup.h; sourceTree = "<group>"; };
@@ -126,12 +131,21 @@
 		C5557FA01CD0F15E006EC41D /* UserVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserVO.m; sourceTree = "<group>"; };
 		C5557FA11CD0F15E006EC41D /* VOWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWrapper.h; sourceTree = "<group>"; };
 		C5557FA21CD0F15E006EC41D /* VOWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOWrapper.m; sourceTree = "<group>"; };
+		C5971B991CD39A7200C6B263 /* MBProgressHUD+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+Extends.h"; path = "Extends/MBProgressHUD+Extends.h"; sourceTree = "<group>"; };
+		C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+Extends.m"; path = "Extends/MBProgressHUD+Extends.m"; sourceTree = "<group>"; };
+		C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifyPasswordVC.h; path = Controller/ModifyPasswordVC.h; sourceTree = "<group>"; };
+		C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModifyPasswordVC.m; path = Controller/ModifyPasswordVC.m; sourceTree = "<group>"; };
+		C5971B9F1CD3B61500C6B263 /* ActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTVC.h; path = Controller/ActivityTVC.h; sourceTree = "<group>"; };
+		C5971BA01CD3B61500C6B263 /* ActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTVC.m; path = Controller/ActivityTVC.m; sourceTree = "<group>"; };
+		C5971BA61CD3B83500C6B263 /* ActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityCell.xib; path = View/ActivityCell.xib; sourceTree = "<group>"; };
+		C5971BA81CD3B8C500C6B263 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityCell.h; path = View/ActivityCell.h; sourceTree = "<group>"; };
+		C5971BA91CD3B8C500C6B263 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityCell.m; path = View/ActivityCell.m; sourceTree = "<group>"; };
+		C5971BAB1CD3C18400C6B263 /* AddActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddActivityTVC.h; path = Controller/AddActivityTVC.h; sourceTree = "<group>"; };
+		C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddActivityTVC.m; path = Controller/AddActivityTVC.m; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D18B47051CCFAB8300FEA8E8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D18B47061CCFAB8300FEA8E8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D18B47091CCFAB8300FEA8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D18B470B1CCFAB8300FEA8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D18B470E1CCFAB8300FEA8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -198,6 +212,12 @@
 				C500E23C1CD0ADBA00DF960B /* ContentViewController.m */,
 				C500E23E1CD0D9EF00DF960B /* SignInViewController.h */,
 				C500E23F1CD0D9EF00DF960B /* SignInViewController.m */,
+				C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */,
+				C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */,
+				C5971B9F1CD3B61500C6B263 /* ActivityTVC.h */,
+				C5971BA01CD3B61500C6B263 /* ActivityTVC.m */,
+				C5971BAB1CD3C18400C6B263 /* AddActivityTVC.h */,
+				C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -209,8 +229,6 @@
 				C5557F6A1CD0F143006EC41D /* NetworkFile.m */,
 				C5557F6B1CD0F143006EC41D /* NetworkManager.h */,
 				C5557F6C1CD0F143006EC41D /* NetworkManager.m */,
-				C5557F6D1CD0F143006EC41D /* NSDictionary+Extends.h */,
-				C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */,
 				C5557F6F1CD0F143006EC41D /* RequestParameter.h */,
 				C5557F701CD0F143006EC41D /* RequestParameter.m */,
 			);
@@ -273,6 +291,27 @@
 			path = VO;
 			sourceTree = "<group>";
 		};
+		C5971B981CD399D200C6B263 /* Extends */ = {
+			isa = PBXGroup;
+			children = (
+				C5557F6D1CD0F143006EC41D /* NSDictionary+Extends.h */,
+				C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */,
+				C5971B991CD39A7200C6B263 /* MBProgressHUD+Extends.h */,
+				C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */,
+			);
+			name = Extends;
+			sourceTree = "<group>";
+		};
+		C5971BA51CD3B80F00C6B263 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5971BA61CD3B83500C6B263 /* ActivityCell.xib */,
+				C5971BA81CD3B8C500C6B263 /* ActivityCell.h */,
+				C5971BA91CD3B8C500C6B263 /* ActivityCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		D18B46F31CCFAB8300FEA8E8 = {
 			isa = PBXGroup;
 			children = (
@@ -298,14 +337,14 @@
 		D18B46FE1CCFAB8300FEA8E8 /* CHManagement */ = {
 			isa = PBXGroup;
 			children = (
+				C5971BA51CD3B80F00C6B263 /* View */,
+				C5971B981CD399D200C6B263 /* Extends */,
 				C5557F681CD0F143006EC41D /* NetworkService */,
 				C5557F751CD0F154006EC41D /* Entity */,
 				C5557F7C1CD0F15E006EC41D /* VO */,
 				C500E2341CD0A49200DF960B /* Controller */,
 				D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */,
 				D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */,
-				D18B47051CCFAB8300FEA8E8 /* ViewController.h */,
-				D18B47061CCFAB8300FEA8E8 /* ViewController.m */,
 				D18B47081CCFAB8300FEA8E8 /* Main.storyboard */,
 				D18B470B1CCFAB8300FEA8E8 /* Assets.xcassets */,
 				D18B470D1CCFAB8300FEA8E8 /* LaunchScreen.storyboard */,
@@ -449,6 +488,7 @@
 			files = (
 				D18B470F1CCFAB8300FEA8E8 /* LaunchScreen.storyboard in Resources */,
 				D18B470C1CCFAB8300FEA8E8 /* Assets.xcassets in Resources */,
+				C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */,
 				D18B470A1CCFAB8300FEA8E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,21 +564,25 @@
 			files = (
 				C5557F7B1CD0F154006EC41D /* Role.m in Sources */,
 				C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */,
-				D18B47071CCFAB8300FEA8E8 /* ViewController.m in Sources */,
+				C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */,
 				C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */,
 				C5557F7A1CD0F154006EC41D /* MyGroup.m in Sources */,
 				D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */,
 				C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */,
 				C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */,
 				C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */,
+				C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */,
+				C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */,
 				C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */,
 				C5557FA81CD0F15E006EC41D /* BillMaterialsVO.m in Sources */,
 				C5557FA31CD0F15E006EC41D /* AccountVO.m in Sources */,
+				C5971BAD1CD3C18400C6B263 /* AddActivityTVC.m in Sources */,
 				C5557FB51CD0F15E006EC41D /* VOWrapper.m in Sources */,
 				C5557F741CD0F143006EC41D /* RequestParameter.m in Sources */,
 				C5557FAF1CD0F15E006EC41D /* ResultVO.m in Sources */,
 				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
+				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
 				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
 				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,
