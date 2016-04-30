@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivityVO.h"
 
 @interface AddActivityTVC : UITableViewController
+
+@property (nonatomic, strong) ActivityVO *activity;
 
 @end

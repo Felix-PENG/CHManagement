@@ -42,6 +42,8 @@
 		C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BA61CD3B83500C6B263 /* ActivityCell.xib */; };
 		C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA91CD3B8C500C6B263 /* ActivityCell.m */; };
 		C5971BAD1CD3C18400C6B263 /* AddActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */; };
+		C5971BB11CD4F85900C6B263 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BB01CD4F85900C6B263 /* LoadMoreCell.xib */; };
+		C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BB31CD4F88500C6B263 /* LoadMoreCell.m */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -142,6 +144,9 @@
 		C5971BA91CD3B8C500C6B263 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityCell.m; path = View/ActivityCell.m; sourceTree = "<group>"; };
 		C5971BAB1CD3C18400C6B263 /* AddActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddActivityTVC.h; path = Controller/AddActivityTVC.h; sourceTree = "<group>"; };
 		C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddActivityTVC.m; path = Controller/AddActivityTVC.m; sourceTree = "<group>"; };
+		C5971BB01CD4F85900C6B263 /* LoadMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadMoreCell.xib; path = View/LoadMoreCell.xib; sourceTree = "<group>"; };
+		C5971BB21CD4F88500C6B263 /* LoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadMoreCell.h; path = View/LoadMoreCell.h; sourceTree = "<group>"; };
+		C5971BB31CD4F88500C6B263 /* LoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadMoreCell.m; path = View/LoadMoreCell.m; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -308,6 +313,9 @@
 				C5971BA61CD3B83500C6B263 /* ActivityCell.xib */,
 				C5971BA81CD3B8C500C6B263 /* ActivityCell.h */,
 				C5971BA91CD3B8C500C6B263 /* ActivityCell.m */,
+				C5971BB01CD4F85900C6B263 /* LoadMoreCell.xib */,
+				C5971BB21CD4F88500C6B263 /* LoadMoreCell.h */,
+				C5971BB31CD4F88500C6B263 /* LoadMoreCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -486,6 +494,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5971BB11CD4F85900C6B263 /* LoadMoreCell.xib in Resources */,
 				D18B470F1CCFAB8300FEA8E8 /* LaunchScreen.storyboard in Resources */,
 				D18B470C1CCFAB8300FEA8E8 /* Assets.xcassets in Resources */,
 				C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */,
@@ -583,6 +592,7 @@
 				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
 				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
+				C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */,
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
 				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
 				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,

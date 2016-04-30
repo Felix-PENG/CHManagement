@@ -20,6 +20,10 @@
     [self.navigationController.navigationBar setBarTintColor:[self.view tintColor]];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    if (self.activity) {
+        self.navigationItem.title = @"活动更新";
+    }
 }
 
 - (IBAction)cancelButtonPressed:(id)sender

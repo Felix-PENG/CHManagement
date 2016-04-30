@@ -30,11 +30,11 @@
         //[userData setObject:@"admin" forKey:@"user_id"];
         NSLog(@"%@___%@",[resultVO message],[signResultVO token]);
     }];
-    [[NetworkManager sharedInstance]changePswd:@"123" withNewPswd:@"123" withUserId:@"888" completionHandler:^(NSDictionary *responseObject) {
-        ResultVO* r = [[ResultVO alloc]initWithDictionary:[responseObject objectForKey:@"resultVO"] error:nil];
-        NSString* token = [responseObject objectForKey:@"token"];
-        NSLog(@"%@",[r message]);
-    }];
+//    [[NetworkManager sharedInstance]changePswd:@"123" withNewPswd:@"123" withUserId:@"888" completionHandler:^(NSDictionary *responseObject) {
+//        ResultVO* r = [[ResultVO alloc]initWithDictionary:[responseObject objectForKey:@"resultVO"] error:nil];
+//        NSString* token = [responseObject objectForKey:@"token"];
+//        NSLog(@"%@",[r message]);
+//    }];
 
     return YES;
 }
