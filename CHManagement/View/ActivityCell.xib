@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21:11:34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4g-kT-VXw">
-                        <rect key="frame" x="8" y="37" width="369" height="21"/>
+                        <rect key="frame" x="16" y="37" width="361" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="O4U-tJ-FUr"/>
                         </constraints>
@@ -24,18 +24,18 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="what the frack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ot8-9e-KkV">
-                        <rect key="frame" x="8" y="66" width="369" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-04-23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huM-Bd-ZqT">
-                        <rect key="frame" x="8" y="8" width="369" height="21"/>
+                        <rect key="frame" x="16" y="8" width="361" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="OEN-pA-bmE"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="what the frack" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ot8-9e-KkV">
+                        <rect key="frame" x="16" y="66" width="361" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -44,20 +44,14 @@
                     <constraint firstAttribute="bottomMargin" secondItem="ot8-9e-KkV" secondAttribute="bottom" constant="2.5" id="0G2-Lp-dUJ"/>
                     <constraint firstItem="ot8-9e-KkV" firstAttribute="trailing" secondItem="rxw-GT-WGB" secondAttribute="trailingMargin" id="1Vn-z6-Pd9"/>
                     <constraint firstItem="huM-Bd-ZqT" firstAttribute="top" secondItem="rxw-GT-WGB" secondAttribute="topMargin" id="1bS-29-IWd"/>
-                    <constraint firstItem="ot8-9e-KkV" firstAttribute="leading" secondItem="rxw-GT-WGB" secondAttribute="leadingMargin" id="2Rc-0p-dit"/>
+                    <constraint firstItem="ot8-9e-KkV" firstAttribute="leading" secondItem="rxw-GT-WGB" secondAttribute="leadingMargin" constant="8" id="2Rc-0p-dit"/>
                     <constraint firstItem="H4g-kT-VXw" firstAttribute="trailing" secondItem="rxw-GT-WGB" secondAttribute="trailingMargin" id="9Rm-LR-QKE"/>
                     <constraint firstItem="H4g-kT-VXw" firstAttribute="top" secondItem="huM-Bd-ZqT" secondAttribute="bottom" constant="8" id="9du-Oo-dWg"/>
-                    <constraint firstItem="H4g-kT-VXw" firstAttribute="leading" secondItem="rxw-GT-WGB" secondAttribute="leadingMargin" id="Heb-6B-uxi"/>
+                    <constraint firstItem="H4g-kT-VXw" firstAttribute="leading" secondItem="rxw-GT-WGB" secondAttribute="leadingMargin" constant="8" id="Heb-6B-uxi"/>
                     <constraint firstItem="ot8-9e-KkV" firstAttribute="top" secondItem="H4g-kT-VXw" secondAttribute="bottom" constant="8" id="P6v-Fc-CNV"/>
-                    <constraint firstItem="huM-Bd-ZqT" firstAttribute="leading" secondItem="rxw-GT-WGB" secondAttribute="leadingMargin" id="TPC-LE-xal"/>
-                    <constraint firstItem="ot8-9e-KkV" firstAttribute="top" secondItem="H4g-kT-VXw" secondAttribute="bottom" constant="8" id="Zov-LU-0YA"/>
+                    <constraint firstItem="huM-Bd-ZqT" firstAttribute="leading" secondItem="rxw-GT-WGB" secondAttribute="leadingMargin" constant="8" id="TPC-LE-xal"/>
                     <constraint firstItem="huM-Bd-ZqT" firstAttribute="trailing" secondItem="rxw-GT-WGB" secondAttribute="trailingMargin" id="dGJ-hz-HFG"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="Zov-LU-0YA"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLabel" destination="ot8-9e-KkV" id="47M-eK-5Q1"/>

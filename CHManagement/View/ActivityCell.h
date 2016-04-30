@@ -10,4 +10,6 @@
 
 @interface ActivityCell : UITableViewCell
 
+- (void)configureWithContent:(NSString *)content time:(NSUInteger)time;
+
 @end
