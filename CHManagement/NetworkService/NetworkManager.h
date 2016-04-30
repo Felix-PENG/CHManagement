@@ -16,14 +16,14 @@
 
 - (void)httpActionWithParameter:(RequestParameter *)parameter completionHandler:(void (^) (id responseObject))handler;
 
-#pragma account api
+#pragma mark Account api
 - (void)signIn:(NSString *)email pswd:(NSString *)pswd completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)registerWithEmail:(NSString*)email withPswd:(NSString*)pswd withName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)changePswd:(NSString*)pswd withNewPswd:(NSString*)n_pswd completionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma group api
+#pragma mark Group api
 - (void)createGroupWithName:(NSString*)name completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)changeGroupName:(NSString*)name withGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler;
@@ -34,9 +34,9 @@
 
 - (void)deleteGroupWithGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)getGroupsByUserIdWithCompletionHandler:(void (^)(NSDictionary *))handler;
+- (void)getGroupsByUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma role api
+#pragma mark Role api
 - (void)createRoleAndPermissionWithName:(NSString*)name withPermissionList:(NSString*)permission_list completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)deleteRoleWithRoleId:(NSInteger)role_id completionHandler:(void (^)(NSDictionary *))handler;
@@ -51,45 +51,45 @@
 
 - (void)changeRolePermissionWithRoleId:(NSInteger)role_id withPermissionList:(NSString*)permission_list completionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma permission api
+#pragma mark Permission api
 - (void)getPermissionsWithCompletionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma user api
+#pragma mark User api
 - (void)getUsersWithCompletionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)getUserByUserIdWithCompletionHandler:(void (^)(NSDictionary *))handler;
+- (void)getUserById:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)deleteUserByUserIdWithCompletionHandler:(void (^)(NSDictionary *))handler;
+- (void)deleteUserById:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)changUserWithName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler;
+- (void)changUserWithName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma sign api
-- (void)signWithCompletionHandler:(void (^)(NSDictionary *))handler;
+#pragma mark Sign api
+- (void)signByUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)getSignStatusWithCompletionHandler:(void (^)(NSDictionary *))handler;
+- (void)getSignStatusByUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma file api
-- (void)createFileWithName:(NSString*)name withSize:(NSString*)size withUrl:(NSString*)url completionHandler:(void (^)(NSDictionary *))handler;
+#pragma mark File api
+- (void)createFileWithName:(NSString*)name withSize:(NSString*)size withUrl:(NSString*)url withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)getUploadTokenWithName:(NSString*)name withKeyPre:(NSString*)key_pre completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)deleteFileByFileId:(NSInteger)file_id completionHandler:(void (^)(NSDictionary *))handler;
+- (void)deleteFileWithFileId:(NSInteger)file_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)getFilesWithPage:(NSInteger)page completionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma message_api
-- (void)createMessageWithIdList:(NSString*)id_list withContent:(NSString*)content completionHandler:(void (^)(NSDictionary *))handler;
+#pragma mark Message api
+- (void)createMessageWithIdList:(NSString*)id_list withContent:(NSString*)content withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)deleteMessageWithMessageId:(NSInteger)message_id withInOff:(NSInteger)in_off completionHandler:(void (^)(NSDictionary *))handler;
+- (void)deleteMessageWithMessageId:(NSInteger)message_id withInOff:(NSInteger)in_off withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)getMessagesWithPage:(NSInteger)page withInOff:(NSInteger)in_off completionHandler:(void (^)(NSDictionary *))handler;
+- (void)getMessagesWithPage:(NSInteger)page withInOff:(NSInteger)in_off withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma activity api
-- (void)createActivityWithGroupId:(NSInteger)group_id withContent:(NSString*)content completionHandler:(void (^)(NSDictionary *))handler;
+#pragma mark Activity api
+- (void)createActivityWithGroupId:(NSInteger)group_id withContent:(NSString*)content withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)getActivitiesByGroupId:(NSInteger)group_id withPage:(NSInteger)page completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)changeActivityWithActivityId:(NSInteger)activity_id withContent:(NSString*)content completionHandler:(void (^)(NSDictionary *))handler;
+- (void)changeActivityWithActivityId:(NSInteger)activity_id withContent:(NSString*)content withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)getActivityById:(NSInteger)activity_id completionHandler:(void (^)(NSDictionary *))handler;
 
@@ -97,6 +97,91 @@
 
 - (void)getYesterdayActivityByGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler;
 
-#pragma schedule api
+#pragma mark Schedule api
+- (void)createScheduleWithYesterday:(NSString*)yst withToday:(NSString*)tdy withTomorrow:(NSString*)tmw withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)changeScheduleWithId:(NSInteger)schedule_id withYesterday:(NSString*)yst withToday:(NSString*)tdy withTomorrow:(NSString*)tmw completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getSchedulesWithPage:(NSInteger)page withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getScheduleById:(NSInteger)schedule_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getYesterdayScheduleByUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getYesterdayScheduleById:(NSInteger)schedule_id completionHandler:(void (^)(NSDictionary *))handler;
+
+#pragma mark AuditMaterials api
+- (void)createAuditMaterialsWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)changeAuditMaterialsWithId:(NSInteger)auditMaterials_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)deleteAuditMaterialsWithId:(NSInteger)auditMaterials_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getAuditMaterialsListWithStatus:(NSInteger)audit_status withIn_off:(NSInteger)in_off withPage:(NSInteger)page withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getAuditMaterialsListWithGroupId:(NSInteger)group_id withStatus:(NSInteger)audit_status withIn_off:(NSInteger)in_off withPage:(NSInteger)page withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getAuditMaterialsById:(NSInteger)auditMaterials_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)auditAuditMaterialsWithId:(NSInteger)auditMaterials_id withStatus:(NSInteger)audit_status withReason:(NSString*)reason completionHandler:(void (^)(NSDictionary *))handler;
+
+#pragma mark AuditOthers api
+- (void)createAuditOthersWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUnitPrice:(double)unit_price withNum:(NSInteger)num withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)changeAuditOthersWithId:(NSInteger)auditOthers_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUnitPrice:(double)unit_price withNum:(NSInteger)num withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)deleteAuditOthersWithId:(NSInteger)auditOthers_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getAuditOthersListWithStatus:(NSInteger)audit_status withPage:(NSInteger)page withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getAuditOthersListWithGroupId:(NSInteger)group_id withStatus:(NSInteger)audit_status withPage:(NSInteger)page withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getAuditOthersById:(NSInteger)auditOthers_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)auditAuditOthersWithId:(NSInteger)auditOthers_id withStatus:(NSInteger)audit_status withReason:(NSString*)reason completionHandler:(void (^)(NSDictionary *))handler;
+
+#pragma mark Bill api
+- (void)createBillWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withIn_off:(NSInteger)in_off withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)changeBillWithId:(NSInteger)bill_id withContent:(NSString*)content withMoney:(double)money withIn_off:(NSInteger)in_off withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillById:(NSInteger)bill_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillsWithGroupId:(NSInteger)group_id withPage:(NSInteger)page completionHandler:(void (^)(NSDictionary *))handler;
+
+#pragma mark BillBuilding api
+- (void)createBillBuildingWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withPurName:(NSString*)purchaser_name withPurPhone:(NSString*)purchaser_phone withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)changeBillBuildingWithId:(NSInteger)billBuilding_id withContent:(NSString*)content withMoney:(double)money withPurName:(NSString*)purchaser_name withPurPhone:(NSString*)purchaser_phone withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillBuildingById:(NSInteger)billBuilding_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillBuildingsWithGroupId:(NSInteger)group_id withPage:(NSInteger)page completionHandler:(void (^)(NSDictionary *))handler;
+
+#pragma mark BillMaterials api
+- (void)createBillMaterialsWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withType:(NSString*)type withUnitPrice:(double)unit_price withNum:(NSInteger)num withIn_off:(NSInteger)in_off withDealerName:(NSString*)dealer_name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)changeBillMaterialsWithId:(NSInteger)billMaterials_id withGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withType:(NSString*)type withUnitPrice:(double)unit_price withNum:(NSInteger)num withIn_off:(NSInteger)in_off withDealerName:(NSString*)dealer_name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)deleteBillMaterialsWithId:(NSInteger)billMaterials_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillMaterialsListWithGroupId:(NSInteger)group_id withStatus:(NSInteger)finish_status withIn_off:(NSInteger)in_off withPage:(NSInteger)page completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillMaterialsById:(NSInteger)billMaterials_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)finishBillMaterialsWithId:(NSInteger)billMaterials_id withStatus:(NSInteger)finish_status withUrl:(NSString*)url completionHandler:(void (^)(NSDictionary *))handler;
+
+#pragma mark BillOthers api
+- (void)changeBillOthersWithId:(NSInteger)billOthers_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUnitPrice:(double)unit_price withNum:(NSInteger)num withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)deleteBillOthersWithId:(NSInteger)billOthers_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillOthersListByStatus:(NSInteger)finish_status completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillOthersListWithGroupId:(NSInteger)group_id withStatus:(NSInteger)finish_status withPage:(NSInteger)page completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)getBillOthersById:(NSInteger)billOthers_id completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)finishBillOthersWithId:(NSInteger)billOthers_id withStatus:(NSInteger)finish_status withUrl:(NSString*)url completionHandler:(void (^)(NSDictionary *))handler;
 
 @end
