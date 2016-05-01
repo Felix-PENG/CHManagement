@@ -21,6 +21,7 @@
     switch (status) {
         case ClickToLoad:
             self.loadMoreLabel.text = @"点击加载更多";
+            self.loadMoreLabel.textColor = [self.contentView tintColor];
             self.loadMoreLabel.hidden = NO;
             self.indicator.hidden = YES;
             self.userInteractionEnabled = YES;
