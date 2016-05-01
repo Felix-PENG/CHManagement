@@ -11,7 +11,12 @@
 
 @interface AddActivityTVC (){
     ActivityVO* yesterdayActivity;
+    BOOL _repeatLoad;
 }
+
+@property (nonatomic,assign)IBOutlet UITextView* yesterdayTextView;
+
+@property (nonatomic,assign)IBOutlet UITextView* todayTextView;
 
 @end
 
@@ -26,7 +31,31 @@
     
     if (self.activity) {
         self.navigationItem.title = @"活动更新";
+        _todayTextView.text = _activity.detail;
     }
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    [self.refreshControl beginRefreshing];
+    [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (!_repeatLoad) {
+        [self.refreshControl beginRefreshing];
+        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
+        _repeatLoad = YES;
+    }
+}
+
+- (void)refresh
+{
+    [self loadYesterdayAndTodayActivity];
+    [self.refreshControl endRefreshing];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender
@@ -44,6 +73,7 @@
     [[NetworkManager sharedInstance]getYesterdayActivityWithGroupId:group_id withActivityId:activity_id completionHandler:^(NSDictionary *response) {
         yesterdayActivity = [[ActivityVO alloc]initWithDictionary:[response objectForKey:@"activityVO"] error:nil];
     }];
+    _yesterdayTextView.text = yesterdayActivity.detail;
 }
 
 @end
