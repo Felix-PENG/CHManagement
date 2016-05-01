@@ -52,6 +52,7 @@
 		D18B470F1CCFAB8300FEA8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18B470D1CCFAB8300FEA8E8 /* LaunchScreen.storyboard */; };
 		D18B471A1CCFAB8300FEA8E8 /* CHManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47191CCFAB8300FEA8E8 /* CHManagementTests.m */; };
 		D18B47251CCFAB8400FEA8E8 /* CHManagementUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */; };
+		D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF82E1CD647B90044BA84 /* IDEntity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,8 @@
 		D18B47201CCFAB8300FEA8E8 /* CHManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHManagementUITests.m; sourceTree = "<group>"; };
 		D18B47261CCFAB8400FEA8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19EF82D1CD647B90044BA84 /* IDEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEntity.h; sourceTree = "<group>"; };
+		D19EF82E1CD647B90044BA84 /* IDEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDEntity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,8 @@
 				C5557F771CD0F154006EC41D /* MyGroup.m */,
 				C5557F781CD0F154006EC41D /* Role.h */,
 				C5557F791CD0F154006EC41D /* Role.m */,
+				D19EF82D1CD647B90044BA84 /* IDEntity.h */,
+				D19EF82E1CD647B90044BA84 /* IDEntity.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,
 				C5557FA51CD0F15E006EC41D /* AuditMaterialsVO.m in Sources */,
 				C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */,
+				D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */,
 				C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */,
 				C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */,
 				C5557FAC1CD0F15E006EC41D /* MessageVO.m in Sources */,

@@ -7,8 +7,11 @@
 //
 
 #import "AddActivityTVC.h"
+#import "NetworkManager.h"
 
-@interface AddActivityTVC ()
+@interface AddActivityTVC (){
+    ActivityVO* yesterdayActivity;
+}
 
 @end
 
@@ -33,6 +36,14 @@
 - (IBAction)saveButtonPressed:(id)sender
 {
     
+}
+
+- (void)loadYesterdayAndTodayActivity{
+    NSInteger group_id = 0;//need to override here
+    NSInteger activity_id = _activity.id;
+    [[NetworkManager sharedInstance]getYesterdayActivityWithGroupId:group_id withActivityId:activity_id completionHandler:^(NSDictionary *response) {
+        yesterdayActivity = [[ActivityVO alloc]initWithDictionary:[response objectForKey:@"activityVO"] error:nil];
+    }];
 }
 
 @end

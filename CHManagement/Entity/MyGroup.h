@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
+#import "IDEntity.h"
 
-@interface MyGroup : JSONModel
+@interface MyGroup : IDEntity
 
 @property (nonatomic,copy) NSString* name;
 
