@@ -34,10 +34,10 @@ static NSString * const AddActivitySegue = @"AddActivity";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UINib *cellNib = [UINib nibWithNibName:@"ActivityCell" bundle:nil];
+    UINib *cellNib = [UINib nibWithNibName:CellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:CellIdentifier];
     
-    cellNib = [UINib nibWithNibName:@"LoadMoreCell" bundle:nil];
+    cellNib = [UINib nibWithNibName:LoadMoreCellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:LoadMoreCellIdentifier];
     
     _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择角色" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -91,11 +91,16 @@ static NSString * const AddActivitySegue = @"AddActivity";
             for (NSDictionary *activityDict in activityList) {
                 [_activityList addObject:[[ActivityVO alloc] initWithDictionary:activityDict error:nil]];
             }
+            _noMoreData = NO;
         } else {
             _noMoreData = YES;
         }
         
         [self.tableView reloadData];
+        
+        if (self.refreshControl.isRefreshing) {
+            [self.refreshControl endRefreshing];
+        }
     }];
 }
 
@@ -157,8 +162,6 @@ static NSString * const AddActivitySegue = @"AddActivity";
 {
     _page = 1;
     [self loadDataWithPage:_page];
-    
-    [self.refreshControl endRefreshing];
 }
 
 #pragma mark - Segue
