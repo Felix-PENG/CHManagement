@@ -10,7 +10,10 @@
 #import "NetworkManager.h"
 #import "ResultVO.h"
 
-@interface AddActivityTVC ()
+@interface AddActivityTVC (){
+    NSInteger group_id;
+    NSInteger user_id;
+}
 
 @property (nonatomic,assign)IBOutlet UITextView* yesterdayTextView;
 
@@ -26,6 +29,10 @@
     [self.navigationController.navigationBar setBarTintColor:[self.view tintColor]];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    group_id = [[userData objectForKey:@"group_id"]integerValue];
+    user_id = [[userData objectForKey:@"user_id"]integerValue];
     
     if ([self.activity isKindOfClass:[ActivityVO class]]) {
         self.navigationItem.title = @"活动更新";
@@ -51,8 +58,6 @@
 }
 - (IBAction)saveButtonPressed:(id)sender
 {
-    NSInteger group_id = 0;
-    NSInteger user_id = 0;
     if([self.activity isKindOfClass:[ActivityVO class]]){
         [[NetworkManager sharedInstance]changeActivityWithActivityId:self.activity.id withContent:_todayTextView.text withUserId:user_id completionHandler:^(NSDictionary *response) {
             ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
@@ -67,8 +72,6 @@
 }
 
 - (void)loadYesterdayActivity{
-    NSInteger group_id = 0;//need to override here
-    
     if([self.activity isKindOfClass:[ActivityVO class]]){
         NSInteger activity_id = _activity.id;
         [[NetworkManager sharedInstance]getYesterdayActivityWithGroupId:group_id withActivityId:activity_id completionHandler:^(NSDictionary *response) {

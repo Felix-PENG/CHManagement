@@ -78,7 +78,9 @@ static NSString * const AddActivitySegue = @"AddActivity";
 
 - (void)loadDataWithPage:(NSUInteger)page
 {
-    [[NetworkManager sharedInstance] getActivitiesByGroupId:0 withPage:page completionHandler:^(NSDictionary *response) {
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+    [[NetworkManager sharedInstance] getActivitiesByGroupId:group_id withPage:page completionHandler:^(NSDictionary *response) {
         
         if (page <= 1) {
             [_activityList removeAllObjects];

@@ -69,6 +69,15 @@
             
             if (resultVO.success == 0) {
                 [self performSegueWithIdentifier:@"SignIn" sender:nil];
+                NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+                NSInteger user_id = [[signResultVO user]id];
+                NSInteger token_user_id = user_id;
+                NSString* token = [signResultVO token];
+                NSInteger group_id = [[[signResultVO user]group]id];
+                [userData setObject:[NSNumber numberWithInteger:user_id] forKey:@"user_id"];
+                [userData setObject:[NSNumber numberWithInteger:token_user_id] forKey:@"token_user_id"];
+                [userData setObject:token forKey:@"token"];
+                [userData setObject:[NSNumber numberWithInteger:group_id] forKey:@"group_id"];
             } else {
                 
                 self.hintLabel.text = @"用户名或密码错误";
