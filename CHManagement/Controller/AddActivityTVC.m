@@ -7,8 +7,13 @@
 //
 
 #import "AddActivityTVC.h"
+#import "NetworkManager.h"
 
 @interface AddActivityTVC ()
+
+@property (nonatomic,assign)IBOutlet UITextView* yesterdayTextView;
+
+@property (nonatomic,assign)IBOutlet UITextView* todayTextView;
 
 @end
 
@@ -23,7 +28,9 @@
     
     if (self.activity) {
         self.navigationItem.title = @"活动更新";
+        _todayTextView.text = _activity.detail;
     }
+    [self loadYesterdayActivity];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender
@@ -33,6 +40,16 @@
 - (IBAction)saveButtonPressed:(id)sender
 {
     
+}
+
+- (void)loadYesterdayActivity{
+    NSInteger group_id = 0;//need to override here
+    NSInteger activity_id = _activity.id;
+    [[NetworkManager sharedInstance]getYesterdayActivityWithGroupId:group_id withActivityId:activity_id completionHandler:^(NSDictionary *response) {
+        ActivityVO* yesterdayActivity = [[ActivityVO alloc]initWithDictionary:[response objectForKey:@"activityVO"] error:nil];
+        _yesterdayTextView.text = yesterdayActivity.detail;
+        _yesterdayTextView.editable = NO;
+    }];
 }
 
 @end

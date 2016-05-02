@@ -606,6 +606,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="todayTextView" destination="pov-9i-IBM" id="n0c-WO-21O"/>
+                        <outlet property="yesterdayTextView" destination="Hmz-cR-yEn" id="D1c-fs-WYm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kc-Nn-Wvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
