@@ -56,6 +56,11 @@
 		C5971BD31CD5EE2B00C6B263 /* MailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BD21CD5EE2B00C6B263 /* MailCell.xib */; };
 		C5971BD61CD5EE4100C6B263 /* MailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BD51CD5EE4100C6B263 /* MailCell.m */; };
 		C5971BD91CD5F3E700C6B263 /* SendMailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BD81CD5F3E700C6B263 /* SendMailTVC.m */; };
+		C5971BE01CD7561D00C6B263 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BDF1CD7561D00C6B263 /* TabItem.m */; };
+		C5971BE31CD78CAB00C6B263 /* YesterdayPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BE21CD78CAB00C6B263 /* YesterdayPlanTVC.m */; };
+		C5971BE61CD78CBF00C6B263 /* TodayPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */; };
+		C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */; };
+		C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -182,6 +187,16 @@
 		C5971BD51CD5EE4100C6B263 /* MailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailCell.m; path = View/MailCell.m; sourceTree = "<group>"; };
 		C5971BD71CD5F3E700C6B263 /* SendMailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendMailTVC.h; path = Controller/SendMailTVC.h; sourceTree = "<group>"; };
 		C5971BD81CD5F3E700C6B263 /* SendMailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendMailTVC.m; path = Controller/SendMailTVC.m; sourceTree = "<group>"; };
+		C5971BDE1CD7561D00C6B263 /* TabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabItem.h; path = Utils/TabItem.h; sourceTree = "<group>"; };
+		C5971BDF1CD7561D00C6B263 /* TabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabItem.m; path = Utils/TabItem.m; sourceTree = "<group>"; };
+		C5971BE11CD78CAB00C6B263 /* YesterdayPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YesterdayPlanTVC.h; path = Controller/YesterdayPlanTVC.h; sourceTree = "<group>"; };
+		C5971BE21CD78CAB00C6B263 /* YesterdayPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YesterdayPlanTVC.m; path = Controller/YesterdayPlanTVC.m; sourceTree = "<group>"; };
+		C5971BE41CD78CBF00C6B263 /* TodayPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodayPlanTVC.h; path = Controller/TodayPlanTVC.h; sourceTree = "<group>"; };
+		C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodayPlanTVC.m; path = Controller/TodayPlanTVC.m; sourceTree = "<group>"; };
+		C5971BE71CD78CD200C6B263 /* TomorrowPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TomorrowPlanTVC.h; path = Controller/TomorrowPlanTVC.h; sourceTree = "<group>"; };
+		C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TomorrowPlanTVC.m; path = Controller/TomorrowPlanTVC.m; sourceTree = "<group>"; };
+		C5971BEA1CD7943A00C6B263 /* TabbedScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabbedScrollViewController.h; path = Utils/TabbedScrollViewController.h; sourceTree = "<group>"; };
+		C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabbedScrollViewController.m; path = Utils/TabbedScrollViewController.m; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -264,6 +279,12 @@
 				C5971BB61CD5D38900C6B263 /* PlanTVC.m */,
 				C5971BB81CD5D46500C6B263 /* AddPlanVC.h */,
 				C5971BB91CD5D46500C6B263 /* AddPlanVC.m */,
+				C5971BE11CD78CAB00C6B263 /* YesterdayPlanTVC.h */,
+				C5971BE21CD78CAB00C6B263 /* YesterdayPlanTVC.m */,
+				C5971BE41CD78CBF00C6B263 /* TodayPlanTVC.h */,
+				C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */,
+				C5971BE71CD78CD200C6B263 /* TomorrowPlanTVC.h */,
+				C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */,
 				C5971BC31CD5DD5F00C6B263 /* FileTVC.h */,
 				C5971BC41CD5DD5F00C6B263 /* FileTVC.m */,
 				C5971BC61CD5DFCE00C6B263 /* UploadFileVC.h */,
@@ -381,6 +402,17 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		C5971BDD1CD755EF00C6B263 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C5971BEA1CD7943A00C6B263 /* TabbedScrollViewController.h */,
+				C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */,
+				C5971BDE1CD7561D00C6B263 /* TabItem.h */,
+				C5971BDF1CD7561D00C6B263 /* TabItem.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		D18B46F31CCFAB8300FEA8E8 = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +438,7 @@
 		D18B46FE1CCFAB8300FEA8E8 /* CHManagement */ = {
 			isa = PBXGroup;
 			children = (
+				C5971BDD1CD755EF00C6B263 /* Utils */,
 				C5971BA51CD3B80F00C6B263 /* View */,
 				C5971B981CD399D200C6B263 /* Extends */,
 				C5557F681CD0F143006EC41D /* NetworkService */,
@@ -644,9 +677,11 @@
 				D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */,
 				C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */,
 				C5971BBA1CD5D46500C6B263 /* AddPlanVC.m in Sources */,
+				C5971BE31CD78CAB00C6B263 /* YesterdayPlanTVC.m in Sources */,
 				C5971BD11CD5EA9E00C6B263 /* OutboxTVC.m in Sources */,
 				C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */,
 				C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */,
+				C5971BE01CD7561D00C6B263 /* TabItem.m in Sources */,
 				C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */,
 				C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */,
 				C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */,
@@ -659,10 +694,12 @@
 				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
 				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
+				C5971BE61CD78CBF00C6B263 /* TodayPlanTVC.m in Sources */,
 				C5971BCB1CD5E88100C6B263 /* MailBoxVC.m in Sources */,
 				C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */,
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
 				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
+				C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */,
 				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,
 				C5557FA51CD0F15E006EC41D /* AuditMaterialsVO.m in Sources */,
 				C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */,
@@ -678,6 +715,7 @@
 				C5971BCE1CD5EA8200C6B263 /* InboxTVC.m in Sources */,
 				C5971BC81CD5DFCE00C6B263 /* UploadFileVC.m in Sources */,
 				C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */,
+				C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */,
 				C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */,
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
 				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,
