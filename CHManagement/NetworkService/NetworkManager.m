@@ -107,6 +107,7 @@
         [request setValue:token forKey:@"token"];
     }
     NSString *token_user_id = [userData objectForKey:@"token_user_id"];
+    NSLog(@"token_user_id:%@",token_user_id);
     if (token_user_id) {
         //[request setValue:token_user_id forHTTPHeaderField:@"token_user_id"];
         [request setValue:token_user_id forKey:@"token_user_id"];
