@@ -10,4 +10,6 @@
 
 @interface TomorrowPlanTVC : UITableViewController
 
+@property (nonatomic, copy) NSString *plan;
+
 @end

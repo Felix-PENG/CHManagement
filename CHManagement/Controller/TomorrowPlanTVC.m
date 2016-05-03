@@ -9,6 +9,7 @@
 #import "TomorrowPlanTVC.h"
 
 @interface TomorrowPlanTVC ()
+@property (weak, nonatomic) IBOutlet UITextView *planTextView;
 
 @end
 
@@ -22,6 +23,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (NSString *)plan
+{
+    return self.planTextView.text;
 }
 
 @end
