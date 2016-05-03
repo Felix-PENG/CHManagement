@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ResultVO.h"
 #import "RequestParameter.h"
 
 @interface NetworkManager : NSObject
