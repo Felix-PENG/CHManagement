@@ -79,8 +79,7 @@
                 [userData setObject:token forKey:@"token"];
                 [userData setObject:[NSNumber numberWithInteger:group_id] forKey:@"group_id"];
             } else {
-                
-                self.hintLabel.text = @"用户名或密码错误";
+                self.hintLabel.text = [resultVO message];
                 self.hintLabel.hidden = NO;
             }
         }];

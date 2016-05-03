@@ -7,11 +7,23 @@
 //
 
 #import "PlanTVC.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "ScheduleVO.h"
+#import "ActivityCell.h"
+#import "LoadMoreCell.h"
+#import "AddPlanVC.h"
 
 static NSString * const CellIdentifier = @"ActivityCell";
 static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
+static NSString * const AddPlanSegue = @"AddPlan";
 
-@interface PlanTVC ()
+@interface PlanTVC (){
+    NSUInteger _page;
+    NSMutableArray *_planList;
+    BOOL _repeatLoad;
+    BOOL _noMoreData;
+}
 
 @end
 
@@ -23,6 +35,9 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     UINib *nib = [UINib nibWithNibName:CellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
     
+    nib = [UINib nibWithNibName:LoadMoreCellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:LoadMoreCellIdentifier];
+    
     // cell自适应高度
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 98.0;
@@ -33,6 +48,15 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (!_repeatLoad) {
+        [self.refreshControl beginRefreshing];
+        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
+        _repeatLoad = YES;
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,59 +64,77 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return _planList.count > 0? _planList.count : 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    return cell;
+    if (indexPath.row < _planList.count) {
+        ActivityCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        ScheduleVO *plan = [_planList objectAtIndex:indexPath.row];
+        
+        [cell configureWithContent:plan.today time:plan.time];
+        
+        return cell;
+    } else {
+        LoadMoreCell *cell = [self.tableView dequeueReusableCellWithIdentifier:LoadMoreCellIdentifier];
+        cell.status = _noMoreData ? NoMore : ClickToLoad;
+        return cell;
+    }
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+#pragma mark - UITableViewDelegate
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row < _planList.count) {
+        [self performSegueWithIdentifier:AddPlanSegue sender:[_planList objectAtIndex:indexPath.row]];
+    } else {
+        LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        cell.status = Loading;
+        [self loadPlanListWithPage:++_page];
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+#pragma mark IBAction
+- (IBAction)refresh
+{
+    _page = 1;
+    [self loadPlanListWithPage:_page];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+#pragma  mark load data
+- (void)loadPlanListWithPage:(NSInteger)page{
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    [[NetworkManager sharedInstance]getSchedulesWithPage:page withUserId:user_id completionHandler:^(NSDictionary *response) {
+        if(page <= 1){
+            [_planList removeAllObjects];
+        }
+        
+        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        if([resultVO success] == 0){
+            NSLog(@"%@",[resultVO message]);
+            NSArray* planList = [response objectForKey:@"scheduleVOList"];
+            if(planList.count > 0){
+                for(NSDictionary* planDict in planList){
+                    [_planList addObject:[[ScheduleVO alloc]initWithDictionary:planDict error:nil]];
+                }
+                _noMoreData = NO;
+            } else {
+                _noMoreData = YES;
+            }
+            
+            [self.tableView reloadData];
+            
+            if (self.refreshControl.isRefreshing) {
+                [self.refreshControl endRefreshing];
+            }
+        }else{
+            NSLog(@"%@",[resultVO message]);
+        }
+    }];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -308,6 +308,9 @@
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="KTN-b7-Zby">
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="dlo-s8-Nh0" eventType="valueChanged" id="Zkw-fT-Nq7"/>
+                        </connections>
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSj-br-7cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
