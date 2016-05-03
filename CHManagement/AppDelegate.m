@@ -21,21 +21,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-
-    //NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    
-    [[NetworkManager sharedInstance] signIn:@"admin" pswd:@"123" completionHandler:^(NSDictionary * response) {
-        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-        SignInResultVO* signResultVO = [[SignInResultVO alloc]initWithDictionary:[response objectForKey:@"signInResultVO"] error:nil];
-        //[userData setObject:@"admin" forKey:@"user_id"];
-        NSLog(@"%@___%@",[resultVO message],[signResultVO token]);
-    }];
-//    [[NetworkManager sharedInstance]changePswd:@"123" withNewPswd:@"123" withUserId:@"888" completionHandler:^(NSDictionary *responseObject) {
-//        ResultVO* r = [[ResultVO alloc]initWithDictionary:[responseObject objectForKey:@"resultVO"] error:nil];
-//        NSString* token = [responseObject objectForKey:@"token"];
-//        NSLog(@"%@",[r message]);
-//    }];
-
     return YES;
 }
 
