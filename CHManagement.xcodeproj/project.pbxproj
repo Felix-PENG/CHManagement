@@ -61,6 +61,7 @@
 		C5971BE61CD78CBF00C6B263 /* TodayPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */; };
 		C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */; };
 		C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */; };
+		C5971BEF1CD8D39000C6B263 /* ChooseUserTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -197,6 +198,8 @@
 		C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TomorrowPlanTVC.m; path = Controller/TomorrowPlanTVC.m; sourceTree = "<group>"; };
 		C5971BEA1CD7943A00C6B263 /* TabbedScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabbedScrollViewController.h; path = Utils/TabbedScrollViewController.h; sourceTree = "<group>"; };
 		C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabbedScrollViewController.m; path = Utils/TabbedScrollViewController.m; sourceTree = "<group>"; };
+		C5971BED1CD8D39000C6B263 /* ChooseUserTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseUserTVC.h; path = Controller/ChooseUserTVC.h; sourceTree = "<group>"; };
+		C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseUserTVC.m; path = Controller/ChooseUserTVC.m; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				C5971BD01CD5EA9E00C6B263 /* OutboxTVC.m */,
 				C5971BD71CD5F3E700C6B263 /* SendMailTVC.h */,
 				C5971BD81CD5F3E700C6B263 /* SendMailTVC.m */,
+				C5971BED1CD8D39000C6B263 /* ChooseUserTVC.h */,
+				C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -702,6 +707,7 @@
 				C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */,
 				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,
 				C5557FA51CD0F15E006EC41D /* AuditMaterialsVO.m in Sources */,
+				C5971BEF1CD8D39000C6B263 /* ChooseUserTVC.m in Sources */,
 				C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */,
 				D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */,
 				C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */,

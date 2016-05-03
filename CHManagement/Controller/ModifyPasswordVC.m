@@ -8,6 +8,14 @@
 
 #import "ModifyPasswordVC.h"
 
+@interface ModifyPasswordVC()
+@property (weak, nonatomic) IBOutlet UITextField *oldPwdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *nPwdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *repeatPwdTextField;
+@property (weak, nonatomic) IBOutlet UILabel *hintLabel;
+
+@end
+
 @implementation ModifyPasswordVC
 
 - (void)viewDidLoad {
@@ -20,6 +28,11 @@
 - (IBAction)cancelButtonPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)modifyButtonPressed:(id)sender
+{
+    
 }
 
 @end

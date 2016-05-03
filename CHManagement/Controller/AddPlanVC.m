@@ -72,8 +72,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark load data 
-- (void)loadYesterdayPlan{
+- (IBAction)saveButtonPressed:(id)sender
+{
     
 }
 
