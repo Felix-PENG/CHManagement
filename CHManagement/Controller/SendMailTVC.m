@@ -9,6 +9,7 @@
 #import "SendMailTVC.h"
 
 @interface SendMailTVC ()
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
 @end
 
@@ -25,6 +26,8 @@
 - (IBAction)cancelButtonPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)sendButtonPressed:(id)sender {
 }
 
 @end

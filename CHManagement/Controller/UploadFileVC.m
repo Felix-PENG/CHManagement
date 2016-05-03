@@ -9,6 +9,7 @@
 #import "UploadFileVC.h"
 
 @interface UploadFileVC ()
+@property (weak, nonatomic) IBOutlet UILabel *filePathLabel;
 
 @end
 
@@ -40,6 +41,10 @@
 - (IBAction)cancelButtonPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)chooseFileButtonPressed:(id)sender {
+}
+- (IBAction)uploadButtonPressed:(id)sender {
 }
 
 @end
