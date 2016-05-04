@@ -18,4 +18,6 @@
 
 + (void)showLoadingWithMessage:(NSString *)msg executing:(void (^)())executingBlock completion:(void (^)())completionBlock;
 
++ (void)showSuccessWithMessage:(NSString*)message toView:(UIView*)view completion:(void (^)())completionBlock;
+
 @end

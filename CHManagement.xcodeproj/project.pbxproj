@@ -216,6 +216,7 @@
 		D18B47261CCFAB8400FEA8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D19EF82D1CD647B90044BA84 /* IDEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEntity.h; sourceTree = "<group>"; };
 		D19EF82E1CD647B90044BA84 /* IDEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDEntity.m; sourceTree = "<group>"; };
+		D19EF8301CD9CCDE0044BA84 /* NetworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +310,7 @@
 		C5557F681CD0F143006EC41D /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				D19EF8301CD9CCDE0044BA84 /* NetworkConstants.h */,
 				C5557F691CD0F143006EC41D /* NetworkFile.h */,
 				C5557F6A1CD0F143006EC41D /* NetworkFile.m */,
 				C5557F6B1CD0F143006EC41D /* NetworkManager.h */,

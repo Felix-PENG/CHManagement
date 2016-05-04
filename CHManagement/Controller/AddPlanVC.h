@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScheduleVO.h"
 
 @interface AddPlanVC : UIViewController
+
+@property (nonatomic, strong) ScheduleVO* todaySchedule;
 
 @end

@@ -38,6 +38,8 @@ static NSString * const AddPlanSegue = @"AddPlan";
     nib = [UINib nibWithNibName:LoadMoreCellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:LoadMoreCellIdentifier];
     
+    _planList = [NSMutableArray array];
+    
     // cell自适应高度
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 98.0;
@@ -57,6 +59,10 @@ static NSString * const AddPlanSegue = @"AddPlan";
     }
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    _repeatLoad = NO;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -64,7 +70,7 @@ static NSString * const AddPlanSegue = @"AddPlan";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _planList.count > 0? _planList.count : 0;
+    return _planList.count > 0? _planList.count + 1 : 0;
 }
 
 
@@ -115,7 +121,6 @@ static NSString * const AddPlanSegue = @"AddPlan";
         
         ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
         if([resultVO success] == 0){
-            NSLog(@"%@",[resultVO message]);
             NSArray* planList = [response objectForKey:@"scheduleVOList"];
             if(planList.count > 0){
                 for(NSDictionary* planDict in planList){
@@ -135,6 +140,17 @@ static NSString * const AddPlanSegue = @"AddPlan";
             NSLog(@"%@",[resultVO message]);
         }
     }];
+}
+
+#pragma mark segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:AddPlanSegue]) {
+        UINavigationController *desViewController = segue.destinationViewController;
+        if ([desViewController.topViewController isKindOfClass:[AddPlanVC class]]) {
+            ((AddPlanVC *)desViewController.topViewController).todaySchedule = sender;
+        }
+    }
 }
 
 @end
