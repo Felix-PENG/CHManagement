@@ -379,7 +379,7 @@
                     <navigationItem key="navigationItem" title="计划列表" id="RFB-06-oWI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qr4-rR-VUd">
                             <connections>
-                                <segue destination="o9c-Qe-l2e" kind="presentation" id="auA-J7-1hh"/>
+                                <segue destination="o9c-Qe-l2e" kind="presentation" identifier="AddPlan" id="auA-J7-1hh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

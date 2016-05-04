@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.planTextView setEditable:NO];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -31,9 +32,21 @@
     return self.arrangementTextView.text;
 }
 
+- (void)setArrangement:(NSString *)arrangement{
+    self.arrangementTextView.text = arrangement;
+}
+
 - (NSString *)plan
 {
     return self.planTextView.text;
+}
+
+- (void)setPlan:(NSString *)plan{
+    self.planTextView.text = plan;
+}
+
+- (void)setArrangementTextViewEditable:(BOOL)editable{
+    self.arrangementTextView.editable = editable;
 }
 
 @end

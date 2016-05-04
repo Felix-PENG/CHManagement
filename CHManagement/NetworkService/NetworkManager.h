@@ -20,7 +20,7 @@
 
 - (void)registerWithEmail:(NSString*)email withPswd:(NSString*)pswd withName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)changePswd:(NSString*)pswd withNewPswd:(NSString*)n_pswd completionHandler:(void (^)(NSDictionary *))handler;
+- (void)changePswd:(NSString*)pswd withNewPswd:(NSString*)n_pswd withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 #pragma mark Group api
 - (void)createGroupWithName:(NSString*)name completionHandler:(void (^)(NSDictionary *))handler;

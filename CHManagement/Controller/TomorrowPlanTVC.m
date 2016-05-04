@@ -30,4 +30,12 @@
     return self.planTextView.text;
 }
 
+- (void)setPlan:(NSString *)plan{
+    self.planTextView.text = plan;
+}
+
+- (void)setPlanTextViewEditable:(BOOL)editable{
+    self.planTextView.editable = editable;
+}
+
 @end

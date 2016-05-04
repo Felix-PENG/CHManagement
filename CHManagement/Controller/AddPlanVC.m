@@ -12,6 +12,9 @@
 #import "YesterdayPlanTVC.h"
 #import "TodayPlanTVC.h"
 #import "TomorrowPlanTVC.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "MBProgressHUD+Extends.h"
 
 @interface AddPlanVC ()
 
@@ -23,6 +26,8 @@
     TodayPlanTVC *_todayPlanTVC;
     TomorrowPlanTVC *_tomorrowPlanTVC;
     TabbedScrollViewController *_tsvc;
+    BOOL _isAddNew;
+    NSInteger _user_id;
 }
 
 - (void)viewDidLoad {
@@ -51,6 +56,17 @@
     
 //    [self.view addSubview:_yesterdayPlanTVC.view];
 //    [self addChildViewController:_yesterdayPlanTVC];
+    
+    if([self.todaySchedule isKindOfClass:[ScheduleVO class]]){
+        _isAddNew = NO;
+        [self.navigationItem setTitle:@"计划更新"];
+    }else{
+        _isAddNew = YES;
+    }
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    _user_id = [[userData objectForKey:@"user_id"]integerValue];
+    
+    [self loadSchedule];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +83,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark IBAction
 - (IBAction)cancelButtonPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -74,7 +91,78 @@
 
 - (IBAction)saveButtonPressed:(id)sender
 {
-    
+    if(_isAddNew){
+        [[NetworkManager sharedInstance]createScheduleWithYesterday:[_yesterdayPlanTVC summary] withToday:[_todayPlanTVC arrangement] withTomorrow:[_tomorrowPlanTVC plan] withUserId:_user_id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            NSLog(@"%lu",[resultVO success]);
+            if([resultVO success] == 0){
+                [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+            }else{
+                [self showErrorAlert:[resultVO message]];
+            }
+        }];
+    }else{
+        [[NetworkManager sharedInstance]changeScheduleWithId:[self.todaySchedule id] withYesterday:[_yesterdayPlanTVC summary] withToday:[_todayPlanTVC arrangement] withTomorrow:[_tomorrowPlanTVC plan] completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if([resultVO success] == 0){
+                [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+            }else{
+                [self showErrorAlert:[resultVO message]];
+            }
+        }];
+    }
+}
+
+- (void)showErrorAlert:(NSString*)message{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark load data
+- (void)loadSchedule{
+    if(_isAddNew){  //计划添加
+        [[NetworkManager sharedInstance]getYesterdayScheduleByUserId:_user_id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+
+            if([resultVO success] == 0){
+                ScheduleVO* yesterdaySchedule = [[ScheduleVO alloc]initWithDictionary:[response objectForKey:@"scheduleVO"] error:nil];
+
+                _yesterdayPlanTVC.arrangement = [yesterdaySchedule today];
+                _todayPlanTVC.plan = [yesterdaySchedule tomorrow];
+            }
+        }];
+    }else{  //计划更新
+        _yesterdayPlanTVC.summary = [self.todaySchedule yesterday];
+        _todayPlanTVC.arrangement = [self.todaySchedule today];
+        _tomorrowPlanTVC.plan = [self.todaySchedule tomorrow];
+        
+        NSDate *todayScheduleDate = [[NSDate alloc] initWithTimeIntervalSince1970:self.todaySchedule.time/1000.0];
+        BOOL isToday = [[NSCalendar currentCalendar]isDateInToday:todayScheduleDate];
+        if(!isToday){
+            [_yesterdayPlanTVC setSummaryTextViewEditable:NO];
+            [_todayPlanTVC setArrangementTextViewEditable:NO];
+            [_tomorrowPlanTVC setPlanTextViewEditable:NO];
+            [self.navigationItem setRightBarButtonItem:nil];
+        }
+
+        [[NetworkManager sharedInstance]getYesterdayScheduleById:[self.todaySchedule id] completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if([resultVO success] == 0){
+                ScheduleVO* yesterdaySchedule = [[ScheduleVO alloc]initWithDictionary:[response objectForKey:@"scheduleVO"] error:nil];
+                
+                _yesterdayPlanTVC.arrangement = [yesterdaySchedule today];
+                _todayPlanTVC.plan = [yesterdaySchedule tomorrow];
+            }
+        }];
+    }
 }
 
 @end

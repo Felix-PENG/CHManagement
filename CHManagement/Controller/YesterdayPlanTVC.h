@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *arrangement;
 @property (nonatomic, copy) NSString *summary;
 
+- (void)setSummaryTextViewEditable:(BOOL)editable;
+
 @end

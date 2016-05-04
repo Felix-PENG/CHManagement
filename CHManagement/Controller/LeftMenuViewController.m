@@ -58,6 +58,8 @@
 - (IBAction)logOffButtonPressed:(id)sender
 {
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 }
 
 @end

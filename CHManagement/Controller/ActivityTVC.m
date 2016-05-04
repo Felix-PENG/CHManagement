@@ -10,6 +10,7 @@
 #import "ActivityCell.h"
 #import "NetworkManager.h"
 #import "MBProgressHUD+Extends.h"
+#import "ResultVO.h"
 #import "ActivityVO.h"
 #import "AddActivityTVC.h"
 #import "LoadMoreCell.h"
@@ -76,6 +77,10 @@ static NSString * const AddActivitySegue = @"AddActivity";
     }
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    _repeatLoad = NO;
+}
+
 - (void)loadDataWithPage:(NSUInteger)page
 {
     NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
@@ -86,19 +91,25 @@ static NSString * const AddActivitySegue = @"AddActivity";
             [_activityList removeAllObjects];
         }
         
-        NSArray *activityList = [response objectForKey:@"activityVOList"];
-//        ResultVO *resultVO = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        ResultVO *resultVO = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
         
-        if (activityList.count > 0) {
-            for (NSDictionary *activityDict in activityList) {
-                [_activityList addObject:[[ActivityVO alloc] initWithDictionary:activityDict error:nil]];
+        if([resultVO success] == 0){
+            NSArray *activityList = [response objectForKey:@"activityVOList"];
+            
+            if (activityList.count > 0) {
+                for (NSDictionary *activityDict in activityList) {
+                    [_activityList addObject:[[ActivityVO alloc] initWithDictionary:activityDict error:nil]];
+                }
+                _noMoreData = NO;
+            } else {
+                _noMoreData = YES;
             }
-            _noMoreData = NO;
-        } else {
-            _noMoreData = YES;
+            
+            [self.tableView reloadData];
+            
+        }else{
+            NSLog(@"%@",[resultVO message]);
         }
-        
-        [self.tableView reloadData];
         
         if (self.refreshControl.isRefreshing) {
             [self.refreshControl endRefreshing];

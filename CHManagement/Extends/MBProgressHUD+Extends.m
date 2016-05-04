@@ -40,4 +40,12 @@
     return hud;
 }
 
++ (void)showSuccessWithMessage:(NSString*)message toView:(UIView*)view completion:(void (^)())completionBlock{
+    MBProgressHUD* hud = [MBProgressHUD hudWithMessage:message toView:view];
+    [hud setMode:MBProgressHUDModeText];
+    [hud show:YES];
+    [hud hide:YES afterDelay:1];
+    [hud setCompletionBlock:completionBlock];
+}
+
 @end

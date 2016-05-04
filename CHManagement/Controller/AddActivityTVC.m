@@ -9,6 +9,7 @@
 #import "AddActivityTVC.h"
 #import "NetworkManager.h"
 #import "ResultVO.h"
+#import "MBProgressHUD+Extends.h"
 
 @interface AddActivityTVC (){
     NSInteger group_id;
@@ -52,25 +53,47 @@
     _yesterdayTextView.editable = NO;
 }
 
+#pragma mark IBAction
 - (IBAction)cancelButtonPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (IBAction)saveButtonPressed:(id)sender
 {
     if([self.activity isKindOfClass:[ActivityVO class]]){
         [[NetworkManager sharedInstance]changeActivityWithActivityId:self.activity.id withContent:_todayTextView.text withUserId:user_id completionHandler:^(NSDictionary *response) {
             ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-            NSLog(@"changeActivity:%@",[resultVO message]);
+            if([resultVO success] == 0){
+                [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+            }else{
+                [self showErrorAlert:[resultVO message]];
+            }
         }];
     }else{
         [[NetworkManager sharedInstance]createActivityWithGroupId:group_id withContent:_todayTextView.text withUserId:user_id completionHandler:^(NSDictionary *response) {
             ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-            NSLog(@"createActivity:%@",[resultVO message]);
+            if([resultVO success] == 0){
+                [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+            }else{
+                [self showErrorAlert:[resultVO message]];
+            }
         }];
     }
 }
 
+- (void)showErrorAlert:(NSString*)message{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark load data
 - (void)loadYesterdayActivity{
     if([self.activity isKindOfClass:[ActivityVO class]]){
         NSInteger activity_id = _activity.id;

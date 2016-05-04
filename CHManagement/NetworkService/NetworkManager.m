@@ -85,9 +85,21 @@
                                                                                  error:nil];
         
     }else{
+        NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+        NSString* token = [userData objectForKey:@"token"];
+        NSInteger token_user_id = [[userData objectForKey:@"token_user_id"]integerValue];
+        NSMutableDictionary* json = [NSMutableDictionary dictionary];
+        [json addEntriesFromDictionary:parameter.json];
+        
+        if ([userData objectForKey:@"token"]) {
+            [json setObject:token forKey:@"token"];
+        }
+        if([userData objectForKey:@"token_user_id"]){
+            [json setObject:[NSNumber numberWithInteger:token_user_id] forKey:@"token_user_id"];
+        }
         request = [[AFHTTPRequestSerializer serializer] requestWithMethod:parameter.httpMethod
                                                                 URLString:parameter.url
-                                                               parameters:parameter.json
+                                                               parameters:json
                                                                     error:nil
                    ];
     }
@@ -100,18 +112,13 @@
     request.timeoutInterval = TIME_OUT_SECONDS;
     [request setValue:@"iOS" forHTTPHeaderField:@"From"];
     
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSString *token = [userData objectForKey:@"token"];
-    if (token) {
-        //[request setValue:token forHTTPHeaderField:@"token"];
-        //[request setValue:token forKey:@"token"];
-    }
-    NSString *token_user_id = [userData objectForKey:@"token_user_id"];
-    NSLog(@"token_user_id:%@",token_user_id);
-    if (token_user_id) {
+    
+   // NSString *token_user_id = [userData objectForKey:@"token_user_id"];
+    //NSLog(@"token_user_id:%@",token_user_id);
+    //if (token_user_id) {
         //[request setValue:token_user_id forHTTPHeaderField:@"token_user_id"];
         //[request setValue:token_user_id forKey:@"token_user_id"];
-    }
+    //}
     
     NSLog(@"%@", request.allHTTPHeaderFields);
     
@@ -162,10 +169,10 @@
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 
-- (void)changePswd:(NSString*)pswd withNewPswd:(NSString*)n_pswd completionHandler:(void (^)(NSDictionary *))handler{
+- (void)changePswd:(NSString*)pswd withNewPswd:(NSString*)n_pswd withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter getRequest];
     parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, changePswdUrl];
-    parameter.json = @{@"pswd": pswd, @"n_pswd": n_pswd};
+    parameter.json = @{@"pswd": pswd, @"n_pswd": n_pswd, @"user_id":[NSNumber numberWithInteger:user_id]};
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 

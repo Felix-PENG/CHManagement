@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *plan;
 @property (nonatomic, copy) NSString *arrangement;
 
+- (void)setArrangementTextViewEditable:(BOOL)editable;
+
 @end
