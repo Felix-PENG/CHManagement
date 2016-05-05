@@ -73,6 +73,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLabel" destination="cHQ-04-zcX" id="Jb4-AX-D0p"/>
+                <outlet property="senderHintLabel" destination="J4j-GH-WKT" id="cR7-sF-E0G"/>
                 <outlet property="senderLabel" destination="WpJ-Fd-LU4" id="zjJ-0R-9TR"/>
                 <outlet property="timeLabel" destination="jgw-DS-x5C" id="7Be-Wx-XtC"/>
             </connections>

@@ -547,6 +547,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="lDb-iG-n3a" id="v2v-n3-vtC"/>
+                        <outlet property="receiversButton" destination="aRc-vT-Z7r" id="AbX-tD-7tj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hu-MI-akS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1205,7 +1206,13 @@
                             <outlet property="delegate" destination="GMs-Tn-3Nj" id="YqF-le-MP3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="选择用户" id="yyH-o5-o3d"/>
+                    <navigationItem key="navigationItem" title="选择用户" id="yyH-o5-o3d">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="bNs-J5-78I">
+                            <connections>
+                                <action selector="confirmButtonPressed:" destination="GMs-Tn-3Nj" id="pry-hv-aOi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1z-xC-7x3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

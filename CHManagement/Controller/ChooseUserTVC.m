@@ -7,15 +7,27 @@
 //
 
 #import "ChooseUserTVC.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "UserVO.h"
+#import "SendMailTVC.h"
 
 @interface ChooseUserTVC ()
 
 @end
 
-@implementation ChooseUserTVC
+@implementation ChooseUserTVC{
+    NSMutableArray* _userList;
+    NSMutableArray* _choosedUserList;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _userList = [NSMutableArray array];
+    _choosedUserList = [NSMutableArray array];
+    
+    [self loadAllUser];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -36,13 +48,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return _userList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"用户%ld", (long)indexPath.row];
+    if([_choosedUserList containsObject:[_userList objectAtIndex:indexPath.row]]){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    cell.textLabel.text = [[_userList objectAtIndex:indexPath.row]name];
     
     return cell;
 }
@@ -57,6 +75,12 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     cell.accessoryType = cell.accessoryType == UITableViewCellAccessoryCheckmark ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
+    
+    if(cell.accessoryType ==  UITableViewCellAccessoryCheckmark){
+        [_choosedUserList addObject:[_userList objectAtIndex:indexPath.row]];
+    }else{
+        [_choosedUserList removeObject:[_userList objectAtIndex:indexPath.row]];
+    }
 }
 
 /*
@@ -68,5 +92,36 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark IBAction
+- (IBAction)confirmButtonPressed:(id)sender{
+    SendMailTVC* sendMailViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 2];
+    [sendMailViewController setReceivers:_choosedUserList];
+    [self.navigationController popToViewController:sendMailViewController animated:true];
+}
+
+#pragma mark load data
+- (void)loadAllUser{
+    [[NetworkManager sharedInstance]getUsersWithCompletionHandler:^(NSDictionary *response) {
+        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+
+        if([resultVO success] == 0){
+            NSArray* userVOList = [response objectForKey:@"userVOList"];
+            for(NSDictionary* userDict in userVOList){
+                [_userList addObject:[[UserVO alloc]initWithDictionary:userDict error:nil]];
+            }
+            [self.tableView reloadData];
+            
+        }else{
+            //error handler
+        }
+    }];
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"Back");
+}
 
 @end

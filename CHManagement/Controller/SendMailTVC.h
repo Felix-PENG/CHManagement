@@ -10,4 +10,6 @@
 
 @interface SendMailTVC : UITableViewController
 
+@property (nonatomic, strong) NSArray* receivers;
+
 @end

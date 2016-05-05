@@ -10,6 +10,8 @@
 
 @interface MailCell : UITableViewCell
 
-- (void)configureWithContent:(NSString*)content withSender:(NSString*)sender withTime:(NSInteger)time;
+- (void)configureInboxCellWithContent:(NSString*)content withSender:(NSString*)sender withTime:(NSInteger)time;
+
+- (void)configureOutboxCellWithContent:(NSString*)content withReceivers:(NSArray*)receivers withTime:(NSInteger)time;
 
 @end

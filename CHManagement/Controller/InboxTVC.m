@@ -55,8 +55,8 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 
 - (void)viewDidAppear:(BOOL)animated{
     if(!_repeatLoad){
-        [self.refreshControl beginRefreshing];
-        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
+        [_refreshControl beginRefreshing];
+        [_refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
         _repeatLoad = YES;
     }
 }
@@ -87,7 +87,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
         
         MessageVO* message = [_messageList objectAtIndex:indexPath.row];
         
-        [cell configureWithContent:message.content withSender:message.sender.name withTime:message.time];
+        [cell configureInboxCellWithContent:message.content withSender:message.sender.name withTime:message.time];
         
         return cell;
     }else{
@@ -133,8 +133,12 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
         
         if([resultVO success] == 0){
             NSArray* messageVOList = [response objectForKey:@"messageVOList"];
-            NSLog(@"%lu",[messageVOList count]);
+
             if(messageVOList.count > 0){
+                if(_page <= 1){
+                    [_messageList removeAllObjects];
+                }
+                
                 for(NSDictionary* messageDict in messageVOList){
                     MessageVO* message = [[MessageVO alloc]initWithDictionary:messageDict error:nil];
                     [_messageList addObject:message];
@@ -149,8 +153,8 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
             
         }
         
-        if([self.refreshControl isRefreshing]){
-            [self.refreshControl endRefreshing];
+        if([_refreshControl isRefreshing]){
+            [_refreshControl endRefreshing];
         }
     }];
 }

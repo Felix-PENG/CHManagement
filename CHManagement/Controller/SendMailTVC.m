@@ -9,6 +9,7 @@
 #import "SendMailTVC.h"
 
 @interface SendMailTVC ()
+@property (weak,nonatomic) IBOutlet UIButton* receiversButton;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
 @end
@@ -23,10 +24,16 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
 
-- (IBAction)cancelButtonPressed:(id)sender
-{
+- (void)viewDidAppear:(BOOL)animated{
+    if([self.receivers count] > 0){
+        //self.receiversButton.titleLabel.text = @"111";
+    }
+}
+
+- (IBAction)cancelButtonPressed:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (IBAction)sendButtonPressed:(id)sender {
 }
 
