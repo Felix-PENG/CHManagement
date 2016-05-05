@@ -7,6 +7,13 @@
 //
 
 #import "InboxTVC.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "MessageVO.h"
+#import "LoadMoreCell.h"
+#import "MailCell.h"
+
+#define INBOX_FLAG 0
 
 static NSString * const CellIdentifier = @"MailCell";
 static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
@@ -18,13 +25,21 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 @implementation InboxTVC
 {
     UIRefreshControl *_refreshControl;
+    NSMutableArray* _messageList;
+    NSInteger _page;
+    BOOL _noMoreData;
+    BOOL _repeatLoad;
 }
 
+#pragma mark life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UINib *nib = [UINib nibWithNibName:CellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+    
+    nib = [UINib nibWithNibName:LoadMoreCellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:LoadMoreCellIdentifier];
     
     // cell自适应高度
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -34,6 +49,20 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:_refreshControl];
+    
+    _messageList = [NSMutableArray array];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    if(!_repeatLoad){
+        [self.refreshControl beginRefreshing];
+        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
+        _repeatLoad = YES;
+    }
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    _repeatLoad = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,52 +77,35 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _messageList.count > 0 ? _messageList.count + 1 : 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    if(indexPath.row < _messageList.count){
+        MailCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        MessageVO* message = [_messageList objectAtIndex:indexPath.row];
+        
+        [cell configureWithContent:message.content withSender:message.sender.name withTime:message.time];
+        
+        return cell;
+    }else{
+        LoadMoreCell *cell = [self.tableView dequeueReusableCellWithIdentifier:LoadMoreCellIdentifier];
+        cell.status = _noMoreData ? NoMore : ClickToLoad;
+        return cell;
+    }
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row < _messageList.count){
+        
+    }else{
+        LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        cell.status = Loading;
+        [self loadInboxEmail:++_page];
+    }
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
@@ -107,7 +119,40 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 
 - (void)refresh
 {
-    [_refreshControl endRefreshing];
+    _page = 1;
+    [self loadInboxEmail:_page];
+}
+
+#pragma mark load data
+- (void)loadInboxEmail:(NSInteger)page{
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    
+    [[NetworkManager sharedInstance]getMessagesWithPage:page withInOff:INBOX_FLAG withUserId:user_id completionHandler:^(NSDictionary *response) {
+        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        
+        if([resultVO success] == 0){
+            NSArray* messageVOList = [response objectForKey:@"messageVOList"];
+            NSLog(@"%lu",[messageVOList count]);
+            if(messageVOList.count > 0){
+                for(NSDictionary* messageDict in messageVOList){
+                    MessageVO* message = [[MessageVO alloc]initWithDictionary:messageDict error:nil];
+                    [_messageList addObject:message];
+                }
+                _noMoreData = NO;
+            }else{
+                _noMoreData = YES;
+            }
+            
+            [self.tableView reloadData];
+        }else{
+            
+        }
+        
+        if([self.refreshControl isRefreshing]){
+            [self.refreshControl endRefreshing];
+        }
+    }];
 }
 
 @end

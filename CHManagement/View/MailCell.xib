@@ -71,7 +71,12 @@
                     <constraint firstItem="jgw-DS-x5C" firstAttribute="trailing" secondItem="xAi-dP-YjQ" secondAttribute="trailingMargin" id="vPo-js-Exw"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="234" y="297.5"/>
+            <connections>
+                <outlet property="contentLabel" destination="cHQ-04-zcX" id="Jb4-AX-D0p"/>
+                <outlet property="senderLabel" destination="WpJ-Fd-LU4" id="zjJ-0R-9TR"/>
+                <outlet property="timeLabel" destination="jgw-DS-x5C" id="7Be-Wx-XtC"/>
+            </connections>
+            <point key="canvasLocation" x="339" y="268.5"/>
         </tableViewCell>
     </objects>
 </document>
