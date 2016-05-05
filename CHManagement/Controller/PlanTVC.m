@@ -21,7 +21,6 @@ static NSString * const AddPlanSegue = @"AddPlan";
 @interface PlanTVC (){
     NSUInteger _page;
     NSMutableArray *_planList;
-    BOOL _repeatLoad;
     BOOL _noMoreData;
 }
 
@@ -45,22 +44,8 @@ static NSString * const AddPlanSegue = @"AddPlan";
     self.tableView.estimatedRowHeight = 98.0;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    if (!_repeatLoad) {
-        [self.refreshControl beginRefreshing];
-        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
-        _repeatLoad = YES;
-    }
-}
-
 - (void)viewDidDisappear:(BOOL)animated{
-    _repeatLoad = NO;
+    self.repeatLoad = NO;
 }
 
 #pragma mark - Table view data source

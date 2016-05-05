@@ -6,9 +6,9 @@
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ModalTableViewController.h"
 
-@interface SendMailTVC : UITableViewController
+@interface SendMailTVC : ModalTableViewController
 
 @property (nonatomic, strong) NSArray* receivers;
 

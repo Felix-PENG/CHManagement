@@ -6,10 +6,10 @@
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ModalTableViewController.h"
 #import "ActivityVO.h"
 
-@interface AddActivityTVC : UITableViewController
+@interface AddActivityTVC : ModalTableViewController
 
 @property (nonatomic, strong) ActivityVO *activity;
 

@@ -1,18 +1,18 @@
 //
-//  CHTableViewController.m
+//  ReportRegisterTVC.m
 //  CHManagement
 //
 //  Created by 黄嘉伟 on 16/5/5.
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import "CHTableViewController.h"
+#import "ReportRegisterTVC.h"
 
-@interface CHTableViewController ()
+@interface ReportRegisterTVC ()
 
 @end
 
-@implementation CHTableViewController
+@implementation ReportRegisterTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,10 +22,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    // cell自适应高度
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 100.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,14 +29,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    if(!self.repeatLoad){
-        [self.refreshControl beginRefreshing];
-        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
-        self.repeatLoad = YES;
-    }
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -19,13 +19,12 @@
 #define CELL_HEIGHT 44.0
 
 @interface ContentViewController ()
-//@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation ContentViewController
 {
     NSMutableDictionary *_permissionDict;
-    BOOL _repeatLoad;
 }
 
 - (void)viewDidLoad {
@@ -36,22 +35,6 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     _permissionDict = [NSMutableDictionary dictionary];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    if (!_repeatLoad) {
-        [self.refreshControl beginRefreshing];
-        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
-        _repeatLoad = YES;
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDataSource

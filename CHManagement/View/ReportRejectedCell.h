@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ReportRejectedDelegate <NSObject>
+
+- (void)modifyButtonPressed:(NSUInteger)index;
+
+@end
+
 @interface ReportRejectedCell : UITableViewCell
+
+@property (nonatomic, weak) id<ReportRejectedDelegate> delegate;
+
+- (void)setOffsetTag:(NSUInteger)tag;
 
 @end

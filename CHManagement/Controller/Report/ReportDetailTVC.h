@@ -1,5 +1,5 @@
 //
-//  CHTableViewController.h
+//  ReportDetailTVC.h
 //  CHManagement
 //
 //  Created by 黄嘉伟 on 16/5/5.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CHTableViewController : UITableViewController
-
-@property (nonatomic, assign) BOOL repeatLoad;
+@interface ReportDetailTVC : UITableViewController
 
 @end

@@ -51,6 +51,9 @@
 		C56E55551CDB621300C608B9 /* ReportMaterialGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55541CDB621300C608B9 /* ReportMaterialGoingTVC.m */; };
 		C56E55581CDB623500C608B9 /* ReportMaterialRejectedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */; };
 		C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */; };
+		C56E55641CDB83C100C608B9 /* ReportDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */; };
+		C56E55671CDB83D200C608B9 /* ReportRegisterTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */; };
+		C56E556A1CDB899100C608B9 /* ModalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55691CDB899100C608B9 /* ModalTableViewController.m */; };
 		C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */; };
 		C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */; };
 		C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA01CD3B61500C6B263 /* ActivityTVC.m */; };
@@ -195,6 +198,12 @@
 		C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialRejectedTVC.m; path = Controller/Report/ReportMaterialRejectedTVC.m; sourceTree = "<group>"; };
 		C56E55591CDB625200C608B9 /* ReportMaterialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialVC.h; path = Controller/Report/ReportMaterialVC.h; sourceTree = "<group>"; };
 		C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialVC.m; path = Controller/Report/ReportMaterialVC.m; sourceTree = "<group>"; };
+		C56E55621CDB83C100C608B9 /* ReportDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportDetailTVC.h; path = Controller/Report/ReportDetailTVC.h; sourceTree = "<group>"; };
+		C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportDetailTVC.m; path = Controller/Report/ReportDetailTVC.m; sourceTree = "<group>"; };
+		C56E55651CDB83D200C608B9 /* ReportRegisterTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportRegisterTVC.h; path = Controller/Report/ReportRegisterTVC.h; sourceTree = "<group>"; };
+		C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportRegisterTVC.m; path = Controller/Report/ReportRegisterTVC.m; sourceTree = "<group>"; };
+		C56E55681CDB899100C608B9 /* ModalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalTableViewController.h; path = Controller/ModalTableViewController.h; sourceTree = "<group>"; };
+		C56E55691CDB899100C608B9 /* ModalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalTableViewController.m; path = Controller/ModalTableViewController.m; sourceTree = "<group>"; };
 		C5971B991CD39A7200C6B263 /* MBProgressHUD+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+Extends.h"; path = "Extends/MBProgressHUD+Extends.h"; sourceTree = "<group>"; };
 		C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+Extends.m"; path = "Extends/MBProgressHUD+Extends.m"; sourceTree = "<group>"; };
 		C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifyPasswordVC.h; path = Controller/ModifyPasswordVC.h; sourceTree = "<group>"; };
@@ -349,6 +358,8 @@
 				C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */,
 				C56E553A1CDB426A00C608B9 /* CHTableViewController.h */,
 				C56E553B1CDB426A00C608B9 /* CHTableViewController.m */,
+				C56E55681CDB899100C608B9 /* ModalTableViewController.h */,
+				C56E55691CDB899100C608B9 /* ModalTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -446,6 +457,10 @@
 				C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */,
 				C56E55591CDB625200C608B9 /* ReportMaterialVC.h */,
 				C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */,
+				C56E55621CDB83C100C608B9 /* ReportDetailTVC.h */,
+				C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */,
+				C56E55651CDB83D200C608B9 /* ReportRegisterTVC.h */,
+				C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */,
 			);
 			name = Report;
 			sourceTree = "<group>";
@@ -758,6 +773,7 @@
 				C56E55461CDB451B00C608B9 /* ReportGoingTVC.m in Sources */,
 				C5557F7B1CD0F154006EC41D /* Role.m in Sources */,
 				C56E554F1CDB46B800C608B9 /* ReportFundsRejectedTVC.m in Sources */,
+				C56E55641CDB83C100C608B9 /* ReportDetailTVC.m in Sources */,
 				C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */,
 				C56E55221CDB112300C608B9 /* Permission.m in Sources */,
 				C5971BB71CD5D38900C6B263 /* PlanTVC.m in Sources */,
@@ -770,6 +786,7 @@
 				C5971BBA1CD5D46500C6B263 /* AddPlanVC.m in Sources */,
 				C5971BE31CD78CAB00C6B263 /* YesterdayPlanTVC.m in Sources */,
 				C56E55521CDB46D700C608B9 /* ReportFundsVC.m in Sources */,
+				C56E55671CDB83D200C608B9 /* ReportRegisterTVC.m in Sources */,
 				C56E554C1CDB468300C608B9 /* ReportFundsGoingTVC.m in Sources */,
 				C5971BD11CD5EA9E00C6B263 /* OutboxTVC.m in Sources */,
 				C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */,
@@ -820,6 +837,7 @@
 				C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */,
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
 				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,
+				C56E556A1CDB899100C608B9 /* ModalTableViewController.m in Sources */,
 				C5971BD91CD5F3E700C6B263 /* SendMailTVC.m in Sources */,
 				C56E552B1CDB305E00C608B9 /* Constants.m in Sources */,
 			);
