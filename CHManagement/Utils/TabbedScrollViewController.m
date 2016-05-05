@@ -40,16 +40,16 @@
         _contentScrollView.frame = CGRectMake(0, TAB_HEIGHT, frame.size.width, frame.size.height - TAB_HEIGHT);
         [self.view addSubview:_contentScrollView];
         
-        _selectedLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, SELECTED_LINE_HEIGHT)];
-        _selectedLine.backgroundColor = SELECTED_TAB_COLOR;
-        [self.view addSubview:_selectedLine];
-        
         _currentIndex = -1;
         
         NSUInteger tabCount = items.count;
         
         if (tabCount > 0) {
             CGFloat tabWidth = self.view.frame.size.width / tabCount;
+            
+            _selectedLine = [[UIView alloc] initWithFrame:CGRectMake(0, TAB_HEIGHT - SELECTED_LINE_HEIGHT, tabWidth, SELECTED_LINE_HEIGHT)];
+            _selectedLine.backgroundColor = SELECTED_TAB_COLOR;
+            [self.view addSubview:_selectedLine];
             
             _contentScrollView.contentSize = CGSizeMake(tabCount * frame.size.width, frame.size.height - TAB_HEIGHT);
             
@@ -63,6 +63,7 @@
                 tabLabel.text = item.tabName;
                 tabLabel.tag = i + 1;
                 tabLabel.userInteractionEnabled = YES;
+                tabLabel.backgroundColor = [UIColor whiteColor];
                 [self.view addSubview:tabLabel];
                 
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tabTapped:)];
@@ -74,6 +75,7 @@
                 [self addChildViewController:item.controller];
             }
             
+            [self.view bringSubviewToFront:_selectedLine];
             [self scrollToLabel:0];
         }
     }
@@ -110,7 +112,7 @@
     UILabel *tabLabel = [self.view viewWithTag:index + 1];
     tabLabel.textColor = [self.view tintColor];
     
-    [UIView animateWithDuration:0.25
+    [UIView animateWithDuration:0.15
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^
