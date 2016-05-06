@@ -13,6 +13,11 @@
 #import "Permission.h"
 #import "ReportFundsVC.h"
 #import "ReportMaterialVC.h"
+#import "RegisterFundsVC.h"
+#import "BuildingMaterialPurchaseVC.h"
+#import "BuildingMaterialSellVC.h"
+#import "SellBuildingVC.h"
+#import "FundsMovementVC.h"
 
 #define SECTION_HEADER_HEIGHT 28.0
 #define TOP_MENU_CELL_HEIGHT 84.0
@@ -108,6 +113,21 @@
             break;
         case BuildingMaterialPurchaseReport:
             [self.navigationController pushViewController:[[ReportMaterialVC alloc] init] animated: YES];
+            break;
+        case FundsRegister:
+            [self.navigationController pushViewController:[[RegisterFundsVC alloc] init] animated: YES];
+            break;
+        case BuildingMaterialPurchaseRegister:
+            [self.navigationController pushViewController:[[BuildingMaterialPurchaseVC alloc] init] animated: YES];
+            break;
+        case BuildingMaterialSellRegister:
+            [self.navigationController pushViewController:[[BuildingMaterialSellVC alloc] init] animated: YES];
+            break;
+        case SaleBuildingRegister:
+            [self.navigationController pushViewController:[[SellBuildingVC alloc] init] animated: YES];
+            break;
+        case FundsMovementRegister:
+            [self.navigationController pushViewController:[[FundsMovementVC alloc] init] animated: YES];
             break;
         default:
             break;

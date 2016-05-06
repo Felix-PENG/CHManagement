@@ -26,6 +26,11 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:self.cellIdentifier];
 }
 
+- (void)refresh
+{
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
