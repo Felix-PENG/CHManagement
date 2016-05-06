@@ -23,7 +23,7 @@
     
     // navigation items
     UIBarButtonItem *roleItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_assignment_ind_white_24dp"] style:UIBarButtonItemStylePlain target:self action:@selector(roleButtonPressed)];
-    self.navigationItem.rightBarButtonItems = [[self rightNavigationItems] arrayByAddingObject:roleItem];
+    self.navigationItem.rightBarButtonItems = [[NSArray arrayWithArray:[self rightNavigationItems]] arrayByAddingObject:roleItem];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     

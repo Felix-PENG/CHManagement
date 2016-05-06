@@ -1,24 +1,29 @@
 //
-//  RegisterFundsGoingTVC.m
+//  CheckMaterialPurchaseUndealTVC.m
 //  CHManagement
 //
 //  Created by 黄嘉伟 on 16/5/6.
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import "RegisterFundsGoingTVC.h"
-#import "RegisterCell.h"
-#import "RegisterDetailTVC.h"
+#import "CheckMaterialPurchaseUndealTVC.h"
+#import "ReportGoingCell.h"
+#import "ReportDetailTVC.h"
 
-@interface RegisterFundsGoingTVC ()
+static NSString * const CellIdentifier = @"ReportGoingCell";
+
+@interface CheckMaterialPurchaseUndealTVC ()
 
 @end
 
-@implementation RegisterFundsGoingTVC
+@implementation CheckMaterialPurchaseUndealTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UINib *nib = [UINib nibWithNibName:CellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +45,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RegisterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    ReportGoingCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     return cell;
 }
@@ -49,8 +54,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RegisterDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterDetailTVC"];
-    tvc.uploadable = YES;
+    ReportDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportDetailTVC"];
+    tvc.navigationItem.title = @"审核建材买入";
     [self.navigationController pushViewController:tvc animated:YES];
 }
 

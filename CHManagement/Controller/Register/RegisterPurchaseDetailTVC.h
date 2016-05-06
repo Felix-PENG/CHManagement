@@ -10,4 +10,6 @@
 
 @interface RegisterPurchaseDetailTVC : UITableViewController
 
+@property (nonatomic, assign) BOOL uploadable;
+
 @end

@@ -19,6 +19,14 @@
 
 @implementation ReportDetailTVC
 
+- (void)setCheckable:(BOOL)checkable
+{
+    if (!checkable) {
+        self.navigationItem.rightBarButtonItems = nil;
+    }
+    _checkable = checkable;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
