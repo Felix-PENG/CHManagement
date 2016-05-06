@@ -51,6 +51,30 @@
 		C56E55551CDB621300C608B9 /* ReportMaterialGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55541CDB621300C608B9 /* ReportMaterialGoingTVC.m */; };
 		C56E55581CDB623500C608B9 /* ReportMaterialRejectedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */; };
 		C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */; };
+		C56E55641CDB83C100C608B9 /* ReportDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */; };
+		C56E55671CDB83D200C608B9 /* ReportRegisterTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */; };
+		C56E556A1CDB899100C608B9 /* ModalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55691CDB899100C608B9 /* ModalTableViewController.m */; };
+		C56E556C1CDC6E6000C608B9 /* RegisterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56E556B1CDC6E6000C608B9 /* RegisterCell.xib */; };
+		C56E556F1CDC6EBC00C608B9 /* RegisterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E556E1CDC6EBC00C608B9 /* RegisterCell.m */; };
+		C56E55761CDC700400C608B9 /* RegisterFundsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55751CDC700400C608B9 /* RegisterFundsVC.m */; };
+		C56E55791CDC70FB00C608B9 /* RegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55781CDC70FB00C608B9 /* RegisterTableViewController.m */; };
+		C56E557C1CDC721600C608B9 /* RegisterFundsGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E557B1CDC721600C608B9 /* RegisterFundsGoingTVC.m */; };
+		C56E557F1CDC72F400C608B9 /* RegisterFundsDoneTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E557E1CDC72F400C608B9 /* RegisterFundsDoneTVC.m */; };
+		C56E55821CDC7B1D00C608B9 /* RegisterDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55811CDC7B1D00C608B9 /* RegisterDetailTVC.m */; };
+		C56E55851CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55841CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.m */; };
+		C56E55881CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55871CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.m */; };
+		C56E558B1CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E558A1CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.m */; };
+		C56E558E1CDC7E2800C608B9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E558D1CDC7E2800C608B9 /* RegisterViewController.m */; };
+		C56E55911CDC7FFB00C608B9 /* RegisterPurchaseDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55901CDC7FFB00C608B9 /* RegisterPurchaseDetailTVC.m */; };
+		C56E55941CDC832D00C608B9 /* BuildingMaterialSellVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55931CDC832D00C608B9 /* BuildingMaterialSellVC.m */; };
+		C56E55971CDC858C00C608B9 /* BuildingMaterialSellTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55961CDC858C00C608B9 /* BuildingMaterialSellTVC.m */; };
+		C56E559A1CDC86F300C608B9 /* AddBuildingMaterialSellTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55991CDC86F300C608B9 /* AddBuildingMaterialSellTVC.m */; };
+		C56E559D1CDC892900C608B9 /* SellBuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E559C1CDC892900C608B9 /* SellBuildingVC.m */; };
+		C56E55A01CDC896500C608B9 /* SellBuildingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E559F1CDC896500C608B9 /* SellBuildingTVC.m */; };
+		C56E55A61CDC8C2F00C608B9 /* AddSellBuildingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55A51CDC8C2F00C608B9 /* AddSellBuildingTVC.m */; };
+		C56E55A91CDC8D4C00C608B9 /* FundsMovementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55A81CDC8D4C00C608B9 /* FundsMovementVC.m */; };
+		C56E55AC1CDC8D7F00C608B9 /* FundsMovementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55AB1CDC8D7F00C608B9 /* FundsMovementTVC.m */; };
+		C56E55AF1CDC8DD100C608B9 /* AddFundsMovementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55AE1CDC8DD100C608B9 /* AddFundsMovementTVC.m */; };
 		C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */; };
 		C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */; };
 		C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA01CD3B61500C6B263 /* ActivityTVC.m */; };
@@ -195,6 +219,53 @@
 		C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialRejectedTVC.m; path = Controller/Report/ReportMaterialRejectedTVC.m; sourceTree = "<group>"; };
 		C56E55591CDB625200C608B9 /* ReportMaterialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialVC.h; path = Controller/Report/ReportMaterialVC.h; sourceTree = "<group>"; };
 		C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialVC.m; path = Controller/Report/ReportMaterialVC.m; sourceTree = "<group>"; };
+		C56E55621CDB83C100C608B9 /* ReportDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportDetailTVC.h; path = Controller/Report/ReportDetailTVC.h; sourceTree = "<group>"; };
+		C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportDetailTVC.m; path = Controller/Report/ReportDetailTVC.m; sourceTree = "<group>"; };
+		C56E55651CDB83D200C608B9 /* ReportRegisterTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportRegisterTVC.h; path = Controller/Report/ReportRegisterTVC.h; sourceTree = "<group>"; };
+		C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportRegisterTVC.m; path = Controller/Report/ReportRegisterTVC.m; sourceTree = "<group>"; };
+		C56E55681CDB899100C608B9 /* ModalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalTableViewController.h; path = Controller/ModalTableViewController.h; sourceTree = "<group>"; };
+		C56E55691CDB899100C608B9 /* ModalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalTableViewController.m; path = Controller/ModalTableViewController.m; sourceTree = "<group>"; };
+		C56E556B1CDC6E6000C608B9 /* RegisterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterCell.xib; path = View/RegisterCell.xib; sourceTree = "<group>"; };
+		C56E556D1CDC6EBC00C608B9 /* RegisterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterCell.h; path = View/RegisterCell.h; sourceTree = "<group>"; };
+		C56E556E1CDC6EBC00C608B9 /* RegisterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterCell.m; path = View/RegisterCell.m; sourceTree = "<group>"; };
+		C56E55741CDC700400C608B9 /* RegisterFundsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterFundsVC.h; path = Controller/Register/RegisterFundsVC.h; sourceTree = "<group>"; };
+		C56E55751CDC700400C608B9 /* RegisterFundsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterFundsVC.m; path = Controller/Register/RegisterFundsVC.m; sourceTree = "<group>"; };
+		C56E55771CDC70FB00C608B9 /* RegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterTableViewController.h; path = Controller/Register/RegisterTableViewController.h; sourceTree = "<group>"; };
+		C56E55781CDC70FB00C608B9 /* RegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterTableViewController.m; path = Controller/Register/RegisterTableViewController.m; sourceTree = "<group>"; };
+		C56E557A1CDC721600C608B9 /* RegisterFundsGoingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterFundsGoingTVC.h; path = Controller/Register/RegisterFundsGoingTVC.h; sourceTree = "<group>"; };
+		C56E557B1CDC721600C608B9 /* RegisterFundsGoingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterFundsGoingTVC.m; path = Controller/Register/RegisterFundsGoingTVC.m; sourceTree = "<group>"; };
+		C56E557D1CDC72F400C608B9 /* RegisterFundsDoneTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterFundsDoneTVC.h; path = Controller/Register/RegisterFundsDoneTVC.h; sourceTree = "<group>"; };
+		C56E557E1CDC72F400C608B9 /* RegisterFundsDoneTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterFundsDoneTVC.m; path = Controller/Register/RegisterFundsDoneTVC.m; sourceTree = "<group>"; };
+		C56E55801CDC7B1D00C608B9 /* RegisterDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterDetailTVC.h; path = Controller/Register/RegisterDetailTVC.h; sourceTree = "<group>"; };
+		C56E55811CDC7B1D00C608B9 /* RegisterDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterDetailTVC.m; path = Controller/Register/RegisterDetailTVC.m; sourceTree = "<group>"; };
+		C56E55831CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuildingMaterialPurchaseVC.h; path = Controller/Register/BuildingMaterialPurchaseVC.h; sourceTree = "<group>"; };
+		C56E55841CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuildingMaterialPurchaseVC.m; path = Controller/Register/BuildingMaterialPurchaseVC.m; sourceTree = "<group>"; };
+		C56E55861CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuildingMaterialPurchaseGoingTVC.h; path = Controller/Register/BuildingMaterialPurchaseGoingTVC.h; sourceTree = "<group>"; };
+		C56E55871CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuildingMaterialPurchaseGoingTVC.m; path = Controller/Register/BuildingMaterialPurchaseGoingTVC.m; sourceTree = "<group>"; };
+		C56E55891CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuildingMaterialPurchaseDoneTVC.h; path = Controller/Register/BuildingMaterialPurchaseDoneTVC.h; sourceTree = "<group>"; };
+		C56E558A1CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuildingMaterialPurchaseDoneTVC.m; path = Controller/Register/BuildingMaterialPurchaseDoneTVC.m; sourceTree = "<group>"; };
+		C56E558C1CDC7E2800C608B9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controller/Register/RegisterViewController.h; sourceTree = "<group>"; };
+		C56E558D1CDC7E2800C608B9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Controller/Register/RegisterViewController.m; sourceTree = "<group>"; };
+		C56E558F1CDC7FFB00C608B9 /* RegisterPurchaseDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterPurchaseDetailTVC.h; path = Controller/Register/RegisterPurchaseDetailTVC.h; sourceTree = "<group>"; };
+		C56E55901CDC7FFB00C608B9 /* RegisterPurchaseDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterPurchaseDetailTVC.m; path = Controller/Register/RegisterPurchaseDetailTVC.m; sourceTree = "<group>"; };
+		C56E55921CDC832D00C608B9 /* BuildingMaterialSellVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuildingMaterialSellVC.h; path = Controller/Register/BuildingMaterialSellVC.h; sourceTree = "<group>"; };
+		C56E55931CDC832D00C608B9 /* BuildingMaterialSellVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuildingMaterialSellVC.m; path = Controller/Register/BuildingMaterialSellVC.m; sourceTree = "<group>"; };
+		C56E55951CDC858C00C608B9 /* BuildingMaterialSellTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuildingMaterialSellTVC.h; path = Controller/Register/BuildingMaterialSellTVC.h; sourceTree = "<group>"; };
+		C56E55961CDC858C00C608B9 /* BuildingMaterialSellTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuildingMaterialSellTVC.m; path = Controller/Register/BuildingMaterialSellTVC.m; sourceTree = "<group>"; };
+		C56E55981CDC86F300C608B9 /* AddBuildingMaterialSellTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddBuildingMaterialSellTVC.h; path = Controller/Register/AddBuildingMaterialSellTVC.h; sourceTree = "<group>"; };
+		C56E55991CDC86F300C608B9 /* AddBuildingMaterialSellTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddBuildingMaterialSellTVC.m; path = Controller/Register/AddBuildingMaterialSellTVC.m; sourceTree = "<group>"; };
+		C56E559B1CDC892900C608B9 /* SellBuildingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellBuildingVC.h; path = Controller/Register/SellBuildingVC.h; sourceTree = "<group>"; };
+		C56E559C1CDC892900C608B9 /* SellBuildingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellBuildingVC.m; path = Controller/Register/SellBuildingVC.m; sourceTree = "<group>"; };
+		C56E559E1CDC896500C608B9 /* SellBuildingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellBuildingTVC.h; path = Controller/Register/SellBuildingTVC.h; sourceTree = "<group>"; };
+		C56E559F1CDC896500C608B9 /* SellBuildingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellBuildingTVC.m; path = Controller/Register/SellBuildingTVC.m; sourceTree = "<group>"; };
+		C56E55A41CDC8C2F00C608B9 /* AddSellBuildingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddSellBuildingTVC.h; path = Controller/Register/AddSellBuildingTVC.h; sourceTree = "<group>"; };
+		C56E55A51CDC8C2F00C608B9 /* AddSellBuildingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddSellBuildingTVC.m; path = Controller/Register/AddSellBuildingTVC.m; sourceTree = "<group>"; };
+		C56E55A71CDC8D4C00C608B9 /* FundsMovementVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FundsMovementVC.h; path = Controller/Register/FundsMovementVC.h; sourceTree = "<group>"; };
+		C56E55A81CDC8D4C00C608B9 /* FundsMovementVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FundsMovementVC.m; path = Controller/Register/FundsMovementVC.m; sourceTree = "<group>"; };
+		C56E55AA1CDC8D7F00C608B9 /* FundsMovementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FundsMovementTVC.h; path = Controller/Register/FundsMovementTVC.h; sourceTree = "<group>"; };
+		C56E55AB1CDC8D7F00C608B9 /* FundsMovementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FundsMovementTVC.m; path = Controller/Register/FundsMovementTVC.m; sourceTree = "<group>"; };
+		C56E55AD1CDC8DD100C608B9 /* AddFundsMovementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFundsMovementTVC.h; path = Controller/Register/AddFundsMovementTVC.h; sourceTree = "<group>"; };
+		C56E55AE1CDC8DD100C608B9 /* AddFundsMovementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFundsMovementTVC.m; path = Controller/Register/AddFundsMovementTVC.m; sourceTree = "<group>"; };
 		C5971B991CD39A7200C6B263 /* MBProgressHUD+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+Extends.h"; path = "Extends/MBProgressHUD+Extends.h"; sourceTree = "<group>"; };
 		C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+Extends.m"; path = "Extends/MBProgressHUD+Extends.m"; sourceTree = "<group>"; };
 		C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifyPasswordVC.h; path = Controller/ModifyPasswordVC.h; sourceTree = "<group>"; };
@@ -308,6 +379,7 @@
 		C500E2341CD0A49200DF960B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C56E55701CDC6F2A00C608B9 /* Register */,
 				C56E55401CDB449900C608B9 /* Report */,
 				C500E2351CD0A4C400DF960B /* MainViewController.h */,
 				C500E2361CD0A4C400DF960B /* MainViewController.m */,
@@ -349,6 +421,8 @@
 				C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */,
 				C56E553A1CDB426A00C608B9 /* CHTableViewController.h */,
 				C56E553B1CDB426A00C608B9 /* CHTableViewController.m */,
+				C56E55681CDB899100C608B9 /* ModalTableViewController.h */,
+				C56E55691CDB899100C608B9 /* ModalTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -446,8 +520,57 @@
 				C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */,
 				C56E55591CDB625200C608B9 /* ReportMaterialVC.h */,
 				C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */,
+				C56E55621CDB83C100C608B9 /* ReportDetailTVC.h */,
+				C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */,
+				C56E55651CDB83D200C608B9 /* ReportRegisterTVC.h */,
+				C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */,
 			);
 			name = Report;
+			sourceTree = "<group>";
+		};
+		C56E55701CDC6F2A00C608B9 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C56E558C1CDC7E2800C608B9 /* RegisterViewController.h */,
+				C56E558D1CDC7E2800C608B9 /* RegisterViewController.m */,
+				C56E55771CDC70FB00C608B9 /* RegisterTableViewController.h */,
+				C56E55781CDC70FB00C608B9 /* RegisterTableViewController.m */,
+				C56E55741CDC700400C608B9 /* RegisterFundsVC.h */,
+				C56E55751CDC700400C608B9 /* RegisterFundsVC.m */,
+				C56E557A1CDC721600C608B9 /* RegisterFundsGoingTVC.h */,
+				C56E557B1CDC721600C608B9 /* RegisterFundsGoingTVC.m */,
+				C56E557D1CDC72F400C608B9 /* RegisterFundsDoneTVC.h */,
+				C56E557E1CDC72F400C608B9 /* RegisterFundsDoneTVC.m */,
+				C56E55801CDC7B1D00C608B9 /* RegisterDetailTVC.h */,
+				C56E55811CDC7B1D00C608B9 /* RegisterDetailTVC.m */,
+				C56E55831CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.h */,
+				C56E55841CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.m */,
+				C56E55861CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.h */,
+				C56E55871CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.m */,
+				C56E55891CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.h */,
+				C56E558A1CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.m */,
+				C56E558F1CDC7FFB00C608B9 /* RegisterPurchaseDetailTVC.h */,
+				C56E55901CDC7FFB00C608B9 /* RegisterPurchaseDetailTVC.m */,
+				C56E55921CDC832D00C608B9 /* BuildingMaterialSellVC.h */,
+				C56E55931CDC832D00C608B9 /* BuildingMaterialSellVC.m */,
+				C56E55951CDC858C00C608B9 /* BuildingMaterialSellTVC.h */,
+				C56E55961CDC858C00C608B9 /* BuildingMaterialSellTVC.m */,
+				C56E55981CDC86F300C608B9 /* AddBuildingMaterialSellTVC.h */,
+				C56E55991CDC86F300C608B9 /* AddBuildingMaterialSellTVC.m */,
+				C56E559B1CDC892900C608B9 /* SellBuildingVC.h */,
+				C56E559C1CDC892900C608B9 /* SellBuildingVC.m */,
+				C56E559E1CDC896500C608B9 /* SellBuildingTVC.h */,
+				C56E559F1CDC896500C608B9 /* SellBuildingTVC.m */,
+				C56E55A41CDC8C2F00C608B9 /* AddSellBuildingTVC.h */,
+				C56E55A51CDC8C2F00C608B9 /* AddSellBuildingTVC.m */,
+				C56E55A71CDC8D4C00C608B9 /* FundsMovementVC.h */,
+				C56E55A81CDC8D4C00C608B9 /* FundsMovementVC.m */,
+				C56E55AA1CDC8D7F00C608B9 /* FundsMovementTVC.h */,
+				C56E55AB1CDC8D7F00C608B9 /* FundsMovementTVC.m */,
+				C56E55AD1CDC8DD100C608B9 /* AddFundsMovementTVC.h */,
+				C56E55AE1CDC8DD100C608B9 /* AddFundsMovementTVC.m */,
+			);
+			name = Register;
 			sourceTree = "<group>";
 		};
 		C5971B981CD399D200C6B263 /* Extends */ = {
@@ -482,6 +605,9 @@
 				C56E55351CDB3EE200C608B9 /* ReportRejectedCell.xib */,
 				C56E55371CDB41C000C608B9 /* ReportRejectedCell.h */,
 				C56E55381CDB41C000C608B9 /* ReportRejectedCell.m */,
+				C56E556B1CDC6E6000C608B9 /* RegisterCell.xib */,
+				C56E556D1CDC6EBC00C608B9 /* RegisterCell.h */,
+				C56E556E1CDC6EBC00C608B9 /* RegisterCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -682,6 +808,7 @@
 				C5971BBC1CD5DA8A00C6B263 /* FileCell.xib in Resources */,
 				C56E552F1CDB3BB800C608B9 /* ReportGoingCell.xib in Resources */,
 				C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */,
+				C56E556C1CDC6E6000C608B9 /* RegisterCell.xib in Resources */,
 				D18B470A1CCFAB8300FEA8E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,22 +882,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56E55A91CDC8D4C00C608B9 /* FundsMovementVC.m in Sources */,
 				C56E55461CDB451B00C608B9 /* ReportGoingTVC.m in Sources */,
 				C5557F7B1CD0F154006EC41D /* Role.m in Sources */,
 				C56E554F1CDB46B800C608B9 /* ReportFundsRejectedTVC.m in Sources */,
+				C56E55641CDB83C100C608B9 /* ReportDetailTVC.m in Sources */,
 				C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */,
 				C56E55221CDB112300C608B9 /* Permission.m in Sources */,
 				C5971BB71CD5D38900C6B263 /* PlanTVC.m in Sources */,
 				C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */,
 				C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */,
+				C56E557F1CDC72F400C608B9 /* RegisterFundsDoneTVC.m in Sources */,
 				C5971BBF1CD5DD0B00C6B263 /* FileCell.m in Sources */,
 				C5557F7A1CD0F154006EC41D /* MyGroup.m in Sources */,
 				D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */,
 				C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */,
+				C56E55971CDC858C00C608B9 /* BuildingMaterialSellTVC.m in Sources */,
 				C5971BBA1CD5D46500C6B263 /* AddPlanVC.m in Sources */,
+				C56E55941CDC832D00C608B9 /* BuildingMaterialSellVC.m in Sources */,
 				C5971BE31CD78CAB00C6B263 /* YesterdayPlanTVC.m in Sources */,
+				C56E55791CDC70FB00C608B9 /* RegisterTableViewController.m in Sources */,
 				C56E55521CDB46D700C608B9 /* ReportFundsVC.m in Sources */,
+				C56E55671CDB83D200C608B9 /* ReportRegisterTVC.m in Sources */,
 				C56E554C1CDB468300C608B9 /* ReportFundsGoingTVC.m in Sources */,
+				C56E55AF1CDC8DD100C608B9 /* AddFundsMovementTVC.m in Sources */,
+				C56E55761CDC700400C608B9 /* RegisterFundsVC.m in Sources */,
 				C5971BD11CD5EA9E00C6B263 /* OutboxTVC.m in Sources */,
 				C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */,
 				C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */,
@@ -784,11 +920,15 @@
 				C5557FA31CD0F15E006EC41D /* AccountVO.m in Sources */,
 				C5971BAD1CD3C18400C6B263 /* AddActivityTVC.m in Sources */,
 				C5557FB51CD0F15E006EC41D /* VOWrapper.m in Sources */,
+				C56E55AC1CDC8D7F00C608B9 /* FundsMovementTVC.m in Sources */,
 				C56E55391CDB41C000C608B9 /* ReportRejectedCell.m in Sources */,
 				C5557F741CD0F143006EC41D /* RequestParameter.m in Sources */,
+				C56E559A1CDC86F300C608B9 /* AddBuildingMaterialSellTVC.m in Sources */,
 				C5557FAF1CD0F15E006EC41D /* ResultVO.m in Sources */,
 				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
 				C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */,
+				C56E557C1CDC721600C608B9 /* RegisterFundsGoingTVC.m in Sources */,
+				C56E556F1CDC6EBC00C608B9 /* RegisterCell.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
 				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
 				C5971BE61CD78CBF00C6B263 /* TodayPlanTVC.m in Sources */,
@@ -796,13 +936,17 @@
 				C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */,
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
 				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
+				C56E55881CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.m in Sources */,
 				C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */,
+				C56E558B1CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.m in Sources */,
 				C56E55321CDB3E1800C608B9 /* ReportGoingCell.m in Sources */,
 				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,
 				C5557FA51CD0F15E006EC41D /* AuditMaterialsVO.m in Sources */,
 				C5971BEF1CD8D39000C6B263 /* ChooseUserTVC.m in Sources */,
+				C56E558E1CDC7E2800C608B9 /* RegisterViewController.m in Sources */,
 				C56E55581CDB623500C608B9 /* ReportMaterialRejectedTVC.m in Sources */,
 				C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */,
+				C56E55A01CDC896500C608B9 /* SellBuildingTVC.m in Sources */,
 				D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */,
 				C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */,
 				C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */,
@@ -810,6 +954,7 @@
 				C5971BC51CD5DD5F00C6B263 /* FileTVC.m in Sources */,
 				C5971BD61CD5EE4100C6B263 /* MailCell.m in Sources */,
 				C5557FA61CD0F15E006EC41D /* AuditOthersVO.m in Sources */,
+				C56E55851CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.m in Sources */,
 				C5557FB21CD0F15E006EC41D /* SignStatusVO.m in Sources */,
 				C5557FA41CD0F15E006EC41D /* ActivityVO.m in Sources */,
 				C56E55491CDB462A00C608B9 /* ReportRejectedTVC.m in Sources */,
@@ -820,8 +965,13 @@
 				C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */,
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
 				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,
+				C56E556A1CDB899100C608B9 /* ModalTableViewController.m in Sources */,
 				C5971BD91CD5F3E700C6B263 /* SendMailTVC.m in Sources */,
+				C56E55A61CDC8C2F00C608B9 /* AddSellBuildingTVC.m in Sources */,
 				C56E552B1CDB305E00C608B9 /* Constants.m in Sources */,
+				C56E559D1CDC892900C608B9 /* SellBuildingVC.m in Sources */,
+				C56E55821CDC7B1D00C608B9 /* RegisterDetailTVC.m in Sources */,
+				C56E55911CDC7FFB00C608B9 /* RegisterPurchaseDetailTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

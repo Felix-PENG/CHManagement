@@ -82,6 +82,9 @@
                         <state key="normal" title="修改" image="ic_edit_black_24dp">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="modifyButtonPressed:" destination="OMJ-pq-mKs" eventType="touchUpInside" id="nrg-ta-g7r"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

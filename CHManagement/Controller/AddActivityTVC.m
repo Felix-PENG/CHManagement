@@ -27,10 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setBarTintColor:[self.view tintColor]];
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
     NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
     group_id = [[userData objectForKey:@"group_id"]integerValue];
     user_id = [[userData objectForKey:@"user_id"]integerValue];

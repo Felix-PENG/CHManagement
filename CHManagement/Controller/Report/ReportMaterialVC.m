@@ -11,6 +11,7 @@
 #import "ReportMaterialGoingTVC.h"
 #import "ReportMaterialRejectedTVC.h"
 #import "TabItem.h"
+#import "ReportRegisterTVC.h"
 
 @interface ReportMaterialVC ()
 
@@ -24,6 +25,7 @@
     
     self.navigationItem.title = @"建材买入审核情况";
     
+    // contents
     ReportMaterialGoingTVC *rfgtvc = [[ReportMaterialGoingTVC alloc] init];
     ReportMaterialRejectedTVC *rfrtvc = [[ReportMaterialRejectedTVC alloc] init];
     
@@ -34,8 +36,12 @@
     
     [self.view addSubview:tsvc.view];
     [self addChildViewController:tsvc];
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    // bar button items
+    UIBarButtonItem *roleItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_assignment_ind_white_24dp"] style:UIBarButtonItemStylePlain target:self action:@selector(roleButtonPressed)];
+    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
+    self.navigationItem.rightBarButtonItems = @[addItem, roleItem];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,5 +58,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)roleButtonPressed
+{
+    
+}
+
+- (void)addButtonPressed
+{
+    ReportRegisterTVC *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportRegisterTVC"];
+    [self presentViewController:controller animated:YES completion:nil];
+}
 
 @end

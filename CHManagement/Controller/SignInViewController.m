@@ -30,6 +30,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.navigationController.navigationBar setBarTintColor:[self.view tintColor]];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    
+    [self.userNameTextField becomeFirstResponder];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

@@ -28,7 +28,6 @@ static NSString * const AddActivitySegue = @"AddActivity";
     UIAlertController *_sheetAlert;
     NSUInteger _page;
     NSMutableArray *_activityList;
-    BOOL _repeatLoad;
     BOOL _noMoreData;
 }
 
@@ -68,17 +67,8 @@ static NSString * const AddActivitySegue = @"AddActivity";
     self.tableView.estimatedRowHeight = 98.0;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    if (!_repeatLoad) {
-        [self.refreshControl beginRefreshing];
-        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
-        _repeatLoad = YES;
-    }
-}
-
 - (void)viewDidDisappear:(BOOL)animated{
-    _repeatLoad = NO;
+    self.repeatLoad = NO;
 }
 
 - (void)loadDataWithPage:(NSUInteger)page

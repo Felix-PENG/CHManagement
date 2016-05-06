@@ -10,4 +10,6 @@
 
 @interface CHTableViewController : UITableViewController
 
+@property (nonatomic, assign) BOOL repeatLoad;
+
 @end

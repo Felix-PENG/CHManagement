@@ -6,8 +6,8 @@
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHTableViewController.h"
 
-@interface OutboxTVC : UITableViewController
+@interface OutboxTVC : CHTableViewController
 
 @end

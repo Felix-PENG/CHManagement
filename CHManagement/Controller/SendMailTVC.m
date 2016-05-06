@@ -26,10 +26,6 @@ static NSString * const chooseUserSegue = @"chooseUser";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBarTintColor:[self.view tintColor]];
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    self.receivers = [NSMutableArray array];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
