@@ -6,7 +6,7 @@
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ModalTableViewController.h"
 
 @protocol MailBoxSwitchViewDelegate <NSObject>
 
@@ -15,7 +15,7 @@
 
 @end
 
-@interface SendMailTVC : UITableViewController
+@interface SendMailTVC : ModalTableViewController
 
 @property (nonatomic, strong) NSMutableArray* receivers;
 @property (nonatomic,weak) id<MailBoxSwitchViewDelegate> mailBoxSwitchViewDelegate;

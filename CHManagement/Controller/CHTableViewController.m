@@ -10,8 +10,6 @@
 
 @interface CHTableViewController ()
 
-@property (nonatomic, assign) BOOL repeatLoad;
-
 @end
 
 @implementation CHTableViewController
@@ -19,20 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     // cell自适应高度
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100.0;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    // 刷新控件
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:self.refreshControl];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -44,6 +36,8 @@
         self.repeatLoad = YES;
     }
 }
+
+#pragma mark - To be implemented
 
 - (void)refresh
 {

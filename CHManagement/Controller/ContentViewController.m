@@ -13,19 +13,23 @@
 #import "Permission.h"
 #import "ReportFundsVC.h"
 #import "ReportMaterialVC.h"
+#import "RegisterFundsVC.h"
+#import "BuildingMaterialPurchaseVC.h"
+#import "BuildingMaterialSellVC.h"
+#import "SellBuildingVC.h"
+#import "FundsMovementVC.h"
 
 #define SECTION_HEADER_HEIGHT 28.0
 #define TOP_MENU_CELL_HEIGHT 84.0
 #define CELL_HEIGHT 44.0
 
 @interface ContentViewController ()
-//@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation ContentViewController
 {
     NSMutableDictionary *_permissionDict;
-    BOOL _repeatLoad;
 }
 
 - (void)viewDidLoad {
@@ -36,22 +40,6 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     _permissionDict = [NSMutableDictionary dictionary];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    if (!_repeatLoad) {
-        [self.refreshControl beginRefreshing];
-        [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
-        _repeatLoad = YES;
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDataSource
@@ -125,6 +113,21 @@
             break;
         case BuildingMaterialPurchaseReport:
             [self.navigationController pushViewController:[[ReportMaterialVC alloc] init] animated: YES];
+            break;
+        case FundsRegister:
+            [self.navigationController pushViewController:[[RegisterFundsVC alloc] init] animated: YES];
+            break;
+        case BuildingMaterialPurchaseRegister:
+            [self.navigationController pushViewController:[[BuildingMaterialPurchaseVC alloc] init] animated: YES];
+            break;
+        case BuildingMaterialSellRegister:
+            [self.navigationController pushViewController:[[BuildingMaterialSellVC alloc] init] animated: YES];
+            break;
+        case SaleBuildingRegister:
+            [self.navigationController pushViewController:[[SellBuildingVC alloc] init] animated: YES];
+            break;
+        case FundsMovementRegister:
+            [self.navigationController pushViewController:[[FundsMovementVC alloc] init] animated: YES];
             break;
         default:
             break;

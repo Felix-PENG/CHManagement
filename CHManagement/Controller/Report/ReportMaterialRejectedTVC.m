@@ -7,8 +7,11 @@
 //
 
 #import "ReportMaterialRejectedTVC.h"
+#import "ReportRejectedCell.h"
+#import "ReportRegisterTVC.h"
+#import "ReportDetailTVC.h"
 
-@interface ReportMaterialRejectedTVC ()
+@interface ReportMaterialRejectedTVC () <ReportRejectedDelegate>
 
 @end
 
@@ -38,7 +41,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    ReportRejectedCell *cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    [cell setOffsetTag:indexPath.row];
+    cell.delegate = self;
     
     return cell;
 }
@@ -47,8 +52,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ReportDetailTVC *detail = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportDetailTVC"];
     
-    
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 /*
@@ -60,5 +66,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - ReportRejectedDelegate
+
+- (void)modifyButtonPressed:(NSUInteger)index
+{
+    ReportRejectedTVC *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportRegisterTVC"];
+    [self presentViewController:controller animated:YES completion:nil];
+}
 
 @end

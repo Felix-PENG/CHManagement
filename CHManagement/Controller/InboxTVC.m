@@ -24,7 +24,6 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 
 @implementation InboxTVC
 {
-    UIRefreshControl *_refreshControl;
     NSMutableArray* _messageList;
     NSInteger _page;
     BOOL _noMoreData;
@@ -46,23 +45,15 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     self.tableView.estimatedRowHeight = 95.0;
     
     // 刷新控件
-    _refreshControl = [[UIRefreshControl alloc] init];
-    [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:_refreshControl];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:self.refreshControl];
     
     _messageList = [NSMutableArray array];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    if(!_repeatLoad){
-        [_refreshControl beginRefreshing];
-        [_refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
-        _repeatLoad = YES;
-    }
-}
-
 -(void)viewDidDisappear:(BOOL)animated{
-    _repeatLoad = NO;
+    self.repeatLoad = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -153,8 +144,8 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
             
         }
         
-        if([_refreshControl isRefreshing]){
-            [_refreshControl endRefreshing];
+        if([self.refreshControl isRefreshing]){
+            [self.refreshControl endRefreshing];
         }
     }];
 }

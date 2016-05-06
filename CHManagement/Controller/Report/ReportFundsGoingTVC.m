@@ -7,6 +7,8 @@
 //
 
 #import "ReportFundsGoingTVC.h"
+#import "ReportGoingCell.h"
+#import "ReportDetailTVC.h"
 
 @interface ReportFundsGoingTVC ()
 
@@ -38,7 +40,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    ReportGoingCell *cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
     
     return cell;
 }
@@ -47,8 +49,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    ReportDetailTVC *detail = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportDetailTVC"];
     
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 

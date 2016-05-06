@@ -8,6 +8,8 @@
 
 #import "ReportRejectedCell.h"
 
+#define REPORT_REJECTED_CELL_TAG_OFFSET 100
+
 @interface ReportRejectedCell()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateTimeLabel;
@@ -30,6 +32,16 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setOffsetTag:(NSUInteger)tag
+{
+    self.tag = REPORT_REJECTED_CELL_TAG_OFFSET + tag;
+}
+
+- (IBAction)modifyButtonPressed:(id)sender
+{
+    [self.delegate modifyButtonPressed:self.tag - REPORT_REJECTED_CELL_TAG_OFFSET];
 }
 
 @end
