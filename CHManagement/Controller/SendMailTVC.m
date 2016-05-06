@@ -26,6 +26,7 @@ static NSString * const chooseUserSegue = @"chooseUser";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.receivers = [NSMutableArray array];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
