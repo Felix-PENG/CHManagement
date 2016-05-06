@@ -36,6 +36,21 @@
 		C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F9E1CD0F15E006EC41D /* UserShortVO.m */; };
 		C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557FA01CD0F15E006EC41D /* UserVO.m */; };
 		C5557FB51CD0F15E006EC41D /* VOWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557FA21CD0F15E006EC41D /* VOWrapper.m */; };
+		C56E55221CDB112300C608B9 /* Permission.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55211CDB112300C608B9 /* Permission.m */; };
+		C56E552B1CDB305E00C608B9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E552A1CDB305E00C608B9 /* Constants.m */; };
+		C56E552F1CDB3BB800C608B9 /* ReportGoingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56E552E1CDB3BB800C608B9 /* ReportGoingCell.xib */; };
+		C56E55321CDB3E1800C608B9 /* ReportGoingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55311CDB3E1800C608B9 /* ReportGoingCell.m */; };
+		C56E55361CDB3EE200C608B9 /* ReportRejectedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56E55351CDB3EE200C608B9 /* ReportRejectedCell.xib */; };
+		C56E55391CDB41C000C608B9 /* ReportRejectedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55381CDB41C000C608B9 /* ReportRejectedCell.m */; };
+		C56E553C1CDB426A00C608B9 /* CHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E553B1CDB426A00C608B9 /* CHTableViewController.m */; };
+		C56E55461CDB451B00C608B9 /* ReportGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55451CDB451B00C608B9 /* ReportGoingTVC.m */; };
+		C56E55491CDB462A00C608B9 /* ReportRejectedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55481CDB462A00C608B9 /* ReportRejectedTVC.m */; };
+		C56E554C1CDB468300C608B9 /* ReportFundsGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E554B1CDB468300C608B9 /* ReportFundsGoingTVC.m */; };
+		C56E554F1CDB46B800C608B9 /* ReportFundsRejectedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E554E1CDB46B800C608B9 /* ReportFundsRejectedTVC.m */; };
+		C56E55521CDB46D700C608B9 /* ReportFundsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55511CDB46D700C608B9 /* ReportFundsVC.m */; };
+		C56E55551CDB621300C608B9 /* ReportMaterialGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55541CDB621300C608B9 /* ReportMaterialGoingTVC.m */; };
+		C56E55581CDB623500C608B9 /* ReportMaterialRejectedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */; };
+		C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */; };
 		C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */; };
 		C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */; };
 		C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA01CD3B61500C6B263 /* ActivityTVC.m */; };
@@ -152,6 +167,34 @@
 		C5557FA01CD0F15E006EC41D /* UserVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserVO.m; sourceTree = "<group>"; };
 		C5557FA11CD0F15E006EC41D /* VOWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWrapper.h; sourceTree = "<group>"; };
 		C5557FA21CD0F15E006EC41D /* VOWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOWrapper.m; sourceTree = "<group>"; };
+		C56E55201CDB112300C608B9 /* Permission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Permission.h; sourceTree = "<group>"; };
+		C56E55211CDB112300C608B9 /* Permission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Permission.m; sourceTree = "<group>"; };
+		C56E55291CDB305E00C608B9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		C56E552A1CDB305E00C608B9 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		C56E552E1CDB3BB800C608B9 /* ReportGoingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportGoingCell.xib; path = View/ReportGoingCell.xib; sourceTree = "<group>"; };
+		C56E55301CDB3E1800C608B9 /* ReportGoingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportGoingCell.h; path = View/ReportGoingCell.h; sourceTree = "<group>"; };
+		C56E55311CDB3E1800C608B9 /* ReportGoingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportGoingCell.m; path = View/ReportGoingCell.m; sourceTree = "<group>"; };
+		C56E55351CDB3EE200C608B9 /* ReportRejectedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportRejectedCell.xib; path = View/ReportRejectedCell.xib; sourceTree = "<group>"; };
+		C56E55371CDB41C000C608B9 /* ReportRejectedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportRejectedCell.h; path = View/ReportRejectedCell.h; sourceTree = "<group>"; };
+		C56E55381CDB41C000C608B9 /* ReportRejectedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportRejectedCell.m; path = View/ReportRejectedCell.m; sourceTree = "<group>"; };
+		C56E553A1CDB426A00C608B9 /* CHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHTableViewController.h; path = Controller/CHTableViewController.h; sourceTree = "<group>"; };
+		C56E553B1CDB426A00C608B9 /* CHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTableViewController.m; path = Controller/CHTableViewController.m; sourceTree = "<group>"; };
+		C56E55441CDB451B00C608B9 /* ReportGoingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportGoingTVC.h; path = Controller/Report/ReportGoingTVC.h; sourceTree = "<group>"; };
+		C56E55451CDB451B00C608B9 /* ReportGoingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportGoingTVC.m; path = Controller/Report/ReportGoingTVC.m; sourceTree = "<group>"; };
+		C56E55471CDB462A00C608B9 /* ReportRejectedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportRejectedTVC.h; path = Controller/Report/ReportRejectedTVC.h; sourceTree = "<group>"; };
+		C56E55481CDB462A00C608B9 /* ReportRejectedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportRejectedTVC.m; path = Controller/Report/ReportRejectedTVC.m; sourceTree = "<group>"; };
+		C56E554A1CDB468300C608B9 /* ReportFundsGoingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportFundsGoingTVC.h; path = Controller/Report/ReportFundsGoingTVC.h; sourceTree = "<group>"; };
+		C56E554B1CDB468300C608B9 /* ReportFundsGoingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportFundsGoingTVC.m; path = Controller/Report/ReportFundsGoingTVC.m; sourceTree = "<group>"; };
+		C56E554D1CDB46B800C608B9 /* ReportFundsRejectedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportFundsRejectedTVC.h; path = Controller/Report/ReportFundsRejectedTVC.h; sourceTree = "<group>"; };
+		C56E554E1CDB46B800C608B9 /* ReportFundsRejectedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportFundsRejectedTVC.m; path = Controller/Report/ReportFundsRejectedTVC.m; sourceTree = "<group>"; };
+		C56E55501CDB46D700C608B9 /* ReportFundsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportFundsVC.h; path = Controller/Report/ReportFundsVC.h; sourceTree = "<group>"; };
+		C56E55511CDB46D700C608B9 /* ReportFundsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportFundsVC.m; path = Controller/Report/ReportFundsVC.m; sourceTree = "<group>"; };
+		C56E55531CDB621300C608B9 /* ReportMaterialGoingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialGoingTVC.h; path = Controller/Report/ReportMaterialGoingTVC.h; sourceTree = "<group>"; };
+		C56E55541CDB621300C608B9 /* ReportMaterialGoingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialGoingTVC.m; path = Controller/Report/ReportMaterialGoingTVC.m; sourceTree = "<group>"; };
+		C56E55561CDB623500C608B9 /* ReportMaterialRejectedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialRejectedTVC.h; path = Controller/Report/ReportMaterialRejectedTVC.h; sourceTree = "<group>"; };
+		C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialRejectedTVC.m; path = Controller/Report/ReportMaterialRejectedTVC.m; sourceTree = "<group>"; };
+		C56E55591CDB625200C608B9 /* ReportMaterialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialVC.h; path = Controller/Report/ReportMaterialVC.h; sourceTree = "<group>"; };
+		C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialVC.m; path = Controller/Report/ReportMaterialVC.m; sourceTree = "<group>"; };
 		C5971B991CD39A7200C6B263 /* MBProgressHUD+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+Extends.h"; path = "Extends/MBProgressHUD+Extends.h"; sourceTree = "<group>"; };
 		C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+Extends.m"; path = "Extends/MBProgressHUD+Extends.m"; sourceTree = "<group>"; };
 		C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifyPasswordVC.h; path = Controller/ModifyPasswordVC.h; sourceTree = "<group>"; };
@@ -265,6 +308,7 @@
 		C500E2341CD0A49200DF960B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C56E55401CDB449900C608B9 /* Report */,
 				C500E2351CD0A4C400DF960B /* MainViewController.h */,
 				C500E2361CD0A4C400DF960B /* MainViewController.m */,
 				C500E2381CD0ADAA00DF960B /* LeftMenuViewController.h */,
@@ -303,6 +347,8 @@
 				C5971BD81CD5F3E700C6B263 /* SendMailTVC.m */,
 				C5971BED1CD8D39000C6B263 /* ChooseUserTVC.h */,
 				C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */,
+				C56E553A1CDB426A00C608B9 /* CHTableViewController.h */,
+				C56E553B1CDB426A00C608B9 /* CHTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -330,6 +376,8 @@
 				C5557F791CD0F154006EC41D /* Role.m */,
 				D19EF82D1CD647B90044BA84 /* IDEntity.h */,
 				D19EF82E1CD647B90044BA84 /* IDEntity.m */,
+				C56E55201CDB112300C608B9 /* Permission.h */,
+				C56E55211CDB112300C608B9 /* Permission.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -379,6 +427,29 @@
 			path = VO;
 			sourceTree = "<group>";
 		};
+		C56E55401CDB449900C608B9 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				C56E55441CDB451B00C608B9 /* ReportGoingTVC.h */,
+				C56E55451CDB451B00C608B9 /* ReportGoingTVC.m */,
+				C56E55471CDB462A00C608B9 /* ReportRejectedTVC.h */,
+				C56E55481CDB462A00C608B9 /* ReportRejectedTVC.m */,
+				C56E554A1CDB468300C608B9 /* ReportFundsGoingTVC.h */,
+				C56E554B1CDB468300C608B9 /* ReportFundsGoingTVC.m */,
+				C56E554D1CDB46B800C608B9 /* ReportFundsRejectedTVC.h */,
+				C56E554E1CDB46B800C608B9 /* ReportFundsRejectedTVC.m */,
+				C56E55501CDB46D700C608B9 /* ReportFundsVC.h */,
+				C56E55511CDB46D700C608B9 /* ReportFundsVC.m */,
+				C56E55531CDB621300C608B9 /* ReportMaterialGoingTVC.h */,
+				C56E55541CDB621300C608B9 /* ReportMaterialGoingTVC.m */,
+				C56E55561CDB623500C608B9 /* ReportMaterialRejectedTVC.h */,
+				C56E55571CDB623500C608B9 /* ReportMaterialRejectedTVC.m */,
+				C56E55591CDB625200C608B9 /* ReportMaterialVC.h */,
+				C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */,
+			);
+			name = Report;
+			sourceTree = "<group>";
+		};
 		C5971B981CD399D200C6B263 /* Extends */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +476,12 @@
 				C5971BD21CD5EE2B00C6B263 /* MailCell.xib */,
 				C5971BD41CD5EE4100C6B263 /* MailCell.h */,
 				C5971BD51CD5EE4100C6B263 /* MailCell.m */,
+				C56E552E1CDB3BB800C608B9 /* ReportGoingCell.xib */,
+				C56E55301CDB3E1800C608B9 /* ReportGoingCell.h */,
+				C56E55311CDB3E1800C608B9 /* ReportGoingCell.m */,
+				C56E55351CDB3EE200C608B9 /* ReportRejectedCell.xib */,
+				C56E55371CDB41C000C608B9 /* ReportRejectedCell.h */,
+				C56E55381CDB41C000C608B9 /* ReportRejectedCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -459,6 +536,8 @@
 				D18B470D1CCFAB8300FEA8E8 /* LaunchScreen.storyboard */,
 				D18B47101CCFAB8300FEA8E8 /* Info.plist */,
 				D18B46FF1CCFAB8300FEA8E8 /* Supporting Files */,
+				C56E55291CDB305E00C608B9 /* Constants.h */,
+				C56E552A1CDB305E00C608B9 /* Constants.m */,
 			);
 			path = CHManagement;
 			sourceTree = "<group>";
@@ -598,8 +677,10 @@
 				C5971BD31CD5EE2B00C6B263 /* MailCell.xib in Resources */,
 				C5971BB11CD4F85900C6B263 /* LoadMoreCell.xib in Resources */,
 				D18B470F1CCFAB8300FEA8E8 /* LaunchScreen.storyboard in Resources */,
+				C56E55361CDB3EE200C608B9 /* ReportRejectedCell.xib in Resources */,
 				D18B470C1CCFAB8300FEA8E8 /* Assets.xcassets in Resources */,
 				C5971BBC1CD5DA8A00C6B263 /* FileCell.xib in Resources */,
+				C56E552F1CDB3BB800C608B9 /* ReportGoingCell.xib in Resources */,
 				C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */,
 				D18B470A1CCFAB8300FEA8E8 /* Main.storyboard in Resources */,
 			);
@@ -674,8 +755,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56E55461CDB451B00C608B9 /* ReportGoingTVC.m in Sources */,
 				C5557F7B1CD0F154006EC41D /* Role.m in Sources */,
+				C56E554F1CDB46B800C608B9 /* ReportFundsRejectedTVC.m in Sources */,
 				C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */,
+				C56E55221CDB112300C608B9 /* Permission.m in Sources */,
 				C5971BB71CD5D38900C6B263 /* PlanTVC.m in Sources */,
 				C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */,
 				C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */,
@@ -685,20 +769,26 @@
 				C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */,
 				C5971BBA1CD5D46500C6B263 /* AddPlanVC.m in Sources */,
 				C5971BE31CD78CAB00C6B263 /* YesterdayPlanTVC.m in Sources */,
+				C56E55521CDB46D700C608B9 /* ReportFundsVC.m in Sources */,
+				C56E554C1CDB468300C608B9 /* ReportFundsGoingTVC.m in Sources */,
 				C5971BD11CD5EA9E00C6B263 /* OutboxTVC.m in Sources */,
 				C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */,
 				C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */,
+				C56E55551CDB621300C608B9 /* ReportMaterialGoingTVC.m in Sources */,
 				C5971BE01CD7561D00C6B263 /* TabItem.m in Sources */,
 				C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */,
 				C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */,
 				C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */,
 				C5557FA81CD0F15E006EC41D /* BillMaterialsVO.m in Sources */,
+				C56E553C1CDB426A00C608B9 /* CHTableViewController.m in Sources */,
 				C5557FA31CD0F15E006EC41D /* AccountVO.m in Sources */,
 				C5971BAD1CD3C18400C6B263 /* AddActivityTVC.m in Sources */,
 				C5557FB51CD0F15E006EC41D /* VOWrapper.m in Sources */,
+				C56E55391CDB41C000C608B9 /* ReportRejectedCell.m in Sources */,
 				C5557F741CD0F143006EC41D /* RequestParameter.m in Sources */,
 				C5557FAF1CD0F15E006EC41D /* ResultVO.m in Sources */,
 				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
+				C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
 				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
 				C5971BE61CD78CBF00C6B263 /* TodayPlanTVC.m in Sources */,
@@ -707,9 +797,11 @@
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
 				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
 				C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */,
+				C56E55321CDB3E1800C608B9 /* ReportGoingCell.m in Sources */,
 				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,
 				C5557FA51CD0F15E006EC41D /* AuditMaterialsVO.m in Sources */,
 				C5971BEF1CD8D39000C6B263 /* ChooseUserTVC.m in Sources */,
+				C56E55581CDB623500C608B9 /* ReportMaterialRejectedTVC.m in Sources */,
 				C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */,
 				D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */,
 				C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */,
@@ -720,6 +812,7 @@
 				C5557FA61CD0F15E006EC41D /* AuditOthersVO.m in Sources */,
 				C5557FB21CD0F15E006EC41D /* SignStatusVO.m in Sources */,
 				C5557FA41CD0F15E006EC41D /* ActivityVO.m in Sources */,
+				C56E55491CDB462A00C608B9 /* ReportRejectedTVC.m in Sources */,
 				C5971BCE1CD5EA8200C6B263 /* InboxTVC.m in Sources */,
 				C5971BC81CD5DFCE00C6B263 /* UploadFileVC.m in Sources */,
 				C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */,
@@ -728,6 +821,7 @@
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
 				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,
 				C5971BD91CD5F3E700C6B263 /* SendMailTVC.m in Sources */,
+				C56E552B1CDB305E00C608B9 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
