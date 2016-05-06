@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SendMailTVC.h"
 
-@interface MailBoxVC : UIViewController
+@interface MailBoxVC : UIViewController<MailBoxSwitchViewDelegate>
 
 @end

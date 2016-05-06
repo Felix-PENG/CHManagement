@@ -353,7 +353,7 @@
 - (void)createMessageWithIdList:(NSString*)id_list withContent:(NSString*)content withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter getRequest];
     parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, createMessageUrl];
-    parameter.json = @{@"id_list":id_list,@"user_id":[NSNumber numberWithInteger:user_id]};
+    parameter.json = @{@"id_list":id_list,@"content":content,@"user_id":[NSNumber numberWithInteger:user_id]};
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 

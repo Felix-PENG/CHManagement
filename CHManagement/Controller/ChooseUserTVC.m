@@ -18,14 +18,12 @@
 
 @implementation ChooseUserTVC{
     NSMutableArray* _userList;
-    NSMutableArray* _choosedUserList;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _userList = [NSMutableArray array];
-    _choosedUserList = [NSMutableArray array];
     
     [self loadAllUser];
     
@@ -54,10 +52,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    if([_choosedUserList containsObject:[_userList objectAtIndex:indexPath.row]]){
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    UserVO* user = [_userList objectAtIndex:indexPath.row];
+    
+    for(UserVO* singleUser in self.choosedUserList){
+        if([singleUser id] == [user id]){
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            break;
+        }
     }
     
     cell.textLabel.text = [[_userList objectAtIndex:indexPath.row]name];
@@ -76,10 +78,16 @@
     
     cell.accessoryType = cell.accessoryType == UITableViewCellAccessoryCheckmark ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
     
+    UserVO* user = [_userList objectAtIndex:indexPath.row];
     if(cell.accessoryType ==  UITableViewCellAccessoryCheckmark){
-        [_choosedUserList addObject:[_userList objectAtIndex:indexPath.row]];
+        [self.choosedUserList addObject:user];
     }else{
-        [_choosedUserList removeObject:[_userList objectAtIndex:indexPath.row]];
+        for(UserVO* singleUser in self.choosedUserList){
+            if([singleUser id] == [user id]){
+                [self.choosedUserList removeObject:singleUser];
+                break;
+            }
+        }
     }
 }
 
@@ -95,7 +103,7 @@
 #pragma mark IBAction
 - (IBAction)confirmButtonPressed:(id)sender{
     SendMailTVC* sendMailViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 2];
-    [sendMailViewController setReceivers:_choosedUserList];
+    [sendMailViewController setReceivers:self.choosedUserList];
     [self.navigationController popToViewController:sendMailViewController animated:true];
 }
 
@@ -115,13 +123,6 @@
             //error handler
         }
     }];
-}
-
-#pragma mark - Segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSLog(@"Back");
 }
 
 @end
