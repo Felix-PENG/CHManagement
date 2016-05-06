@@ -10,4 +10,6 @@
 
 @interface ChooseUserTVC : CHTableViewController
 
+@property (nonatomic,strong) NSMutableArray* choosedUserList;
+
 @end

@@ -854,7 +854,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="GMs-Tn-3Nj" kind="show" id="JKc-jr-6ua"/>
+                                                        <segue destination="GMs-Tn-3Nj" kind="show" identifier="chooseUser" id="JKc-jr-6ua"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

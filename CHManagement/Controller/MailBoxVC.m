@@ -18,6 +18,7 @@
 @implementation MailBoxVC
 {
     NSMutableDictionary *_controllerDict;
+    NSUInteger _index;
 }
 
 - (void)viewDidLoad {
@@ -25,7 +26,13 @@
     // Do any additional setup after loading the view.
     
     _controllerDict = [NSMutableDictionary dictionaryWithCapacity:2];
-    [self.segmentedControl setSelectedSegmentIndex:0];
+    _index = 0;
+    [self.segmentedControl setSelectedSegmentIndex:_index];
+    [self.segmentedControl sendActionsForControlEvents:UIControlEventValueChanged];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [self.segmentedControl setSelectedSegmentIndex:_index];
     [self.segmentedControl sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
@@ -80,6 +87,18 @@
 {
     NSUInteger index = self.segmentedControl.selectedSegmentIndex;
     [self switchView:index];
+}
+
+#pragma mark segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UINavigationController* navigationController = segue.destinationViewController;
+    SendMailTVC* sendMailTVC = (SendMailTVC*)navigationController.topViewController;
+    [sendMailTVC setMailBoxSwitchViewDelegate:self];
+}
+
+#pragma mark segue
+-(void)switchViewToOutBox{
+    _index = 1;
 }
 
 @end
