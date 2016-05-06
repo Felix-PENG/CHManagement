@@ -10,4 +10,6 @@
 
 @interface ReportDetailTVC : UITableViewController
 
+@property (nonatomic, assign) BOOL checkable;
+
 @end

@@ -50,6 +50,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RegisterDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterDetailTVC"];
+    tvc.uploadable = NO;
     [self.navigationController pushViewController:tvc animated:YES];
 }
 

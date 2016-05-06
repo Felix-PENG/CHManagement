@@ -75,6 +75,14 @@
 		C56E55A91CDC8D4C00C608B9 /* FundsMovementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55A81CDC8D4C00C608B9 /* FundsMovementVC.m */; };
 		C56E55AC1CDC8D7F00C608B9 /* FundsMovementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55AB1CDC8D7F00C608B9 /* FundsMovementTVC.m */; };
 		C56E55AF1CDC8DD100C608B9 /* AddFundsMovementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55AE1CDC8DD100C608B9 /* AddFundsMovementTVC.m */; };
+		C56E55B31CDCAF2B00C608B9 /* CheckFundsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55B21CDCAF2B00C608B9 /* CheckFundsVC.m */; };
+		C56E55B61CDCAF5500C608B9 /* CheckFundsUndealTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55B51CDCAF5500C608B9 /* CheckFundsUndealTVC.m */; };
+		C56E55B91CDCAF6700C608B9 /* CheckFundsDealedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55B81CDCAF6700C608B9 /* CheckFundsDealedTVC.m */; };
+		C56E55BB1CDCB79400C608B9 /* CheckRejectedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56E55BA1CDCB79400C608B9 /* CheckRejectedCell.xib */; };
+		C56E55BE1CDCB8B900C608B9 /* CheckRejectedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55BD1CDCB8B900C608B9 /* CheckRejectedCell.m */; };
+		C56E55C11CDCD74900C608B9 /* CheckMaterialPurchaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55C01CDCD74900C608B9 /* CheckMaterialPurchaseVC.m */; };
+		C56E55C41CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55C31CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m */; };
+		C56E55C71CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55C61CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m */; };
 		C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */; };
 		C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */; };
 		C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA01CD3B61500C6B263 /* ActivityTVC.m */; };
@@ -266,6 +274,21 @@
 		C56E55AB1CDC8D7F00C608B9 /* FundsMovementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FundsMovementTVC.m; path = Controller/Register/FundsMovementTVC.m; sourceTree = "<group>"; };
 		C56E55AD1CDC8DD100C608B9 /* AddFundsMovementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFundsMovementTVC.h; path = Controller/Register/AddFundsMovementTVC.h; sourceTree = "<group>"; };
 		C56E55AE1CDC8DD100C608B9 /* AddFundsMovementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFundsMovementTVC.m; path = Controller/Register/AddFundsMovementTVC.m; sourceTree = "<group>"; };
+		C56E55B11CDCAF2B00C608B9 /* CheckFundsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckFundsVC.h; path = Controller/Check/CheckFundsVC.h; sourceTree = "<group>"; };
+		C56E55B21CDCAF2B00C608B9 /* CheckFundsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckFundsVC.m; path = Controller/Check/CheckFundsVC.m; sourceTree = "<group>"; };
+		C56E55B41CDCAF5500C608B9 /* CheckFundsUndealTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckFundsUndealTVC.h; path = Controller/Check/CheckFundsUndealTVC.h; sourceTree = "<group>"; };
+		C56E55B51CDCAF5500C608B9 /* CheckFundsUndealTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckFundsUndealTVC.m; path = Controller/Check/CheckFundsUndealTVC.m; sourceTree = "<group>"; };
+		C56E55B71CDCAF6700C608B9 /* CheckFundsDealedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckFundsDealedTVC.h; path = Controller/Check/CheckFundsDealedTVC.h; sourceTree = "<group>"; };
+		C56E55B81CDCAF6700C608B9 /* CheckFundsDealedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckFundsDealedTVC.m; path = Controller/Check/CheckFundsDealedTVC.m; sourceTree = "<group>"; };
+		C56E55BA1CDCB79400C608B9 /* CheckRejectedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckRejectedCell.xib; path = View/CheckRejectedCell.xib; sourceTree = "<group>"; };
+		C56E55BC1CDCB8B900C608B9 /* CheckRejectedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckRejectedCell.h; path = View/CheckRejectedCell.h; sourceTree = "<group>"; };
+		C56E55BD1CDCB8B900C608B9 /* CheckRejectedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckRejectedCell.m; path = View/CheckRejectedCell.m; sourceTree = "<group>"; };
+		C56E55BF1CDCD74900C608B9 /* CheckMaterialPurchaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMaterialPurchaseVC.h; path = Controller/Check/CheckMaterialPurchaseVC.h; sourceTree = "<group>"; };
+		C56E55C01CDCD74900C608B9 /* CheckMaterialPurchaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMaterialPurchaseVC.m; path = Controller/Check/CheckMaterialPurchaseVC.m; sourceTree = "<group>"; };
+		C56E55C21CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMaterialPurchaseUndealTVC.h; path = Controller/Check/CheckMaterialPurchaseUndealTVC.h; sourceTree = "<group>"; };
+		C56E55C31CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMaterialPurchaseUndealTVC.m; path = Controller/Check/CheckMaterialPurchaseUndealTVC.m; sourceTree = "<group>"; };
+		C56E55C51CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMaterialPurchaseDealedTVC.h; path = Controller/Check/CheckMaterialPurchaseDealedTVC.h; sourceTree = "<group>"; };
+		C56E55C61CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMaterialPurchaseDealedTVC.m; path = Controller/Check/CheckMaterialPurchaseDealedTVC.m; sourceTree = "<group>"; };
 		C5971B991CD39A7200C6B263 /* MBProgressHUD+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+Extends.h"; path = "Extends/MBProgressHUD+Extends.h"; sourceTree = "<group>"; };
 		C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+Extends.m"; path = "Extends/MBProgressHUD+Extends.m"; sourceTree = "<group>"; };
 		C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifyPasswordVC.h; path = Controller/ModifyPasswordVC.h; sourceTree = "<group>"; };
@@ -379,6 +402,7 @@
 		C500E2341CD0A49200DF960B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C56E55B01CDCAEBF00C608B9 /* Check */,
 				C56E55701CDC6F2A00C608B9 /* Register */,
 				C56E55401CDB449900C608B9 /* Report */,
 				C500E2351CD0A4C400DF960B /* MainViewController.h */,
@@ -573,6 +597,25 @@
 			name = Register;
 			sourceTree = "<group>";
 		};
+		C56E55B01CDCAEBF00C608B9 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				C56E55B11CDCAF2B00C608B9 /* CheckFundsVC.h */,
+				C56E55B21CDCAF2B00C608B9 /* CheckFundsVC.m */,
+				C56E55B41CDCAF5500C608B9 /* CheckFundsUndealTVC.h */,
+				C56E55B51CDCAF5500C608B9 /* CheckFundsUndealTVC.m */,
+				C56E55B71CDCAF6700C608B9 /* CheckFundsDealedTVC.h */,
+				C56E55B81CDCAF6700C608B9 /* CheckFundsDealedTVC.m */,
+				C56E55BF1CDCD74900C608B9 /* CheckMaterialPurchaseVC.h */,
+				C56E55C01CDCD74900C608B9 /* CheckMaterialPurchaseVC.m */,
+				C56E55C21CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.h */,
+				C56E55C31CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m */,
+				C56E55C51CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.h */,
+				C56E55C61CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m */,
+			);
+			name = Check;
+			sourceTree = "<group>";
+		};
 		C5971B981CD399D200C6B263 /* Extends */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +651,9 @@
 				C56E556B1CDC6E6000C608B9 /* RegisterCell.xib */,
 				C56E556D1CDC6EBC00C608B9 /* RegisterCell.h */,
 				C56E556E1CDC6EBC00C608B9 /* RegisterCell.m */,
+				C56E55BA1CDCB79400C608B9 /* CheckRejectedCell.xib */,
+				C56E55BC1CDCB8B900C608B9 /* CheckRejectedCell.h */,
+				C56E55BD1CDCB8B900C608B9 /* CheckRejectedCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -804,6 +850,7 @@
 				C5971BB11CD4F85900C6B263 /* LoadMoreCell.xib in Resources */,
 				D18B470F1CCFAB8300FEA8E8 /* LaunchScreen.storyboard in Resources */,
 				C56E55361CDB3EE200C608B9 /* ReportRejectedCell.xib in Resources */,
+				C56E55BB1CDCB79400C608B9 /* CheckRejectedCell.xib in Resources */,
 				D18B470C1CCFAB8300FEA8E8 /* Assets.xcassets in Resources */,
 				C5971BBC1CD5DA8A00C6B263 /* FileCell.xib in Resources */,
 				C56E552F1CDB3BB800C608B9 /* ReportGoingCell.xib in Resources */,
@@ -896,10 +943,12 @@
 				C5971BBF1CD5DD0B00C6B263 /* FileCell.m in Sources */,
 				C5557F7A1CD0F154006EC41D /* MyGroup.m in Sources */,
 				D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */,
+				C56E55C71CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m in Sources */,
 				C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */,
 				C56E55971CDC858C00C608B9 /* BuildingMaterialSellTVC.m in Sources */,
 				C5971BBA1CD5D46500C6B263 /* AddPlanVC.m in Sources */,
 				C56E55941CDC832D00C608B9 /* BuildingMaterialSellVC.m in Sources */,
+				C56E55C41CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m in Sources */,
 				C5971BE31CD78CAB00C6B263 /* YesterdayPlanTVC.m in Sources */,
 				C56E55791CDC70FB00C608B9 /* RegisterTableViewController.m in Sources */,
 				C56E55521CDB46D700C608B9 /* ReportFundsVC.m in Sources */,
@@ -909,11 +958,14 @@
 				C56E55761CDC700400C608B9 /* RegisterFundsVC.m in Sources */,
 				C5971BD11CD5EA9E00C6B263 /* OutboxTVC.m in Sources */,
 				C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */,
+				C56E55B31CDCAF2B00C608B9 /* CheckFundsVC.m in Sources */,
 				C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */,
 				C56E55551CDB621300C608B9 /* ReportMaterialGoingTVC.m in Sources */,
+				C56E55BE1CDCB8B900C608B9 /* CheckRejectedCell.m in Sources */,
 				C5971BE01CD7561D00C6B263 /* TabItem.m in Sources */,
 				C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */,
 				C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */,
+				C56E55B91CDCAF6700C608B9 /* CheckFundsDealedTVC.m in Sources */,
 				C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */,
 				C5557FA81CD0F15E006EC41D /* BillMaterialsVO.m in Sources */,
 				C56E553C1CDB426A00C608B9 /* CHTableViewController.m in Sources */,
@@ -928,6 +980,7 @@
 				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
 				C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */,
 				C56E557C1CDC721600C608B9 /* RegisterFundsGoingTVC.m in Sources */,
+				C56E55C11CDCD74900C608B9 /* CheckMaterialPurchaseVC.m in Sources */,
 				C56E556F1CDC6EBC00C608B9 /* RegisterCell.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
 				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
@@ -949,6 +1002,7 @@
 				C56E55A01CDC896500C608B9 /* SellBuildingTVC.m in Sources */,
 				D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */,
 				C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */,
+				C56E55B61CDCAF5500C608B9 /* CheckFundsUndealTVC.m in Sources */,
 				C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */,
 				C5557FAC1CD0F15E006EC41D /* MessageVO.m in Sources */,
 				C5971BC51CD5DD5F00C6B263 /* FileTVC.m in Sources */,

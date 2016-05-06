@@ -16,22 +16,37 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *attachImageView;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UIButton *uploadButton;
 
 @end
 
 @implementation RegisterPurchaseDetailTVC
 
+- (void)setUploadable:(BOOL)uploadable
+{
+    _uploadable = uploadable;
+    [self checkUploadState];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self checkUploadState];
 }
+
+- (void)checkUploadState
+{
+    if (!self.uploadable) {
+        self.addButton.hidden = YES;
+        self.uploadButton.hidden = YES;
+    }
+}
+
 - (IBAction)addButtonPressed:(id)sender {
 }
 
+- (IBAction)uploadButtonPressed:(id)sender {
+}
 
 @end
