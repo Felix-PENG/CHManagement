@@ -1606,7 +1606,7 @@
         <!--经费详情-->
         <scene sceneID="1bk-sJ-7W1">
             <objects>
-                <tableViewController id="WC4-bA-0xV" customClass="ReportDetailTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ReportDetailTVC" id="WC4-bA-0xV" customClass="ReportDetailTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J7D-Iy-g4p">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
