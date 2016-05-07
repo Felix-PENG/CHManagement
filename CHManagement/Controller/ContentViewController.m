@@ -18,6 +18,8 @@
 #import "BuildingMaterialSellVC.h"
 #import "SellBuildingVC.h"
 #import "FundsMovementVC.h"
+#import "CheckFundsVC.h"
+#import "CheckMaterialPurchaseVC.h"
 
 #define SECTION_HEADER_HEIGHT 28.0
 #define TOP_MENU_CELL_HEIGHT 84.0
@@ -128,6 +130,12 @@
             break;
         case FundsMovementRegister:
             [self.navigationController pushViewController:[[FundsMovementVC alloc] init] animated: YES];
+            break;
+        case FundsCheck:
+            [self.navigationController pushViewController:[[CheckFundsVC alloc] init] animated: YES];
+            break;
+        case BuildingMaterialPurchaseCheck:
+            [self.navigationController pushViewController:[[CheckMaterialPurchaseVC alloc] init] animated: YES];
             break;
         default:
             break;
