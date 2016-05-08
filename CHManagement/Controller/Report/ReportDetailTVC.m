@@ -30,6 +30,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if([self.auditOthersVO isKindOfClass:[AuditOthersVO class]]){
+        self.entryLabel.text = self.auditOthersVO.name;
+        self.singlePriceLabel.text = [NSString stringWithFormat:@"¥%.2f",self.auditOthersVO.unit_price];
+        self.amountLabel.text = [NSString stringWithFormat:@"%@",[NSNumber numberWithInteger:self.auditOthersVO.num]];
+        self.remarkLabel.text = self.auditOthersVO.detail;
+        self.totalPriceLabel.text = [NSString stringWithFormat:@"¥%.2f",self.auditOthersVO.money];
+        
+        NSInteger status = self.auditOthersVO.audit_status;
+        
+        if(status == 0){
+            self.statusLabel.text = @"未处理";
+        }else if(status == 1){
+            self.statusLabel.text = @"已审核";
+        }else if(status == 2){
+            self.statusLabel.text = @"被驳回";
+        }else{
+            self.statusLabel.text = @"审核通过";
+        }
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

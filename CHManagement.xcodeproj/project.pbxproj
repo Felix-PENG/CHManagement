@@ -118,6 +118,7 @@
 		D18B471A1CCFAB8300FEA8E8 /* CHManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47191CCFAB8300FEA8E8 /* CHManagementTests.m */; };
 		D18B47251CCFAB8400FEA8E8 /* CHManagementUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */; };
 		D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF82E1CD647B90044BA84 /* IDEntity.m */; };
+		D19EF8331CDD97250044BA84 /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8321CDD97250044BA84 /* ErrorHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,8 +304,8 @@
 		C5971BB01CD4F85900C6B263 /* LoadMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadMoreCell.xib; path = View/LoadMoreCell.xib; sourceTree = "<group>"; };
 		C5971BB21CD4F88500C6B263 /* LoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadMoreCell.h; path = View/LoadMoreCell.h; sourceTree = "<group>"; };
 		C5971BB31CD4F88500C6B263 /* LoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadMoreCell.m; path = View/LoadMoreCell.m; sourceTree = "<group>"; };
-		C5971BB51CD5D38900C6B263 /* PlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanTVC.h; path = Controller/PlanTVC.h; sourceTree = "<group>"; };
-		C5971BB61CD5D38900C6B263 /* PlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanTVC.m; path = Controller/PlanTVC.m; sourceTree = "<group>"; };
+		C5971BB51CD5D38900C6B263 /* PlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanTVC.h; path = CHManagement/Controller/PlanTVC.h; sourceTree = SOURCE_ROOT; };
+		C5971BB61CD5D38900C6B263 /* PlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanTVC.m; path = CHManagement/Controller/PlanTVC.m; sourceTree = SOURCE_ROOT; };
 		C5971BB81CD5D46500C6B263 /* AddPlanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddPlanVC.h; path = Controller/AddPlanVC.h; sourceTree = "<group>"; };
 		C5971BB91CD5D46500C6B263 /* AddPlanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddPlanVC.m; path = Controller/AddPlanVC.m; sourceTree = "<group>"; };
 		C5971BBB1CD5DA8A00C6B263 /* FileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileCell.xib; path = View/FileCell.xib; sourceTree = "<group>"; };
@@ -354,6 +355,8 @@
 		D19EF82D1CD647B90044BA84 /* IDEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEntity.h; sourceTree = "<group>"; };
 		D19EF82E1CD647B90044BA84 /* IDEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDEntity.m; sourceTree = "<group>"; };
 		D19EF8301CD9CCDE0044BA84 /* NetworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkConstants.h; sourceTree = "<group>"; };
+		D19EF8311CDD97250044BA84 /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorHandler.h; path = Controller/ErrorHandler.h; sourceTree = "<group>"; };
+		D19EF8321CDD97250044BA84 /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorHandler.m; path = Controller/ErrorHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +405,8 @@
 		C500E2341CD0A49200DF960B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D19EF83C1CDF03180044BA84 /* Plan */,
+				D19EF83B1CDF03010044BA84 /* Activity */,
 				C56E55B01CDCAEBF00C608B9 /* Check */,
 				C56E55701CDC6F2A00C608B9 /* Register */,
 				C56E55401CDB449900C608B9 /* Report */,
@@ -415,20 +420,6 @@
 				C500E23F1CD0D9EF00DF960B /* SignInViewController.m */,
 				C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */,
 				C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */,
-				C5971B9F1CD3B61500C6B263 /* ActivityTVC.h */,
-				C5971BA01CD3B61500C6B263 /* ActivityTVC.m */,
-				C5971BAB1CD3C18400C6B263 /* AddActivityTVC.h */,
-				C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */,
-				C5971BB51CD5D38900C6B263 /* PlanTVC.h */,
-				C5971BB61CD5D38900C6B263 /* PlanTVC.m */,
-				C5971BB81CD5D46500C6B263 /* AddPlanVC.h */,
-				C5971BB91CD5D46500C6B263 /* AddPlanVC.m */,
-				C5971BE11CD78CAB00C6B263 /* YesterdayPlanTVC.h */,
-				C5971BE21CD78CAB00C6B263 /* YesterdayPlanTVC.m */,
-				C5971BE41CD78CBF00C6B263 /* TodayPlanTVC.h */,
-				C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */,
-				C5971BE71CD78CD200C6B263 /* TomorrowPlanTVC.h */,
-				C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */,
 				C5971BC31CD5DD5F00C6B263 /* FileTVC.h */,
 				C5971BC41CD5DD5F00C6B263 /* FileTVC.m */,
 				C5971BC61CD5DFCE00C6B263 /* UploadFileVC.h */,
@@ -447,6 +438,8 @@
 				C56E553B1CDB426A00C608B9 /* CHTableViewController.m */,
 				C56E55681CDB899100C608B9 /* ModalTableViewController.h */,
 				C56E55691CDB899100C608B9 /* ModalTableViewController.m */,
+				D19EF8311CDD97250044BA84 /* ErrorHandler.h */,
+				D19EF8321CDD97250044BA84 /* ErrorHandler.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -740,6 +733,34 @@
 			path = CHManagementUITests;
 			sourceTree = "<group>";
 		};
+		D19EF83B1CDF03010044BA84 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				C5971B9F1CD3B61500C6B263 /* ActivityTVC.h */,
+				C5971BA01CD3B61500C6B263 /* ActivityTVC.m */,
+				C5971BAB1CD3C18400C6B263 /* AddActivityTVC.h */,
+				C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */,
+			);
+			name = Activity;
+			sourceTree = "<group>";
+		};
+		D19EF83C1CDF03180044BA84 /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				C5971BB51CD5D38900C6B263 /* PlanTVC.h */,
+				C5971BB61CD5D38900C6B263 /* PlanTVC.m */,
+				C5971BB81CD5D46500C6B263 /* AddPlanVC.h */,
+				C5971BB91CD5D46500C6B263 /* AddPlanVC.m */,
+				C5971BE11CD78CAB00C6B263 /* YesterdayPlanTVC.h */,
+				C5971BE21CD78CAB00C6B263 /* YesterdayPlanTVC.m */,
+				C5971BE41CD78CBF00C6B263 /* TodayPlanTVC.h */,
+				C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */,
+				C5971BE71CD78CD200C6B263 /* TomorrowPlanTVC.h */,
+				C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */,
+			);
+			name = Plan;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1020,6 +1041,7 @@
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
 				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,
 				C56E556A1CDB899100C608B9 /* ModalTableViewController.m in Sources */,
+				D19EF8331CDD97250044BA84 /* ErrorHandler.m in Sources */,
 				C5971BD91CD5F3E700C6B263 /* SendMailTVC.m in Sources */,
 				C56E55A61CDC8C2F00C608B9 /* AddSellBuildingTVC.m in Sources */,
 				C56E552B1CDB305E00C608B9 /* Constants.m in Sources */,

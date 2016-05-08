@@ -10,4 +10,8 @@
 
 @interface ReportFundsRejectedTVC : ReportRejectedTVC
 
+@property (nonatomic, assign) NSNumber* choosedGroupId;
+
+- (void)refresh;
+
 @end

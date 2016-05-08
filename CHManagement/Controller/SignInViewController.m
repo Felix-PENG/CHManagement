@@ -76,10 +76,12 @@
                 NSInteger token_user_id = user_id;
                 NSString* token = [signResultVO token];
                 NSInteger group_id = [[[signResultVO user]group]id];
+                NSInteger role_id = [[[signResultVO user]role]id];
                 [userData setObject:[NSNumber numberWithInteger:user_id] forKey:@"user_id"];
                 [userData setObject:[NSNumber numberWithInteger:token_user_id] forKey:@"token_user_id"];
                 [userData setObject:token forKey:@"token"];
                 [userData setObject:[NSNumber numberWithInteger:group_id] forKey:@"group_id"];
+                [userData setObject:[NSNumber numberWithInteger:role_id] forKey:@"role_id"];
             } else {
                 self.hintLabel.text = [resultVO message];
                 self.hintLabel.hidden = NO;

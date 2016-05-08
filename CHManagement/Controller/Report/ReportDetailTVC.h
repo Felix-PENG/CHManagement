@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuditOthersVO.h"
 
 @interface ReportDetailTVC : UITableViewController
 
 @property (nonatomic, assign) BOOL checkable;
+
+@property (nonatomic, strong) AuditOthersVO* auditOthersVO;
 
 @end

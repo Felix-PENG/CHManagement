@@ -10,4 +10,8 @@
 
 @interface ReportFundsGoingTVC : ReportGoingTVC
 
+@property (nonatomic, assign) NSNumber* choosedGroupId;
+
+- (void)refresh;
+
 @end
