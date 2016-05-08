@@ -21,7 +21,7 @@
 @property (nonatomic,assign) NSInteger audit_status;
 // 总价
 @property (nonatomic,assign) double money;
-@property (nonatomic,copy) NSString* reason;
+@property (nonatomic,copy) NSString<Optional>* reason;
 @property (nonatomic,copy) NSString* name;
 @property (nonatomic,assign) double unit_price;
 @property (nonatomic,assign) NSInteger num;

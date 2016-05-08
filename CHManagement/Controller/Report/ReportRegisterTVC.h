@@ -7,7 +7,10 @@
 //
 
 #import "ModalTableViewController.h"
+#import "AuditOthersVO.h"
 
 @interface ReportRegisterTVC : ModalTableViewController
+
+@property (nonatomic, strong) AuditOthersVO* auditOthersVO;
 
 @end

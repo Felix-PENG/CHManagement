@@ -12,12 +12,17 @@
 #import "ReportFundsRejectedTVC.h"
 #import "TabItem.h"
 #import "ReportRegisterTVC.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "MyGroup.h"
 
 @interface ReportFundsVC ()
 
 @end
 
-@implementation ReportFundsVC
+@implementation ReportFundsVC{
+    UIAlertController* _sheetAlert;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,7 +46,41 @@
     // bar button items
     UIBarButtonItem *roleItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_assignment_ind_white_24dp"] style:UIBarButtonItemStylePlain target:self action:@selector(roleButtonPressed)];
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
-    self.navigationItem.rightBarButtonItems = @[addItem, roleItem];
+    
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+    
+    if(group_id == 0){
+        self.navigationItem.rightBarButtonItems = @[addItem, roleItem];
+        
+        _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择部门" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        [[NetworkManager sharedInstance]getAllGroupsWithCompletionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];;
+            
+            if([resultVO success] == 0){
+                NSArray* groupList = [response objectForKey:@"groupList"];
+                for(NSDictionary* groupDict in groupList){
+                    MyGroup* group = [[MyGroup alloc]initWithDictionary:groupDict error:nil];
+                    UIAlertAction *action = [UIAlertAction actionWithTitle:group.name style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [rfgtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
+                        [rfgtvc refresh];
+                        [rfrtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
+                        [rfrtvc refresh];
+                    }];
+                    [_sheetAlert addAction:action];
+                }
+            }
+        }];
+
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+
+        [_sheetAlert addAction:cancelAction];
+    }else{
+        self.navigationItem.rightBarButtonItem = addItem;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +100,7 @@
 
 - (void)roleButtonPressed
 {
-    
+    [self presentViewController:_sheetAlert animated:YES completion:nil];
 }
 
 - (void)addButtonPressed

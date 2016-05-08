@@ -19,11 +19,19 @@
     return @"ReportRejectedCell";
 }
 
+- (NSString *)loadMoreCellIdentifier
+{
+    return @"LoadMoreCell";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UINib *nib = [UINib nibWithNibName:self.cellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:self.cellIdentifier];
+    
+    nib = [UINib nibWithNibName:self.loadMoreCellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:self.loadMoreCellIdentifier];
 }
 
 - (void)refresh

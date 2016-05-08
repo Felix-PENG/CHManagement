@@ -21,7 +21,7 @@
 @property (nonatomic,assign) NSInteger finish_status;
 // 总价
 @property (nonatomic,assign) double money;
-@property (nonatomic,copy) NSString* url;
+@property (nonatomic,copy) NSString<Optional>* url;
 @property (nonatomic,copy) NSString* name;
 // 单价
 @property (nonatomic,assign) double unit_price;

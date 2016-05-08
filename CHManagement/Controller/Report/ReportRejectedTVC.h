@@ -11,5 +11,6 @@
 @interface ReportRejectedTVC : CHTableViewController
 
 @property (nonatomic, readonly) NSString *cellIdentifier;
+@property (nonatomic, readonly) NSString *loadMoreCellIdentifier;
 
 @end

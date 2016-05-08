@@ -14,6 +14,7 @@
 #import "ActivityVO.h"
 #import "AddActivityTVC.h"
 #import "LoadMoreCell.h"
+#import "MyGroup.h"
 
 static NSString * const CellIdentifier = @"ActivityCell";
 static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
@@ -29,6 +30,7 @@ static NSString * const AddActivitySegue = @"AddActivity";
     NSUInteger _page;
     NSMutableArray *_activityList;
     BOOL _noMoreData;
+    NSNumber* _choosedGroupId;
 }
 
 - (void)viewDidLoad {
@@ -40,24 +42,33 @@ static NSString * const AddActivitySegue = @"AddActivity";
     cellNib = [UINib nibWithNibName:LoadMoreCellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:LoadMoreCellIdentifier];
     
-    _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择角色" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *adminAction = [UIAlertAction actionWithTitle:@"管理员" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    UIAlertAction *managerAction = [UIAlertAction actionWithTitle:@"项目经理" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    UIAlertAction *headAction = [UIAlertAction actionWithTitle:@"主任" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
     
-    [_sheetAlert addAction:adminAction];
-    [_sheetAlert addAction:managerAction];
-    [_sheetAlert addAction:headAction];
-    [_sheetAlert addAction:cancelAction];
+    if(group_id == 0){
+        _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择部门" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        [[NetworkManager sharedInstance]getAllGroupsWithCompletionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];;
+            
+            if([resultVO success] == 0){
+                NSArray* groupList = [response objectForKey:@"groupList"];
+                for(NSDictionary* groupDict in groupList){
+                    MyGroup* group = [[MyGroup alloc]initWithDictionary:groupDict error:nil];
+                    UIAlertAction *action = [UIAlertAction actionWithTitle:group.name style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        _choosedGroupId = [NSNumber numberWithInteger:group.id];
+                        [self refresh];
+                    }];
+                    [_sheetAlert addAction:action];
+                }
+            }
+        }];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        [_sheetAlert addAction:cancelAction];
+    }
     
     _activityList = [NSMutableArray array];
     _page = 1;
@@ -75,6 +86,11 @@ static NSString * const AddActivitySegue = @"AddActivity";
 {
     NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
     NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+    
+    if(_choosedGroupId){
+        group_id = _choosedGroupId.integerValue;
+    }
+    
     [[NetworkManager sharedInstance] getActivitiesByGroupId:group_id withPage:page completionHandler:^(NSDictionary *response) {
         
         if (page <= 1) {

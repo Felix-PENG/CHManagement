@@ -37,6 +37,10 @@
     }
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    self.repeatLoad = NO;
+}
+
 #pragma mark - To be implemented
 
 - (void)refresh

@@ -10,4 +10,6 @@
 
 @interface ReportGoingCell : UITableViewCell
 
+- (void)configureCellWithTitle:(NSString*)title withTime:(NSInteger)time withUsername:(NSString*)userName withRole:(NSString*)role withDetail:(NSString*)detail withPrice:(double)price;
+
 @end
