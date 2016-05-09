@@ -119,6 +119,7 @@
 		D18B47251CCFAB8400FEA8E8 /* CHManagementUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */; };
 		D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF82E1CD647B90044BA84 /* IDEntity.m */; };
 		D19EF8331CDD97250044BA84 /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8321CDD97250044BA84 /* ErrorHandler.m */; };
+		D19EF8421CE087520044BA84 /* ReportMaterialDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -357,6 +358,8 @@
 		D19EF8301CD9CCDE0044BA84 /* NetworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkConstants.h; sourceTree = "<group>"; };
 		D19EF8311CDD97250044BA84 /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorHandler.h; path = Controller/ErrorHandler.h; sourceTree = "<group>"; };
 		D19EF8321CDD97250044BA84 /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorHandler.m; path = Controller/ErrorHandler.m; sourceTree = "<group>"; };
+		D19EF8401CE087520044BA84 /* ReportMaterialDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialDetailTVC.h; path = Controller/Report/ReportMaterialDetailTVC.h; sourceTree = "<group>"; };
+		D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialDetailTVC.m; path = Controller/Report/ReportMaterialDetailTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +544,8 @@
 				C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */,
 				C56E55651CDB83D200C608B9 /* ReportRegisterTVC.h */,
 				C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */,
+				D19EF8401CE087520044BA84 /* ReportMaterialDetailTVC.h */,
+				D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */,
 			);
 			name = Report;
 			sourceTree = "<group>";
@@ -1028,6 +1033,7 @@
 				C5557FAC1CD0F15E006EC41D /* MessageVO.m in Sources */,
 				C5971BC51CD5DD5F00C6B263 /* FileTVC.m in Sources */,
 				C5971BD61CD5EE4100C6B263 /* MailCell.m in Sources */,
+				D19EF8421CE087520044BA84 /* ReportMaterialDetailTVC.m in Sources */,
 				C5557FA61CD0F15E006EC41D /* AuditOthersVO.m in Sources */,
 				C56E55851CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.m in Sources */,
 				C5557FB21CD0F15E006EC41D /* SignStatusVO.m in Sources */,

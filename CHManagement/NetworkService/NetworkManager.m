@@ -482,14 +482,14 @@
 
 - (void)getAuditMaterialsListWithStatus:(NSInteger)audit_status withIn_off:(NSInteger)in_off withPage:(NSInteger)page withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter getRequest];
-    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, getAuditMeterialsListByStatusAndIn_offUrl];
+    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, getAuditMaterialsListByStatusAndIn_offUrl];
     parameter.json = @{@"audit_status":[NSNumber numberWithInteger:audit_status],@"in_off":[NSNumber numberWithInteger:in_off],@"page":[NSNumber numberWithInteger:page],@"user_id":[NSNumber numberWithInteger:user_id]};
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 
 - (void)getAuditMaterialsListWithGroupId:(NSInteger)group_id withStatus:(NSInteger)audit_status withIn_off:(NSInteger)in_off withPage:(NSInteger)page withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter getRequest];
-    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, getAuditMeterialsListByGroupIdAndStatusAndIn_offUrl];
+    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, getAuditMaterialsListByGroupIdAndStatusAndIn_offUrl];
     parameter.json = @{@"group_id":[NSNumber numberWithInteger:group_id],@"audit_status":[NSNumber numberWithInteger:audit_status],@"in_off":[NSNumber numberWithInteger:in_off],@"page":[NSNumber numberWithInteger:page],@"user_id":[NSNumber numberWithInteger:user_id]};
     [self httpActionWithParameter:parameter completionHandler:handler];
 }

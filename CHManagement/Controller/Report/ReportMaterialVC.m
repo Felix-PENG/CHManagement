@@ -12,12 +12,17 @@
 #import "ReportMaterialRejectedTVC.h"
 #import "TabItem.h"
 #import "ReportRegisterTVC.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "MyGroup.h"
 
 @interface ReportMaterialVC ()
 
 @end
 
-@implementation ReportMaterialVC
+@implementation ReportMaterialVC{
+    UIAlertController* _sheetAlert;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,11 +31,11 @@
     self.navigationItem.title = @"建材买入审核情况";
     
     // contents
-    ReportMaterialGoingTVC *rfgtvc = [[ReportMaterialGoingTVC alloc] init];
-    ReportMaterialRejectedTVC *rfrtvc = [[ReportMaterialRejectedTVC alloc] init];
+    ReportMaterialGoingTVC *rmgtvc = [[ReportMaterialGoingTVC alloc] init];
+    ReportMaterialRejectedTVC *rmrtvc = [[ReportMaterialRejectedTVC alloc] init];
     
-    TabItem *item1 = [[TabItem alloc] initWithTab:@"进行中" controller:rfgtvc];
-    TabItem *item2 = [[TabItem alloc] initWithTab:@"被驳回" controller:rfrtvc];
+    TabItem *item1 = [[TabItem alloc] initWithTab:@"进行中" controller:rmgtvc];
+    TabItem *item2 = [[TabItem alloc] initWithTab:@"被驳回" controller:rmrtvc];
     
     TabbedScrollViewController *tsvc = [[TabbedScrollViewController alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64) items:@[item1, item2]];
     
@@ -41,7 +46,41 @@
     // bar button items
     UIBarButtonItem *roleItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_assignment_ind_white_24dp"] style:UIBarButtonItemStylePlain target:self action:@selector(roleButtonPressed)];
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
-    self.navigationItem.rightBarButtonItems = @[addItem, roleItem];
+    
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+    
+    if(group_id == 0){
+        self.navigationItem.rightBarButtonItems = @[addItem, roleItem];
+        
+        _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择部门" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        [[NetworkManager sharedInstance]getAllGroupsWithCompletionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];;
+            
+            if([resultVO success] == 0){
+                NSArray* groupList = [response objectForKey:@"groupList"];
+                for(NSDictionary* groupDict in groupList){
+                    MyGroup* group = [[MyGroup alloc]initWithDictionary:groupDict error:nil];
+                    UIAlertAction *action = [UIAlertAction actionWithTitle:group.name style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [rmgtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
+                        [rmgtvc refresh];
+                        [rmrtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
+                        [rmrtvc refresh];
+                    }];
+                    [_sheetAlert addAction:action];
+                }
+            }
+        }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        [_sheetAlert addAction:cancelAction];
+    }else{
+        self.navigationItem.rightBarButtonItem = addItem;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +100,7 @@
 
 - (void)roleButtonPressed
 {
-    
+    [self presentViewController:_sheetAlert animated:YES completion:nil];
 }
 
 - (void)addButtonPressed
