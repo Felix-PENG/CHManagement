@@ -8,6 +8,10 @@
 
 #import "LeftMenuViewController.h"
 #import "MainViewController.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "SignStatusVO.h"
+#import "ErrorHandler.h"
 
 @interface LeftMenuViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -16,11 +20,38 @@
 
 @end
 
-@implementation LeftMenuViewController
+@implementation LeftMenuViewController{
+    NSInteger _user_id;
+}
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    NSString* user_name = [userData objectForKey:@"user_name"];
+    NSNumber* credit = [userData objectForKey:@"credit"];
+    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    _user_id = user_id;
+    
+    self.userNameLabel.text = user_name;
+    self.creditLabel.text = [NSString stringWithFormat:@"%@",credit];
+    
+    [[NetworkManager sharedInstance]getSignStatusByUserId:_user_id completionHandler:^(NSDictionary *response) {
+        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        
+        if(resultVO.success == 0){
+            SignStatusVO* signStatusVO = [[SignStatusVO alloc]initWithDictionary:[response objectForKey:@"signStatusVO"] error:nil];
+            
+            if(signStatusVO.status == 0){
+                [self.signInButton setTitle:@"未签到" forState:UIControlStateNormal];
+            }else{
+                [self.signInButton setTitle:@"已签到" forState:UIControlStateNormal];
+                [self.signInButton setEnabled:NO];
+            }
+
+        }else{
+            UIAlertController* alert = [ErrorHandler showErrorAlert:[resultVO message]];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,7 +70,17 @@
 */
 - (IBAction)signInButtonPressed:(id)sender
 {
-    
+    [[NetworkManager sharedInstance]signByUserId:_user_id completionHandler:^(NSDictionary *response) {
+        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        
+        if(resultVO.success == 0){
+            [self.signInButton setTitle:@"已签到" forState:UIControlStateNormal];
+            [self.signInButton setEnabled:NO];
+        }else{
+            UIAlertController* alert = [ErrorHandler showErrorAlert:[resultVO message]];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
 }
 
 - (IBAction)HomeButtonPressed:(id)sender

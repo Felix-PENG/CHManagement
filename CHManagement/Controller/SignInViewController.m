@@ -70,18 +70,25 @@
             NSLog(@"%@___%@",[resultVO message],[signResultVO token]);
             
             if (resultVO.success == 0) {
-                [self performSegueWithIdentifier:@"SignIn" sender:nil];
+                NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
                 NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+                [userData removePersistentDomainForName:appDomain];
+
                 NSInteger user_id = [[signResultVO user]id];
                 NSInteger token_user_id = user_id;
                 NSString* token = [signResultVO token];
                 NSInteger group_id = [[[signResultVO user]group]id];
-                NSInteger role_id = [[[signResultVO user]role]id];
+                NSString* user_name = [[signResultVO user]name];
+                NSInteger credit = [[signResultVO user]point];
+                
                 [userData setObject:[NSNumber numberWithInteger:user_id] forKey:@"user_id"];
                 [userData setObject:[NSNumber numberWithInteger:token_user_id] forKey:@"token_user_id"];
                 [userData setObject:token forKey:@"token"];
                 [userData setObject:[NSNumber numberWithInteger:group_id] forKey:@"group_id"];
-                [userData setObject:[NSNumber numberWithInteger:role_id] forKey:@"role_id"];
+                [userData setObject:user_name forKey:@"user_name"];
+                [userData setObject:[NSNumber numberWithInteger:credit] forKey:@"credit"];
+                
+                [self performSegueWithIdentifier:@"SignIn" sender:nil];
             } else {
                 self.hintLabel.text = [resultVO message];
                 self.hintLabel.hidden = NO;
