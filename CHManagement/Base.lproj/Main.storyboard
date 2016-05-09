@@ -1021,7 +1021,11 @@
                                     <segue destination="9PJ-bB-uvu" kind="presentation" identifier="AddActivity" id="9BJ-wS-CSn"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="ic_assignment_ind_white_24dp" id="rJm-fH-sJ4"/>
+                            <barButtonItem image="ic_assignment_ind_white_24dp" id="rJm-fH-sJ4">
+                                <connections>
+                                    <action selector="roolButtonPressed:" destination="4AP-1w-mFU" id="pLG-Fa-kOA"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="FPZ-Zg-JeM">
@@ -1030,6 +1034,9 @@
                             <action selector="refresh" destination="4AP-1w-mFU" eventType="valueChanged" id="Xwk-3y-oLe"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="roleButtonItem" destination="rJm-fH-sJ4" id="Ucy-fu-pdI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bU3-re-0n1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
