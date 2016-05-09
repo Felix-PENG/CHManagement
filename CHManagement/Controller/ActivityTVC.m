@@ -22,6 +22,7 @@ static NSString * const AddActivitySegue = @"AddActivity";
 
 @interface ActivityTVC()
 
+@property (nonatomic, weak) IBOutlet UIBarButtonItem* roleButtonItem;
 @end
 
 @implementation ActivityTVC
@@ -68,6 +69,12 @@ static NSString * const AddActivitySegue = @"AddActivity";
         }];
         
         [_sheetAlert addAction:cancelAction];
+    }else{
+        NSMutableArray<UIBarButtonItem*>* buttonItems = [NSMutableArray arrayWithArray:self.navigationItem.rightBarButtonItems];
+        
+        [buttonItems removeObject:self.roleButtonItem];
+        
+        [self.navigationItem setRightBarButtonItems:buttonItems];
     }
     
     _activityList = [NSMutableArray array];
