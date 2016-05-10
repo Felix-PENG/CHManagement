@@ -10,6 +10,10 @@
 
 @interface MBProgressHUD (Extends)
 
++ (MBProgressHUD *)progressHudWithMessage:(NSString *)msg;
+
++ (MBProgressHUD *)progressHudWithMessage:(NSString *)msg toView:(UIView *)view;
+
 + (MBProgressHUD *)hudWithMessage:(NSString *)msg;
 
 + (MBProgressHUD *)hudWithMessage:(NSString *)msg toView:(UIView *)view;

@@ -20,9 +20,13 @@ PODS:
   - AFNetworking/UIKit (2.6.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - HappyDNS (0.2.3)
   - IQKeyboardManager (3.3.4)
   - JSONModel (1.1.2)
   - MBProgressHUD (0.9.1)
+  - Qiniu (7.0.17):
+    - AFNetworking (~> 2.0)
+    - HappyDNS (~> 0.2)
   - RESideMenu (4.0.7)
 
 DEPENDENCIES:
@@ -30,13 +34,16 @@ DEPENDENCIES:
   - IQKeyboardManager (~> 3.3.2)
   - JSONModel (~> 1.1.2)
   - MBProgressHUD (~> 0.9.1)
+  - Qiniu (~> 7.0)
   - RESideMenu (~> 4.0.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  HappyDNS: 6d85942e64c28b4fa61f8c76580398f52d6d1d11
   IQKeyboardManager: ac803e61e5b50efae6b3aeedd95a02c7c7d3b2b3
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Qiniu: 2c05af1f9d580c036b18faf832cc98e98bfb21bc
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
 
 COCOAPODS: 0.39.0
