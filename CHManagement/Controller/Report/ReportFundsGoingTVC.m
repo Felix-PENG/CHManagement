@@ -83,6 +83,7 @@
     if(indexPath.row < _goingAuditOthersList.count){
         ReportDetailTVC *detail = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportDetailTVC"];
         [detail setAuditOthersVO:[_goingAuditOthersList objectAtIndex:indexPath.row]];
+        [detail setCheckable:NO];
         [self.navigationController pushViewController:detail animated:YES];
     }else{
         LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

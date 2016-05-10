@@ -11,6 +11,7 @@
 #import "ResultVO.h"
 #import "ErrorHandler.h"
 #import "MBProgressHUD+Extends.h"
+#import "Utils.h"
 
 @interface ReportRegisterTVC ()
 
@@ -86,10 +87,10 @@
     if([entry isEqualToString:@""]||[unit_price isEqualToString:@""]||[num isEqualToString:@""]||[remark isEqualToString:@""]||[totalPrice isEqualToString:@""]){
         UIAlertController* alertView = [ErrorHandler showErrorAlert:@"选项不得为空"];
         [self presentViewController:alertView animated:YES completion:nil];
-    }else if(![self isInputPositiveInteger:num]){
+    }else if(![Utils isInputPositiveInteger:num]){
         UIAlertController* alertView = [ErrorHandler showErrorAlert:@"数量必须为正整数"];
         [self presentViewController:alertView animated:YES completion:nil];
-    }else if(![self isInputPositiveDouble:unit_price] || ![self isInputPositiveDouble:totalPrice]){
+    }else if(![Utils isInputPositiveDouble:unit_price] || ![Utils isInputPositiveDouble:totalPrice]){
         UIAlertController* alertView = [ErrorHandler showErrorAlert:@"单价和总价必须为正整数或正小数"];
         [self presentViewController:alertView animated:YES completion:nil];
     }else{
@@ -122,25 +123,6 @@
             }];
         }
     }
-}
-
-#pragma mark validate form
-- (BOOL)isInputPositiveInteger:(NSString*)input{
-    NSScanner* scan = [NSScanner scannerWithString:input];
-    NSInteger input_integer;
-    BOOL success = [scan scanInteger:&input_integer];
-    BOOL isAtEnd = [scan isAtEnd];
-    BOOL isPositive = input_integer >= 0 ? 1 : 0;
-    return success && isAtEnd && isPositive;
-}
-
--(BOOL)isInputPositiveDouble:(NSString*)input{
-    NSScanner* scan = [NSScanner scannerWithString:input];
-    double input_double;
-    BOOL success = [scan scanDouble:&input_double];
-    BOOL isAtEnd = [scan isAtEnd];
-    BOOL isPositive = input_double >=0 ? 1 : 0;
-    return success && isAtEnd && isPositive;
 }
 
 @end
