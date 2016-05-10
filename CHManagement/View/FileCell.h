@@ -10,4 +10,8 @@
 
 @interface FileCell : UITableViewCell
 
+- (void)setSize:(NSString *)size dateTime:(NSUInteger)dateTime uploader:(NSString *)uploaderName file:(NSString *)fileName;
+
+- (void)setDownloaded:(BOOL)downloaded;
+
 @end

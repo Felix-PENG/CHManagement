@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define KEY_PRE_PICTURE @"picture"
+#define KEY_PRE_FILE @"file"
+
 enum PermissionID{
     Unknown,
     FundsReport,

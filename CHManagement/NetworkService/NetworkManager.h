@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "RequestParameter.h"
 
+@class File;
+
 @interface NetworkManager : NSObject
 
 + (instancetype)sharedInstance;
@@ -75,6 +77,8 @@
 - (void)deleteFileWithFileId:(NSInteger)file_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)getFilesWithPage:(NSInteger)page completionHandler:(void (^)(NSDictionary *))handler;
+
+- (void)downloadFile:(File *)file success:(void (^)(id))success failure:(void (^)(NSError *))failure progress:(void (^)(float))progress;
 
 #pragma mark Message api
 - (void)createMessageWithIdList:(NSString*)id_list withContent:(NSString*)content withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
