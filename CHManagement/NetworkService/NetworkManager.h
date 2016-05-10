@@ -110,9 +110,9 @@
 - (void)getYesterdayScheduleById:(NSInteger)schedule_id completionHandler:(void (^)(NSDictionary *))handler;
 
 #pragma mark AuditMaterials api
-- (void)createAuditMaterialsWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+- (void)createAuditMaterialsWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withType:(NSString*)type withUnitPrice:(double)unit_price withNum:(NSInteger)num withIn_off:(NSInteger)in_off withDealerName:(NSString*)dealer_name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)changeAuditMaterialsWithId:(NSInteger)auditMaterials_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+- (void)changeAuditMaterialsWithId:(NSInteger)auditMaterials_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name  withType:(NSString*)type withUnitPrice:(double)unit_price withNum:(NSInteger)num withIn_off:(NSInteger)in_off withDealerName:(NSString*)dealer_name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)deleteAuditMaterialsWithId:(NSInteger)auditMaterials_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 

@@ -120,6 +120,8 @@
 		D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF82E1CD647B90044BA84 /* IDEntity.m */; };
 		D19EF8331CDD97250044BA84 /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8321CDD97250044BA84 /* ErrorHandler.m */; };
 		D19EF8421CE087520044BA84 /* ReportMaterialDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */; };
+		D19EF8451CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8441CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m */; };
+		D19EF8481CE205870044BA84 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8471CE205870044BA84 /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -360,6 +362,10 @@
 		D19EF8321CDD97250044BA84 /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorHandler.m; path = Controller/ErrorHandler.m; sourceTree = "<group>"; };
 		D19EF8401CE087520044BA84 /* ReportMaterialDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialDetailTVC.h; path = Controller/Report/ReportMaterialDetailTVC.h; sourceTree = "<group>"; };
 		D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialDetailTVC.m; path = Controller/Report/ReportMaterialDetailTVC.m; sourceTree = "<group>"; };
+		D19EF8431CE1E86A0044BA84 /* ReportMaterialRegisterTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialRegisterTVC.h; path = Controller/Report/ReportMaterialRegisterTVC.h; sourceTree = "<group>"; };
+		D19EF8441CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialRegisterTVC.m; path = Controller/Report/ReportMaterialRegisterTVC.m; sourceTree = "<group>"; };
+		D19EF8461CE205870044BA84 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Controller/Utils.h; sourceTree = "<group>"; };
+		D19EF8471CE205870044BA84 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Controller/Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +449,8 @@
 				C56E55691CDB899100C608B9 /* ModalTableViewController.m */,
 				D19EF8311CDD97250044BA84 /* ErrorHandler.h */,
 				D19EF8321CDD97250044BA84 /* ErrorHandler.m */,
+				D19EF8461CE205870044BA84 /* Utils.h */,
+				D19EF8471CE205870044BA84 /* Utils.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -546,6 +554,8 @@
 				C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */,
 				D19EF8401CE087520044BA84 /* ReportMaterialDetailTVC.h */,
 				D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */,
+				D19EF8431CE1E86A0044BA84 /* ReportMaterialRegisterTVC.h */,
+				D19EF8441CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m */,
 			);
 			name = Report;
 			sourceTree = "<group>";
@@ -961,6 +971,7 @@
 				C56E554F1CDB46B800C608B9 /* ReportFundsRejectedTVC.m in Sources */,
 				C56E55641CDB83C100C608B9 /* ReportDetailTVC.m in Sources */,
 				C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */,
+				D19EF8481CE205870044BA84 /* Utils.m in Sources */,
 				C56E55221CDB112300C608B9 /* Permission.m in Sources */,
 				C5971BB71CD5D38900C6B263 /* PlanTVC.m in Sources */,
 				C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */,
@@ -994,6 +1005,7 @@
 				C56E55B91CDCAF6700C608B9 /* CheckFundsDealedTVC.m in Sources */,
 				C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */,
 				C5557FA81CD0F15E006EC41D /* BillMaterialsVO.m in Sources */,
+				D19EF8451CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m in Sources */,
 				C56E553C1CDB426A00C608B9 /* CHTableViewController.m in Sources */,
 				C5557FA31CD0F15E006EC41D /* AccountVO.m in Sources */,
 				C5971BAD1CD3C18400C6B263 /* AddActivityTVC.m in Sources */,
