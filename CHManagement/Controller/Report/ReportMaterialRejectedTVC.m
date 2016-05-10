@@ -8,7 +8,7 @@
 
 #import "ReportMaterialRejectedTVC.h"
 #import "ReportRejectedCell.h"
-#import "ReportRegisterTVC.h"
+#import "ReportMaterialRegisterTVC.h"
 #import "ReportMaterialDetailTVC.h"
 #import "NetworkManager.h"
 #import "ResultVO.h"
@@ -105,7 +105,8 @@
 
 - (void)modifyButtonPressed:(NSUInteger)index
 {
-    ReportRejectedTVC *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportRegisterTVC"];
+    UINavigationController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportMaterialRegisterTVC"];
+    [(ReportMaterialRegisterTVC*)controller.topViewController setAuditMaterialsVO: [_rejectedAuditMaterialsList objectAtIndex:index]];
     [self presentViewController:controller animated:YES completion:nil];
 }
 

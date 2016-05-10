@@ -90,6 +90,7 @@
         ReportDetailTVC *detail = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportDetailTVC"];
         
         [detail setAuditOthersVO:[_rejectedAuditOthersList objectAtIndex:indexPath.row]];
+        [detail setCheckable:NO];
         
         [self.navigationController pushViewController:detail animated:YES];
     }else{

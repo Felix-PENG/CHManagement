@@ -498,17 +498,16 @@
 }
 
 #pragma mark AuditMaterials api
-- (void)createAuditMaterialsWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
+- (void)createAuditMaterialsWithGroupId:(NSInteger)group_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withType:(NSString*)type withUnitPrice:(double)unit_price withNum:(NSInteger)num withIn_off:(NSInteger)in_off withDealerName:(NSString*)dealer_name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter getRequest];
     parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, createAuditMaterialsUrl];
-    parameter.json = @{@"group_id":[NSNumber numberWithInteger:group_id],@"content":content,@"money":[NSNumber numberWithDouble:money],@"name":name,@"user_id":[NSNumber numberWithInteger:user_id]};
+    parameter.json = @{@"group_id":[NSNumber numberWithInteger:group_id],@"content":content,@"money":[NSNumber numberWithDouble:money],@"name":name,@"type":type,@"unit_price":[NSNumber numberWithDouble:unit_price],@"num":[NSNumber numberWithInteger:num],@"in_off":[NSNumber numberWithInteger:in_off],@"dealer_name":dealer_name,@"user_id":[NSNumber numberWithInteger:user_id]};
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 
-- (void)changeAuditMaterialsWithId:(NSInteger)auditMaterials_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
-    RequestParameter *parameter = [RequestParameter getRequest];
+- (void)changeAuditMaterialsWithId:(NSInteger)auditMaterials_id withContent:(NSString*)content withMoney:(double)money withName:(NSString*)name  withType:(NSString*)type withUnitPrice:(double)unit_price withNum:(NSInteger)num withIn_off:(NSInteger)in_off withDealerName:(NSString*)dealer_name withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{    RequestParameter *parameter = [RequestParameter getRequest];
     parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, changeAuditMaterialsUrl];
-    parameter.json = @{@"auditMaterials_id":[NSNumber numberWithInteger:auditMaterials_id],@"content":content,@"money":[NSNumber numberWithDouble:money],@"name":name,@"user_id":[NSNumber numberWithInteger:user_id]};
+    parameter.json = @{@"auditMaterials_id":[NSNumber numberWithInteger:auditMaterials_id],@"content":content,@"money":[NSNumber numberWithDouble:money],@"name":name,@"type":type,@"unit_price":[NSNumber numberWithDouble:unit_price],@"num":[NSNumber numberWithInteger:num],@"in_off":[NSNumber numberWithInteger:in_off],@"dealer_name":dealer_name,@"user_id":[NSNumber numberWithInteger:user_id]};
     [self httpActionWithParameter:parameter completionHandler:handler];
     
 }
