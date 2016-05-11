@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BillOthersVO.h"
 
 @interface RegisterDetailTVC : UITableViewController
 
 @property (nonatomic, assign) BOOL uploadable;
+@property (nonatomic, strong) BillOthersVO *bill;
 
 @end

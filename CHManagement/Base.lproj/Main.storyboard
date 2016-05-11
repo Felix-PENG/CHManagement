@@ -187,28 +187,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-Zr-ThK">
-                                                    <rect key="frame" x="288" y="8" width="24" height="24"/>
-                                                    <state key="normal" backgroundImage="ic_add_circle_black_24dp"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-Zr-ThK">
+                                                    <rect key="frame" x="260" y="8" width="80" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <state key="normal" title="发票上传" image="ic_add_circle_black_24dp">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="MUA-52-Nok" eventType="touchUpInside" id="u1m-cF-5pp"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAN-TM-vMf">
-                                                    <rect key="frame" x="8" y="40" width="584" height="122"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAN-TM-vMf">
+                                                    <rect key="frame" x="8" y="40" width="584" height="121"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0W-yM-fsj">
-                                                    <rect key="frame" x="320" y="5" width="30" height="30"/>
-                                                    <state key="normal" title="上传"/>
-                                                    <connections>
-                                                        <action selector="uploadButtonPressed:" destination="MUA-52-Nok" eventType="touchUpInside" id="0Ua-SM-Byq"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="j0W-yM-fsj" firstAttribute="leading" secondItem="lQo-Zr-ThK" secondAttribute="trailing" constant="8" id="0AE-oG-f0r"/>
                                                 <constraint firstItem="cAN-TM-vMf" firstAttribute="top" secondItem="5wa-69-Bpr" secondAttribute="topMargin" id="AvG-7A-1Bo"/>
-                                                <constraint firstItem="j0W-yM-fsj" firstAttribute="centerY" secondItem="lQo-Zr-ThK" secondAttribute="centerY" id="NeX-dN-7gr"/>
                                                 <constraint firstItem="cAN-TM-vMf" firstAttribute="top" secondItem="lQo-Zr-ThK" secondAttribute="bottom" constant="8" id="QhK-iz-3zb"/>
                                                 <constraint firstItem="cAN-TM-vMf" firstAttribute="trailing" secondItem="5wa-69-Bpr" secondAttribute="trailingMargin" id="Ykf-Ns-XWV"/>
                                                 <constraint firstItem="lQo-Zr-ThK" firstAttribute="top" secondItem="5wa-69-Bpr" secondAttribute="topMargin" id="kLg-sP-LXh"/>
@@ -231,7 +225,13 @@
                             <outlet property="delegate" destination="MUA-52-Nok" id="Qgp-iJ-1lo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="经费单详情" id="ETv-ky-0Lu"/>
+                    <navigationItem key="navigationItem" title="经费单详情" id="ETv-ky-0Lu">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="XtU-X3-vYY">
+                            <connections>
+                                <action selector="finishButtonPressed:" destination="MUA-52-Nok" id="Uo4-If-wnx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="addButton" destination="lQo-Zr-ThK" id="s45-jY-CKJ"/>
@@ -242,7 +242,6 @@
                         <outlet property="singlePriceLabel" destination="jNO-Sz-HWx" id="M4a-k0-W9d"/>
                         <outlet property="statusLabel" destination="W3v-uy-sCL" id="PFN-UE-Nru"/>
                         <outlet property="totalPriceLabel" destination="hzG-rS-OA1" id="USr-1g-3Yl"/>
-                        <outlet property="uploadButton" destination="j0W-yM-fsj" id="PWK-cm-tSq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s85-U9-U5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2050,10 +2049,10 @@
                             <tableViewSection headerTitle="条目" id="WwM-kG-nUl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KyR-Bg-D6g">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KyR-Bg-D6g" id="Uao-qP-q2p">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-SS-j8E">
@@ -2069,10 +2068,10 @@
                             <tableViewSection headerTitle="型号" id="N89-53-j2C">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2bO-Gt-QVx">
-                                        <rect key="frame" x="0.0" y="207.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="209" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2bO-Gt-QVx" id="N2O-0T-1Vx">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PgJ-sG-gA5">
@@ -2088,10 +2087,10 @@
                             <tableViewSection headerTitle="数量" id="Rbo-mk-Q0R">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eTp-5N-8wg">
-                                        <rect key="frame" x="0.0" y="301.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="304" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eTp-5N-8wg" id="c2P-sp-yIV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VCT-ss-mSF">
@@ -2107,10 +2106,10 @@
                             <tableViewSection headerTitle="进价" id="Nju-A1-e76">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XSX-ug-9VA">
-                                        <rect key="frame" x="0.0" y="395.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="399" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XSX-ug-9VA" id="ZPX-0M-xjD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-RV-I4n">
@@ -2126,10 +2125,10 @@
                             <tableViewSection headerTitle="总价" id="UGd-2P-FW6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bwi-SD-Yyy">
-                                        <rect key="frame" x="0.0" y="489.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="494" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bwi-SD-Yyy" id="kCB-fa-Yph">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E6e-fm-zpq">
@@ -2145,10 +2144,10 @@
                             <tableViewSection headerTitle="买入单位" id="909-rb-2Oh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0wH-Kk-1rb">
-                                        <rect key="frame" x="0.0" y="583.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="589" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0wH-Kk-1rb" id="xOF-Tf-ggG">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vaF-KO-Wh1">
@@ -2164,10 +2163,10 @@
                             <tableViewSection headerTitle="详情" id="Onx-M8-Axk">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="v4h-IJ-eye">
-                                        <rect key="frame" x="0.0" y="677.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="684" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v4h-IJ-eye" id="iZ5-mR-TIR">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAk-uc-brW">
@@ -2375,31 +2374,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXw-bZ-OlC">
-                                                    <rect key="frame" x="288" y="8" width="24" height="24"/>
-                                                    <state key="normal" backgroundImage="ic_add_circle_black_24dp"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXw-bZ-OlC">
+                                                    <rect key="frame" x="260" y="8" width="80" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <state key="normal" title="发票上传" image="ic_add_circle_black_24dp">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="sf9-xf-Bzx" eventType="touchUpInside" id="cq9-ts-gkh"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzn-98-ezp">
-                                                    <rect key="frame" x="8" y="40" width="584" height="122"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hzn-98-ezp">
+                                                    <rect key="frame" x="8" y="40" width="584" height="121"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2M-B2-o1f">
-                                                    <rect key="frame" x="320" y="5" width="30" height="30"/>
-                                                    <state key="normal" title="上传"/>
-                                                    <connections>
-                                                        <action selector="uploadButtonPressed:" destination="sf9-xf-Bzx" eventType="touchUpInside" id="TsE-hi-bET"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="bottom" secondItem="2ZW-zf-J84" secondAttribute="bottomMargin" id="0SY-QL-ZTI"/>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="top" secondItem="2ZW-zf-J84" secondAttribute="topMargin" id="0Yf-p4-yMT"/>
-                                                <constraint firstItem="F2M-B2-o1f" firstAttribute="centerY" secondItem="cXw-bZ-OlC" secondAttribute="centerY" id="6qS-7J-l5m"/>
                                                 <constraint firstItem="cXw-bZ-OlC" firstAttribute="centerX" secondItem="2ZW-zf-J84" secondAttribute="centerX" id="O0A-bi-daS"/>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="top" secondItem="cXw-bZ-OlC" secondAttribute="bottom" constant="8" id="S5t-ls-4Jz"/>
-                                                <constraint firstItem="F2M-B2-o1f" firstAttribute="leading" secondItem="cXw-bZ-OlC" secondAttribute="trailing" constant="8" id="TO0-wd-GDL"/>
                                                 <constraint firstItem="cXw-bZ-OlC" firstAttribute="top" secondItem="2ZW-zf-J84" secondAttribute="topMargin" id="hnx-P8-fSL"/>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="trailing" secondItem="2ZW-zf-J84" secondAttribute="trailingMargin" id="jTj-0B-9Ai"/>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="leading" secondItem="2ZW-zf-J84" secondAttribute="leadingMargin" id="sjg-Rp-DEW"/>
@@ -2430,7 +2423,6 @@
                         <outlet property="modelLabel" destination="Erd-zx-RbU" id="nHw-N1-BU8"/>
                         <outlet property="purchasePriceLabel" destination="9WT-rD-pIy" id="0E2-9d-7Tu"/>
                         <outlet property="totalPriceLabel" destination="idQ-bT-54K" id="scT-wf-acZ"/>
-                        <outlet property="uploadButton" destination="F2M-B2-o1f" id="AbT-NW-ydU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cES-xi-BkN" userLabel="First Responder" sceneMemberID="firstResponder"/>

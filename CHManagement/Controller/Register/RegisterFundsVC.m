@@ -17,6 +17,16 @@
 @end
 
 @implementation RegisterFundsVC
+{
+    RegisterFundsGoingTVC *_rfgtvc;
+    RegisterFundsDoneTVC *_rfdtvc;
+}
+
+- (void)setGroupID:(NSInteger)groupID
+{
+    _rfgtvc.groupID = groupID;
+    _rfdtvc.groupID = groupID;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,11 +34,11 @@
     self.navigationItem.title = @"经费列表";
     
     // contents
-    RegisterFundsGoingTVC *rfgtvc = [[RegisterFundsGoingTVC alloc] init];
-    RegisterFundsDoneTVC *rfdtvc = [[RegisterFundsDoneTVC alloc] init];
+    _rfgtvc = [[RegisterFundsGoingTVC alloc] init];
+    _rfdtvc = [[RegisterFundsDoneTVC alloc] init];
     
-    TabItem *tabItem1 = [[TabItem alloc] initWithTab:@"进行中" controller:rfgtvc];
-    TabItem *tabItem2 = [[TabItem alloc] initWithTab:@"已完成" controller:rfdtvc];
+    TabItem *tabItem1 = [[TabItem alloc] initWithTab:@"进行中" controller:_rfgtvc];
+    TabItem *tabItem2 = [[TabItem alloc] initWithTab:@"已完成" controller:_rfdtvc];
     
     TabbedScrollViewController *tsvc = [[TabbedScrollViewController alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64) items:@[tabItem1, tabItem2]];
     [self.view addSubview:tsvc.view];

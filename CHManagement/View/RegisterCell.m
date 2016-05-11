@@ -20,6 +20,24 @@
 
 @implementation RegisterCell
 
+- (void)setTitle:(NSString *)title dateTime:(NSUInteger)dateTime group:(NSString *)group user:(NSString *)user detail:(NSString *)detail money:(double)money
+{
+    self.titleLabel.text = title;
+    
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:dateTime/1000.0];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    self.dateTimeLabel.text = [formatter stringFromDate:date];
+    
+    self.userNameLabel.text = user;
+    
+    self.roleLabel.text = group;
+    
+    self.detailLabel.text = detail;
+    
+    self.priceLabel.text = [NSString stringWithFormat:@"￥%.1f", money];
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

@@ -11,6 +11,12 @@
 #define KEY_PRE_PICTURE @"picture"
 #define KEY_PRE_FILE @"file"
 
+#define STATUS_NOT_FINISHED 0
+#define STATUS_FINISHED 1
+
+#define BILL_IN 0
+#define BILL_OFF 1
+
 enum PermissionID{
     Unknown,
     FundsReport,
