@@ -20,6 +20,7 @@
 #import "FundsMovementVC.h"
 #import "CheckFundsVC.h"
 #import "CheckMaterialPurchaseVC.h"
+#import "GroupManagementTVC.h"
 
 #define SECTION_HEADER_HEIGHT 28.0
 #define TOP_MENU_CELL_HEIGHT 84.0
@@ -137,6 +138,16 @@
                 break;
             case BuildingMaterialPurchaseCheck:
                 [self.navigationController pushViewController:[[CheckMaterialPurchaseVC alloc] init] animated: YES];
+                break;
+            case ApartmentManagement:
+                //GroupManagementTVC *controller = (GroupManagementTVC*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GroupManagementTVC"];
+
+                [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GroupManagementTVC"] animated:YES];
+
+                break;
+            case RoleManagement:
+                break;
+            case UserManagement:
                 break;
             default:
                 break;

@@ -123,6 +123,9 @@
 		D19EF8421CE087520044BA84 /* ReportMaterialDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */; };
 		D19EF8451CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8441CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m */; };
 		D19EF8481CE205870044BA84 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8471CE205870044BA84 /* Utils.m */; };
+		D1E9C3701CE35ACE00109870 /* GroupManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C36F1CE35ACE00109870 /* GroupManagementTVC.m */; };
+		D1E9C3731CE35B1800109870 /* RoleManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3721CE35B1800109870 /* RoleManagementTVC.m */; };
+		D1E9C3761CE35B4000109870 /* UserManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3751CE35B4000109870 /* UserManagementTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -370,6 +373,12 @@
 		D19EF8441CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialRegisterTVC.m; path = Controller/Report/ReportMaterialRegisterTVC.m; sourceTree = "<group>"; };
 		D19EF8461CE205870044BA84 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Controller/Utils.h; sourceTree = "<group>"; };
 		D19EF8471CE205870044BA84 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Controller/Utils.m; sourceTree = "<group>"; };
+		D1E9C36E1CE35ACE00109870 /* GroupManagementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupManagementTVC.h; path = Controller/Management/GroupManagementTVC.h; sourceTree = "<group>"; };
+		D1E9C36F1CE35ACE00109870 /* GroupManagementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupManagementTVC.m; path = Controller/Management/GroupManagementTVC.m; sourceTree = "<group>"; };
+		D1E9C3711CE35B1800109870 /* RoleManagementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoleManagementTVC.h; path = Controller/Management/RoleManagementTVC.h; sourceTree = "<group>"; };
+		D1E9C3721CE35B1800109870 /* RoleManagementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoleManagementTVC.m; path = Controller/Management/RoleManagementTVC.m; sourceTree = "<group>"; };
+		D1E9C3741CE35B4000109870 /* UserManagementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManagementTVC.h; path = Controller/Management/UserManagementTVC.h; sourceTree = "<group>"; };
+		D1E9C3751CE35B4000109870 /* UserManagementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManagementTVC.m; path = Controller/Management/UserManagementTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +428,7 @@
 		C500E2341CD0A49200DF960B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D1E9C36D1CE35A9700109870 /* Management */,
 				C514306A1CE19F9300448BD1 /* File */,
 				D19EF83C1CDF03180044BA84 /* Plan */,
 				D19EF83B1CDF03010044BA84 /* Activity */,
@@ -799,6 +809,19 @@
 			name = Plan;
 			sourceTree = "<group>";
 		};
+		D1E9C36D1CE35A9700109870 /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				D1E9C36E1CE35ACE00109870 /* GroupManagementTVC.h */,
+				D1E9C36F1CE35ACE00109870 /* GroupManagementTVC.m */,
+				D1E9C3711CE35B1800109870 /* RoleManagementTVC.h */,
+				D1E9C3721CE35B1800109870 /* RoleManagementTVC.m */,
+				D1E9C3741CE35B4000109870 /* UserManagementTVC.h */,
+				D1E9C3751CE35B4000109870 /* UserManagementTVC.m */,
+			);
+			name = Management;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1006,6 +1029,7 @@
 				C56E55C71CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m in Sources */,
 				C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */,
 				C56E55971CDC858C00C608B9 /* BuildingMaterialSellTVC.m in Sources */,
+				D1E9C3731CE35B1800109870 /* RoleManagementTVC.m in Sources */,
 				C5971BBA1CD5D46500C6B263 /* AddPlanVC.m in Sources */,
 				C56E55941CDC832D00C608B9 /* BuildingMaterialSellVC.m in Sources */,
 				C56E55C41CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m in Sources */,
@@ -1050,6 +1074,7 @@
 				C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */,
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
 				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
+				D1E9C3761CE35B4000109870 /* UserManagementTVC.m in Sources */,
 				C56E55881CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.m in Sources */,
 				C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */,
 				C56E558B1CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.m in Sources */,
@@ -1062,6 +1087,7 @@
 				C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */,
 				C56E55A01CDC896500C608B9 /* SellBuildingTVC.m in Sources */,
 				D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */,
+				D1E9C3701CE35ACE00109870 /* GroupManagementTVC.m in Sources */,
 				C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */,
 				C56E55B61CDCAF5500C608B9 /* CheckFundsUndealTVC.m in Sources */,
 				C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */,
