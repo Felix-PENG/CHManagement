@@ -109,38 +109,39 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (((Permission *)((NSArray *)_permissionDict[_permissionDict.allKeys[indexPath.section - 1]])[indexPath.row]).id) {
-        case FundsReport:
-            [self.navigationController pushViewController:[[ReportFundsVC alloc] init] animated:YES];
-            break;
-        case BuildingMaterialPurchaseReport:
-            [self.navigationController pushViewController:[[ReportMaterialVC alloc] init] animated: YES];
-            break;
-        case FundsRegister:
-            [self.navigationController pushViewController:[[RegisterFundsVC alloc] init] animated: YES];
-            break;
-        case BuildingMaterialPurchaseRegister:
-            [self.navigationController pushViewController:[[BuildingMaterialPurchaseVC alloc] init] animated: YES];
-            break;
-        case BuildingMaterialSellRegister:
-            [self.navigationController pushViewController:[[BuildingMaterialSellVC alloc] init] animated: YES];
-            break;
-        case SaleBuildingRegister:
-            [self.navigationController pushViewController:[[SellBuildingVC alloc] init] animated: YES];
-            break;
-        case FundsMovementRegister:
-            [self.navigationController pushViewController:[[FundsMovementVC alloc] init] animated: YES];
-            break;
-        case FundsCheck:
-            [self.navigationController pushViewController:[[CheckFundsVC alloc] init] animated: YES];
-            break;
-        case BuildingMaterialPurchaseCheck:
-            [self.navigationController pushViewController:[[CheckMaterialPurchaseVC alloc] init] animated: YES];
-            break;
-        default:
-            break;
+    if (indexPath.section > 0) {
+        switch (((Permission *)((NSArray *)_permissionDict[_permissionDict.allKeys[indexPath.section - 1]])[indexPath.row]).id) {
+            case FundsReport:
+                [self.navigationController pushViewController:[[ReportFundsVC alloc] init] animated:YES];
+                break;
+            case BuildingMaterialPurchaseReport:
+                [self.navigationController pushViewController:[[ReportMaterialVC alloc] init] animated: YES];
+                break;
+            case FundsRegister:
+                [self.navigationController pushViewController:[[RegisterFundsVC alloc] init] animated: YES];
+                break;
+            case BuildingMaterialPurchaseRegister:
+                [self.navigationController pushViewController:[[BuildingMaterialPurchaseVC alloc] init] animated: YES];
+                break;
+            case BuildingMaterialSellRegister:
+                [self.navigationController pushViewController:[[BuildingMaterialSellVC alloc] init] animated: YES];
+                break;
+            case SaleBuildingRegister:
+                [self.navigationController pushViewController:[[SellBuildingVC alloc] init] animated: YES];
+                break;
+            case FundsMovementRegister:
+                [self.navigationController pushViewController:[[FundsMovementVC alloc] init] animated: YES];
+                break;
+            case FundsCheck:
+                [self.navigationController pushViewController:[[CheckFundsVC alloc] init] animated: YES];
+                break;
+            case BuildingMaterialPurchaseCheck:
+                [self.navigationController pushViewController:[[CheckMaterialPurchaseVC alloc] init] animated: YES];
+                break;
+            default:
+                break;
+        }
     }
-    
 }
 
 - (void)fetchPermissions

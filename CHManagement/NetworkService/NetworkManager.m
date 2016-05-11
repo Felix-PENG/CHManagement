@@ -11,6 +11,8 @@
 #import "NetworkFile.h"
 #import "NSDictionary+Extends.h"
 #import "NetworkConstants.h"
+#import "File.h"
+#import "FileVO.h"
 
 #define TIME_OUT_SECONDS 100
 
@@ -140,6 +142,33 @@
     
     [_queue addOperation:operation];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+- (void)downloadWithParameter:(RequestParameter *)parameter savePath:(NSString *)savePath success:(void (^)(id))success failure:(void (^)(NSError *))failure progress:(void (^)(float))progress
+{
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:parameter.httpMethod
+                                                                                 URLString:parameter.url
+                                                                                parameters:parameter.json
+                                                                                     error:nil];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    request.timeoutInterval = TIME_OUT_SECONDS;
+    
+    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:savePath append:NO]];
+    [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+        float p = totalBytesRead / totalBytesExpectedToRead;
+        progress(p);
+    }];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"下载成功");
+        success(responseObject);
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"Download error: %@", error);
+        failure(error);
+    }];
+    
+    [_queue addOperation:operation];
 }
 
 - (void)completeTask
@@ -347,6 +376,17 @@
     parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, getFilesUrl];
     parameter.json = @{@"page":[NSNumber numberWithInteger:page]};
     [self httpActionWithParameter:parameter completionHandler:handler];
+}
+
+- (void)downloadFile:(File *)file success:(void (^)(id))success failure:(void (^)(NSError *))failure progress:(void (^)(float))progress
+{
+    RequestParameter *parameter = [RequestParameter getRequest];
+    parameter.url = file.fileVO.url;
+    [self downloadWithParameter:parameter
+                       savePath:file.localURL.absoluteString
+                        success:success
+                        failure:failure
+                       progress:progress];
 }
 
 #pragma mark Message api

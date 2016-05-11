@@ -10,6 +10,28 @@
 
 @implementation MBProgressHUD (Extends)
 
++ (MBProgressHUD *)progressHudWithMessage:(NSString *)msg
+{
+    return [self progressHudWithMessage:msg toView:[[UIApplication sharedApplication].windows lastObject]];
+}
+
++ (MBProgressHUD *)progressHudWithMessage:(NSString *)msg toView:(UIView *)view
+{
+    MBProgressHUD *hud = [self hudWithMessage:msg toView:view];
+    hud.mode = MBProgressHUDModeDeterminate;
+    
+    [hud showAnimated:YES whileExecutingBlock:^{
+        hud.progress = 0.0f;
+        while (hud.progress < 1.0f) {
+            ;
+        }
+    } completionBlock:^{
+        [hud removeFromSuperview];
+    }];
+    
+    return hud;
+}
+
 + (void)showLoadingWithMessage:(NSString *)msg toView:(UIView *)view executing:(void (^)())executingBlock completion:(void (^)())completionBlock
 {
     MBProgressHUD *hud = [self hudWithMessage:msg toView:view];
@@ -42,6 +64,7 @@
 
 + (void)showSuccessWithMessage:(NSString*)message toView:(UIView*)view completion:(void (^)())completionBlock{
     MBProgressHUD* hud = [MBProgressHUD hudWithMessage:message toView:view];
+    hud.removeFromSuperViewOnHide = YES;
     [hud setMode:MBProgressHUDModeText];
     [hud show:YES];
     [hud hide:YES afterDelay:1];
