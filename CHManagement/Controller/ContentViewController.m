@@ -140,14 +140,13 @@
                 [self.navigationController pushViewController:[[CheckMaterialPurchaseVC alloc] init] animated: YES];
                 break;
             case ApartmentManagement:
-                //GroupManagementTVC *controller = (GroupManagementTVC*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GroupManagementTVC"];
-
                 [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GroupManagementTVC"] animated:YES];
-
                 break;
             case RoleManagement:
+                [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RoleManagementTVC"] animated:YES];
                 break;
             case UserManagement:
+                [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"UserManagementTVC"] animated:YES];
                 break;
             default:
                 break;
@@ -157,7 +156,8 @@
 
 - (void)fetchPermissions
 {
-    [[NetworkManager sharedInstance] getRolePermissionWithRoleId:0 completionHandler:^(NSDictionary *response) {
+    NSInteger role_id = [[[NSUserDefaults standardUserDefaults]objectForKey:@"role_id"]integerValue];
+    [[NetworkManager sharedInstance] getRolePermissionWithRoleId:role_id completionHandler:^(NSDictionary *response) {
         NSArray *permissionList = [response objectForKey:@"permissionList"];
         [self buildPermissionMapWithArray:permissionList];
 

@@ -126,6 +126,11 @@
 		D1E9C3701CE35ACE00109870 /* GroupManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C36F1CE35ACE00109870 /* GroupManagementTVC.m */; };
 		D1E9C3731CE35B1800109870 /* RoleManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3721CE35B1800109870 /* RoleManagementTVC.m */; };
 		D1E9C3761CE35B4000109870 /* UserManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3751CE35B4000109870 /* UserManagementTVC.m */; };
+		D1E9C3791CE42AD900109870 /* AddGroupTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3781CE42AD900109870 /* AddGroupTVC.m */; };
+		D1E9C37C1CE43E3200109870 /* AddRoleTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C37B1CE43E3200109870 /* AddRoleTVC.m */; };
+		D1E9C37F1CE45FB200109870 /* AddUserTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C37E1CE45FB200109870 /* AddUserTVC.m */; };
+		D1E9C3821CE4981800109870 /* RoleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3811CE4981800109870 /* RoleCell.m */; };
+		D1E9C3841CE4992100109870 /* RoleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E9C3831CE4992100109870 /* RoleCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -379,6 +384,15 @@
 		D1E9C3721CE35B1800109870 /* RoleManagementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoleManagementTVC.m; path = Controller/Management/RoleManagementTVC.m; sourceTree = "<group>"; };
 		D1E9C3741CE35B4000109870 /* UserManagementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManagementTVC.h; path = Controller/Management/UserManagementTVC.h; sourceTree = "<group>"; };
 		D1E9C3751CE35B4000109870 /* UserManagementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManagementTVC.m; path = Controller/Management/UserManagementTVC.m; sourceTree = "<group>"; };
+		D1E9C3771CE42AD900109870 /* AddGroupTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddGroupTVC.h; path = Controller/Management/AddGroupTVC.h; sourceTree = "<group>"; };
+		D1E9C3781CE42AD900109870 /* AddGroupTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddGroupTVC.m; path = Controller/Management/AddGroupTVC.m; sourceTree = "<group>"; };
+		D1E9C37A1CE43E3200109870 /* AddRoleTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRoleTVC.h; path = Controller/Management/AddRoleTVC.h; sourceTree = "<group>"; };
+		D1E9C37B1CE43E3200109870 /* AddRoleTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddRoleTVC.m; path = Controller/Management/AddRoleTVC.m; sourceTree = "<group>"; };
+		D1E9C37D1CE45FB200109870 /* AddUserTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddUserTVC.h; path = Controller/Management/AddUserTVC.h; sourceTree = "<group>"; };
+		D1E9C37E1CE45FB200109870 /* AddUserTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddUserTVC.m; path = Controller/Management/AddUserTVC.m; sourceTree = "<group>"; };
+		D1E9C3801CE4981800109870 /* RoleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoleCell.h; path = View/RoleCell.h; sourceTree = "<group>"; };
+		D1E9C3811CE4981800109870 /* RoleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoleCell.m; path = View/RoleCell.m; sourceTree = "<group>"; };
+		D1E9C3831CE4992100109870 /* RoleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoleCell.xib; path = View/RoleCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -694,6 +708,9 @@
 				C56E55BA1CDCB79400C608B9 /* CheckRejectedCell.xib */,
 				C56E55BC1CDCB8B900C608B9 /* CheckRejectedCell.h */,
 				C56E55BD1CDCB8B900C608B9 /* CheckRejectedCell.m */,
+				D1E9C3801CE4981800109870 /* RoleCell.h */,
+				D1E9C3811CE4981800109870 /* RoleCell.m */,
+				D1E9C3831CE4992100109870 /* RoleCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -818,6 +835,12 @@
 				D1E9C3721CE35B1800109870 /* RoleManagementTVC.m */,
 				D1E9C3741CE35B4000109870 /* UserManagementTVC.h */,
 				D1E9C3751CE35B4000109870 /* UserManagementTVC.m */,
+				D1E9C3771CE42AD900109870 /* AddGroupTVC.h */,
+				D1E9C3781CE42AD900109870 /* AddGroupTVC.m */,
+				D1E9C37A1CE43E3200109870 /* AddRoleTVC.h */,
+				D1E9C37B1CE43E3200109870 /* AddRoleTVC.m */,
+				D1E9C37D1CE45FB200109870 /* AddUserTVC.h */,
+				D1E9C37E1CE45FB200109870 /* AddUserTVC.m */,
 			);
 			name = Management;
 			sourceTree = "<group>";
@@ -935,6 +958,7 @@
 				C56E55BB1CDCB79400C608B9 /* CheckRejectedCell.xib in Resources */,
 				D18B470C1CCFAB8300FEA8E8 /* Assets.xcassets in Resources */,
 				C5971BBC1CD5DA8A00C6B263 /* FileCell.xib in Resources */,
+				D1E9C3841CE4992100109870 /* RoleCell.xib in Resources */,
 				C56E552F1CDB3BB800C608B9 /* ReportGoingCell.xib in Resources */,
 				C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */,
 				C56E556C1CDC6E6000C608B9 /* RegisterCell.xib in Resources */,
@@ -1068,9 +1092,11 @@
 				C56E55C11CDCD74900C608B9 /* CheckMaterialPurchaseVC.m in Sources */,
 				C56E556F1CDC6EBC00C608B9 /* RegisterCell.m in Sources */,
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
+				D1E9C3791CE42AD900109870 /* AddGroupTVC.m in Sources */,
 				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
 				C5971BE61CD78CBF00C6B263 /* TodayPlanTVC.m in Sources */,
 				C5971BCB1CD5E88100C6B263 /* MailBoxVC.m in Sources */,
+				D1E9C37C1CE43E3200109870 /* AddRoleTVC.m in Sources */,
 				C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */,
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
 				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
@@ -1101,10 +1127,12 @@
 				C5557FA41CD0F15E006EC41D /* ActivityVO.m in Sources */,
 				C56E55491CDB462A00C608B9 /* ReportRejectedTVC.m in Sources */,
 				C5971BCE1CD5EA8200C6B263 /* InboxTVC.m in Sources */,
+				D1E9C3821CE4981800109870 /* RoleCell.m in Sources */,
 				C514306E1CE1C2F900448BD1 /* File.m in Sources */,
 				C5971BC81CD5DFCE00C6B263 /* UploadFileVC.m in Sources */,
 				C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */,
 				C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */,
+				D1E9C37F1CE45FB200109870 /* AddUserTVC.m in Sources */,
 				C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */,
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
 				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,

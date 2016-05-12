@@ -11,6 +11,7 @@
 #import "ResultVO.h"
 #import "MyGroup.h"
 #import "ErrorHandler.h"
+#import "AddGroupTVC.h"
 
 static NSString * const CellIdentifier = @"GroupCell";
 
@@ -42,19 +43,13 @@ static NSString * const CellIdentifier = @"GroupCell";
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 45;
-}
-
 #pragma mark - TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        //ReportDetailTVC *detail = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportDetailTVC"];
-        //[detail setAuditOthersVO:[_goingAuditOthersList objectAtIndex:indexPath.row]];
-        //[detail setCheckable:NO];
-        //[self.navigationController pushViewController:detail animated:YES];
+        AddGroupTVC *addGroupTVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AddGroupTVC"];
+        [addGroupTVC setGroup:[_groupList objectAtIndex:indexPath.row]];
+        [self.navigationController pushViewController:addGroupTVC animated:YES];
 }
 
 #pragma mark load data
@@ -86,6 +81,12 @@ static NSString * const CellIdentifier = @"GroupCell";
 #pragma mark implement refresh
 - (void)refresh{
     [self loadAllGroups];
+}
+
+#pragma mark IBAction
+- (IBAction)addButtonPressed:(id)sender{
+    AddGroupTVC *addGroupTVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AddGroupTVC"];
+    [self.navigationController pushViewController:addGroupTVC animated:YES];
 }
 
 
