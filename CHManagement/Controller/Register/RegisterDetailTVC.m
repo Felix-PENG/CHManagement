@@ -15,8 +15,9 @@
 #import "ResultVO.h"
 #import "ErrorHandler.h"
 #import "QiNiuVO.h"
+#import "File.h"
 
-@interface RegisterDetailTVC () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate>
+@interface RegisterDetailTVC ()
 @property (weak, nonatomic) IBOutlet UILabel *entryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *singlePriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
@@ -25,25 +26,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *attachImageView;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
-@property (weak, nonatomic) IBOutlet UIButton *uploadButton;
-@property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @end
 
 @implementation RegisterDetailTVC
-{
-    NSURL *_imageURL;
-}
-
-- (UIImagePickerController *)imagePickerController
-{
-    if (!_imagePickerController) {
-        _imagePickerController = [[UIImagePickerController alloc] init];
-        _imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        _imagePickerController.delegate = self;
-        _imagePickerController.allowsEditing = NO;
-    }
-    return _imagePickerController;
-}
 
 - (void)setUploadable:(BOOL)uploadable
 {
@@ -64,35 +49,24 @@
     self.statusLabel.text = self.bill.finish_status == STATUS_NOT_FINISHED ? @"进行中" : @"已完成";
     NSLog(@"%@", self.bill.url);
     [self.attachImageView setImageWithURL:[NSURL URLWithString:self.bill.url]];
-    self.attachImageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTapped)];
-    [self.attachImageView addGestureRecognizer:tapRecognizer];
 }
 
-- (void)imageViewTapped
+- (UIImageView *)imageView
 {
-    if (self.attachImageView.image) {
-        NSData *imgData = UIImageJPEGRepresentation(self.attachImageView.image, 1.0);
-        NSString *tmpPath = [NSString stringWithFormat:@"%@/tmp.jpg", NSTemporaryDirectory()];
-        [imgData writeToFile:tmpPath atomically:YES];
-        UIDocumentInteractionController *dic = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:tmpPath]];
-        dic.delegate = self;
-        [dic presentPreviewAnimated:YES];
-    }
+    return self.attachImageView;
 }
 
 - (void)checkUploadState
 {
     if (!self.uploadable) {
         self.addButton.hidden = YES;
-        self.uploadButton.hidden = YES;
         self.navigationItem.rightBarButtonItems = nil;
     }
 }
 
 - (IBAction)addButtonPressed:(id)sender
 {
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+    [self pickImage];
 }
 
 - (IBAction)finishButtonPressed:(id)sender
@@ -104,86 +78,16 @@
     [self uploadImage:self.attachImageView.image];
 }
 
-- (NSString *)uniqueImageName
+- (void)dealWithQiNiuKey:(NSString *)key
 {
-    NSDate *currDate = [NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyyMMdd_HHmmss"];
-    NSString *timeStr = [formatter stringFromDate:currDate];
-    
-    return [NSString stringWithFormat:@"IMG_%@.JPG", timeStr];
-}
-
-- (void)uploadImage:(UIImage *)image
-{
-    NSString *uniqueName = [self uniqueImageName];
-    MBProgressHUD *hud = [MBProgressHUD progressHudWithMessage:@"上传中..." toView:self.view.window];
-    [[NetworkManager sharedInstance] getUploadTokenWithName:uniqueName withKeyPre:KEY_PRE_PICTURE completionHandler:^(NSDictionary *response) {
+    [[NetworkManager sharedInstance] finishBillOthersWithId:self.bill.id withStatus:STATUS_FINISHED withUrl:key completionHandler:^(NSDictionary *response) {
         ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
         if (result.success == 0) {
-            QiNiuVO *qiniu = [[QiNiuVO alloc] initWithDictionary:[response objectForKey:@"qiNiuVO"] error:nil];
-            // upload to qiniu
-            QNUploadManager *upManager = [[QNUploadManager alloc] init];
-            NSData *data = UIImageJPEGRepresentation(image, 1.0);
-            QNUploadOption *opt = [[QNUploadOption alloc] initWithMime:nil progressHandler:^(NSString *key, float percent) {
-                hud.progress = percent;
-            }params:nil checkCrc:YES cancellationSignal:nil];
-            [upManager putData:data
-                           key:qiniu.key
-                         token:qiniu.token
-                      complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-                          NSLog(@"%@", key);
-                          NSLog(@"%@", info);
-                          NSLog(@"%@", resp);
-                          // upload to server
-                          [[NetworkManager sharedInstance] finishBillOthersWithId:self.bill.id withStatus:STATUS_FINISHED withUrl:key completionHandler:^(NSDictionary *response) {
-                              ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-                              if (result.success == 0) {
-                                  [self.navigationController popViewControllerAnimated:YES];
-                              } else {
-                                  [ErrorHandler showErrorAlert:@"上传失败"];
-                              }
-                          }];
-                      } option:opt];
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             [ErrorHandler showErrorAlert:@"上传失败"];
         }
     }];
-}
-
-#pragma mark - UIImagePickerControllerDelegate
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
-{
-    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    self.attachImageView.image = image;
-    [self.imagePickerController dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(nonnull UIViewController *)viewController animated:(BOOL)animated
-{
-    [navigationController.navigationBar setBarTintColor:[self.view tintColor]];
-    navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    [navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-}
-
-#pragma mark - UIDocumentInteractionControllerDelegate
-
-- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller
-{
-    return self;
-}
-
-- (UIView *)documentInteractionControllerViewForPreview:(UIDocumentInteractionController *)controller
-{
-    return self.view;
-}
-
-- (CGRect)documentInteractionControllerRectForPreview:(UIDocumentInteractionController *)controller
-{
-    return self.view.frame;
 }
 
 @end

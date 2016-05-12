@@ -6,10 +6,12 @@
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ImagePickPreviewTVC.h"
+#import "BillMaterialsVO.h"
 
-@interface RegisterPurchaseDetailTVC : UITableViewController
+@interface RegisterPurchaseDetailTVC : ImagePickPreviewTVC
 
 @property (nonatomic, assign) BOOL uploadable;
+@property (nonatomic, strong) BillMaterialsVO *bill;
 
 @end

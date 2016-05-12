@@ -54,4 +54,14 @@
     }
 }
 
++ (NSString *)dataTimeImageName
+{
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMdd_HHmmss"];
+    NSString *timeStr = [formatter stringFromDate:currDate];
+    
+    return [NSString stringWithFormat:@"IMG_%@.JPG", timeStr];
+}
+
 @end

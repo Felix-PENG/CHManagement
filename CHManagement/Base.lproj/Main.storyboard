@@ -2412,7 +2412,13 @@
                             <outlet property="delegate" destination="sf9-xf-Bzx" id="qDB-Qb-esp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="建材买入详情" id="O6c-yD-gki"/>
+                    <navigationItem key="navigationItem" title="建材买入详情" id="O6c-yD-gki">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="q1I-bK-zBV">
+                            <connections>
+                                <action selector="finishButtonPressed:" destination="sf9-xf-Bzx" id="4Ps-8n-1AJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="addButton" destination="cXw-bZ-OlC" id="LfC-hS-lRA"/>

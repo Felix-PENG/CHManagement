@@ -81,9 +81,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RegisterPurchaseDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterPurchaseDetailTVC"];
-    tvc.uploadable = NO;
-    [self.navigationController pushViewController:tvc animated:YES];
+    if (indexPath.row < _dataList.count) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        BillMaterialsVO *bill = _dataList[indexPath.row];
+        RegisterPurchaseDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterPurchaseDetailTVC"];
+        tvc.uploadable = NO;
+        tvc.bill = bill;
+        [self.navigationController pushViewController:tvc animated:YES];
+    } else {
+        LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        cell.status = Loading;
+        [self loadDataWithPage:++_page];
+    }
 }
 
 /*
