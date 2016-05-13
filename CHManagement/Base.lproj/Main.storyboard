@@ -2929,22 +2929,22 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="部门" id="hKB-oy-Czn">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oJY-Px-2Sm">
-                                        <rect key="frame" x="0.0" y="395.5" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="oJY-Px-2Sm">
+                                        <rect key="frame" x="0.0" y="395.5" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oJY-Px-2Sm" id="36L-gH-vnW">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAj-ya-yQn">
-                                                    <rect key="frame" x="8" y="8" width="584" height="27.5"/>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yo-Ve-gvh">
+                                                    <rect key="frame" x="8" y="8" width="584" height="83.5"/>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="bAj-ya-yQn" secondAttribute="bottom" id="Db3-y7-ngr"/>
-                                                <constraint firstItem="bAj-ya-yQn" firstAttribute="leading" secondItem="36L-gH-vnW" secondAttribute="leadingMargin" id="fRI-6B-hYw"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bAj-ya-yQn" secondAttribute="trailing" id="jZe-07-Dag"/>
-                                                <constraint firstItem="bAj-ya-yQn" firstAttribute="top" secondItem="36L-gH-vnW" secondAttribute="topMargin" id="qKF-wI-sl9"/>
+                                                <constraint firstItem="4yo-Ve-gvh" firstAttribute="top" secondItem="36L-gH-vnW" secondAttribute="topMargin" id="53r-gk-AWG"/>
+                                                <constraint firstItem="4yo-Ve-gvh" firstAttribute="leading" secondItem="36L-gH-vnW" secondAttribute="leadingMargin" id="8Y3-7J-ty5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4yo-Ve-gvh" secondAttribute="bottom" id="G8u-oh-bex"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4yo-Ve-gvh" secondAttribute="trailing" id="j2n-ZW-FjO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2952,12 +2952,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="角色" id="BkV-U9-Cgc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dAI-98-QcV">
-                                        <rect key="frame" x="0.0" y="489.5" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="dAI-98-QcV">
+                                        <rect key="frame" x="0.0" y="545.5" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dAI-98-QcV" id="E3e-Sv-to3">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-Od-k9J">
+                                                    <rect key="frame" x="8" y="8" width="584" height="83.5"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0zj-Od-k9J" secondAttribute="bottom" id="M7W-Qn-Wwm"/>
+                                                <constraint firstItem="0zj-Od-k9J" firstAttribute="leading" secondItem="E3e-Sv-to3" secondAttribute="leadingMargin" id="PD1-BY-B0K"/>
+                                                <constraint firstItem="0zj-Od-k9J" firstAttribute="trailing" secondItem="E3e-Sv-to3" secondAttribute="trailingMargin" id="gik-aV-Uq6"/>
+                                                <constraint firstItem="0zj-Od-k9J" firstAttribute="top" secondItem="E3e-Sv-to3" secondAttribute="topMargin" id="mMb-ab-CQm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -2969,9 +2980,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="添加用户" id="yNy-wo-IUa">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="LEX-Cg-QdW"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="LEX-Cg-QdW">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="5dg-oF-dip" id="GfU-I7-Uz3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="accountField" destination="rO6-qo-oV9" id="os3-a1-t7J"/>
+                        <outlet property="groupPicker" destination="4yo-Ve-gvh" id="49s-gR-hBh"/>
+                        <outlet property="nameField" destination="aWC-g1-MXT" id="jVG-lf-9mH"/>
+                        <outlet property="pswdField" destination="xK4-Fv-xlK" id="uTB-2K-Oet"/>
+                        <outlet property="rolePicker" destination="0zj-Od-k9J" id="Gik-6T-v88"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKy-Rd-6RV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

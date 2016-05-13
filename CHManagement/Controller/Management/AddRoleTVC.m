@@ -36,6 +36,7 @@ static NSString* const PermissionCellIdentifier = @"PermissionCell";
     [self loadAllPermissions];
     if(self.role){
         [self loadRolePermission];
+        [self.navigationItem setTitle:@"角色信息更新"];
     }
     
 }
