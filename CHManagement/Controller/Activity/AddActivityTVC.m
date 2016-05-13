@@ -10,6 +10,8 @@
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "MBProgressHUD+Extends.h"
+#import "ErrorHandler.h"
+#import "ActivityTVC.h"
 
 @interface AddActivityTVC (){
     NSInteger group_id;
@@ -65,7 +67,8 @@
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }];
             }else{
-                [self showErrorAlert:[resultVO message]];
+                UIAlertController* alert = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alert animated:YES completion:nil];
             }
         }];
     }else{
@@ -76,17 +79,11 @@
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }];
             }else{
-                [self showErrorAlert:[resultVO message]];
+                UIAlertController* alert = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alert animated:YES completion:nil];
             }
         }];
     }
-}
-
-- (void)showErrorAlert:(NSString*)message{
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark load data

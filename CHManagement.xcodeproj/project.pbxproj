@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E2361CD0A4C400DF960B /* MainViewController.m */; };
-		C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E2391CD0ADAA00DF960B /* LeftMenuViewController.m */; };
-		C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E23C1CD0ADBA00DF960B /* ContentViewController.m */; };
-		C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E23F1CD0D9EF00DF960B /* SignInViewController.m */; };
 		C514306E1CE1C2F900448BD1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = C514306D1CE1C2F900448BD1 /* File.m */; };
 		C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6A1CD0F143006EC41D /* NetworkFile.m */; };
 		C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6C1CD0F143006EC41D /* NetworkManager.m */; };
@@ -43,7 +39,6 @@
 		C56E55321CDB3E1800C608B9 /* ReportGoingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55311CDB3E1800C608B9 /* ReportGoingCell.m */; };
 		C56E55361CDB3EE200C608B9 /* ReportRejectedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56E55351CDB3EE200C608B9 /* ReportRejectedCell.xib */; };
 		C56E55391CDB41C000C608B9 /* ReportRejectedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55381CDB41C000C608B9 /* ReportRejectedCell.m */; };
-		C56E553C1CDB426A00C608B9 /* CHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E553B1CDB426A00C608B9 /* CHTableViewController.m */; };
 		C56E55461CDB451B00C608B9 /* ReportGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55451CDB451B00C608B9 /* ReportGoingTVC.m */; };
 		C56E55491CDB462A00C608B9 /* ReportRejectedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55481CDB462A00C608B9 /* ReportRejectedTVC.m */; };
 		C56E554C1CDB468300C608B9 /* ReportFundsGoingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E554B1CDB468300C608B9 /* ReportFundsGoingTVC.m */; };
@@ -54,7 +49,6 @@
 		C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E555A1CDB625200C608B9 /* ReportMaterialVC.m */; };
 		C56E55641CDB83C100C608B9 /* ReportDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */; };
 		C56E55671CDB83D200C608B9 /* ReportRegisterTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */; };
-		C56E556A1CDB899100C608B9 /* ModalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55691CDB899100C608B9 /* ModalTableViewController.m */; };
 		C56E556C1CDC6E6000C608B9 /* RegisterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56E556B1CDC6E6000C608B9 /* RegisterCell.xib */; };
 		C56E556F1CDC6EBC00C608B9 /* RegisterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E556E1CDC6EBC00C608B9 /* RegisterCell.m */; };
 		C56E55761CDC700400C608B9 /* RegisterFundsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55751CDC700400C608B9 /* RegisterFundsVC.m */; };
@@ -85,31 +79,16 @@
 		C56E55C41CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55C31CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m */; };
 		C56E55C71CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55C61CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m */; };
 		C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */; };
-		C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */; };
-		C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA01CD3B61500C6B263 /* ActivityTVC.m */; };
 		C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BA61CD3B83500C6B263 /* ActivityCell.xib */; };
 		C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA91CD3B8C500C6B263 /* ActivityCell.m */; };
-		C5971BAD1CD3C18400C6B263 /* AddActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */; };
 		C5971BB11CD4F85900C6B263 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BB01CD4F85900C6B263 /* LoadMoreCell.xib */; };
 		C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BB31CD4F88500C6B263 /* LoadMoreCell.m */; };
-		C5971BB71CD5D38900C6B263 /* PlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BB61CD5D38900C6B263 /* PlanTVC.m */; };
-		C5971BBA1CD5D46500C6B263 /* AddPlanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BB91CD5D46500C6B263 /* AddPlanVC.m */; };
 		C5971BBC1CD5DA8A00C6B263 /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BBB1CD5DA8A00C6B263 /* FileCell.xib */; };
 		C5971BBF1CD5DD0B00C6B263 /* FileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BBE1CD5DD0B00C6B263 /* FileCell.m */; };
-		C5971BC51CD5DD5F00C6B263 /* FileTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BC41CD5DD5F00C6B263 /* FileTVC.m */; };
-		C5971BC81CD5DFCE00C6B263 /* UploadFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BC71CD5DFCE00C6B263 /* UploadFileVC.m */; };
-		C5971BCB1CD5E88100C6B263 /* MailBoxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BCA1CD5E88100C6B263 /* MailBoxVC.m */; };
-		C5971BCE1CD5EA8200C6B263 /* InboxTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BCD1CD5EA8200C6B263 /* InboxTVC.m */; };
-		C5971BD11CD5EA9E00C6B263 /* OutboxTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BD01CD5EA9E00C6B263 /* OutboxTVC.m */; };
 		C5971BD31CD5EE2B00C6B263 /* MailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BD21CD5EE2B00C6B263 /* MailCell.xib */; };
 		C5971BD61CD5EE4100C6B263 /* MailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BD51CD5EE4100C6B263 /* MailCell.m */; };
-		C5971BD91CD5F3E700C6B263 /* SendMailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BD81CD5F3E700C6B263 /* SendMailTVC.m */; };
 		C5971BE01CD7561D00C6B263 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BDF1CD7561D00C6B263 /* TabItem.m */; };
-		C5971BE31CD78CAB00C6B263 /* YesterdayPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BE21CD78CAB00C6B263 /* YesterdayPlanTVC.m */; };
-		C5971BE61CD78CBF00C6B263 /* TodayPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */; };
-		C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */; };
 		C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */; };
-		C5971BEF1CD8D39000C6B263 /* ChooseUserTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -119,10 +98,8 @@
 		D18B471A1CCFAB8300FEA8E8 /* CHManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47191CCFAB8300FEA8E8 /* CHManagementTests.m */; };
 		D18B47251CCFAB8400FEA8E8 /* CHManagementUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47241CCFAB8400FEA8E8 /* CHManagementUITests.m */; };
 		D19EF82F1CD647B90044BA84 /* IDEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF82E1CD647B90044BA84 /* IDEntity.m */; };
-		D19EF8331CDD97250044BA84 /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8321CDD97250044BA84 /* ErrorHandler.m */; };
 		D19EF8421CE087520044BA84 /* ReportMaterialDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */; };
 		D19EF8451CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8441CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m */; };
-		D19EF8481CE205870044BA84 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D19EF8471CE205870044BA84 /* Utils.m */; };
 		D1E9C3701CE35ACE00109870 /* GroupManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C36F1CE35ACE00109870 /* GroupManagementTVC.m */; };
 		D1E9C3731CE35B1800109870 /* RoleManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3721CE35B1800109870 /* RoleManagementTVC.m */; };
 		D1E9C3761CE35B4000109870 /* UserManagementTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3751CE35B4000109870 /* UserManagementTVC.m */; };
@@ -131,6 +108,29 @@
 		D1E9C37F1CE45FB200109870 /* AddUserTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C37E1CE45FB200109870 /* AddUserTVC.m */; };
 		D1E9C3821CE4981800109870 /* RoleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3811CE4981800109870 /* RoleCell.m */; };
 		D1E9C3841CE4992100109870 /* RoleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E9C3831CE4992100109870 /* RoleCell.xib */; };
+		D1E9C3901CE5A0FF00109870 /* InboxTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3891CE5A0FF00109870 /* InboxTVC.m */; };
+		D1E9C3911CE5A0FF00109870 /* MailBoxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C38B1CE5A0FF00109870 /* MailBoxVC.m */; };
+		D1E9C3921CE5A0FF00109870 /* OutboxTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C38D1CE5A0FF00109870 /* OutboxTVC.m */; };
+		D1E9C3931CE5A0FF00109870 /* SendMailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C38F1CE5A0FF00109870 /* SendMailTVC.m */; };
+		D1E9C3981CE5A24C00109870 /* ActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3951CE5A24C00109870 /* ActivityTVC.m */; };
+		D1E9C3991CE5A24C00109870 /* AddActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3971CE5A24C00109870 /* AddActivityTVC.m */; };
+		D1E9C39E1CE5A27200109870 /* AddPlanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C39B1CE5A27200109870 /* AddPlanVC.m */; };
+		D1E9C39F1CE5A27200109870 /* PlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C39D1CE5A27200109870 /* PlanTVC.m */; };
+		D1E9C3A61CE5A2E000109870 /* TodayPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3A11CE5A2E000109870 /* TodayPlanTVC.m */; };
+		D1E9C3A71CE5A2E000109870 /* TomorrowPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3A31CE5A2E000109870 /* TomorrowPlanTVC.m */; };
+		D1E9C3A81CE5A2E000109870 /* YesterdayPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3A51CE5A2E000109870 /* YesterdayPlanTVC.m */; };
+		D1E9C3AD1CE5A33D00109870 /* FileTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3AA1CE5A33D00109870 /* FileTVC.m */; };
+		D1E9C3AE1CE5A33D00109870 /* UploadFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3AC1CE5A33D00109870 /* UploadFileVC.m */; };
+		D1E9C3BA1CE5A42200109870 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3B11CE5A42200109870 /* ContentViewController.m */; };
+		D1E9C3BB1CE5A42200109870 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3B31CE5A42200109870 /* LeftMenuViewController.m */; };
+		D1E9C3BC1CE5A42200109870 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3B51CE5A42200109870 /* MainViewController.m */; };
+		D1E9C3BD1CE5A42200109870 /* ModifyPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3B71CE5A42200109870 /* ModifyPasswordVC.m */; };
+		D1E9C3BE1CE5A42200109870 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3B91CE5A42200109870 /* SignInViewController.m */; };
+		D1E9C3C11CE5A43D00109870 /* ChooseUserTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3C01CE5A43D00109870 /* ChooseUserTVC.m */; };
+		D1E9C3C71CE5A4F800109870 /* CHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3C41CE5A4F800109870 /* CHTableViewController.m */; };
+		D1E9C3C81CE5A4F800109870 /* ModalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3C61CE5A4F800109870 /* ModalTableViewController.m */; };
+		D1E9C3CE1CE5A53D00109870 /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3CB1CE5A53D00109870 /* ErrorHandler.m */; };
+		D1E9C3CF1CE5A53D00109870 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3CD1CE5A53D00109870 /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,14 +154,6 @@
 		2C70A178924B476A49005E9F /* Pods-CHManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHManagement.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHManagement/Pods-CHManagement.release.xcconfig"; sourceTree = "<group>"; };
 		788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHManagement.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B0AC6DBE4E10D816EC340 /* Pods-CHManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHManagement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHManagement/Pods-CHManagement.debug.xcconfig"; sourceTree = "<group>"; };
-		C500E2351CD0A4C400DF960B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/MainViewController.h; sourceTree = "<group>"; };
-		C500E2361CD0A4C400DF960B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/MainViewController.m; sourceTree = "<group>"; };
-		C500E2381CD0ADAA00DF960B /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuViewController.h; path = Controller/LeftMenuViewController.h; sourceTree = "<group>"; };
-		C500E2391CD0ADAA00DF960B /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuViewController.m; path = Controller/LeftMenuViewController.m; sourceTree = "<group>"; };
-		C500E23B1CD0ADBA00DF960B /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentViewController.h; path = Controller/ContentViewController.h; sourceTree = "<group>"; };
-		C500E23C1CD0ADBA00DF960B /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentViewController.m; path = Controller/ContentViewController.m; sourceTree = "<group>"; };
-		C500E23E1CD0D9EF00DF960B /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = Controller/SignInViewController.h; sourceTree = "<group>"; };
-		C500E23F1CD0D9EF00DF960B /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = Controller/SignInViewController.m; sourceTree = "<group>"; };
 		C514306C1CE1C2F900448BD1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = Model/File.h; sourceTree = "<group>"; };
 		C514306D1CE1C2F900448BD1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = Model/File.m; sourceTree = "<group>"; };
 		C514306F1CE1F2FF00448BD1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -225,8 +217,6 @@
 		C56E55351CDB3EE200C608B9 /* ReportRejectedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportRejectedCell.xib; path = View/ReportRejectedCell.xib; sourceTree = "<group>"; };
 		C56E55371CDB41C000C608B9 /* ReportRejectedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportRejectedCell.h; path = View/ReportRejectedCell.h; sourceTree = "<group>"; };
 		C56E55381CDB41C000C608B9 /* ReportRejectedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportRejectedCell.m; path = View/ReportRejectedCell.m; sourceTree = "<group>"; };
-		C56E553A1CDB426A00C608B9 /* CHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHTableViewController.h; path = Controller/CHTableViewController.h; sourceTree = "<group>"; };
-		C56E553B1CDB426A00C608B9 /* CHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTableViewController.m; path = Controller/CHTableViewController.m; sourceTree = "<group>"; };
 		C56E55441CDB451B00C608B9 /* ReportGoingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportGoingTVC.h; path = Controller/Report/ReportGoingTVC.h; sourceTree = "<group>"; };
 		C56E55451CDB451B00C608B9 /* ReportGoingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportGoingTVC.m; path = Controller/Report/ReportGoingTVC.m; sourceTree = "<group>"; };
 		C56E55471CDB462A00C608B9 /* ReportRejectedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportRejectedTVC.h; path = Controller/Report/ReportRejectedTVC.h; sourceTree = "<group>"; };
@@ -247,8 +237,6 @@
 		C56E55631CDB83C100C608B9 /* ReportDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportDetailTVC.m; path = Controller/Report/ReportDetailTVC.m; sourceTree = "<group>"; };
 		C56E55651CDB83D200C608B9 /* ReportRegisterTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportRegisterTVC.h; path = Controller/Report/ReportRegisterTVC.h; sourceTree = "<group>"; };
 		C56E55661CDB83D200C608B9 /* ReportRegisterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportRegisterTVC.m; path = Controller/Report/ReportRegisterTVC.m; sourceTree = "<group>"; };
-		C56E55681CDB899100C608B9 /* ModalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalTableViewController.h; path = Controller/ModalTableViewController.h; sourceTree = "<group>"; };
-		C56E55691CDB899100C608B9 /* ModalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalTableViewController.m; path = Controller/ModalTableViewController.m; sourceTree = "<group>"; };
 		C56E556B1CDC6E6000C608B9 /* RegisterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterCell.xib; path = View/RegisterCell.xib; sourceTree = "<group>"; };
 		C56E556D1CDC6EBC00C608B9 /* RegisterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterCell.h; path = View/RegisterCell.h; sourceTree = "<group>"; };
 		C56E556E1CDC6EBC00C608B9 /* RegisterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterCell.m; path = View/RegisterCell.m; sourceTree = "<group>"; };
@@ -307,52 +295,22 @@
 		C56E55C61CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMaterialPurchaseDealedTVC.m; path = Controller/Check/CheckMaterialPurchaseDealedTVC.m; sourceTree = "<group>"; };
 		C5971B991CD39A7200C6B263 /* MBProgressHUD+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+Extends.h"; path = "Extends/MBProgressHUD+Extends.h"; sourceTree = "<group>"; };
 		C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+Extends.m"; path = "Extends/MBProgressHUD+Extends.m"; sourceTree = "<group>"; };
-		C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifyPasswordVC.h; path = Controller/ModifyPasswordVC.h; sourceTree = "<group>"; };
-		C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModifyPasswordVC.m; path = Controller/ModifyPasswordVC.m; sourceTree = "<group>"; };
-		C5971B9F1CD3B61500C6B263 /* ActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTVC.h; path = Controller/ActivityTVC.h; sourceTree = "<group>"; };
-		C5971BA01CD3B61500C6B263 /* ActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTVC.m; path = Controller/ActivityTVC.m; sourceTree = "<group>"; };
 		C5971BA61CD3B83500C6B263 /* ActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityCell.xib; path = View/ActivityCell.xib; sourceTree = "<group>"; };
 		C5971BA81CD3B8C500C6B263 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityCell.h; path = View/ActivityCell.h; sourceTree = "<group>"; };
 		C5971BA91CD3B8C500C6B263 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityCell.m; path = View/ActivityCell.m; sourceTree = "<group>"; };
-		C5971BAB1CD3C18400C6B263 /* AddActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddActivityTVC.h; path = Controller/AddActivityTVC.h; sourceTree = "<group>"; };
-		C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddActivityTVC.m; path = Controller/AddActivityTVC.m; sourceTree = "<group>"; };
 		C5971BB01CD4F85900C6B263 /* LoadMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadMoreCell.xib; path = View/LoadMoreCell.xib; sourceTree = "<group>"; };
 		C5971BB21CD4F88500C6B263 /* LoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadMoreCell.h; path = View/LoadMoreCell.h; sourceTree = "<group>"; };
 		C5971BB31CD4F88500C6B263 /* LoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadMoreCell.m; path = View/LoadMoreCell.m; sourceTree = "<group>"; };
-		C5971BB51CD5D38900C6B263 /* PlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanTVC.h; path = CHManagement/Controller/PlanTVC.h; sourceTree = SOURCE_ROOT; };
-		C5971BB61CD5D38900C6B263 /* PlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanTVC.m; path = CHManagement/Controller/PlanTVC.m; sourceTree = SOURCE_ROOT; };
-		C5971BB81CD5D46500C6B263 /* AddPlanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddPlanVC.h; path = Controller/AddPlanVC.h; sourceTree = "<group>"; };
-		C5971BB91CD5D46500C6B263 /* AddPlanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddPlanVC.m; path = Controller/AddPlanVC.m; sourceTree = "<group>"; };
 		C5971BBB1CD5DA8A00C6B263 /* FileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FileCell.xib; path = View/FileCell.xib; sourceTree = "<group>"; };
 		C5971BBD1CD5DD0B00C6B263 /* FileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileCell.h; path = View/FileCell.h; sourceTree = "<group>"; };
 		C5971BBE1CD5DD0B00C6B263 /* FileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileCell.m; path = View/FileCell.m; sourceTree = "<group>"; };
-		C5971BC31CD5DD5F00C6B263 /* FileTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileTVC.h; path = Controller/FileTVC.h; sourceTree = "<group>"; };
-		C5971BC41CD5DD5F00C6B263 /* FileTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileTVC.m; path = Controller/FileTVC.m; sourceTree = "<group>"; };
-		C5971BC61CD5DFCE00C6B263 /* UploadFileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadFileVC.h; path = Controller/UploadFileVC.h; sourceTree = "<group>"; };
-		C5971BC71CD5DFCE00C6B263 /* UploadFileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadFileVC.m; path = Controller/UploadFileVC.m; sourceTree = "<group>"; };
-		C5971BC91CD5E88100C6B263 /* MailBoxVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailBoxVC.h; path = Controller/MailBoxVC.h; sourceTree = "<group>"; };
-		C5971BCA1CD5E88100C6B263 /* MailBoxVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailBoxVC.m; path = Controller/MailBoxVC.m; sourceTree = "<group>"; };
-		C5971BCC1CD5EA8200C6B263 /* InboxTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxTVC.h; path = Controller/InboxTVC.h; sourceTree = "<group>"; };
-		C5971BCD1CD5EA8200C6B263 /* InboxTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxTVC.m; path = Controller/InboxTVC.m; sourceTree = "<group>"; };
-		C5971BCF1CD5EA9E00C6B263 /* OutboxTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutboxTVC.h; path = Controller/OutboxTVC.h; sourceTree = "<group>"; };
-		C5971BD01CD5EA9E00C6B263 /* OutboxTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutboxTVC.m; path = Controller/OutboxTVC.m; sourceTree = "<group>"; };
 		C5971BD21CD5EE2B00C6B263 /* MailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MailCell.xib; path = View/MailCell.xib; sourceTree = "<group>"; };
 		C5971BD41CD5EE4100C6B263 /* MailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailCell.h; path = View/MailCell.h; sourceTree = "<group>"; };
 		C5971BD51CD5EE4100C6B263 /* MailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailCell.m; path = View/MailCell.m; sourceTree = "<group>"; };
-		C5971BD71CD5F3E700C6B263 /* SendMailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendMailTVC.h; path = Controller/SendMailTVC.h; sourceTree = "<group>"; };
-		C5971BD81CD5F3E700C6B263 /* SendMailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendMailTVC.m; path = Controller/SendMailTVC.m; sourceTree = "<group>"; };
 		C5971BDE1CD7561D00C6B263 /* TabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabItem.h; path = Utils/TabItem.h; sourceTree = "<group>"; };
 		C5971BDF1CD7561D00C6B263 /* TabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabItem.m; path = Utils/TabItem.m; sourceTree = "<group>"; };
-		C5971BE11CD78CAB00C6B263 /* YesterdayPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YesterdayPlanTVC.h; path = Controller/YesterdayPlanTVC.h; sourceTree = "<group>"; };
-		C5971BE21CD78CAB00C6B263 /* YesterdayPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YesterdayPlanTVC.m; path = Controller/YesterdayPlanTVC.m; sourceTree = "<group>"; };
-		C5971BE41CD78CBF00C6B263 /* TodayPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodayPlanTVC.h; path = Controller/TodayPlanTVC.h; sourceTree = "<group>"; };
-		C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodayPlanTVC.m; path = Controller/TodayPlanTVC.m; sourceTree = "<group>"; };
-		C5971BE71CD78CD200C6B263 /* TomorrowPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TomorrowPlanTVC.h; path = Controller/TomorrowPlanTVC.h; sourceTree = "<group>"; };
-		C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TomorrowPlanTVC.m; path = Controller/TomorrowPlanTVC.m; sourceTree = "<group>"; };
 		C5971BEA1CD7943A00C6B263 /* TabbedScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabbedScrollViewController.h; path = Utils/TabbedScrollViewController.h; sourceTree = "<group>"; };
 		C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabbedScrollViewController.m; path = Utils/TabbedScrollViewController.m; sourceTree = "<group>"; };
-		C5971BED1CD8D39000C6B263 /* ChooseUserTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseUserTVC.h; path = Controller/ChooseUserTVC.h; sourceTree = "<group>"; };
-		C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseUserTVC.m; path = Controller/ChooseUserTVC.m; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -370,14 +328,10 @@
 		D19EF82D1CD647B90044BA84 /* IDEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEntity.h; sourceTree = "<group>"; };
 		D19EF82E1CD647B90044BA84 /* IDEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDEntity.m; sourceTree = "<group>"; };
 		D19EF8301CD9CCDE0044BA84 /* NetworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkConstants.h; sourceTree = "<group>"; };
-		D19EF8311CDD97250044BA84 /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorHandler.h; path = Controller/ErrorHandler.h; sourceTree = "<group>"; };
-		D19EF8321CDD97250044BA84 /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorHandler.m; path = Controller/ErrorHandler.m; sourceTree = "<group>"; };
 		D19EF8401CE087520044BA84 /* ReportMaterialDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialDetailTVC.h; path = Controller/Report/ReportMaterialDetailTVC.h; sourceTree = "<group>"; };
 		D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialDetailTVC.m; path = Controller/Report/ReportMaterialDetailTVC.m; sourceTree = "<group>"; };
 		D19EF8431CE1E86A0044BA84 /* ReportMaterialRegisterTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialRegisterTVC.h; path = Controller/Report/ReportMaterialRegisterTVC.h; sourceTree = "<group>"; };
 		D19EF8441CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialRegisterTVC.m; path = Controller/Report/ReportMaterialRegisterTVC.m; sourceTree = "<group>"; };
-		D19EF8461CE205870044BA84 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Controller/Utils.h; sourceTree = "<group>"; };
-		D19EF8471CE205870044BA84 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Controller/Utils.m; sourceTree = "<group>"; };
 		D1E9C36E1CE35ACE00109870 /* GroupManagementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupManagementTVC.h; path = Controller/Management/GroupManagementTVC.h; sourceTree = "<group>"; };
 		D1E9C36F1CE35ACE00109870 /* GroupManagementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupManagementTVC.m; path = Controller/Management/GroupManagementTVC.m; sourceTree = "<group>"; };
 		D1E9C3711CE35B1800109870 /* RoleManagementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoleManagementTVC.h; path = Controller/Management/RoleManagementTVC.h; sourceTree = "<group>"; };
@@ -393,6 +347,52 @@
 		D1E9C3801CE4981800109870 /* RoleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoleCell.h; path = View/RoleCell.h; sourceTree = "<group>"; };
 		D1E9C3811CE4981800109870 /* RoleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoleCell.m; path = View/RoleCell.m; sourceTree = "<group>"; };
 		D1E9C3831CE4992100109870 /* RoleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoleCell.xib; path = View/RoleCell.xib; sourceTree = "<group>"; };
+		D1E9C3881CE5A0DA00109870 /* InboxTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxTVC.h; path = Controller/Email/InboxTVC.h; sourceTree = "<group>"; };
+		D1E9C3891CE5A0FF00109870 /* InboxTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxTVC.m; path = Controller/Email/InboxTVC.m; sourceTree = "<group>"; };
+		D1E9C38A1CE5A0FF00109870 /* MailBoxVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailBoxVC.h; path = Controller/Email/MailBoxVC.h; sourceTree = "<group>"; };
+		D1E9C38B1CE5A0FF00109870 /* MailBoxVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailBoxVC.m; path = Controller/Email/MailBoxVC.m; sourceTree = "<group>"; };
+		D1E9C38C1CE5A0FF00109870 /* OutboxTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutboxTVC.h; path = Controller/Email/OutboxTVC.h; sourceTree = "<group>"; };
+		D1E9C38D1CE5A0FF00109870 /* OutboxTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutboxTVC.m; path = Controller/Email/OutboxTVC.m; sourceTree = "<group>"; };
+		D1E9C38E1CE5A0FF00109870 /* SendMailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendMailTVC.h; path = Controller/Email/SendMailTVC.h; sourceTree = "<group>"; };
+		D1E9C38F1CE5A0FF00109870 /* SendMailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendMailTVC.m; path = Controller/Email/SendMailTVC.m; sourceTree = "<group>"; };
+		D1E9C3941CE5A24C00109870 /* ActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTVC.h; path = Controller/Activity/ActivityTVC.h; sourceTree = "<group>"; };
+		D1E9C3951CE5A24C00109870 /* ActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTVC.m; path = Controller/Activity/ActivityTVC.m; sourceTree = "<group>"; };
+		D1E9C3961CE5A24C00109870 /* AddActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddActivityTVC.h; path = Controller/Activity/AddActivityTVC.h; sourceTree = "<group>"; };
+		D1E9C3971CE5A24C00109870 /* AddActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddActivityTVC.m; path = Controller/Activity/AddActivityTVC.m; sourceTree = "<group>"; };
+		D1E9C39A1CE5A27200109870 /* AddPlanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddPlanVC.h; path = Controller/Plan/AddPlanVC.h; sourceTree = "<group>"; };
+		D1E9C39B1CE5A27200109870 /* AddPlanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddPlanVC.m; path = Controller/Plan/AddPlanVC.m; sourceTree = "<group>"; };
+		D1E9C39C1CE5A27200109870 /* PlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanTVC.h; path = Controller/Plan/PlanTVC.h; sourceTree = "<group>"; };
+		D1E9C39D1CE5A27200109870 /* PlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanTVC.m; path = Controller/Plan/PlanTVC.m; sourceTree = "<group>"; };
+		D1E9C3A01CE5A2E000109870 /* TodayPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodayPlanTVC.h; path = Controller/Plan/TodayPlanTVC.h; sourceTree = "<group>"; };
+		D1E9C3A11CE5A2E000109870 /* TodayPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodayPlanTVC.m; path = Controller/Plan/TodayPlanTVC.m; sourceTree = "<group>"; };
+		D1E9C3A21CE5A2E000109870 /* TomorrowPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TomorrowPlanTVC.h; path = Controller/Plan/TomorrowPlanTVC.h; sourceTree = "<group>"; };
+		D1E9C3A31CE5A2E000109870 /* TomorrowPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TomorrowPlanTVC.m; path = Controller/Plan/TomorrowPlanTVC.m; sourceTree = "<group>"; };
+		D1E9C3A41CE5A2E000109870 /* YesterdayPlanTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YesterdayPlanTVC.h; path = Controller/Plan/YesterdayPlanTVC.h; sourceTree = "<group>"; };
+		D1E9C3A51CE5A2E000109870 /* YesterdayPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YesterdayPlanTVC.m; path = Controller/Plan/YesterdayPlanTVC.m; sourceTree = "<group>"; };
+		D1E9C3A91CE5A33D00109870 /* FileTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileTVC.h; path = Controller/File/FileTVC.h; sourceTree = "<group>"; };
+		D1E9C3AA1CE5A33D00109870 /* FileTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileTVC.m; path = Controller/File/FileTVC.m; sourceTree = "<group>"; };
+		D1E9C3AB1CE5A33D00109870 /* UploadFileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadFileVC.h; path = Controller/File/UploadFileVC.h; sourceTree = "<group>"; };
+		D1E9C3AC1CE5A33D00109870 /* UploadFileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadFileVC.m; path = Controller/File/UploadFileVC.m; sourceTree = "<group>"; };
+		D1E9C3B01CE5A42200109870 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentViewController.h; path = Controller/Menu/ContentViewController.h; sourceTree = "<group>"; };
+		D1E9C3B11CE5A42200109870 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentViewController.m; path = Controller/Menu/ContentViewController.m; sourceTree = "<group>"; };
+		D1E9C3B21CE5A42200109870 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuViewController.h; path = Controller/Menu/LeftMenuViewController.h; sourceTree = "<group>"; };
+		D1E9C3B31CE5A42200109870 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuViewController.m; path = Controller/Menu/LeftMenuViewController.m; sourceTree = "<group>"; };
+		D1E9C3B41CE5A42200109870 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/Menu/MainViewController.h; sourceTree = "<group>"; };
+		D1E9C3B51CE5A42200109870 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/Menu/MainViewController.m; sourceTree = "<group>"; };
+		D1E9C3B61CE5A42200109870 /* ModifyPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifyPasswordVC.h; path = Controller/Menu/ModifyPasswordVC.h; sourceTree = "<group>"; };
+		D1E9C3B71CE5A42200109870 /* ModifyPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModifyPasswordVC.m; path = Controller/Menu/ModifyPasswordVC.m; sourceTree = "<group>"; };
+		D1E9C3B81CE5A42200109870 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = Controller/Menu/SignInViewController.h; sourceTree = "<group>"; };
+		D1E9C3B91CE5A42200109870 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = Controller/Menu/SignInViewController.m; sourceTree = "<group>"; };
+		D1E9C3BF1CE5A43D00109870 /* ChooseUserTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseUserTVC.h; path = Controller/Email/ChooseUserTVC.h; sourceTree = "<group>"; };
+		D1E9C3C01CE5A43D00109870 /* ChooseUserTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseUserTVC.m; path = Controller/Email/ChooseUserTVC.m; sourceTree = "<group>"; };
+		D1E9C3C31CE5A4F800109870 /* CHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHTableViewController.h; path = Controller/BaseViewController/CHTableViewController.h; sourceTree = "<group>"; };
+		D1E9C3C41CE5A4F800109870 /* CHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTableViewController.m; path = Controller/BaseViewController/CHTableViewController.m; sourceTree = "<group>"; };
+		D1E9C3C51CE5A4F800109870 /* ModalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalTableViewController.h; path = Controller/BaseViewController/ModalTableViewController.h; sourceTree = "<group>"; };
+		D1E9C3C61CE5A4F800109870 /* ModalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalTableViewController.m; path = Controller/BaseViewController/ModalTableViewController.m; sourceTree = "<group>"; };
+		D1E9C3CA1CE5A53D00109870 /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorHandler.h; path = Controller/Utils/ErrorHandler.h; sourceTree = "<group>"; };
+		D1E9C3CB1CE5A53D00109870 /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorHandler.m; path = Controller/Utils/ErrorHandler.m; sourceTree = "<group>"; };
+		D1E9C3CC1CE5A53D00109870 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Controller/Utils/Utils.h; sourceTree = "<group>"; };
+		D1E9C3CD1CE5A53D00109870 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Controller/Utils/Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +442,10 @@
 		C500E2341CD0A49200DF960B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D1E9C3C91CE5A50500109870 /* Utils */,
+				D1E9C3C21CE5A4E100109870 /* BaseViewController */,
+				D1E9C3AF1CE5A3F500109870 /* Menu */,
+				D1E9C3871CE5A0A600109870 /* Email */,
 				D1E9C36D1CE35A9700109870 /* Management */,
 				C514306A1CE19F9300448BD1 /* File */,
 				D19EF83C1CDF03180044BA84 /* Plan */,
@@ -449,34 +453,6 @@
 				C56E55B01CDCAEBF00C608B9 /* Check */,
 				C56E55701CDC6F2A00C608B9 /* Register */,
 				C56E55401CDB449900C608B9 /* Report */,
-				C500E2351CD0A4C400DF960B /* MainViewController.h */,
-				C500E2361CD0A4C400DF960B /* MainViewController.m */,
-				C500E2381CD0ADAA00DF960B /* LeftMenuViewController.h */,
-				C500E2391CD0ADAA00DF960B /* LeftMenuViewController.m */,
-				C500E23B1CD0ADBA00DF960B /* ContentViewController.h */,
-				C500E23C1CD0ADBA00DF960B /* ContentViewController.m */,
-				C500E23E1CD0D9EF00DF960B /* SignInViewController.h */,
-				C500E23F1CD0D9EF00DF960B /* SignInViewController.m */,
-				C5971B9C1CD3B49A00C6B263 /* ModifyPasswordVC.h */,
-				C5971B9D1CD3B49A00C6B263 /* ModifyPasswordVC.m */,
-				C5971BC91CD5E88100C6B263 /* MailBoxVC.h */,
-				C5971BCA1CD5E88100C6B263 /* MailBoxVC.m */,
-				C5971BCC1CD5EA8200C6B263 /* InboxTVC.h */,
-				C5971BCD1CD5EA8200C6B263 /* InboxTVC.m */,
-				C5971BCF1CD5EA9E00C6B263 /* OutboxTVC.h */,
-				C5971BD01CD5EA9E00C6B263 /* OutboxTVC.m */,
-				C5971BD71CD5F3E700C6B263 /* SendMailTVC.h */,
-				C5971BD81CD5F3E700C6B263 /* SendMailTVC.m */,
-				C5971BED1CD8D39000C6B263 /* ChooseUserTVC.h */,
-				C5971BEE1CD8D39000C6B263 /* ChooseUserTVC.m */,
-				C56E553A1CDB426A00C608B9 /* CHTableViewController.h */,
-				C56E553B1CDB426A00C608B9 /* CHTableViewController.m */,
-				C56E55681CDB899100C608B9 /* ModalTableViewController.h */,
-				C56E55691CDB899100C608B9 /* ModalTableViewController.m */,
-				D19EF8311CDD97250044BA84 /* ErrorHandler.h */,
-				D19EF8321CDD97250044BA84 /* ErrorHandler.m */,
-				D19EF8461CE205870044BA84 /* Utils.h */,
-				D19EF8471CE205870044BA84 /* Utils.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -484,10 +460,10 @@
 		C514306A1CE19F9300448BD1 /* File */ = {
 			isa = PBXGroup;
 			children = (
-				C5971BC31CD5DD5F00C6B263 /* FileTVC.h */,
-				C5971BC41CD5DD5F00C6B263 /* FileTVC.m */,
-				C5971BC61CD5DFCE00C6B263 /* UploadFileVC.h */,
-				C5971BC71CD5DFCE00C6B263 /* UploadFileVC.m */,
+				D1E9C3A91CE5A33D00109870 /* FileTVC.h */,
+				D1E9C3AA1CE5A33D00109870 /* FileTVC.m */,
+				D1E9C3AB1CE5A33D00109870 /* UploadFileVC.h */,
+				D1E9C3AC1CE5A33D00109870 /* UploadFileVC.m */,
 			);
 			name = File;
 			sourceTree = "<group>";
@@ -751,6 +727,7 @@
 		D18B46FE1CCFAB8300FEA8E8 /* CHManagement */ = {
 			isa = PBXGroup;
 			children = (
+				C500E2341CD0A49200DF960B /* Controller */,
 				C514306B1CE1C2DA00448BD1 /* Model */,
 				C5971BDD1CD755EF00C6B263 /* Utils */,
 				C5971BA51CD3B80F00C6B263 /* View */,
@@ -758,7 +735,6 @@
 				C5557F681CD0F143006EC41D /* NetworkService */,
 				C5557F751CD0F154006EC41D /* Entity */,
 				C5557F7C1CD0F15E006EC41D /* VO */,
-				C500E2341CD0A49200DF960B /* Controller */,
 				D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */,
 				D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */,
 				D18B47081CCFAB8300FEA8E8 /* Main.storyboard */,
@@ -801,10 +777,10 @@
 		D19EF83B1CDF03010044BA84 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				C5971B9F1CD3B61500C6B263 /* ActivityTVC.h */,
-				C5971BA01CD3B61500C6B263 /* ActivityTVC.m */,
-				C5971BAB1CD3C18400C6B263 /* AddActivityTVC.h */,
-				C5971BAC1CD3C18400C6B263 /* AddActivityTVC.m */,
+				D1E9C3941CE5A24C00109870 /* ActivityTVC.h */,
+				D1E9C3951CE5A24C00109870 /* ActivityTVC.m */,
+				D1E9C3961CE5A24C00109870 /* AddActivityTVC.h */,
+				D1E9C3971CE5A24C00109870 /* AddActivityTVC.m */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
@@ -812,16 +788,16 @@
 		D19EF83C1CDF03180044BA84 /* Plan */ = {
 			isa = PBXGroup;
 			children = (
-				C5971BB51CD5D38900C6B263 /* PlanTVC.h */,
-				C5971BB61CD5D38900C6B263 /* PlanTVC.m */,
-				C5971BB81CD5D46500C6B263 /* AddPlanVC.h */,
-				C5971BB91CD5D46500C6B263 /* AddPlanVC.m */,
-				C5971BE11CD78CAB00C6B263 /* YesterdayPlanTVC.h */,
-				C5971BE21CD78CAB00C6B263 /* YesterdayPlanTVC.m */,
-				C5971BE41CD78CBF00C6B263 /* TodayPlanTVC.h */,
-				C5971BE51CD78CBF00C6B263 /* TodayPlanTVC.m */,
-				C5971BE71CD78CD200C6B263 /* TomorrowPlanTVC.h */,
-				C5971BE81CD78CD200C6B263 /* TomorrowPlanTVC.m */,
+				D1E9C3A01CE5A2E000109870 /* TodayPlanTVC.h */,
+				D1E9C3A11CE5A2E000109870 /* TodayPlanTVC.m */,
+				D1E9C3A21CE5A2E000109870 /* TomorrowPlanTVC.h */,
+				D1E9C3A31CE5A2E000109870 /* TomorrowPlanTVC.m */,
+				D1E9C3A41CE5A2E000109870 /* YesterdayPlanTVC.h */,
+				D1E9C3A51CE5A2E000109870 /* YesterdayPlanTVC.m */,
+				D1E9C39A1CE5A27200109870 /* AddPlanVC.h */,
+				D1E9C39B1CE5A27200109870 /* AddPlanVC.m */,
+				D1E9C39C1CE5A27200109870 /* PlanTVC.h */,
+				D1E9C39D1CE5A27200109870 /* PlanTVC.m */,
 			);
 			name = Plan;
 			sourceTree = "<group>";
@@ -843,6 +819,62 @@
 				D1E9C37E1CE45FB200109870 /* AddUserTVC.m */,
 			);
 			name = Management;
+			sourceTree = "<group>";
+		};
+		D1E9C3871CE5A0A600109870 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				D1E9C3BF1CE5A43D00109870 /* ChooseUserTVC.h */,
+				D1E9C3C01CE5A43D00109870 /* ChooseUserTVC.m */,
+				D1E9C38A1CE5A0FF00109870 /* MailBoxVC.h */,
+				D1E9C38B1CE5A0FF00109870 /* MailBoxVC.m */,
+				D1E9C3881CE5A0DA00109870 /* InboxTVC.h */,
+				D1E9C3891CE5A0FF00109870 /* InboxTVC.m */,
+				D1E9C38C1CE5A0FF00109870 /* OutboxTVC.h */,
+				D1E9C38D1CE5A0FF00109870 /* OutboxTVC.m */,
+				D1E9C38E1CE5A0FF00109870 /* SendMailTVC.h */,
+				D1E9C38F1CE5A0FF00109870 /* SendMailTVC.m */,
+			);
+			name = Email;
+			sourceTree = "<group>";
+		};
+		D1E9C3AF1CE5A3F500109870 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				D1E9C3B01CE5A42200109870 /* ContentViewController.h */,
+				D1E9C3B11CE5A42200109870 /* ContentViewController.m */,
+				D1E9C3B21CE5A42200109870 /* LeftMenuViewController.h */,
+				D1E9C3B31CE5A42200109870 /* LeftMenuViewController.m */,
+				D1E9C3B41CE5A42200109870 /* MainViewController.h */,
+				D1E9C3B51CE5A42200109870 /* MainViewController.m */,
+				D1E9C3B61CE5A42200109870 /* ModifyPasswordVC.h */,
+				D1E9C3B71CE5A42200109870 /* ModifyPasswordVC.m */,
+				D1E9C3B81CE5A42200109870 /* SignInViewController.h */,
+				D1E9C3B91CE5A42200109870 /* SignInViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		D1E9C3C21CE5A4E100109870 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D1E9C3C31CE5A4F800109870 /* CHTableViewController.h */,
+				D1E9C3C41CE5A4F800109870 /* CHTableViewController.m */,
+				D1E9C3C51CE5A4F800109870 /* ModalTableViewController.h */,
+				D1E9C3C61CE5A4F800109870 /* ModalTableViewController.m */,
+			);
+			name = BaseViewController;
+			sourceTree = "<group>";
+		};
+		D1E9C3C91CE5A50500109870 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D1E9C3CA1CE5A53D00109870 /* ErrorHandler.h */,
+				D1E9C3CB1CE5A53D00109870 /* ErrorHandler.m */,
+				D1E9C3CC1CE5A53D00109870 /* Utils.h */,
+				D1E9C3CD1CE5A53D00109870 /* Utils.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1037,56 +1069,59 @@
 			files = (
 				C56E55A91CDC8D4C00C608B9 /* FundsMovementVC.m in Sources */,
 				C56E55461CDB451B00C608B9 /* ReportGoingTVC.m in Sources */,
+				D1E9C3901CE5A0FF00109870 /* InboxTVC.m in Sources */,
 				C5557F7B1CD0F154006EC41D /* Role.m in Sources */,
+				D1E9C3BA1CE5A42200109870 /* ContentViewController.m in Sources */,
 				C56E554F1CDB46B800C608B9 /* ReportFundsRejectedTVC.m in Sources */,
 				C56E55641CDB83C100C608B9 /* ReportDetailTVC.m in Sources */,
-				C500E2401CD0D9EF00DF960B /* SignInViewController.m in Sources */,
-				D19EF8481CE205870044BA84 /* Utils.m in Sources */,
 				C56E55221CDB112300C608B9 /* Permission.m in Sources */,
-				C5971BB71CD5D38900C6B263 /* PlanTVC.m in Sources */,
 				C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */,
 				C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */,
 				C56E557F1CDC72F400C608B9 /* RegisterFundsDoneTVC.m in Sources */,
 				C5971BBF1CD5DD0B00C6B263 /* FileCell.m in Sources */,
 				C5557F7A1CD0F154006EC41D /* MyGroup.m in Sources */,
+				D1E9C3C81CE5A4F800109870 /* ModalTableViewController.m in Sources */,
+				D1E9C3991CE5A24C00109870 /* AddActivityTVC.m in Sources */,
 				D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */,
 				C56E55C71CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m in Sources */,
 				C5557FB01CD0F15E006EC41D /* ScheduleVO.m in Sources */,
 				C56E55971CDC858C00C608B9 /* BuildingMaterialSellTVC.m in Sources */,
+				D1E9C3911CE5A0FF00109870 /* MailBoxVC.m in Sources */,
 				D1E9C3731CE35B1800109870 /* RoleManagementTVC.m in Sources */,
-				C5971BBA1CD5D46500C6B263 /* AddPlanVC.m in Sources */,
+				D1E9C3A81CE5A2E000109870 /* YesterdayPlanTVC.m in Sources */,
 				C56E55941CDC832D00C608B9 /* BuildingMaterialSellVC.m in Sources */,
 				C56E55C41CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m in Sources */,
-				C5971BE31CD78CAB00C6B263 /* YesterdayPlanTVC.m in Sources */,
+				D1E9C3931CE5A0FF00109870 /* SendMailTVC.m in Sources */,
 				C56E55791CDC70FB00C608B9 /* RegisterTableViewController.m in Sources */,
 				C56E55521CDB46D700C608B9 /* ReportFundsVC.m in Sources */,
 				C56E55671CDB83D200C608B9 /* ReportRegisterTVC.m in Sources */,
 				C56E554C1CDB468300C608B9 /* ReportFundsGoingTVC.m in Sources */,
 				C56E55AF1CDC8DD100C608B9 /* AddFundsMovementTVC.m in Sources */,
 				C56E55761CDC700400C608B9 /* RegisterFundsVC.m in Sources */,
-				C5971BD11CD5EA9E00C6B263 /* OutboxTVC.m in Sources */,
 				C5557FB11CD0F15E006EC41D /* SignInResultVO.m in Sources */,
 				C56E55B31CDCAF2B00C608B9 /* CheckFundsVC.m in Sources */,
 				C5557FB41CD0F15E006EC41D /* UserVO.m in Sources */,
+				D1E9C3A71CE5A2E000109870 /* TomorrowPlanTVC.m in Sources */,
 				C56E55551CDB621300C608B9 /* ReportMaterialGoingTVC.m in Sources */,
 				C56E55BE1CDCB8B900C608B9 /* CheckRejectedCell.m in Sources */,
+				D1E9C3AD1CE5A33D00109870 /* FileTVC.m in Sources */,
 				C5971BE01CD7561D00C6B263 /* TabItem.m in Sources */,
-				C5971BA11CD3B61500C6B263 /* ActivityTVC.m in Sources */,
-				C5971B9E1CD3B49A00C6B263 /* ModifyPasswordVC.m in Sources */,
+				D1E9C39F1CE5A27200109870 /* PlanTVC.m in Sources */,
 				C56E55B91CDCAF6700C608B9 /* CheckFundsDealedTVC.m in Sources */,
 				C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */,
 				C5557FA81CD0F15E006EC41D /* BillMaterialsVO.m in Sources */,
 				D19EF8451CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m in Sources */,
-				C56E553C1CDB426A00C608B9 /* CHTableViewController.m in Sources */,
+				D1E9C3C11CE5A43D00109870 /* ChooseUserTVC.m in Sources */,
+				D1E9C3CE1CE5A53D00109870 /* ErrorHandler.m in Sources */,
+				D1E9C3A61CE5A2E000109870 /* TodayPlanTVC.m in Sources */,
 				C5557FA31CD0F15E006EC41D /* AccountVO.m in Sources */,
-				C5971BAD1CD3C18400C6B263 /* AddActivityTVC.m in Sources */,
+				D1E9C3BC1CE5A42200109870 /* MainViewController.m in Sources */,
 				C5557FB51CD0F15E006EC41D /* VOWrapper.m in Sources */,
 				C56E55AC1CDC8D7F00C608B9 /* FundsMovementTVC.m in Sources */,
 				C56E55391CDB41C000C608B9 /* ReportRejectedCell.m in Sources */,
 				C5557F741CD0F143006EC41D /* RequestParameter.m in Sources */,
 				C56E559A1CDC86F300C608B9 /* AddBuildingMaterialSellTVC.m in Sources */,
 				C5557FAF1CD0F15E006EC41D /* ResultVO.m in Sources */,
-				C500E23D1CD0ADBA00DF960B /* ContentViewController.m in Sources */,
 				C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */,
 				C56E557C1CDC721600C608B9 /* RegisterFundsGoingTVC.m in Sources */,
 				C56E55C11CDCD74900C608B9 /* CheckMaterialPurchaseVC.m in Sources */,
@@ -1094,20 +1129,17 @@
 				D18B47011CCFAB8300FEA8E8 /* main.m in Sources */,
 				D1E9C3791CE42AD900109870 /* AddGroupTVC.m in Sources */,
 				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
-				C5971BE61CD78CBF00C6B263 /* TodayPlanTVC.m in Sources */,
-				C5971BCB1CD5E88100C6B263 /* MailBoxVC.m in Sources */,
 				D1E9C37C1CE43E3200109870 /* AddRoleTVC.m in Sources */,
 				C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */,
+				D1E9C3981CE5A24C00109870 /* ActivityTVC.m in Sources */,
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
 				C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */,
 				D1E9C3761CE35B4000109870 /* UserManagementTVC.m in Sources */,
 				C56E55881CDC7DBA00C608B9 /* BuildingMaterialPurchaseGoingTVC.m in Sources */,
-				C5971BE91CD78CD200C6B263 /* TomorrowPlanTVC.m in Sources */,
 				C56E558B1CDC7DD100C608B9 /* BuildingMaterialPurchaseDoneTVC.m in Sources */,
 				C56E55321CDB3E1800C608B9 /* ReportGoingCell.m in Sources */,
 				C5557FA71CD0F15E006EC41D /* BillBuildingVO.m in Sources */,
 				C5557FA51CD0F15E006EC41D /* AuditMaterialsVO.m in Sources */,
-				C5971BEF1CD8D39000C6B263 /* ChooseUserTVC.m in Sources */,
 				C56E558E1CDC7E2800C608B9 /* RegisterViewController.m in Sources */,
 				C56E55581CDB623500C608B9 /* ReportMaterialRejectedTVC.m in Sources */,
 				C5557FAB1CD0F15E006EC41D /* FileVO.m in Sources */,
@@ -1116,31 +1148,31 @@
 				D1E9C3701CE35ACE00109870 /* GroupManagementTVC.m in Sources */,
 				C5557FA91CD0F15E006EC41D /* BillOthersVO.m in Sources */,
 				C56E55B61CDCAF5500C608B9 /* CheckFundsUndealTVC.m in Sources */,
-				C500E23A1CD0ADAA00DF960B /* LeftMenuViewController.m in Sources */,
 				C5557FAC1CD0F15E006EC41D /* MessageVO.m in Sources */,
-				C5971BC51CD5DD5F00C6B263 /* FileTVC.m in Sources */,
+				D1E9C3BD1CE5A42200109870 /* ModifyPasswordVC.m in Sources */,
 				C5971BD61CD5EE4100C6B263 /* MailCell.m in Sources */,
 				D19EF8421CE087520044BA84 /* ReportMaterialDetailTVC.m in Sources */,
 				C5557FA61CD0F15E006EC41D /* AuditOthersVO.m in Sources */,
+				D1E9C3CF1CE5A53D00109870 /* Utils.m in Sources */,
 				C56E55851CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.m in Sources */,
 				C5557FB21CD0F15E006EC41D /* SignStatusVO.m in Sources */,
 				C5557FA41CD0F15E006EC41D /* ActivityVO.m in Sources */,
+				D1E9C3BE1CE5A42200109870 /* SignInViewController.m in Sources */,
 				C56E55491CDB462A00C608B9 /* ReportRejectedTVC.m in Sources */,
-				C5971BCE1CD5EA8200C6B263 /* InboxTVC.m in Sources */,
 				D1E9C3821CE4981800109870 /* RoleCell.m in Sources */,
+				D1E9C3BB1CE5A42200109870 /* LeftMenuViewController.m in Sources */,
 				C514306E1CE1C2F900448BD1 /* File.m in Sources */,
-				C5971BC81CD5DFCE00C6B263 /* UploadFileVC.m in Sources */,
+				D1E9C3AE1CE5A33D00109870 /* UploadFileVC.m in Sources */,
 				C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */,
 				C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */,
+				D1E9C39E1CE5A27200109870 /* AddPlanVC.m in Sources */,
 				D1E9C37F1CE45FB200109870 /* AddUserTVC.m in Sources */,
 				C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */,
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
-				C500E2371CD0A4C400DF960B /* MainViewController.m in Sources */,
-				C56E556A1CDB899100C608B9 /* ModalTableViewController.m in Sources */,
-				D19EF8331CDD97250044BA84 /* ErrorHandler.m in Sources */,
-				C5971BD91CD5F3E700C6B263 /* SendMailTVC.m in Sources */,
+				D1E9C3921CE5A0FF00109870 /* OutboxTVC.m in Sources */,
 				C56E55A61CDC8C2F00C608B9 /* AddSellBuildingTVC.m in Sources */,
 				C56E552B1CDB305E00C608B9 /* Constants.m in Sources */,
+				D1E9C3C71CE5A4F800109870 /* CHTableViewController.m in Sources */,
 				C56E559D1CDC892900C608B9 /* SellBuildingVC.m in Sources */,
 				C56E55821CDC7B1D00C608B9 /* RegisterDetailTVC.m in Sources */,
 				C56E55911CDC7FFB00C608B9 /* RegisterPurchaseDetailTVC.m in Sources */,
