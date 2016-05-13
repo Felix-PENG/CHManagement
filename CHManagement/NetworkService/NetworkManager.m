@@ -325,7 +325,7 @@
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 
-- (void)changUserWithName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
+- (void)changeUserWithName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter getRequest];
     parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, changeUserUrl];
     parameter.json = @{@"name":name,@"role_id":[NSNumber numberWithInteger:role_id],@"group_id":[NSNumber numberWithInteger:group_id],@"user_id":[NSNumber numberWithInteger:user_id]};

@@ -11,7 +11,6 @@
 #import "ReportFundsGoingTVC.h"
 #import "ReportFundsRejectedTVC.h"
 #import "TabItem.h"
-#import "ReportRegisterTVC.h"
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "MyGroup.h"
@@ -105,7 +104,7 @@
 
 - (void)addButtonPressed
 {
-    ReportRegisterTVC *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportRegisterTVC"];
+    UINavigationController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportRegisterTVC"];
     [self presentViewController:controller animated:YES completion:nil];
 }
 

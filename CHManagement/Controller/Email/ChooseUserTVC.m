@@ -11,6 +11,7 @@
 #import "ResultVO.h"
 #import "UserVO.h"
 #import "SendMailTVC.h"
+#import "ErrorHandler.h"
 
 @interface ChooseUserTVC ()
 
@@ -115,7 +116,8 @@
             [self.tableView reloadData];
             
         }else{
-            //error handler
+            UIAlertController* alert = [ErrorHandler showErrorAlert:[resultVO message]];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }];
 }

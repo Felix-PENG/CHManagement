@@ -13,6 +13,7 @@
 #import "MBProgressHUD+Extends.h"
 #import "MailBoxVC.h"
 #import "ChooseUserTVC.h"
+#import "ErrorHandler.h"
 
 static NSString * const chooseUserSegue = @"chooseUser";
 
@@ -51,7 +52,8 @@ static NSString * const chooseUserSegue = @"chooseUser";
     NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
     
     if([self.receivers count] == 0||[content isEqualToString:@""]){
-        [self showErrorAlert:@"收件人与内容均不得为空"];
+        UIAlertController* alert = [ErrorHandler showErrorAlert:@"收件人与内容均不得为空"];
+        [self presentViewController:alert animated:YES completion:nil];
     }else{
         NSMutableString* idList = [NSMutableString stringWithString:@"["];
         
@@ -72,17 +74,11 @@ static NSString * const chooseUserSegue = @"chooseUser";
                 
                 [self.mailBoxSwitchViewDelegate switchViewToOutBox];
             }else{
-                [self showErrorAlert:[resultVO message]];
+                UIAlertController* alert = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alert animated:YES completion:nil];
             }
         }];
     }
-}
-
-- (void)showErrorAlert:(NSString*)message{
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Segue
