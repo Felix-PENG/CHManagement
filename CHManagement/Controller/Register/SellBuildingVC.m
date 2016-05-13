@@ -15,16 +15,24 @@
 @end
 
 @implementation SellBuildingVC
+{
+    SellBuildingTVC *_tvc;
+}
+
+- (void)setGroupID:(NSInteger)groupID
+{
+    _tvc.groupID = groupID;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.title = @"建材卖出列表";
     
-    SellBuildingTVC *tvc = [[SellBuildingTVC alloc] init];
-    tvc.view.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
-    [self.view addSubview:tvc.view];
-    [self addChildViewController:tvc];
+    _tvc = [[SellBuildingTVC alloc] init];
+    _tvc.view.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
+    [self.view addSubview:_tvc.view];
+    [self addChildViewController:_tvc];
 }
 
 - (NSArray *)rightNavigationItems

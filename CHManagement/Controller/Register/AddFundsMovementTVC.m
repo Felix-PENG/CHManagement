@@ -7,28 +7,92 @@
 //
 
 #import "AddFundsMovementTVC.h"
+#import "NetworkManager.h"
+#import "MBProgressHUD+Extends.h"
+#import "ResultVO.h"
+#import "Constants.h"
 
-@interface AddFundsMovementTVC () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface AddFundsMovementTVC () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *moneyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;
-@property (weak, nonatomic) IBOutlet UIPickerView *directionPickerView;
+@property (strong, nonatomic) UIPickerView *directionPickerView;
+@property (weak, nonatomic) IBOutlet UITextField *directionTextField;
 @end
 
 @implementation AddFundsMovementTVC
 
-- (NSArray *)fundsDirections
+- (UIPickerView *)directionPickerView
 {
-    return @[@"进账", @"其他"];
+    if (!_directionPickerView) {
+        _directionPickerView = [[UIPickerView alloc] init];
+        _directionPickerView.dataSource = self;
+        _directionPickerView.delegate = self;
+        [_directionPickerView sizeToFit];
+    }
+    return _directionPickerView;
+}
+
+- (void)setDirectionTextField:(UITextField *)directionTextField
+{
+    _directionTextField = directionTextField;
+    self.directionTextField.inputView = self.directionPickerView;
+    self.directionTextField.delegate = self;
+}
+
+- (void)doneSelect
+{
+    [self.directionTextField endEditing:YES];
+}
+
+- (NSDictionary *)fundsDirections
+{
+    return @{@(BILL_IN) : @"进账",
+              @(BILL_OFF) : @"出账"};
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if (self.bill) {
+        self.navigationItem.title = @"资金变动更新";
+        self.directionTextField.text = [self fundsDirections][@(self.bill.in_off)];
+        self.detailTextField.text = self.bill.detail;
+        self.moneyTextField.text = [NSString stringWithFormat:@"%.1f", self.bill.money];
+    }
+}
+
+- (IBAction)doneButtonPressed:(id)sender
+{
+    MBProgressHUD *hud = [MBProgressHUD hudWithMessage:@"请稍等..."];
+    if (self.bill) {
+        [[NetworkManager sharedInstance] changeBillWithId:self.bill.id
+                                              withContent:self.detailTextField.text
+                                                withMoney:[self.moneyTextField.text doubleValue]
+                                               withIn_off:[self.directionPickerView selectedRowInComponent:0]
+                                               withUserId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]
+                                        completionHandler:^(NSDictionary *response) {
+            ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            if (result.success == 0) {
+                [self.delegate needRefresh];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            [hud hide:YES];
+        }];
+    } else {
+        [[NetworkManager sharedInstance] createBillWithGroupId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"group_id"] integerValue]
+                                                   withContent:self.detailTextField.text
+                                                     withMoney:[self.moneyTextField.text doubleValue]
+                                                    withIn_off:[self.directionPickerView selectedRowInComponent:0]
+                                                    withUserId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]
+                                             completionHandler:^(NSDictionary *response) {
+                                                 ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+                                                 if (result.success == 0) {
+                                                     [self.delegate needRefresh];
+                                                     [self.navigationController popViewControllerAnimated:YES];
+                                                 }
+                                                 [hud hide:YES];
+                                             }];
+    }
 }
 
 #pragma mark - UIPickerViewDataSource
@@ -40,12 +104,12 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [self fundsDirections].count;
+    return [self fundsDirections].allKeys.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [self fundsDirections][row];
+    return [self fundsDirections][@(row)];
 }
 
 #pragma mark - UIPickerViewDelegate
@@ -55,7 +119,12 @@
     
 }
 
-- (IBAction)doneButtonPressed:(id)sender {
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSInteger index = [self.directionPickerView selectedRowInComponent:0];
+    self.directionTextField.text = [self fundsDirections][@(index)];
 }
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import "CHTableViewController.h"
+#import "AddRegisterProtocol.h"
 
-@interface RegisterTableViewController : CHTableViewController
+@interface RegisterTableViewController : CHTableViewController <AddRegisterProtocol>
 {
 @protected
     NSUInteger _page;

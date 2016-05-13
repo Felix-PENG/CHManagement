@@ -88,7 +88,7 @@
         RegisterDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterDetailTVC"];
         tvc.uploadable = YES;
         tvc.bill = bill;
-        self.repeatLoad = NO;
+        tvc.delegate = self;
         [self.navigationController pushViewController:tvc animated:YES];
     } else {
         LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

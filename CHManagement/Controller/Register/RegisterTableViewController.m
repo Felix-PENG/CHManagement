@@ -56,4 +56,11 @@
     
 }
 
+#pragma mark - AddBuildingMaterialsDelegate
+
+- (void)needRefresh
+{
+    self.repeatLoad = NO;
+}
+
 @end

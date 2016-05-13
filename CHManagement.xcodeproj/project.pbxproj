@@ -160,6 +160,7 @@
 		C514306F1CE1F2FF00448BD1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		C514307E1CE479E400448BD1 /* ImagePickPreviewTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePickPreviewTVC.h; path = Controller/Register/ImagePickPreviewTVC.h; sourceTree = "<group>"; };
 		C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePickPreviewTVC.m; path = Controller/Register/ImagePickPreviewTVC.m; sourceTree = "<group>"; };
+		C51430811CE5A85F00448BD1 /* AddRegisterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRegisterProtocol.h; path = Controller/Register/AddRegisterProtocol.h; sourceTree = "<group>"; };
 		C5557F691CD0F143006EC41D /* NetworkFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFile.h; sourceTree = "<group>"; };
 		C5557F6A1CD0F143006EC41D /* NetworkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFile.m; sourceTree = "<group>"; };
 		C5557F6B1CD0F143006EC41D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -628,6 +629,7 @@
 				C56E55AE1CDC8DD100C608B9 /* AddFundsMovementTVC.m */,
 				C514307E1CE479E400448BD1 /* ImagePickPreviewTVC.h */,
 				C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */,
+				C51430811CE5A85F00448BD1 /* AddRegisterProtocol.h */,
 			);
 			name = Register;
 			sourceTree = "<group>";

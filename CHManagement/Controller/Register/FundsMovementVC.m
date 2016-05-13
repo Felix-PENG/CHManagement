@@ -15,16 +15,24 @@
 @end
 
 @implementation FundsMovementVC
+{
+    FundsMovementTVC *_tvc;
+}
+
+- (void)setGroupID:(NSInteger)groupID
+{
+    _tvc.groupID = groupID;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"资金变动列表";
     
-    FundsMovementTVC *tvc = [[FundsMovementTVC alloc] init];
-    tvc.view.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
-    [self.view addSubview:tvc.view];
-    [self addChildViewController:tvc];
+    _tvc = [[FundsMovementTVC alloc] init];
+    _tvc.view.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
+    [self.view addSubview:_tvc.view];
+    [self addChildViewController:_tvc];
 }
 
 - (NSArray *)rightNavigationItems

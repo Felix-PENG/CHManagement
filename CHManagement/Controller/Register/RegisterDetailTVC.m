@@ -83,6 +83,7 @@
     [[NetworkManager sharedInstance] finishBillOthersWithId:self.bill.id withStatus:STATUS_FINISHED withUrl:key completionHandler:^(NSDictionary *response) {
         ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
         if (result.success == 0) {
+            [self.delegate needRefresh];
             [self.navigationController popViewControllerAnimated:YES];
         } else {
             [ErrorHandler showErrorAlert:@"上传失败"];

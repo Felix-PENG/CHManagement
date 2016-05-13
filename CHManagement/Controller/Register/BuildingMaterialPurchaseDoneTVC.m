@@ -87,6 +87,7 @@
         RegisterPurchaseDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterPurchaseDetailTVC"];
         tvc.uploadable = NO;
         tvc.bill = bill;
+        tvc.delegate = self;
         [self.navigationController pushViewController:tvc animated:YES];
     } else {
         LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

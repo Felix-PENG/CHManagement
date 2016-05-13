@@ -8,10 +8,11 @@
 
 #import "ImagePickPreviewTVC.h"
 #import "BillOthersVO.h"
+#import "AddRegisterProtocol.h"
 
 @interface RegisterDetailTVC : ImagePickPreviewTVC
 
 @property (nonatomic, assign) BOOL uploadable;
 @property (nonatomic, strong) BillOthersVO *bill;
-
+@property (nonatomic, weak) id<AddRegisterProtocol> delegate;
 @end
