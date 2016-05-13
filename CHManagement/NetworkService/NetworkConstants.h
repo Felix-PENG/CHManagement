@@ -78,7 +78,7 @@
 #define createBillMaterialsUrl @"api/createBillMaterials"
 #define changeBillMaterialsUrl @"api/changeBillMaterials"
 #define deleteBillMaterialsUrl @"api/deleteBillMaterials"
-#define getBillMeterialsListByGroupIdAndStatusAndIn_offUrl @"api/getBillMeterialsListByGroupIdAndStatusAndIn_off"
+#define getBillMeterialsListByGroupIdAndStatusAndIn_offUrl @"api/getBillMaterialsListByGroupIdAndStatusAndIn_off"
 #define getBillMaterialsByIdUrl @"api/getBillMaterialsById"
 #define finishBillMaterialsUrl @"api/finishBillMaterials"
 #define changeBillOthersUrl @"api/changeBillOthers"

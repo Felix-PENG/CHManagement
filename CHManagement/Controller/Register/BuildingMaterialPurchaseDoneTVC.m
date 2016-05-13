@@ -9,6 +9,11 @@
 #import "BuildingMaterialPurchaseDoneTVC.h"
 #import "RegisterCell.h"
 #import "RegisterPurchaseDetailTVC.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "BillMaterialsVO.h"
+#import "Constants.h"
+#import "LoadMoreCell.h"
 
 @interface BuildingMaterialPurchaseDoneTVC ()
 
@@ -21,9 +26,29 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)loadDataWithPage:(NSUInteger)page
+{
+    [[NetworkManager sharedInstance] getBillMaterialsListWithGroupId:self.groupID withStatus:STATUS_FINISHED withIn_off:BILL_IN withPage:page completionHandler:^(NSDictionary *response) {
+        ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        if (result.success == 0) {
+            NSArray *list = [response objectForKey:@"billMaterialsVOList"];
+            if (list.count > 0) {
+                for (NSDictionary *dict in list) {
+                    BillMaterialsVO *bill = [[BillMaterialsVO alloc] initWithDictionary:dict error:nil];
+                    [_dataList addObject:bill];
+                }
+                _noMoreData = NO;
+            } else {
+                _noMoreData = YES;
+            }
+            [self.tableView reloadData];
+        } else {
+            
+        }
+        if (self.refreshControl.isRefreshing) {
+            [self.refreshControl endRefreshing];
+        }
+    }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -35,23 +60,40 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return _dataList.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RegisterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
-    
-    return cell;
+    if (indexPath.row < _dataList.count) {
+        RegisterCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+        BillMaterialsVO *bill = _dataList[indexPath.row];
+        [cell setTitle:bill.name dateTime:bill.time group:bill.group.name user:bill.user.name detail:bill.detail money:bill.money];
+        return cell;
+    } else {
+        LoadMoreCell *cell = [self.tableView dequeueReusableCellWithIdentifier:self.loadMoreCellIdentifier];
+        cell.status = _noMoreData ? NoMore : ClickToLoad;
+        return cell;
+    }
 }
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RegisterPurchaseDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterPurchaseDetailTVC"];
-    tvc.uploadable = NO;
-    [self.navigationController pushViewController:tvc animated:YES];
+    if (indexPath.row < _dataList.count) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        BillMaterialsVO *bill = _dataList[indexPath.row];
+        RegisterPurchaseDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterPurchaseDetailTVC"];
+        tvc.uploadable = NO;
+        tvc.bill = bill;
+        tvc.delegate = self;
+        [self.navigationController pushViewController:tvc animated:YES];
+    } else {
+        LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        cell.status = Loading;
+        [self loadDataWithPage:++_page];
+    }
 }
 
 /*

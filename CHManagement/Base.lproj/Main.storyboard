@@ -187,28 +187,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="169.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-Zr-ThK">
-                                                    <rect key="frame" x="288" y="8" width="24" height="24"/>
-                                                    <state key="normal" backgroundImage="ic_add_circle_black_24dp"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-Zr-ThK">
+                                                    <rect key="frame" x="260" y="8" width="80" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <state key="normal" title="发票上传" image="ic_add_circle_black_24dp">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="MUA-52-Nok" eventType="touchUpInside" id="u1m-cF-5pp"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAN-TM-vMf">
-                                                    <rect key="frame" x="8" y="40" width="584" height="122"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAN-TM-vMf">
+                                                    <rect key="frame" x="8" y="40" width="584" height="121"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0W-yM-fsj">
-                                                    <rect key="frame" x="320" y="5" width="30" height="30"/>
-                                                    <state key="normal" title="上传"/>
-                                                    <connections>
-                                                        <action selector="uploadButtonPressed:" destination="MUA-52-Nok" eventType="touchUpInside" id="0Ua-SM-Byq"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="j0W-yM-fsj" firstAttribute="leading" secondItem="lQo-Zr-ThK" secondAttribute="trailing" constant="8" id="0AE-oG-f0r"/>
                                                 <constraint firstItem="cAN-TM-vMf" firstAttribute="top" secondItem="5wa-69-Bpr" secondAttribute="topMargin" id="AvG-7A-1Bo"/>
-                                                <constraint firstItem="j0W-yM-fsj" firstAttribute="centerY" secondItem="lQo-Zr-ThK" secondAttribute="centerY" id="NeX-dN-7gr"/>
                                                 <constraint firstItem="cAN-TM-vMf" firstAttribute="top" secondItem="lQo-Zr-ThK" secondAttribute="bottom" constant="8" id="QhK-iz-3zb"/>
                                                 <constraint firstItem="cAN-TM-vMf" firstAttribute="trailing" secondItem="5wa-69-Bpr" secondAttribute="trailingMargin" id="Ykf-Ns-XWV"/>
                                                 <constraint firstItem="lQo-Zr-ThK" firstAttribute="top" secondItem="5wa-69-Bpr" secondAttribute="topMargin" id="kLg-sP-LXh"/>
@@ -231,7 +225,13 @@
                             <outlet property="delegate" destination="MUA-52-Nok" id="Qgp-iJ-1lo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="经费单详情" id="ETv-ky-0Lu"/>
+                    <navigationItem key="navigationItem" title="经费单详情" id="ETv-ky-0Lu">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="XtU-X3-vYY">
+                            <connections>
+                                <action selector="finishButtonPressed:" destination="MUA-52-Nok" id="Uo4-If-wnx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="addButton" destination="lQo-Zr-ThK" id="s45-jY-CKJ"/>
@@ -242,7 +242,6 @@
                         <outlet property="singlePriceLabel" destination="jNO-Sz-HWx" id="M4a-k0-W9d"/>
                         <outlet property="statusLabel" destination="W3v-uy-sCL" id="PFN-UE-Nru"/>
                         <outlet property="totalPriceLabel" destination="hzG-rS-OA1" id="USr-1g-3Yl"/>
-                        <outlet property="uploadButton" destination="j0W-yM-fsj" id="PWK-cm-tSq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s85-U9-U5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2050,10 +2049,10 @@
                             <tableViewSection headerTitle="条目" id="WwM-kG-nUl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KyR-Bg-D6g">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KyR-Bg-D6g" id="Uao-qP-q2p">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-SS-j8E">
@@ -2075,10 +2074,10 @@
                             <tableViewSection headerTitle="型号" id="N89-53-j2C">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2bO-Gt-QVx">
-                                        <rect key="frame" x="0.0" y="207.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="209" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2bO-Gt-QVx" id="N2O-0T-1Vx">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PgJ-sG-gA5">
@@ -2100,10 +2099,10 @@
                             <tableViewSection headerTitle="数量" id="Rbo-mk-Q0R">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eTp-5N-8wg">
-                                        <rect key="frame" x="0.0" y="301.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="304" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eTp-5N-8wg" id="c2P-sp-yIV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VCT-ss-mSF">
@@ -2125,10 +2124,10 @@
                             <tableViewSection headerTitle="进价" id="Nju-A1-e76">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XSX-ug-9VA">
-                                        <rect key="frame" x="0.0" y="395.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="399" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XSX-ug-9VA" id="ZPX-0M-xjD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-RV-I4n">
@@ -2150,10 +2149,10 @@
                             <tableViewSection headerTitle="总价" id="UGd-2P-FW6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bwi-SD-Yyy">
-                                        <rect key="frame" x="0.0" y="489.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="494" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bwi-SD-Yyy" id="kCB-fa-Yph">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E6e-fm-zpq">
@@ -2175,10 +2174,10 @@
                             <tableViewSection headerTitle="买入单位" id="909-rb-2Oh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0wH-Kk-1rb">
-                                        <rect key="frame" x="0.0" y="583.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="589" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0wH-Kk-1rb" id="xOF-Tf-ggG">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vaF-KO-Wh1">
@@ -2200,10 +2199,10 @@
                             <tableViewSection headerTitle="详情" id="Onx-M8-Axk">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="v4h-IJ-eye">
-                                        <rect key="frame" x="0.0" y="677.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="684" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v4h-IJ-eye" id="iZ5-mR-TIR">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAk-uc-brW">
@@ -2417,31 +2416,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="169.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXw-bZ-OlC">
-                                                    <rect key="frame" x="288" y="8" width="24" height="24"/>
-                                                    <state key="normal" backgroundImage="ic_add_circle_black_24dp"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXw-bZ-OlC">
+                                                    <rect key="frame" x="260" y="8" width="80" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <state key="normal" title="发票上传" image="ic_add_circle_black_24dp">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="sf9-xf-Bzx" eventType="touchUpInside" id="cq9-ts-gkh"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hzn-98-ezp">
-                                                    <rect key="frame" x="8" y="40" width="584" height="122"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hzn-98-ezp">
+                                                    <rect key="frame" x="8" y="40" width="584" height="121"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2M-B2-o1f">
-                                                    <rect key="frame" x="320" y="5" width="30" height="30"/>
-                                                    <state key="normal" title="上传"/>
-                                                    <connections>
-                                                        <action selector="uploadButtonPressed:" destination="sf9-xf-Bzx" eventType="touchUpInside" id="TsE-hi-bET"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="bottom" secondItem="2ZW-zf-J84" secondAttribute="bottomMargin" id="0SY-QL-ZTI"/>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="top" secondItem="2ZW-zf-J84" secondAttribute="topMargin" id="0Yf-p4-yMT"/>
-                                                <constraint firstItem="F2M-B2-o1f" firstAttribute="centerY" secondItem="cXw-bZ-OlC" secondAttribute="centerY" id="6qS-7J-l5m"/>
                                                 <constraint firstItem="cXw-bZ-OlC" firstAttribute="centerX" secondItem="2ZW-zf-J84" secondAttribute="centerX" id="O0A-bi-daS"/>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="top" secondItem="cXw-bZ-OlC" secondAttribute="bottom" constant="8" id="S5t-ls-4Jz"/>
-                                                <constraint firstItem="F2M-B2-o1f" firstAttribute="leading" secondItem="cXw-bZ-OlC" secondAttribute="trailing" constant="8" id="TO0-wd-GDL"/>
                                                 <constraint firstItem="cXw-bZ-OlC" firstAttribute="top" secondItem="2ZW-zf-J84" secondAttribute="topMargin" id="hnx-P8-fSL"/>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="trailing" secondItem="2ZW-zf-J84" secondAttribute="trailingMargin" id="jTj-0B-9Ai"/>
                                                 <constraint firstItem="Hzn-98-ezp" firstAttribute="leading" secondItem="2ZW-zf-J84" secondAttribute="leadingMargin" id="sjg-Rp-DEW"/>
@@ -2461,7 +2454,13 @@
                             <outlet property="delegate" destination="sf9-xf-Bzx" id="qDB-Qb-esp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="建材买入详情" id="O6c-yD-gki"/>
+                    <navigationItem key="navigationItem" title="建材买入详情" id="O6c-yD-gki">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="q1I-bK-zBV">
+                            <connections>
+                                <action selector="finishButtonPressed:" destination="sf9-xf-Bzx" id="4Ps-8n-1AJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="addButton" destination="cXw-bZ-OlC" id="LfC-hS-lRA"/>
@@ -2472,7 +2471,6 @@
                         <outlet property="modelLabel" destination="Erd-zx-RbU" id="nHw-N1-BU8"/>
                         <outlet property="purchasePriceLabel" destination="9WT-rD-pIy" id="0E2-9d-7Tu"/>
                         <outlet property="totalPriceLabel" destination="idQ-bT-54K" id="scT-wf-acZ"/>
-                        <outlet property="uploadButton" destination="F2M-B2-o1f" id="AbT-NW-ydU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cES-xi-BkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2490,8 +2488,8 @@
                         <sections>
                             <tableViewSection headerTitle="条目" id="k6i-3D-btZ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="Y1R-so-xgT">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="Y1R-so-xgT">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1R-so-xgT" id="mxb-N0-VcR">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -2515,8 +2513,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="型号" id="bFl-kG-un6">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="fSp-Hp-1aJ">
-                                        <rect key="frame" x="0.0" y="209.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="fSp-Hp-1aJ">
+                                        <rect key="frame" x="0.0" y="211" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fSp-Hp-1aJ" id="1NQ-53-9lK">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -2540,8 +2538,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="数量" id="lou-iQ-uf2">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="Fig-ab-EIf">
-                                        <rect key="frame" x="0.0" y="305.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="Fig-ab-EIf">
+                                        <rect key="frame" x="0.0" y="308" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fig-ab-EIf" id="ruu-aw-Z14">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -2565,8 +2563,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="售价" id="7LX-8Q-04g">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="Qw9-Ri-sry">
-                                        <rect key="frame" x="0.0" y="401.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="Qw9-Ri-sry">
+                                        <rect key="frame" x="0.0" y="405" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qw9-Ri-sry" id="UYp-kS-N1F">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -2590,8 +2588,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="总价" id="0eF-jr-uGP">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="WiO-Sq-FeE">
-                                        <rect key="frame" x="0.0" y="497.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="WiO-Sq-FeE">
+                                        <rect key="frame" x="0.0" y="502" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WiO-Sq-FeE" id="d83-fh-3Cu">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -2615,8 +2613,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="卖出单位" id="xb1-dv-wxT">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="mWh-DN-4rq">
-                                        <rect key="frame" x="0.0" y="593.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="mWh-DN-4rq">
+                                        <rect key="frame" x="0.0" y="599" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mWh-DN-4rq" id="eDR-3K-ITW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -2640,8 +2638,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="描述" id="o8V-sw-zOa">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="n2P-zD-ahQ">
-                                        <rect key="frame" x="0.0" y="689.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="n2P-zD-ahQ">
+                                        <rect key="frame" x="0.0" y="696" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2P-zD-ahQ" id="fbE-uN-w6c">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -3058,8 +3056,8 @@
                         <sections>
                             <tableViewSection headerTitle="房子位置" id="jM4-Jg-IqB">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="PEB-aw-e7X">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="PEB-aw-e7X">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PEB-aw-e7X" id="HKd-jy-ANk">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -3083,8 +3081,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="价钱" id="zki-gj-NU6">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="oTq-Uq-Ud9">
-                                        <rect key="frame" x="0.0" y="209.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="oTq-Uq-Ud9">
+                                        <rect key="frame" x="0.0" y="211" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oTq-Uq-Ud9" id="d3Z-eO-88C">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -3108,8 +3106,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="买房者姓名" id="tz5-oq-z3j">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="XcE-3l-nds">
-                                        <rect key="frame" x="0.0" y="305.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="XcE-3l-nds">
+                                        <rect key="frame" x="0.0" y="308" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XcE-3l-nds" id="cXQ-IQ-Qai">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -3133,8 +3131,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="买房者手机号" id="cqI-fJ-SYD">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="wxX-35-a3f">
-                                        <rect key="frame" x="0.0" y="401.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="wxX-35-a3f">
+                                        <rect key="frame" x="0.0" y="405" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wxX-35-a3f" id="jit-Zs-hBu">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -3192,26 +3190,27 @@
                         <sections>
                             <tableViewSection headerTitle="资金流向" id="llE-af-ZwO">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="0bQ-QO-IwW">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="0bQ-QO-IwW">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bQ-QO-IwW" id="TTb-QK-9cX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SG-MZ-x9B">
-                                                    <rect key="frame" x="8" y="8" width="584" height="84"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95U-bA-F9v">
+                                                    <rect key="frame" x="8" y="8" width="584" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="FtT-NU-qmU" id="V25-EZ-tHm"/>
-                                                        <outlet property="delegate" destination="FtT-NU-qmU" id="lKc-Fu-SGg"/>
+                                                        <action selector="selectDirection:" destination="FtT-NU-qmU" eventType="touchDown" id="lFA-Rg-XV3"/>
                                                     </connections>
-                                                </pickerView>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3SG-MZ-x9B" firstAttribute="top" secondItem="TTb-QK-9cX" secondAttribute="topMargin" id="CRo-4j-SBL"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3SG-MZ-x9B" secondAttribute="bottom" id="Lgd-dy-Ywo"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="3SG-MZ-x9B" secondAttribute="trailing" id="Mh3-ze-ubX"/>
-                                                <constraint firstItem="3SG-MZ-x9B" firstAttribute="leading" secondItem="TTb-QK-9cX" secondAttribute="leadingMargin" id="Z4D-Ug-320"/>
+                                                <constraint firstItem="95U-bA-F9v" firstAttribute="trailing" secondItem="TTb-QK-9cX" secondAttribute="trailingMargin" id="CSe-k3-9qe"/>
+                                                <constraint firstItem="95U-bA-F9v" firstAttribute="top" secondItem="TTb-QK-9cX" secondAttribute="topMargin" id="DV0-mP-tr0"/>
+                                                <constraint firstItem="95U-bA-F9v" firstAttribute="leading" secondItem="TTb-QK-9cX" secondAttribute="leadingMargin" id="rDX-wn-4IG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="95U-bA-F9v" secondAttribute="bottom" id="xo1-pl-cy0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -3219,8 +3218,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="金额" id="FmO-14-jgZ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="xoN-mL-dbo">
-                                        <rect key="frame" x="0.0" y="263.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="xoN-mL-dbo">
+                                        <rect key="frame" x="0.0" y="211" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xoN-mL-dbo" id="Uay-Ee-ncV">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -3244,8 +3243,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="明细" id="Tfx-PO-3Ox">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="ej6-GW-wj2">
-                                        <rect key="frame" x="0.0" y="359.5" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="ej6-GW-wj2">
+                                        <rect key="frame" x="0.0" y="308" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ej6-GW-wj2" id="NXV-vb-tGn">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
@@ -3283,7 +3282,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="detailTextField" destination="PXx-zv-Qql" id="JRg-IW-6c6"/>
-                        <outlet property="directionPickerView" destination="3SG-MZ-x9B" id="QIw-6y-i1A"/>
+                        <outlet property="directionTextField" destination="95U-bA-F9v" id="ReR-6M-kE7"/>
                         <outlet property="moneyTextField" destination="7jh-xO-jcJ" id="OlF-cV-xda"/>
                     </connections>
                 </tableViewController>

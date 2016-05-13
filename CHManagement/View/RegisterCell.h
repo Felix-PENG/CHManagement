@@ -10,4 +10,6 @@
 
 @interface RegisterCell : UITableViewCell
 
+- (void)setTitle:(NSString *)title dateTime:(NSUInteger)dateTime group:(NSString *)group user:(NSString *)user detail:(NSString *)detail money:(double)money;
+
 @end

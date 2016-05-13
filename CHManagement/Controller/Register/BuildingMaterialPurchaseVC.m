@@ -17,6 +17,16 @@
 @end
 
 @implementation BuildingMaterialPurchaseVC
+{
+    BuildingMaterialPurchaseGoingTVC *_rfgtvc;
+    BuildingMaterialPurchaseDoneTVC *_rfdtvc;
+}
+
+- (void)setGroupID:(NSInteger)groupID
+{
+    _rfgtvc.groupID = groupID;
+    _rfdtvc.groupID = groupID;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,11 +34,11 @@
     self.navigationItem.title = @"建材买入列表";
     
     // contents
-    BuildingMaterialPurchaseGoingTVC *rfgtvc = [[BuildingMaterialPurchaseGoingTVC alloc] init];
-    BuildingMaterialPurchaseDoneTVC *rfdtvc = [[BuildingMaterialPurchaseDoneTVC alloc] init];
+    _rfgtvc = [[BuildingMaterialPurchaseGoingTVC alloc] init];
+    _rfdtvc = [[BuildingMaterialPurchaseDoneTVC alloc] init];
     
-    TabItem *tabItem1 = [[TabItem alloc] initWithTab:@"进行中" controller:rfgtvc];
-    TabItem *tabItem2 = [[TabItem alloc] initWithTab:@"已完成" controller:rfdtvc];
+    TabItem *tabItem1 = [[TabItem alloc] initWithTab:@"进行中" controller:_rfgtvc];
+    TabItem *tabItem2 = [[TabItem alloc] initWithTab:@"已完成" controller:_rfdtvc];
     
     TabbedScrollViewController *tsvc = [[TabbedScrollViewController alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64) items:@[tabItem1, tabItem2]];
     [self.view addSubview:tsvc.view];

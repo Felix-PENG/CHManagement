@@ -15,9 +15,20 @@
 
 @implementation RegisterTableViewController
 
+- (void)setGroupID:(NSInteger)groupID
+{
+    _groupID = groupID;
+    [self refresh];
+}
+
 - (NSString *)cellIdentifier
 {
     return @"RegisterCell";
+}
+
+- (NSString *)loadMoreCellIdentifier
+{
+    return @"LoadMoreCell";
 }
 
 - (void)viewDidLoad {
@@ -26,11 +37,30 @@
     
     UINib *nib = [UINib nibWithNibName:self.cellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:self.cellIdentifier];
+    nib = [UINib nibWithNibName:self.loadMoreCellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:self.loadMoreCellIdentifier];
+    
+    _page = 1;
+    _dataList = [NSMutableArray array];
 }
 
 - (void)refresh
 {
+    [_dataList removeAllObjects];
+    _page = 1;
+    [self loadDataWithPage:_page];
+}
+
+- (void)loadDataWithPage:(NSUInteger)page
+{
     
+}
+
+#pragma mark - AddBuildingMaterialsDelegate
+
+- (void)needRefresh
+{
+    self.repeatLoad = NO;
 }
 
 @end

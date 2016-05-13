@@ -20,4 +20,6 @@
 
 - (void)delete;
 
++ (NSString *)dataTimeImageName;
+
 @end

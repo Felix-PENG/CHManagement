@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BillMaterialsVO.h"
+#import "AddRegisterProtocol.h"
 
 @interface AddBuildingMaterialSellTVC : UITableViewController
+
+@property (nonatomic, strong) BillMaterialsVO *bill;
+@property (nonatomic, weak) id<AddRegisterProtocol> delegate;
 
 @end

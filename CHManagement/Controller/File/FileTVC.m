@@ -72,7 +72,6 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
                 _noMoreData = NO;
             } else {
                 _noMoreData = YES;
-                
             }
             [self.tableView reloadData];
         } else {
@@ -107,8 +106,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
                           NSLog(@"%@", info);
                           NSLog(@"%@", resp);
                           // upload to server
-#warning default user id
-                          [[NetworkManager sharedInstance] createFileWithName:uniqueName withSize:size withUrl:key withUserId:0 completionHandler:^(NSDictionary *response) {
+                          [[NetworkManager sharedInstance] createFileWithName:uniqueName withSize:size withUrl:key withUserId:(NSInteger)[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] completionHandler:^(NSDictionary *response) {
                               ResultVO *result2 = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
                               if (result2.success == 0) {
                                   [self refresh];
@@ -216,8 +214,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         File *file = _fileList[indexPath.row];
-#warning default userid
-        [[NetworkManager sharedInstance] deleteFileWithFileId:file.fileVO.id withUserId:0 completionHandler:^(NSDictionary *response) {
+        [[NetworkManager sharedInstance] deleteFileWithFileId:file.fileVO.id withUserId:(NSInteger)[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] completionHandler:^(NSDictionary *response) {
             ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
             if (result.success == 0) {
                 [_fileList removeObject:file];
@@ -278,12 +275,6 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 {
     return self.view.frame;
 }
-
-- (void)documentInteractionControllerDidEndPreview:(UIDocumentInteractionController *)controller
-{
-    [controller dismissPreviewAnimated:YES];
-}
-
 
 - (IBAction)addButtonPressed:(id)sender
 {

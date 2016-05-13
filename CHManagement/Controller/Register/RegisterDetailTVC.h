@@ -6,10 +6,13 @@
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ImagePickPreviewTVC.h"
+#import "BillOthersVO.h"
+#import "AddRegisterProtocol.h"
 
-@interface RegisterDetailTVC : UITableViewController
+@interface RegisterDetailTVC : ImagePickPreviewTVC
 
 @property (nonatomic, assign) BOOL uploadable;
-
+@property (nonatomic, strong) BillOthersVO *bill;
+@property (nonatomic, weak) id<AddRegisterProtocol> delegate;
 @end

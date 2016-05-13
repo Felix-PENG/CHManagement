@@ -25,6 +25,7 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.refreshControl];
+    [self.view sendSubviewToBack:self.refreshControl];
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -7,9 +7,17 @@
 //
 
 #import "CHTableViewController.h"
+#import "AddRegisterProtocol.h"
 
-@interface RegisterTableViewController : CHTableViewController
-
+@interface RegisterTableViewController : CHTableViewController <AddRegisterProtocol>
+{
+@protected
+    NSUInteger _page;
+    NSMutableArray *_dataList;
+    BOOL _noMoreData;
+}
 @property (nonatomic, readonly) NSString *cellIdentifier;
+@property (nonatomic, readonly) NSString *loadMoreCellIdentifier;
+@property (nonatomic, assign) NSInteger groupID;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BillBuildingVO.h"
+#import "AddRegisterProtocol.h"
 
 @interface AddSellBuildingTVC : UITableViewController
-
+@property (nonatomic, strong) BillBuildingVO *bill;
+@property (nonatomic, weak) id<AddRegisterProtocol> delegate;
 @end

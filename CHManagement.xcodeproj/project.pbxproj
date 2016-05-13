@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C514306E1CE1C2F900448BD1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = C514306D1CE1C2F900448BD1 /* File.m */; };
+		C51430801CE479E400448BD1 /* ImagePickPreviewTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */; };
 		C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6A1CD0F143006EC41D /* NetworkFile.m */; };
 		C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6C1CD0F143006EC41D /* NetworkManager.m */; };
 		C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */; };
@@ -157,6 +158,9 @@
 		C514306C1CE1C2F900448BD1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = Model/File.h; sourceTree = "<group>"; };
 		C514306D1CE1C2F900448BD1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = Model/File.m; sourceTree = "<group>"; };
 		C514306F1CE1F2FF00448BD1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		C514307E1CE479E400448BD1 /* ImagePickPreviewTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePickPreviewTVC.h; path = Controller/Register/ImagePickPreviewTVC.h; sourceTree = "<group>"; };
+		C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePickPreviewTVC.m; path = Controller/Register/ImagePickPreviewTVC.m; sourceTree = "<group>"; };
+		C51430811CE5A85F00448BD1 /* AddRegisterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRegisterProtocol.h; path = Controller/Register/AddRegisterProtocol.h; sourceTree = "<group>"; };
 		C5557F691CD0F143006EC41D /* NetworkFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFile.h; sourceTree = "<group>"; };
 		C5557F6A1CD0F143006EC41D /* NetworkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFile.m; sourceTree = "<group>"; };
 		C5557F6B1CD0F143006EC41D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -623,6 +627,9 @@
 				C56E55AB1CDC8D7F00C608B9 /* FundsMovementTVC.m */,
 				C56E55AD1CDC8DD100C608B9 /* AddFundsMovementTVC.h */,
 				C56E55AE1CDC8DD100C608B9 /* AddFundsMovementTVC.m */,
+				C514307E1CE479E400448BD1 /* ImagePickPreviewTVC.h */,
+				C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */,
+				C51430811CE5A85F00448BD1 /* AddRegisterProtocol.h */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -1151,6 +1158,7 @@
 				C5557FAC1CD0F15E006EC41D /* MessageVO.m in Sources */,
 				D1E9C3BD1CE5A42200109870 /* ModifyPasswordVC.m in Sources */,
 				C5971BD61CD5EE4100C6B263 /* MailCell.m in Sources */,
+				C51430801CE479E400448BD1 /* ImagePickPreviewTVC.m in Sources */,
 				D19EF8421CE087520044BA84 /* ReportMaterialDetailTVC.m in Sources */,
 				C5557FA61CD0F15E006EC41D /* AuditOthersVO.m in Sources */,
 				D1E9C3CF1CE5A53D00109870 /* Utils.m in Sources */,
