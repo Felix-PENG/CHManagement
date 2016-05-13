@@ -11,7 +11,6 @@
 #import "ReportMaterialGoingTVC.h"
 #import "ReportMaterialRejectedTVC.h"
 #import "TabItem.h"
-#import "ReportMaterialRegisterTVC.h"
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "MyGroup.h"
@@ -105,7 +104,7 @@
 
 - (void)addButtonPressed
 {
-    ReportMaterialRegisterTVC *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportMaterialRegisterTVC"];
+    UINavigationController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportMaterialRegisterTVC"];
     [self presentViewController:controller animated:YES completion:nil];
 }
 

@@ -62,7 +62,7 @@
 
 - (void)deleteUserById:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
-- (void)changUserWithName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
+- (void)changeUserWithName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 #pragma mark Sign api
 - (void)signByUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
