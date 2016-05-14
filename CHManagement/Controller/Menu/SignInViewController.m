@@ -11,6 +11,7 @@
 #import "ResultVO.h"
 #import "SignInResultVO.h"
 #import "MBProgressHUD+Extends.h"
+#import "UserInfo.h"
 
 @interface SignInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
@@ -61,42 +62,15 @@
         self.hintLabel.hidden = NO;
     } else {
         MBProgressHUD *hud = [MBProgressHUD hudWithMessage:@"登录中..." toView:self.view];
-        
-        [[NetworkManager sharedInstance] signIn:username pswd:password completionHandler:^(NSDictionary * response) {
+        [UserInfo signIn:username password:password success:^{
             [hud hide:YES];
-            
-            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-            SignInResultVO* signResultVO = [[SignInResultVO alloc]initWithDictionary:[response objectForKey:@"signInResultVO"] error:nil];
-            NSLog(@"%@___%@",[resultVO message],[signResultVO token]);
-            
-            if (resultVO.success == 0) {
-                NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-                NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-                [userData removePersistentDomainForName:appDomain];
-
-                NSInteger user_id = [[signResultVO user]id];
-                NSInteger token_user_id = user_id;
-                NSString* token = [signResultVO token];
-                NSInteger group_id = [[[signResultVO user]group]id];
-                NSInteger role_id = [[[signResultVO user]role]id];
-                NSString* user_name = [[signResultVO user]name];
-                NSInteger credit = [[signResultVO user]point];
-                
-                [userData setObject:[NSNumber numberWithInteger:user_id] forKey:@"user_id"];
-                [userData setObject:[NSNumber numberWithInteger:token_user_id] forKey:@"token_user_id"];
-                [userData setObject:token forKey:@"token"];
-                [userData setObject:[NSNumber numberWithInteger:group_id] forKey:@"group_id"];
-                [userData setObject:[NSNumber numberWithInteger:role_id] forKey:@"role_id"];
-                [userData setObject:user_name forKey:@"user_name"];
-                [userData setObject:[NSNumber numberWithInteger:credit] forKey:@"credit"];
-                
-                [self performSegueWithIdentifier:@"SignIn" sender:nil];
-            } else {
-                self.hintLabel.text = [resultVO message];
-                self.hintLabel.hidden = NO;
-            }
+            [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"SignIn" object:nil]];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } error:^(NSString *message) {
+            [hud hide:YES];
+            self.hintLabel.text = message;
+            self.hintLabel.hidden = NO;
         }];
-    
     }
 }
 

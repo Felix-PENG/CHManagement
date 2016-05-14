@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "MBProgressHUD+Extends.h"
 #import "ResultVO.h"
+#import "UserInfo.h"
 
 @interface AddBuildingMaterialSellTVC ()
 @property (weak, nonatomic) IBOutlet UITextField *entryTextField;
@@ -46,14 +47,14 @@
     MBProgressHUD *hud = [MBProgressHUD hudWithMessage:@"请稍等..."];
     if (self.bill) {
         [[NetworkManager sharedInstance] changeBillMaterialsWithId:self.bill.id
-                                                       withGroupId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"group_id"] integerValue]
+                                                       withGroupId:[UserInfo sharedInstance].groupId
                                                        withContent:self.descriptionTextField.text withMoney:[self.totalPriceTextField.text doubleValue]
                                                           withName:self.entryTextField.text withType:self.modelTextField.text
                                                      withUnitPrice:[self.sellPriceTextField.text doubleValue]
                                                            withNum:[self.amountTextField.text integerValue]
                                                         withIn_off:BILL_OFF
                                                     withDealerName:self.companyTextField.text
-                                                        withUserId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]
+                                                        withUserId:[UserInfo sharedInstance].id
                                                  completionHandler:^(NSDictionary *response) {
                                                      ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
                                                      if (result.success == 0) {
@@ -63,7 +64,7 @@
                                                      [hud hide:YES];
         }];
     } else {
-        [[NetworkManager sharedInstance] createBillMaterialsWithGroupId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"group_id"] integerValue]
+        [[NetworkManager sharedInstance] createBillMaterialsWithGroupId:[UserInfo sharedInstance].groupId
                                                             withContent:self.descriptionTextField.text
                                                               withMoney:[self.totalPriceTextField.text doubleValue]
                                                                withName:self.entryTextField.text
@@ -72,7 +73,7 @@
                                                                 withNum:[self.amountTextField.text integerValue]
                                                              withIn_off:BILL_OFF
                                                          withDealerName:self.companyTextField.text
-                                                             withUserId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]
+                                                             withUserId:[UserInfo sharedInstance].id
                                                       completionHandler:^(NSDictionary *response) {
                                                           ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
                                                           if (result.success == 0) {

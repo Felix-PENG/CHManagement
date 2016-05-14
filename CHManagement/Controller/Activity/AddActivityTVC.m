@@ -12,6 +12,7 @@
 #import "MBProgressHUD+Extends.h"
 #import "ErrorHandler.h"
 #import "ActivityTVC.h"
+#import "UserInfo.h"
 
 @interface AddActivityTVC (){
     NSInteger group_id;
@@ -29,9 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    group_id = [[userData objectForKey:@"group_id"]integerValue];
-    user_id = [[userData objectForKey:@"user_id"]integerValue];
+    group_id = [UserInfo sharedInstance].groupId;
+    user_id = [UserInfo sharedInstance].id;
     
     if ([self.activity isKindOfClass:[ActivityVO class]]) {
         self.navigationItem.title = @"活动更新";

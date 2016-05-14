@@ -14,6 +14,7 @@
 #import "MailBoxVC.h"
 #import "ChooseUserTVC.h"
 #import "ErrorHandler.h"
+#import "UserInfo.h"
 
 static NSString * const chooseUserSegue = @"chooseUser";
 
@@ -48,8 +49,7 @@ static NSString * const chooseUserSegue = @"chooseUser";
 - (IBAction)sendButtonPressed:(id)sender {
     NSString* content = self.contentTextView.text;
     
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    NSInteger user_id = [UserInfo sharedInstance].id;
     
     if([self.receivers count] == 0||[content isEqualToString:@""]){
         UIAlertController* alert = [ErrorHandler showErrorAlert:@"收件人与内容均不得为空"];

@@ -13,6 +13,7 @@
 #import "ActivityCell.h"
 #import "LoadMoreCell.h"
 #import "AddPlanVC.h"
+#import "UserInfo.h"
 
 static NSString * const CellIdentifier = @"ActivityCell";
 static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
@@ -97,8 +98,7 @@ static NSString * const AddPlanSegue = @"AddPlan";
 
 #pragma  mark load data
 - (void)loadPlanListWithPage:(NSInteger)page{
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    NSInteger user_id = [UserInfo sharedInstance].id;
     [[NetworkManager sharedInstance]getSchedulesWithPage:page withUserId:user_id completionHandler:^(NSDictionary *response) {
         if(page <= 1){
             [_planList removeAllObjects];

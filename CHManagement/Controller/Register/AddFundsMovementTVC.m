@@ -11,6 +11,7 @@
 #import "MBProgressHUD+Extends.h"
 #import "ResultVO.h"
 #import "Constants.h"
+#import "UserInfo.h"
 
 @interface AddFundsMovementTVC () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *moneyTextField;
@@ -69,7 +70,7 @@
                                               withContent:self.detailTextField.text
                                                 withMoney:[self.moneyTextField.text doubleValue]
                                                withIn_off:[self.directionPickerView selectedRowInComponent:0]
-                                               withUserId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]
+                                               withUserId:[UserInfo sharedInstance].id
                                         completionHandler:^(NSDictionary *response) {
             ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
             if (result.success == 0) {
@@ -79,11 +80,11 @@
             [hud hide:YES];
         }];
     } else {
-        [[NetworkManager sharedInstance] createBillWithGroupId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"group_id"] integerValue]
+        [[NetworkManager sharedInstance] createBillWithGroupId:[UserInfo sharedInstance].groupId
                                                    withContent:self.detailTextField.text
                                                      withMoney:[self.moneyTextField.text doubleValue]
                                                     withIn_off:[self.directionPickerView selectedRowInComponent:0]
-                                                    withUserId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]
+                                                    withUserId:[UserInfo sharedInstance].id
                                              completionHandler:^(NSDictionary *response) {
                                                  ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
                                                  if (result.success == 0) {

@@ -16,6 +16,7 @@
 #import "LoadMoreCell.h"
 #import "UserShortVO.h"
 #import "MyGroup.h"
+#import "UserInfo.h"
 
 #define GOINGSTATUS 0
 #define IN_OFF 0
@@ -94,9 +95,8 @@
 
 #pragma mark load data
 - (void)loadGoingAuditMaterialsWithPage:(NSUInteger)page{
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
-    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    NSInteger group_id = [UserInfo sharedInstance].groupId;
+    NSInteger user_id = [UserInfo sharedInstance].id;
     
     if(self.choosedGroupId){
         group_id = self.choosedGroupId.integerValue;

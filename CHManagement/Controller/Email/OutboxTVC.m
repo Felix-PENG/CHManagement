@@ -12,6 +12,7 @@
 #import "MessageVO.h"
 #import "MailCell.h"
 #import "LoadMoreCell.h"
+#import "UserInfo.h"
 
 #define OUTBOX_FLAG 1
 
@@ -111,8 +112,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 
 #pragma mark load data
 - (void)loadOutboxEmail:(NSInteger)page{
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    NSInteger user_id = [UserInfo sharedInstance].id;
     
     [[NetworkManager sharedInstance]getMessagesWithPage:page withInOff:OUTBOX_FLAG withUserId:user_id completionHandler:^(NSDictionary *response) {
         ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];

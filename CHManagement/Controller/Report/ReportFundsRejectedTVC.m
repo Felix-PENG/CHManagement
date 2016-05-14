@@ -15,6 +15,7 @@
 #import "AuditOthersVO.h"
 #import "ErrorHandler.h"
 #import "LoadMoreCell.h"
+#import "UserInfo.h"
 
 #define REJECTSTATUS 2
 
@@ -121,9 +122,8 @@
 
 #pragma mark load data
 - (void)loadRejectedAuditListWithPage:(NSUInteger)page{
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
-    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    NSInteger group_id = [UserInfo sharedInstance].groupId;
+    NSInteger user_id = [UserInfo sharedInstance].id;
     
     if(self.choosedGroupId){
         group_id = self.choosedGroupId.integerValue;

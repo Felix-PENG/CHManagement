@@ -12,6 +12,7 @@
 #import "ErrorHandler.h"
 #import "MBProgressHUD+Extends.h"
 #import "Utils.h"
+#import "UserInfo.h"
 
 #define IN_OFF 0
 
@@ -69,9 +70,8 @@
         UIAlertController* alertView = [ErrorHandler showErrorAlert:@"单价和总价必须为正整数或正小数"];
         [self presentViewController:alertView animated:YES completion:nil];
     }else{
-        NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-        NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
-        NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+        NSInteger user_id = [UserInfo sharedInstance].id;
+        NSInteger group_id = [UserInfo sharedInstance].groupId;
         
         if(self.auditMaterialsVO){
             [[NetworkManager sharedInstance]changeAuditMaterialsWithId:self.auditMaterialsVO.id withContent:detail withMoney:[totalPrice doubleValue] withName:entry withType:type withUnitPrice:[unitPrice doubleValue] withNum:[num integerValue] withIn_off:IN_OFF withDealerName:dealerName withUserId:user_id completionHandler:^(NSDictionary *response) {
