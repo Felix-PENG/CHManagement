@@ -10,6 +10,7 @@
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "MyGroup.h"
+#import "UserInfo.h"
 
 @interface RegisterViewController ()
 
@@ -26,7 +27,7 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"group_id"] integerValue] == 0) {
+    if ([UserInfo sharedInstance].groupId == 0) {
         _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择部门" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         // get groups
         [[NetworkManager sharedInstance] getAllGroupsWithCompletionHandler:^(NSDictionary *response) {

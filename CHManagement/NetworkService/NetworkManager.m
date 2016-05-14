@@ -13,6 +13,7 @@
 #import "NetworkConstants.h"
 #import "File.h"
 #import "FileVO.h"
+#import "UserInfo.h"
 
 #define TIME_OUT_SECONDS 100
 
@@ -87,16 +88,16 @@
                                                                                  error:nil];
         
     }else{
-        NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-        NSString* token = [userData objectForKey:@"token"];
-        NSInteger token_user_id = [[userData objectForKey:@"token_user_id"]integerValue];
+        UserInfo *userInfo = [UserInfo sharedInstance];
+        NSString* token = userInfo.token;
+        NSInteger token_user_id = userInfo.tokenUserId;
         NSMutableDictionary* json = [NSMutableDictionary dictionary];
         [json addEntriesFromDictionary:parameter.json];
         
-        if ([userData objectForKey:@"token"]) {
+        if (token) {
             [json setObject:token forKey:@"token"];
         }
-        if([userData objectForKey:@"token_user_id"]){
+        if(@(token_user_id)){
             [json setObject:[NSNumber numberWithInteger:token_user_id] forKey:@"token_user_id"];
         }
         request = [[AFHTTPRequestSerializer serializer] requestWithMethod:parameter.httpMethod

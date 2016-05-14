@@ -15,6 +15,7 @@
 #import "AddActivityTVC.h"
 #import "LoadMoreCell.h"
 #import "MyGroup.h"
+#import "UserInfo.h"
 
 static NSString * const CellIdentifier = @"ActivityCell";
 static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
@@ -43,8 +44,7 @@ static NSString * const AddActivitySegue = @"AddActivity";
     cellNib = [UINib nibWithNibName:LoadMoreCellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:LoadMoreCellIdentifier];
     
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+    NSInteger group_id = [UserInfo sharedInstance].groupId;
     
     if(group_id == 0){
         _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择部门" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -91,8 +91,7 @@ static NSString * const AddActivitySegue = @"AddActivity";
 
 - (void)loadDataWithPage:(NSUInteger)page
 {
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+    NSInteger group_id = [UserInfo sharedInstance].groupId;
     
     if(_choosedGroupId){
         group_id = _choosedGroupId.integerValue;

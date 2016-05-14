@@ -19,6 +19,7 @@
 #import "QiNiuVO.h"
 #import <QiniuSDK.h>
 #import "ErrorHandler.h"
+#import "UserInfo.h"
 
 static NSString * const CellIdentifier = @"FileCell";
 static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
@@ -106,7 +107,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
                           NSLog(@"%@", info);
                           NSLog(@"%@", resp);
                           // upload to server
-                          [[NetworkManager sharedInstance] createFileWithName:uniqueName withSize:size withUrl:key withUserId:(NSInteger)[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] completionHandler:^(NSDictionary *response) {
+                          [[NetworkManager sharedInstance] createFileWithName:uniqueName withSize:size withUrl:key withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
                               ResultVO *result2 = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
                               if (result2.success == 0) {
                                   [self refresh];
@@ -214,7 +215,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         File *file = _fileList[indexPath.row];
-        [[NetworkManager sharedInstance] deleteFileWithFileId:file.fileVO.id withUserId:(NSInteger)[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] completionHandler:^(NSDictionary *response) {
+        [[NetworkManager sharedInstance] deleteFileWithFileId:file.fileVO.id withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
             ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
             if (result.success == 0) {
                 [_fileList removeObject:file];

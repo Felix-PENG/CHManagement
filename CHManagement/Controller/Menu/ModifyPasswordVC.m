@@ -10,6 +10,7 @@
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "MBProgressHUD+Extends.h"
+#import "UserInfo.h"
 
 @interface ModifyPasswordVC()
 @property (weak, nonatomic) IBOutlet UITextField *oldPwdTextField;
@@ -36,7 +37,7 @@
 - (IBAction)modifyButtonPressed:(id)sender
 {
     self.hintLabel.hidden = YES;
-    NSInteger user_id = [[[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"]integerValue];
+    NSInteger user_id = [UserInfo sharedInstance].id;
     
     NSString* oldPwd = self.oldPwdTextField.text;
     NSString* newPwd = self.nPwdTextField.text;
@@ -53,8 +54,8 @@
             ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
             if([resultVO success] == 0){
                 NSString* token = [response objectForKey:@"token"];
-                [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"token"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
+                [UserInfo sharedInstance].token = token;
+                [[UserInfo sharedInstance] persist];
                 
                 [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
                     [self dismissViewControllerAnimated:YES completion:nil];

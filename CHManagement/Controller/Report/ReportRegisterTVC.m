@@ -12,6 +12,7 @@
 #import "ErrorHandler.h"
 #import "MBProgressHUD+Extends.h"
 #import "Utils.h"
+#import "UserInfo.h"
 
 @interface ReportRegisterTVC ()
 
@@ -74,9 +75,8 @@
 
 #pragma mark upload data
 - (void)uploadAuditOthersData{
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
-    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+    NSInteger user_id = [UserInfo sharedInstance].id;
+    NSInteger group_id = [UserInfo sharedInstance].groupId;
     
     NSString* entry = self.entryField.text;
     NSString* unit_price = self.unit_priceField.text;
