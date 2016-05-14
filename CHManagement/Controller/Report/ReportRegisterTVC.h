@@ -8,9 +8,12 @@
 
 #import "ModalTableViewController.h"
 #import "AuditOthersVO.h"
+#import "AddRegisterProtocol.h"
 
 @interface ReportRegisterTVC : ModalTableViewController
 
 @property (nonatomic, strong) AuditOthersVO* auditOthersVO;
+
+@property (nonatomic, weak) id<AddRegisterProtocol> delegate;
 
 @end

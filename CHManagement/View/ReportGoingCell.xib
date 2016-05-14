@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="382" height="119"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bZu-e0-ubz" id="nny-sQ-fKH">
-                <rect key="frame" x="0.0" y="0.0" width="349" height="119"/>
+                <rect key="frame" x="0.0" y="0.0" width="349" height="118.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVA-gg-uXz">
@@ -92,6 +92,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="clockIcon" destination="Y5J-a8-OXg" id="uNk-5c-MhY"/>
                 <outlet property="dateTimeLabel" destination="yEP-Wv-ULB" id="P8e-T7-bjE"/>
                 <outlet property="detailLabel" destination="qRD-Ay-e7k" id="dJL-Yy-GxB"/>
                 <outlet property="expireLabel" destination="Q68-Jf-C0B" id="72Y-il-MAu"/>

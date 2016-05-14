@@ -85,6 +85,7 @@
     if(indexPath.row < _goingAuditMaterialsList.count){
         ReportMaterialDetailTVC *detail = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportMaterialDetailTVC"];
         [detail setAuditMaterialsVO:[_goingAuditMaterialsList objectAtIndex:indexPath.row]];
+        [detail setCheckable:NO];
         [self.navigationController pushViewController:detail animated:YES];
     }else{
         LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

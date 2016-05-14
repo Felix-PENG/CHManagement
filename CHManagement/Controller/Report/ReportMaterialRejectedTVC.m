@@ -93,6 +93,7 @@
         ReportMaterialDetailTVC *detail = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportMaterialDetailTVC"];
         
         [detail setAuditMaterialsVO:[_rejectedAuditMaterialsList objectAtIndex:indexPath.row]];
+        [detail setCheckable:NO];
         
         [self.navigationController pushViewController:detail animated:YES];
     }else{
@@ -107,7 +108,10 @@
 - (void)modifyButtonPressed:(NSUInteger)index
 {
     UINavigationController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportMaterialRegisterTVC"];
-    [(ReportMaterialRegisterTVC*)controller.topViewController setAuditMaterialsVO: [_rejectedAuditMaterialsList objectAtIndex:index]];
+    ReportMaterialRegisterTVC* reportMaterialRegisterTVC = (ReportMaterialRegisterTVC*)controller.topViewController;
+    [reportMaterialRegisterTVC setAuditMaterialsVO: [_rejectedAuditMaterialsList objectAtIndex:index]];
+    reportMaterialRegisterTVC.delegate = (id<AddRegisterProtocol>)self.parentViewController.parentViewController;
+    
     [self presentViewController:controller animated:YES completion:nil];
 }
 

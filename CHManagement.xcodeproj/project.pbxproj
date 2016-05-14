@@ -338,6 +338,7 @@
 		D19EF8411CE087520044BA84 /* ReportMaterialDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialDetailTVC.m; path = Controller/Report/ReportMaterialDetailTVC.m; sourceTree = "<group>"; };
 		D19EF8431CE1E86A0044BA84 /* ReportMaterialRegisterTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportMaterialRegisterTVC.h; path = Controller/Report/ReportMaterialRegisterTVC.h; sourceTree = "<group>"; };
 		D19EF8441CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportMaterialRegisterTVC.m; path = Controller/Report/ReportMaterialRegisterTVC.m; sourceTree = "<group>"; };
+		D1E5D0661CE7332600040504 /* CheckUpdateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckUpdateProtocol.h; path = Controller/Check/CheckUpdateProtocol.h; sourceTree = "<group>"; };
 		D1E9C36E1CE35ACE00109870 /* GroupManagementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupManagementTVC.h; path = Controller/Management/GroupManagementTVC.h; sourceTree = "<group>"; };
 		D1E9C36F1CE35ACE00109870 /* GroupManagementTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupManagementTVC.m; path = Controller/Management/GroupManagementTVC.m; sourceTree = "<group>"; };
 		D1E9C3711CE35B1800109870 /* RoleManagementTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoleManagementTVC.h; path = Controller/Management/RoleManagementTVC.h; sourceTree = "<group>"; };
@@ -649,6 +650,7 @@
 				C56E55C31CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m */,
 				C56E55C51CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.h */,
 				C56E55C61CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m */,
+				D1E5D0661CE7332600040504 /* CheckUpdateProtocol.h */,
 			);
 			name = Check;
 			sourceTree = "<group>";

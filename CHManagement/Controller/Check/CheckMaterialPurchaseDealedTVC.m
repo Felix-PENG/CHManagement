@@ -9,10 +9,30 @@
 #import "CheckMaterialPurchaseDealedTVC.h"
 #import "RegisterCell.h"
 #import "ReportDetailTVC.h"
+#import "LoadMoreCell.h"
+#import "NetworkManager.h"
+#import "ResultVO.h"
+#import "ErrorHandler.h"
+#import "ReportGoingCell.h"
+#import "AuditMaterialsVO.h"
+#import "CheckRejectedCell.h"
+#import "ReportMaterialDetailTVC.h"
 
-static NSString * const CellIdentifier = @"RegisterCell";
+#define APPROVE_STATUS 3
+#define REJECT_STATUS 2
+#define DEALED_STATUS 1
+#define IN_OFF 0
 
-@interface CheckMaterialPurchaseDealedTVC ()
+static NSString * const ApproveCellIdentifier = @"ReportGoingCell";
+static NSString * const RejectCellIdentifier = @"CheckRejectedCell";
+static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
+
+@interface CheckMaterialPurchaseDealedTVC (){
+    NSUInteger _page;
+    NSMutableArray* _dealedMaterialsList;
+    BOOL _noMoreData;
+
+}
 
 @end
 
@@ -20,10 +40,17 @@ static NSString * const CellIdentifier = @"RegisterCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _dealedMaterialsList = [NSMutableArray array];
     // Do any additional setup after loading the view.
     
-    UINib *nib = [UINib nibWithNibName:CellIdentifier bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+    UINib *nib = [UINib nibWithNibName:ApproveCellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:ApproveCellIdentifier];
+    
+    nib = [UINib nibWithNibName:RejectCellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:RejectCellIdentifier];
+    
+    nib = [UINib nibWithNibName:LoadMoreCellIdentifier bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:LoadMoreCellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,34 +67,108 @@ static NSString * const CellIdentifier = @"RegisterCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return _dealedMaterialsList.count > 0 ? _dealedMaterialsList.count + 1 : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RegisterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    return cell;
+    if(indexPath.row < _dealedMaterialsList.count){
+        AuditMaterialsVO* auditMaterials = [_dealedMaterialsList objectAtIndex:indexPath.row];
+        
+        UserShortVO* userShortVO = [auditMaterials user];
+        NSString* userName = [userShortVO name];
+        
+        MyGroup* group = [auditMaterials group];
+        NSString* role = [group name];
+        
+        NSString* reason = [auditMaterials reason];
+        if(!reason || [reason isEqualToString:@""]){
+            reason = @"无";
+        }
+        
+        if(auditMaterials.audit_status == APPROVE_STATUS){
+            ReportGoingCell* cell = [self.tableView dequeueReusableCellWithIdentifier:ApproveCellIdentifier];
+            
+            [cell configureCellWithTitle:[auditMaterials name] withTime:[auditMaterials time] withUsername:userName withRole:role withDetail:[auditMaterials detail] withPrice:[auditMaterials money]];
+            [cell hideExpireLabel];
+            
+            return cell;
+        }else{
+            CheckRejectedCell *cell = [self.tableView dequeueReusableCellWithIdentifier:RejectCellIdentifier];
+            
+          [cell configureCellWithTitle:[auditMaterials name] withTime:[auditMaterials time] withUsername:userName withRole:role withDetail:[auditMaterials detail] withPrice:[auditMaterials money] withReason:reason];
+            
+            return cell;
+        }
+    }else{
+        LoadMoreCell *cell = [self.tableView dequeueReusableCellWithIdentifier:LoadMoreCellIdentifier];
+        
+        cell.status = _noMoreData ? NoMore : ClickToLoad;
+        return cell;
+    }
+
 }
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ReportDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportDetailTVC"];
-    tvc.checkable = NO;
-    tvc.navigationItem.title = @"建材买入单详情";
-    [self.navigationController pushViewController:tvc animated:YES];
+    if(indexPath.row < _dealedMaterialsList.count){
+        ReportMaterialDetailTVC *detail = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportMaterialDetailTVC"];
+        [detail setAuditMaterialsVO:[_dealedMaterialsList objectAtIndex:indexPath.row]];
+        detail.delegate = (id<CheckUpdateProtocol>)self.parentViewController.parentViewController;
+        [detail.navigationItem setTitle:@"建材买入单详情"];
+        [detail setCheckable:NO];
+        [self.navigationController pushViewController:detail animated:YES];
+        
+    }else{
+        LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        cell.status = Loading;
+        [self loadDealedMaterialsListWithPage:++_page];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark load data
+- (void)loadDealedMaterialsListWithPage:(NSUInteger)page{
+    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
+    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    
+    if(page <= 1){
+        [_dealedMaterialsList removeAllObjects];
+    }
+    
+    [[NetworkManager sharedInstance]getAuditMaterialsListWithStatus:DEALED_STATUS withIn_off:IN_OFF withPage:page withUserId:user_id completionHandler:^(NSDictionary *response) {
+        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        
+        if([resultVO success] == 0){
+            NSArray* auditMaterialsVOList = [response objectForKey:@"auditMaterialsVOList"];
+            
+            if(auditMaterialsVOList.count > 0){
+                for(NSDictionary* dict in auditMaterialsVOList){
+                    AuditMaterialsVO* auditMaterialsVO = [[AuditMaterialsVO alloc]initWithDictionary:dict error:nil];
+                    [_dealedMaterialsList addObject:auditMaterialsVO];
+                }
+                _noMoreData = NO;
+            }else{
+                _noMoreData = YES;
+            }
+            
+            [self.tableView reloadData];
+        }else{
+            UIAlertController* alertView = [ErrorHandler showErrorAlert:[resultVO message]];
+            [self presentViewController:alertView animated:YES completion:nil];
+        }
+        
+        if([self.refreshControl isRefreshing]){
+            [self.refreshControl endRefreshing];
+        }
+    }];
 }
-*/
+
+#pragma mark implement refresh
+- (void)refresh{
+    _page = 1;
+    [self loadDealedMaterialsListWithPage:_page];
+}
 
 @end

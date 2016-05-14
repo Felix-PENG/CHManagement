@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CheckUpdateProtocol.h"
 
-@interface CheckFundsVC : UIViewController
+@interface CheckFundsVC : UIViewController<CheckUpdateProtocol>
 
 @end

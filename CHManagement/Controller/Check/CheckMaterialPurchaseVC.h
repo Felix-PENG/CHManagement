@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CheckUpdateProtocol.h"
 
-@interface CheckMaterialPurchaseVC : UIViewController
+@interface CheckMaterialPurchaseVC : UIViewController<CheckUpdateProtocol>
 
 @end

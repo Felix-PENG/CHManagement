@@ -15,6 +15,7 @@
 #import "ResultVO.h"
 #import "MyGroup.h"
 #import "UserInfo.h"
+#import "ReportRegisterTVC.h"
 
 @interface ReportFundsVC ()
 
@@ -22,6 +23,8 @@
 
 @implementation ReportFundsVC{
     UIAlertController* _sheetAlert;
+    ReportFundsGoingTVC * _rfgtvc;
+    ReportFundsRejectedTVC * _rfrtvc;
 }
 
 - (void)viewDidLoad {
@@ -31,11 +34,11 @@
     self.navigationItem.title = @"经费审核情况";
     
     // contents
-    ReportFundsGoingTVC *rfgtvc = [[ReportFundsGoingTVC alloc] init];
-    ReportFundsRejectedTVC *rfrtvc = [[ReportFundsRejectedTVC alloc] init];
+    _rfgtvc = [[ReportFundsGoingTVC alloc] init];
+    _rfrtvc = [[ReportFundsRejectedTVC alloc] init];
     
-    TabItem *item1 = [[TabItem alloc] initWithTab:@"进行中" controller:rfgtvc];
-    TabItem *item2 = [[TabItem alloc] initWithTab:@"被驳回" controller:rfrtvc];
+    TabItem *item1 = [[TabItem alloc] initWithTab:@"进行中" controller:_rfgtvc];
+    TabItem *item2 = [[TabItem alloc] initWithTab:@"被驳回" controller:_rfrtvc];
     
     TabbedScrollViewController *tsvc = [[TabbedScrollViewController alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64) items:@[item1, item2]];
     
@@ -62,10 +65,10 @@
                 for(NSDictionary* groupDict in groupList){
                     MyGroup* group = [[MyGroup alloc]initWithDictionary:groupDict error:nil];
                     UIAlertAction *action = [UIAlertAction actionWithTitle:group.name style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                        [rfgtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
-                        [rfgtvc refresh];
-                        [rfrtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
-                        [rfrtvc refresh];
+                        [_rfgtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
+                        [_rfgtvc refresh];
+                        [_rfrtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
+                        [_rfrtvc refresh];
                     }];
                     [_sheetAlert addAction:action];
                 }
@@ -87,15 +90,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)roleButtonPressed
 {
@@ -105,7 +99,15 @@
 - (void)addButtonPressed
 {
     UINavigationController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportRegisterTVC"];
+    ReportRegisterTVC* reportRegisterTVC = (ReportRegisterTVC*)controller.topViewController;
+    reportRegisterTVC.delegate = self;
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+#pragma mark implement protocol methods
+- (void)needRefresh{
+    _rfrtvc.repeatLoad = NO;
+    _rfgtvc.repeatLoad = NO;
 }
 
 @end

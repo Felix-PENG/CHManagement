@@ -8,9 +8,12 @@
 
 #import "ModalTableViewController.h"
 #import "AuditMaterialsVO.h"
+#import "AddRegisterProtocol.h"
 
 @interface ReportMaterialRegisterTVC : ModalTableViewController
 
 @property (nonatomic, weak) AuditMaterialsVO* auditMaterialsVO;
+
+@property (nonatomic, weak) id<AddRegisterProtocol> delegate;
 
 @end
