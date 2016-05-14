@@ -100,6 +100,7 @@
                 
                 if([resultVO success] == 0){
                     [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                        [self.delegate needRefresh];
                         [self dismissViewControllerAnimated:YES completion:nil];
                     }];
                 }else{
@@ -114,6 +115,7 @@
                 
                 if([resultVO success] == 0){
                     [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                        [self.delegate needRefresh];
                         [self dismissViewControllerAnimated:YES completion:nil];
                     }];
                 }else{

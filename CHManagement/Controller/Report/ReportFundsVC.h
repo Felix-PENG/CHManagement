@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddRegisterProtocol.h"
 
-@interface ReportFundsVC : UIViewController
+@interface ReportFundsVC : UIViewController<AddRegisterProtocol>
 
 @end

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expireLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *clockIcon;
 
 @end
 
@@ -47,6 +48,11 @@
 
     NSInteger expireHours = -[date timeIntervalSinceNow]/3600;
     _expireLabel.text = [NSString stringWithFormat:@"超出%@小时",[NSNumber numberWithInteger:expireHours]];
+}
+
+- (void)hideExpireLabel{
+    _expireLabel.hidden = YES;
+    _clockIcon.hidden = YES;
 }
 
 @end

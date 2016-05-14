@@ -14,6 +14,7 @@
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "MyGroup.h"
+#import "ReportMaterialRegisterTVC.h"
 
 @interface ReportMaterialVC ()
 
@@ -21,6 +22,8 @@
 
 @implementation ReportMaterialVC{
     UIAlertController* _sheetAlert;
+    ReportMaterialGoingTVC * _rmgtvc;
+    ReportMaterialRejectedTVC * _rmrtvc;
 }
 
 - (void)viewDidLoad {
@@ -30,11 +33,11 @@
     self.navigationItem.title = @"建材买入审核情况";
     
     // contents
-    ReportMaterialGoingTVC *rmgtvc = [[ReportMaterialGoingTVC alloc] init];
-    ReportMaterialRejectedTVC *rmrtvc = [[ReportMaterialRejectedTVC alloc] init];
+    _rmgtvc = [[ReportMaterialGoingTVC alloc] init];
+    _rmrtvc = [[ReportMaterialRejectedTVC alloc] init];
     
-    TabItem *item1 = [[TabItem alloc] initWithTab:@"进行中" controller:rmgtvc];
-    TabItem *item2 = [[TabItem alloc] initWithTab:@"被驳回" controller:rmrtvc];
+    TabItem *item1 = [[TabItem alloc] initWithTab:@"进行中" controller:_rmgtvc];
+    TabItem *item2 = [[TabItem alloc] initWithTab:@"被驳回" controller:_rmrtvc];
     
     TabbedScrollViewController *tsvc = [[TabbedScrollViewController alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64) items:@[item1, item2]];
     
@@ -62,10 +65,10 @@
                 for(NSDictionary* groupDict in groupList){
                     MyGroup* group = [[MyGroup alloc]initWithDictionary:groupDict error:nil];
                     UIAlertAction *action = [UIAlertAction actionWithTitle:group.name style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                        [rmgtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
-                        [rmgtvc refresh];
-                        [rmrtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
-                        [rmrtvc refresh];
+                        [_rmgtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
+                        [_rmgtvc refresh];
+                        [_rmrtvc setChoosedGroupId:[NSNumber numberWithInteger:group.id]];
+                        [_rmrtvc refresh];
                     }];
                     [_sheetAlert addAction:action];
                 }
@@ -105,7 +108,15 @@
 - (void)addButtonPressed
 {
     UINavigationController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportMaterialRegisterTVC"];
+    ReportMaterialRegisterTVC* reportMaterialRegisterTVC = (ReportMaterialRegisterTVC*)controller.topViewController;
+    reportMaterialRegisterTVC.delegate = self;
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+#pragma mark implement protocol methods
+- (void)needRefresh{
+    _rmgtvc.repeatLoad = NO;
+    _rmrtvc.repeatLoad = NO;
 }
 
 @end

@@ -115,7 +115,9 @@
 - (void)modifyButtonPressed:(NSUInteger)index
 {
     UINavigationController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReportRegisterTVC"];
-    [(ReportRegisterTVC*)controller.topViewController setAuditOthersVO:[_rejectedAuditOthersList objectAtIndex:index]];
+    ReportRegisterTVC* reportRegisterTVC = (ReportRegisterTVC*)controller.topViewController;
+    [reportRegisterTVC setAuditOthersVO:[_rejectedAuditOthersList objectAtIndex:index]];
+    reportRegisterTVC.delegate = (id<AddRegisterProtocol>)self.parentViewController.parentViewController;
     [self presentViewController:controller animated:YES completion:nil];
 }
 

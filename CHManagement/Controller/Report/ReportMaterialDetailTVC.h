@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "AuditMaterialsVO.h"
+#import "CheckUpdateProtocol.h"
 
 @interface ReportMaterialDetailTVC : UITableViewController
 
 @property (nonatomic, assign) BOOL checkable;
 
 @property (nonatomic, strong) AuditMaterialsVO* auditMaterialsVO;
+
+@property (nonatomic, weak) id<CheckUpdateProtocol> delegate;
 
 @end

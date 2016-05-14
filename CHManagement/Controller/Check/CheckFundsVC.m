@@ -12,7 +12,10 @@
 #import "TabItem.h"
 #import "TabbedScrollViewController.h"
 
-@interface CheckFundsVC ()
+@interface CheckFundsVC (){
+    CheckFundsUndealTVC * _rfgtvc;
+    CheckFundsDealedTVC * _rfdtvc;
+}
 
 @end
 
@@ -27,11 +30,11 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     // contents
-    CheckFundsUndealTVC *rfgtvc = [[CheckFundsUndealTVC alloc] init];
-    CheckFundsDealedTVC *rfdtvc = [[CheckFundsDealedTVC alloc] init];
+    _rfgtvc = [[CheckFundsUndealTVC alloc] init];
+    _rfdtvc = [[CheckFundsDealedTVC alloc] init];
     
-    TabItem *tabItem1 = [[TabItem alloc] initWithTab:@"未处理" controller:rfgtvc];
-    TabItem *tabItem2 = [[TabItem alloc] initWithTab:@"已处理" controller:rfdtvc];
+    TabItem *tabItem1 = [[TabItem alloc] initWithTab:@"未处理" controller:_rfgtvc];
+    TabItem *tabItem2 = [[TabItem alloc] initWithTab:@"已处理" controller:_rfdtvc];
     
     TabbedScrollViewController *tsvc = [[TabbedScrollViewController alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64) items:@[tabItem1, tabItem2]];
     [self.view addSubview:tsvc.view];
@@ -43,14 +46,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark implement protocol methods
+- (void)needRefresh{
+    _rfgtvc.repeatLoad = NO;
+    _rfdtvc.repeatLoad = NO;
 }
-*/
 
 @end
