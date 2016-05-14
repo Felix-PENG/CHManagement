@@ -56,7 +56,7 @@
 #define createAuditMaterialsUrl @"api/createAuditMaterials"
 #define changeAuditMaterialsUrl @"api/changeAuditMaterials"
 #define deleteAuditMaterialsUrl @"api/deleteAuditMaterials"
-#define getAuditMaterialsListByStatusAndIn_offUrl @"getAuditMaterialsListByStatusAndIn_off"
+#define getAuditMaterialsListByStatusAndIn_offUrl @"api/getAuditMaterialsListByStatusAndIn_off"
 #define getAuditMaterialsListByGroupIdAndStatusAndIn_offUrl @"api/getAuditMaterialsListByGroupIdAndStatusAndIn_off"
 #define getAuditMaterialsByIdUrl @"api/getAuditMaterialsById"
 #define auditAuditMaterialsUrl @"api/auditAuditMaterials"
