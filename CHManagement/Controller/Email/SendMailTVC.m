@@ -69,10 +69,10 @@ static NSString * const chooseUserSegue = @"chooseUser";
             
             if([resultVO success] == 0){
                 [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                    [self.delegate needRefresh];
+                    [self.delegate switchViewToOutBox];
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }];
-                
-                [self.mailBoxSwitchViewDelegate switchViewToOutBox];
             }else{
                 UIAlertController* alert = [ErrorHandler showErrorAlert:[resultVO message]];
                 [self presentViewController:alert animated:YES completion:nil];
