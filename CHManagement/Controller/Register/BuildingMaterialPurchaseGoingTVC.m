@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "ResultVO.h"
 #import "BillMaterialsVO.h"
+#import "BuildingMaterialPurchaseVC.h"
 
 @interface BuildingMaterialPurchaseGoingTVC ()
 
@@ -87,7 +88,9 @@
         RegisterPurchaseDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterPurchaseDetailTVC"];
         tvc.uploadable = YES;
         tvc.bill = bill;
-        tvc.delegate = self;
+        if ([self.parentViewController.parentViewController isKindOfClass:[BuildingMaterialPurchaseVC class]]) {
+            tvc.delegate = (BuildingMaterialPurchaseVC *)self.parentViewController.parentViewController;
+        }
         [self.navigationController pushViewController:tvc animated:YES];
     } else {
         LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

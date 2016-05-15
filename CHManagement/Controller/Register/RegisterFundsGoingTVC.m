@@ -14,6 +14,7 @@
 #import "ResultVO.h"
 #import "BillOthersVO.h"
 #import "Constants.h"
+#import "RegisterFundsVC.h"
 
 @interface RegisterFundsGoingTVC ()
 
@@ -88,7 +89,9 @@
         RegisterDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterDetailTVC"];
         tvc.uploadable = YES;
         tvc.bill = bill;
-        tvc.delegate = self;
+        if ([self.parentViewController.parentViewController isKindOfClass:[RegisterFundsVC class]]) {
+            tvc.delegate = (RegisterFundsVC *)self.parentViewController.parentViewController;
+        }
         [self.navigationController pushViewController:tvc animated:YES];
     } else {
         LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -96,15 +99,5 @@
         [self loadDataWithPage:++_page];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -133,6 +133,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section > 0) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         switch (((Permission *)((NSArray *)_permissionDict[_permissionDict.allKeys[indexPath.section - 1]])[indexPath.row]).id) {
             case FundsReport:
                 [self.navigationController pushViewController:[[ReportFundsVC alloc] init] animated:YES];
