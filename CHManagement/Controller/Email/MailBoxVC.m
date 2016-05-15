@@ -56,6 +56,7 @@
         controller.view.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
         [_controllerDict setObject:controller forKey:@(index)];
         [self addChildViewController:controller];
+        [self.view addSubview:controller.view];
     }
     return controller;
 }
@@ -63,11 +64,8 @@
 - (void)switchView:(NSUInteger)index
 {
     UIViewController *controller = [self controllerForIndex:index];
-    if(self.view.subviews[0] != controller.view) {
-        [self.view.subviews[0] removeFromSuperview];
-        [self.view addSubview:controller.view];
-        [self.view bringSubviewToFront:controller.view];
-    }
+    
+    [self.view bringSubviewToFront:controller.view];
 }
 
 #pragma mark - IBAction
