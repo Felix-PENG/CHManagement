@@ -9,8 +9,16 @@
 #import "ModalTableViewController.h"
 #import "ActivityVO.h"
 
+@protocol AddActivityProtocol <NSObject>
+
+- (void)needRefresh;
+
+@end
+
 @interface AddActivityTVC : ModalTableViewController
 
 @property (nonatomic, strong) ActivityVO *activity;
+
+@property (nonatomic, weak) id<AddActivityProtocol> delegate;
 
 @end

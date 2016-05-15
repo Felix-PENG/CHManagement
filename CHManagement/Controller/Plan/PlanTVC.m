@@ -45,10 +45,6 @@ static NSString * const AddPlanSegue = @"AddPlan";
     self.tableView.estimatedRowHeight = 98.0;
 }
 
-- (void)viewDidDisappear:(BOOL)animated{
-    self.repeatLoad = NO;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -133,9 +129,16 @@ static NSString * const AddPlanSegue = @"AddPlan";
     if ([segue.identifier isEqualToString:AddPlanSegue]) {
         UINavigationController *desViewController = segue.destinationViewController;
         if ([desViewController.topViewController isKindOfClass:[AddPlanVC class]]) {
-            ((AddPlanVC *)desViewController.topViewController).todaySchedule = sender;
+            AddPlanVC* addPlanTVC = (AddPlanVC *)desViewController.topViewController;
+            addPlanTVC.todaySchedule = sender;
+            addPlanTVC.delegate = self;
         }
     }
+}
+
+#pragma mark implement protocol methods
+- (void)needRefresh{
+    self.repeatLoad = NO;
 }
 
 @end
