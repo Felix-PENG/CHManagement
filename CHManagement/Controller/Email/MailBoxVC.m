@@ -66,6 +66,7 @@
                 break;
         }
         controller.view.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
+        [_controllerDict setObject:controller forKey:@(index)];
         [self addChildViewController:controller];
     }
     return controller;

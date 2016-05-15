@@ -18,6 +18,7 @@
 @property (nonatomic,assign) NSInteger credit;
 @property (nonatomic,copy) NSString *userName;
 @property (nonatomic,assign) NSTimeInterval lastSignIn;
+@property (nonatomic, readonly) BOOL expired;
 
 + (void)signIn:(NSString *)userName password:(NSString *)password success:(void (^)())successHandler error:(void (^)(NSString *))errorHandler;
 
@@ -26,7 +27,5 @@
 - (void)persist;
 
 + (void)remove;
-
-- (BOOL)expired;
 
 @end
