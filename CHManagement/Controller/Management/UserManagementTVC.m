@@ -52,6 +52,28 @@ static NSString* const CellIdentifier = @"UserCell";
     [self.navigationController pushViewController:addUserTVC animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        UserVO* user = [_userList objectAtIndex:indexPath.row];
+        
+        [[NetworkManager sharedInstance]deleteUserById:user.id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if(resultVO.success == 0){
+                [_userList removeObjectAtIndex:indexPath.row];
+                if (_userList.count > 0) {
+                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                } else {
+                    [self.tableView reloadData];
+                }
+            }else{
+                UIAlertController* alertView = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alertView animated:YES completion:nil];
+            }
+        }];
+    }
+}
+
 #pragma mark load data
 - (void)loadAllUsers{
     [_userList removeAllObjects];

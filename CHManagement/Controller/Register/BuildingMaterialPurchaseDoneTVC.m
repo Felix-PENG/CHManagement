@@ -14,6 +14,8 @@
 #import "BillMaterialsVO.h"
 #import "Constants.h"
 #import "LoadMoreCell.h"
+#import "UserInfo.h"
+#import "ErrorHandler.h"
 
 @interface BuildingMaterialPurchaseDoneTVC ()
 
@@ -96,14 +98,26 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        BillMaterialsVO* billMaterials = [_dataList objectAtIndex:indexPath.row];
+        
+        [[NetworkManager sharedInstance]deleteBillMaterialsWithId:billMaterials.id withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if(resultVO.success == 0){
+                [_dataList removeObjectAtIndex:indexPath.row];
+                if (_dataList.count > 0) {
+                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                } else {
+                    [self.tableView reloadData];
+                }
+            }else{
+                UIAlertController* alertView = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alertView animated:YES completion:nil];
+            }
+        }];
+    }
 }
-*/
 
 @end
