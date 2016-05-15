@@ -54,10 +54,6 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     _messageList = [NSMutableArray array];
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    self.repeatLoad = NO;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -54,10 +54,6 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     _messageList = [NSMutableArray array];
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    self.repeatLoad = NO;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

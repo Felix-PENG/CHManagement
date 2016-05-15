@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "ScheduleVO.h"
 
+@protocol AddPlanProtocol <NSObject>
+
+- (void)needRefresh;
+
+@end
+
 @interface AddPlanVC : UIViewController
 
 @property (nonatomic, strong) ScheduleVO* todaySchedule;
+
+@property (nonatomic, weak)id<AddPlanProtocol> delegate;
 
 @end

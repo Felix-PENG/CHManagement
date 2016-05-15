@@ -85,10 +85,6 @@ static NSString * const AddActivitySegue = @"AddActivity";
     self.tableView.estimatedRowHeight = 98.0;
 }
 
-- (void)viewDidDisappear:(BOOL)animated{
-    self.repeatLoad = NO;
-}
-
 - (void)loadDataWithPage:(NSUInteger)page
 {
     NSInteger group_id = [UserInfo sharedInstance].groupId;
@@ -169,6 +165,7 @@ static NSString * const AddActivitySegue = @"AddActivity";
 {
     if (indexPath.row < _activityList.count) {
         [self performSegueWithIdentifier:AddActivitySegue sender:[_activityList objectAtIndex:indexPath.row]];
+        
     } else {
         LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
         cell.status = Loading;
@@ -196,9 +193,16 @@ static NSString * const AddActivitySegue = @"AddActivity";
     if ([segue.identifier isEqualToString:AddActivitySegue]) {
         UINavigationController *desViewController = segue.destinationViewController;
         if ([desViewController.topViewController isKindOfClass:[AddActivityTVC class]]) {
-            ((AddActivityTVC *)desViewController.topViewController).activity = sender;
+            AddActivityTVC* addActivityTVC = (AddActivityTVC *)desViewController.topViewController;
+            addActivityTVC.activity = sender;
+            addActivityTVC.delegate = self;
         }
     }
+}
+
+#pragma mark - implement protocol methods
+- (void)needRefresh{
+    self.repeatLoad = NO;
 }
 
 

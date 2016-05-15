@@ -64,6 +64,7 @@
             ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
             if([resultVO success] == 0){
                 [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                    [self.delegate needRefresh];
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }];
             }else{
@@ -76,6 +77,7 @@
             ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
             if([resultVO success] == 0){
                 [MBProgressHUD showSuccessWithMessage:[resultVO message] toView:self.view completion:^{
+                    [self.delegate needRefresh];
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }];
             }else{

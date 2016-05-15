@@ -8,16 +8,17 @@
 
 #import "ModalTableViewController.h"
 
-@protocol MailBoxSwitchViewDelegate <NSObject>
+@protocol SendEmailProtocol <NSObject>
 
 @required
 - (void)switchViewToOutBox;
+- (void)needRefresh;
 
 @end
 
 @interface SendMailTVC : ModalTableViewController
 
 @property (nonatomic, strong) NSMutableArray* receivers;
-@property (nonatomic,weak) id<MailBoxSwitchViewDelegate> mailBoxSwitchViewDelegate;
+@property (nonatomic,weak) id<SendEmailProtocol> delegate;
 
 @end

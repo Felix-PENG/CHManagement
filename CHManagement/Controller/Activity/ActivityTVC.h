@@ -7,7 +7,8 @@
 //
 
 #import "CHTableViewController.h"
+#import "AddActivityTVC.h"
 
-@interface ActivityTVC : CHTableViewController
+@interface ActivityTVC : CHTableViewController<AddActivityProtocol>
 
 @end
