@@ -37,6 +37,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     self.timeLabel.text = [formatter stringFromDate:date];
+    self.userInteractionEnabled = NO;
 }
 
 - (void)configureOutboxCellWithContent:(NSString*)content withReceivers:(NSArray*)receivers withTime:(NSInteger)time{
@@ -53,6 +54,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     self.timeLabel.text = [formatter stringFromDate:date];
+    self.userInteractionEnabled = NO;
 }
 
 @end
