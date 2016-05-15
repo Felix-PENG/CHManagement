@@ -13,6 +13,7 @@
 #import "LoadMoreCell.h"
 #import "MailCell.h"
 #import "UserInfo.h"
+#import "ErrorHandler.h"
 
 #define INBOX_FLAG 0
 
@@ -51,10 +52,6 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     [self.view addSubview:self.refreshControl];
     
     _messageList = [NSMutableArray array];
-}
-
--(void)viewDidDisappear:(BOOL)animated{
-    self.repeatLoad = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,15 +96,27 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        MessageVO* message = [_messageList objectAtIndex:indexPath.row];
+        
+        [[NetworkManager sharedInstance]deleteMessageWithMessageId:message.id withInOff:INBOX_FLAG withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if(resultVO.success == 0){
+                [_messageList removeObjectAtIndex:indexPath.row];
+                if (_messageList.count > 0) {
+                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                } else {
+                    [self.tableView reloadData];
+                }
+            }else{
+                UIAlertController* alertView = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alertView animated:YES completion:nil];
+            }
+        }];
+    }
 }
-*/
 
 - (void)refresh
 {

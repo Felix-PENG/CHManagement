@@ -7,7 +7,8 @@
 //
 
 #import "CHTableViewController.h"
+#import "AddPlanVC.h"
 
-@interface PlanTVC : CHTableViewController
+@interface PlanTVC : CHTableViewController<AddPlanProtocol>
 
 @end

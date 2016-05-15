@@ -52,6 +52,28 @@ static NSString * const CellIdentifier = @"GroupCell";
         [self.navigationController pushViewController:addGroupTVC animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        MyGroup* group = [_groupList objectAtIndex:indexPath.row];
+        
+        [[NetworkManager sharedInstance]deleteGroupWithGroupId:group.id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if(resultVO.success == 0){
+                [_groupList removeObjectAtIndex:indexPath.row];
+                if (_groupList.count > 0) {
+                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                } else {
+                    [self.tableView reloadData];
+                }
+            }else{
+                UIAlertController* alertView = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alertView animated:YES completion:nil];
+            }
+        }];
+    }
+}
+
 #pragma mark load data
 - (void)loadAllGroups{
     [_groupList removeAllObjects];

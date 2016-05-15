@@ -19,19 +19,15 @@
 {
     NSMutableDictionary *_controllerDict;
     NSUInteger _index;
+    InboxTVC* _inboxTVC;
+    OutboxTVC* _outboxTVC;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     _controllerDict = [NSMutableDictionary dictionaryWithCapacity:2];
     _index = 0;
-    [self.segmentedControl setSelectedSegmentIndex:_index];
-    [self.segmentedControl sendActionsForControlEvents:UIControlEventValueChanged];
-}
-
-- (void)viewDidAppear:(BOOL)animated{
     [self.segmentedControl setSelectedSegmentIndex:_index];
     [self.segmentedControl sendActionsForControlEvents:UIControlEventValueChanged];
 }
@@ -41,26 +37,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (UIViewController *)controllerForIndex:(NSUInteger)index
 {
     UIViewController *controller = [_controllerDict objectForKey:@(index)];
     if (!controller) {
         switch (index) {
             case 0:
-                controller = [[InboxTVC alloc] init];
+                _inboxTVC = [[InboxTVC alloc] init];
+                controller = _inboxTVC;
                 break;
             case 1:
-                controller = [[OutboxTVC alloc] init];
+                _outboxTVC = [[OutboxTVC alloc] init];
+                controller = _outboxTVC;
                 break;
             default:
                 break;
@@ -87,6 +75,7 @@
 - (IBAction)segmentValueChanged:(id)sender
 {
     NSUInteger index = self.segmentedControl.selectedSegmentIndex;
+    _index = index;
     [self switchView:index];
 }
 
@@ -94,12 +83,19 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     UINavigationController* navigationController = segue.destinationViewController;
     SendMailTVC* sendMailTVC = (SendMailTVC*)navigationController.topViewController;
-    [sendMailTVC setMailBoxSwitchViewDelegate:self];
+    sendMailTVC.delegate = self;
 }
 
-#pragma mark segue
--(void)switchViewToOutBox{
+#pragma mark implement protocol methods
+- (void)switchViewToOutBox{
     _index = 1;
+    [self.segmentedControl setSelectedSegmentIndex:_index];
+    [self.segmentedControl sendActionsForControlEvents:UIControlEventValueChanged];
+}
+
+- (void)needRefresh{
+    _inboxTVC.repeatLoad = NO;
+    _outboxTVC.repeatLoad = NO;
 }
 
 @end

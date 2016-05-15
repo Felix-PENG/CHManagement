@@ -94,6 +94,28 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        AuditMaterialsVO* auditMaterialsVO = [_goingAuditMaterialsList objectAtIndex:indexPath.row];
+        
+        [[NetworkManager sharedInstance]deleteAuditMaterialsWithId:auditMaterialsVO.id withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if(resultVO.success == 0){
+                [_goingAuditMaterialsList removeObjectAtIndex:indexPath.row];
+                if (_goingAuditMaterialsList.count > 0) {
+                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                } else {
+                    [self.tableView reloadData];
+                }
+            }else{
+                UIAlertController* alertView = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alertView animated:YES completion:nil];
+            }
+        }];
+    }
+}
+
 #pragma mark load data
 - (void)loadGoingAuditMaterialsWithPage:(NSUInteger)page{
     NSInteger group_id = [UserInfo sharedInstance].groupId;
