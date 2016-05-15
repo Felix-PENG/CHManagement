@@ -101,15 +101,27 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        AuditOthersVO* auditOthersVO = [_rejectedAuditOthersList objectAtIndex:indexPath.row];
+        
+        [[NetworkManager sharedInstance]deleteAuditOthersWithId:auditOthersVO.id withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if(resultVO.success == 0){
+                [_rejectedAuditOthersList removeObjectAtIndex:indexPath.row];
+                if (_rejectedAuditOthersList.count > 0) {
+                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                } else {
+                    [self.tableView reloadData];
+                }
+            }else{
+                UIAlertController* alertView = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alertView animated:YES completion:nil];
+            }
+        }];
+    }
 }
-*/
 
 #pragma mark - ReportRejectedDelegate
 

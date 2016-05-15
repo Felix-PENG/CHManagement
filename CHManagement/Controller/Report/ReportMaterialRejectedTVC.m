@@ -103,6 +103,28 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        AuditMaterialsVO* auditMaterialsVO = [_rejectedAuditMaterialsList objectAtIndex:indexPath.row];
+        
+        [[NetworkManager sharedInstance]deleteAuditMaterialsWithId:auditMaterialsVO.id withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
+            ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+            
+            if(resultVO.success == 0){
+                [_rejectedAuditMaterialsList removeObjectAtIndex:indexPath.row];
+                if (_rejectedAuditMaterialsList.count > 0) {
+                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                } else {
+                    [self.tableView reloadData];
+                }
+            }else{
+                UIAlertController* alertView = [ErrorHandler showErrorAlert:[resultVO message]];
+                [self presentViewController:alertView animated:YES completion:nil];
+            }
+        }];
+    }
+}
+
 #pragma mark - ReportRejectedDelegate
 
 - (void)modifyButtonPressed:(NSUInteger)index
