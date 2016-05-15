@@ -14,6 +14,7 @@
 #import "ResultVO.h"
 #import "BillOthersVO.h"
 #import "Constants.h"
+#import "RegisterFundsVC.h"
 #import "UserInfo.h"
 #import "ErrorHandler.h"
 
@@ -90,7 +91,9 @@
         RegisterDetailTVC *tvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterDetailTVC"];
         tvc.uploadable = YES;
         tvc.bill = bill;
-        tvc.delegate = self;
+        if ([self.parentViewController.parentViewController isKindOfClass:[RegisterFundsVC class]]) {
+            tvc.delegate = (RegisterFundsVC *)self.parentViewController.parentViewController;
+        }
         [self.navigationController pushViewController:tvc animated:YES];
     } else {
         LoadMoreCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

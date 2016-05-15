@@ -7,7 +7,8 @@
 //
 
 #import "RegisterViewController.h"
+#import "AddRegisterProtocol.h"
 
-@interface BuildingMaterialPurchaseVC : RegisterViewController
+@interface BuildingMaterialPurchaseVC : RegisterViewController <AddRegisterProtocol>
 
 @end
