@@ -12,6 +12,7 @@
 #import "MessageVO.h"
 #import "LoadMoreCell.h"
 #import "MailCell.h"
+#import "UserInfo.h"
 
 #define INBOX_FLAG 0
 
@@ -116,8 +117,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 
 #pragma mark load data
 - (void)loadInboxEmail:(NSInteger)page{
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    NSInteger user_id = [UserInfo sharedInstance].id;
     
     [[NetworkManager sharedInstance]getMessagesWithPage:page withInOff:INBOX_FLAG withUserId:user_id completionHandler:^(NSDictionary *response) {
         ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];

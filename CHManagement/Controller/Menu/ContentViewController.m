@@ -21,6 +21,7 @@
 #import "CheckFundsVC.h"
 #import "CheckMaterialPurchaseVC.h"
 #import "GroupManagementTVC.h"
+#import "UserInfo.h"
 
 #define SECTION_HEADER_HEIGHT 28.0
 #define TOP_MENU_CELL_HEIGHT 84.0
@@ -35,6 +36,11 @@
     NSMutableDictionary *_permissionDict;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    ;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -43,6 +49,22 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     _permissionDict = [NSMutableDictionary dictionary];
+    
+    
+    if (![UserInfo sharedInstance]) { // not signed in yet
+        UIViewController *signInVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SignInVC"];
+        [self presentViewController:signInVC animated:YES completion:nil];
+    } else {
+        [self refresh];
+        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"SignIn" object:nil]];
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification) name:@"SignIn" object:nil];
+}
+
+- (void)handleNotification
+{
+    NSLog(@"Content got notification");
+    [self refresh];
 }
 
 #pragma mark - UITableViewDataSource
@@ -156,7 +178,7 @@
 
 - (void)fetchPermissions
 {
-    NSInteger role_id = [[[NSUserDefaults standardUserDefaults]objectForKey:@"role_id"]integerValue];
+    NSInteger role_id = [UserInfo sharedInstance].roleId;
     [[NetworkManager sharedInstance] getRolePermissionWithRoleId:role_id completionHandler:^(NSDictionary *response) {
         NSArray *permissionList = [response objectForKey:@"permissionList"];
         [self buildPermissionMapWithArray:permissionList];

@@ -12,6 +12,7 @@
 #import "ResultVO.h"
 #import "SignStatusVO.h"
 #import "ErrorHandler.h"
+#import "UserInfo.h"
 
 @interface LeftMenuViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -25,10 +26,22 @@
 }
 
 - (void)viewDidLoad {
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSString* user_name = [userData objectForKey:@"user_name"];
-    NSNumber* credit = [userData objectForKey:@"credit"];
-    NSInteger user_id = [[userData objectForKey:@"user_id"]integerValue];
+    [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification) name:@"SignIn" object:nil];
+}
+
+- (void)handleNotification
+{
+    NSLog(@"Left menu got notification");
+    [self loadData];
+}
+
+- (void)loadData
+{
+    NSString* user_name = [UserInfo sharedInstance].userName;
+    NSNumber* credit = @([UserInfo sharedInstance].credit);
+    NSInteger user_id = [UserInfo sharedInstance].id;
     _user_id = user_id;
     
     self.userNameLabel.text = user_name;
@@ -46,7 +59,7 @@
                 [self.signInButton setTitle:@"已签到" forState:UIControlStateNormal];
                 [self.signInButton setEnabled:NO];
             }
-
+            
         }else{
             UIAlertController* alert = [ErrorHandler showErrorAlert:[resultVO message]];
             [self presentViewController:alert animated:YES completion:nil];
@@ -98,9 +111,11 @@
 
 - (IBAction)logOffButtonPressed:(id)sender
 {
-    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
-    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+//    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    [self HomeButtonPressed:nil];
+    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SignInVC"] animated:YES completion:nil];
+    
+    [UserInfo remove];
 }
 
 @end

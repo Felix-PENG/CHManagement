@@ -10,6 +10,7 @@
 #import "NetworkManager.h"
 #import "MBProgressHUD+Extends.h"
 #import "ResultVO.h"
+#import "UserInfo.h"
 
 @interface AddSellBuildingTVC ()
 @property (weak, nonatomic) IBOutlet UITextField *buildingLocationTextField;
@@ -41,7 +42,7 @@
                                                         withMoney:[self.priceTextField.text doubleValue]
                                                       withPurName:self.buyerNameTextField.text
                                                      withPurPhone:self.buyerPhoneNumberTextField.text
-                                                       withUserId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]
+                                                       withUserId:[UserInfo sharedInstance].id
                                                 completionHandler:^(NSDictionary *response) {
             ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
             if (result.success == 0) {
@@ -51,12 +52,12 @@
             [hud hide:YES];
         }];
     } else {
-        [[NetworkManager sharedInstance] createBillBuildingWithGroupId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"group_id"] integerValue]
+        [[NetworkManager sharedInstance] createBillBuildingWithGroupId:[UserInfo sharedInstance].groupId
                                                            withContent:self.buildingLocationTextField.text
                                                              withMoney:[self.priceTextField.text doubleValue]
                                                            withPurName:self.buyerNameTextField.text
                                                           withPurPhone:self.buyerPhoneNumberTextField.text
-                                                            withUserId:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]
+                                                            withUserId:[UserInfo sharedInstance].id
                                                      completionHandler:^(NSDictionary *response) {
                                                          ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
                                                          if (result.success == 0) {

@@ -14,6 +14,7 @@
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "MyGroup.h"
+#import "UserInfo.h"
 #import "ReportMaterialRegisterTVC.h"
 
 @interface ReportMaterialVC ()
@@ -49,8 +50,7 @@
     UIBarButtonItem *roleItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_assignment_ind_white_24dp"] style:UIBarButtonItemStylePlain target:self action:@selector(roleButtonPressed)];
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
     
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    NSInteger group_id = [[userData objectForKey:@"group_id"]integerValue];
+    NSInteger group_id = [UserInfo sharedInstance].groupId;
     
     if(group_id == 0){
         self.navigationItem.rightBarButtonItems = @[addItem, roleItem];

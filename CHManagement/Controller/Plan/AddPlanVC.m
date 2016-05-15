@@ -16,6 +16,7 @@
 #import "ResultVO.h"
 #import "MBProgressHUD+Extends.h"
 #import "ErrorHandler.h"
+#import "UserInfo.h"
 
 @interface AddPlanVC ()
 
@@ -64,8 +65,7 @@
     }else{
         _isAddNew = YES;
     }
-    NSUserDefaults* userData = [NSUserDefaults standardUserDefaults];
-    _user_id = [[userData objectForKey:@"user_id"]integerValue];
+    _user_id = [UserInfo sharedInstance].id;
     
     [self loadSchedule];
 }

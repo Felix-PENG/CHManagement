@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C514306E1CE1C2F900448BD1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = C514306D1CE1C2F900448BD1 /* File.m */; };
 		C51430801CE479E400448BD1 /* ImagePickPreviewTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */; };
+		C51430841CE75A5400448BD1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C51430831CE75A5400448BD1 /* UserInfo.m */; };
 		C5557F711CD0F143006EC41D /* NetworkFile.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6A1CD0F143006EC41D /* NetworkFile.m */; };
 		C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6C1CD0F143006EC41D /* NetworkManager.m */; };
 		C5557F731CD0F143006EC41D /* NSDictionary+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5557F6E1CD0F143006EC41D /* NSDictionary+Extends.m */; };
@@ -121,7 +122,6 @@
 		D1E9C3A71CE5A2E000109870 /* TomorrowPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3A31CE5A2E000109870 /* TomorrowPlanTVC.m */; };
 		D1E9C3A81CE5A2E000109870 /* YesterdayPlanTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3A51CE5A2E000109870 /* YesterdayPlanTVC.m */; };
 		D1E9C3AD1CE5A33D00109870 /* FileTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3AA1CE5A33D00109870 /* FileTVC.m */; };
-		D1E9C3AE1CE5A33D00109870 /* UploadFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3AC1CE5A33D00109870 /* UploadFileVC.m */; };
 		D1E9C3BA1CE5A42200109870 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3B11CE5A42200109870 /* ContentViewController.m */; };
 		D1E9C3BB1CE5A42200109870 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3B31CE5A42200109870 /* LeftMenuViewController.m */; };
 		D1E9C3BC1CE5A42200109870 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C3B51CE5A42200109870 /* MainViewController.m */; };
@@ -161,6 +161,8 @@
 		C514307E1CE479E400448BD1 /* ImagePickPreviewTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePickPreviewTVC.h; path = Controller/Register/ImagePickPreviewTVC.h; sourceTree = "<group>"; };
 		C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePickPreviewTVC.m; path = Controller/Register/ImagePickPreviewTVC.m; sourceTree = "<group>"; };
 		C51430811CE5A85F00448BD1 /* AddRegisterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRegisterProtocol.h; path = Controller/Register/AddRegisterProtocol.h; sourceTree = "<group>"; };
+		C51430821CE75A5400448BD1 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = Model/UserInfo.h; sourceTree = "<group>"; };
+		C51430831CE75A5400448BD1 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = Model/UserInfo.m; sourceTree = "<group>"; };
 		C5557F691CD0F143006EC41D /* NetworkFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFile.h; sourceTree = "<group>"; };
 		C5557F6A1CD0F143006EC41D /* NetworkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFile.m; sourceTree = "<group>"; };
 		C5557F6B1CD0F143006EC41D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -376,8 +378,6 @@
 		D1E9C3A51CE5A2E000109870 /* YesterdayPlanTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YesterdayPlanTVC.m; path = Controller/Plan/YesterdayPlanTVC.m; sourceTree = "<group>"; };
 		D1E9C3A91CE5A33D00109870 /* FileTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileTVC.h; path = Controller/File/FileTVC.h; sourceTree = "<group>"; };
 		D1E9C3AA1CE5A33D00109870 /* FileTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileTVC.m; path = Controller/File/FileTVC.m; sourceTree = "<group>"; };
-		D1E9C3AB1CE5A33D00109870 /* UploadFileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadFileVC.h; path = Controller/File/UploadFileVC.h; sourceTree = "<group>"; };
-		D1E9C3AC1CE5A33D00109870 /* UploadFileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadFileVC.m; path = Controller/File/UploadFileVC.m; sourceTree = "<group>"; };
 		D1E9C3B01CE5A42200109870 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentViewController.h; path = Controller/Menu/ContentViewController.h; sourceTree = "<group>"; };
 		D1E9C3B11CE5A42200109870 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentViewController.m; path = Controller/Menu/ContentViewController.m; sourceTree = "<group>"; };
 		D1E9C3B21CE5A42200109870 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuViewController.h; path = Controller/Menu/LeftMenuViewController.h; sourceTree = "<group>"; };
@@ -467,8 +467,6 @@
 			children = (
 				D1E9C3A91CE5A33D00109870 /* FileTVC.h */,
 				D1E9C3AA1CE5A33D00109870 /* FileTVC.m */,
-				D1E9C3AB1CE5A33D00109870 /* UploadFileVC.h */,
-				D1E9C3AC1CE5A33D00109870 /* UploadFileVC.m */,
 			);
 			name = File;
 			sourceTree = "<group>";
@@ -478,6 +476,8 @@
 			children = (
 				C514306C1CE1C2F900448BD1 /* File.h */,
 				C514306D1CE1C2F900448BD1 /* File.m */,
+				C51430821CE75A5400448BD1 /* UserInfo.h */,
+				C51430831CE75A5400448BD1 /* UserInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1131,6 +1131,7 @@
 				C5557F741CD0F143006EC41D /* RequestParameter.m in Sources */,
 				C56E559A1CDC86F300C608B9 /* AddBuildingMaterialSellTVC.m in Sources */,
 				C5557FAF1CD0F15E006EC41D /* ResultVO.m in Sources */,
+				C51430841CE75A5400448BD1 /* UserInfo.m in Sources */,
 				C56E555B1CDB625200C608B9 /* ReportMaterialVC.m in Sources */,
 				C56E557C1CDC721600C608B9 /* RegisterFundsGoingTVC.m in Sources */,
 				C56E55C11CDCD74900C608B9 /* CheckMaterialPurchaseVC.m in Sources */,
@@ -1172,7 +1173,6 @@
 				D1E9C3821CE4981800109870 /* RoleCell.m in Sources */,
 				D1E9C3BB1CE5A42200109870 /* LeftMenuViewController.m in Sources */,
 				C514306E1CE1C2F900448BD1 /* File.m in Sources */,
-				D1E9C3AE1CE5A33D00109870 /* UploadFileVC.m in Sources */,
 				C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */,
 				C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */,
 				D1E9C39E1CE5A27200109870 /* AddPlanVC.m in Sources */,
