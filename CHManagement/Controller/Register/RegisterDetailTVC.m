@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *attachImageView;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @end
 
 @implementation RegisterDetailTVC
@@ -48,7 +49,15 @@
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%.1f", self.bill.money];
     self.statusLabel.text = self.bill.finish_status == STATUS_NOT_FINISHED ? @"进行中" : @"已完成";
     NSLog(@"%@", self.bill.url);
-    [self.attachImageView setImageWithURL:[NSURL URLWithString:self.bill.url]];
+//    [self.attachImageView setImageWithURL:[NSURL URLWithString:self.bill.url] placeholderImage:[UIImage imageNamed:@"loading"]];
+    [self.indicator startAnimating];
+    [self.attachImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.bill.url]]
+                                placeholderImage:nil
+                                         success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+                                    self.attachImageView.image = image;
+                                    self.indicator.hidden = YES;
+    }
+                                         failure:nil];
 }
 
 - (UIImageView *)imageView
@@ -61,6 +70,8 @@
     if (!self.uploadable) {
         self.addButton.hidden = YES;
         self.navigationItem.rightBarButtonItems = nil;
+    } else {
+        self.indicator.hidden = YES;
     }
 }
 

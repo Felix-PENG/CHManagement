@@ -30,6 +30,7 @@
             self.loadMoreLabel.hidden = YES;
             self.indicator.hidden = NO;
             self.userInteractionEnabled = NO;
+            [self.indicator startAnimating];
             break;
         default: // NoMore
             self.loadMoreLabel.text = @"没有更多";
