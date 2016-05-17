@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *attachImageView;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @end
 
 @implementation RegisterPurchaseDetailTVC
@@ -53,7 +54,14 @@
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%.1f", self.bill.money];
     self.companyLabel.text = self.bill.dealer_name;
     NSLog(@"%@", self.bill.url);
-    [self.attachImageView setImageWithURL:[NSURL URLWithString:self.bill.url]];
+    [self.indicator startAnimating];
+    [self.attachImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.bill.url]]
+                                placeholderImage:nil
+                                         success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+                                             self.attachImageView.image = image;
+                                             self.indicator.hidden = YES;
+                                         }
+                                         failure:nil];
 }
 
 - (void)checkUploadState
@@ -61,6 +69,8 @@
     if (!self.uploadable) {
         self.addButton.hidden = YES;
         self.navigationItem.rightBarButtonItems = nil;
+    } else {
+        self.indicator.hidden = YES;
     }
 }
 

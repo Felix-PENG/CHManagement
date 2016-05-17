@@ -38,6 +38,7 @@
         _contentScrollView.bounces = NO;
         _contentScrollView.showsHorizontalScrollIndicator = NO;
         _contentScrollView.frame = CGRectMake(0, TAB_HEIGHT, frame.size.width, frame.size.height - TAB_HEIGHT);
+        _contentScrollView.scrollEnabled = NO;  // 禁止滑动，防止与左滑删除冲突
         [self.view addSubview:_contentScrollView];
         
         _currentIndex = -1;
