@@ -695,7 +695,7 @@
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="vFH-zb-yfW" kind="show" id="KSD-3h-imm"/>
+                                                <segue destination="vFH-zb-yfW" kind="show" identifier="Email" id="KSD-3h-imm"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxY-g3-MsE">

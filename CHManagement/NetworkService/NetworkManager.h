@@ -187,4 +187,8 @@
 
 - (void)finishBillOthersWithId:(NSInteger)billOthers_id withStatus:(NSInteger)finish_status withUrl:(NSString*)url completionHandler:(void (^)(NSDictionary *))handler;
 
+#pragma mark - Push norification
+
+- (void)setDeviceToken:(NSUInteger)userId token:(NSString *)token completionHandler:(void (^)(NSDictionary *))handler;
+
 @end

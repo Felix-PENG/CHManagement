@@ -91,6 +91,8 @@
 		C5971BD61CD5EE4100C6B263 /* MailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BD51CD5EE4100C6B263 /* MailCell.m */; };
 		C5971BE01CD7561D00C6B263 /* TabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BDF1CD7561D00C6B263 /* TabItem.m */; };
 		C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */; };
+		C5A1C7B91CEC7A93004634D8 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A1C7B81CEC7A93004634D8 /* PushNotification.m */; };
+		C5A1C7BC1CEC7AC4004634D8 /* AppleMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A1C7BB1CEC7AC4004634D8 /* AppleMessage.m */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -317,6 +319,10 @@
 		C5971BDF1CD7561D00C6B263 /* TabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabItem.m; path = Utils/TabItem.m; sourceTree = "<group>"; };
 		C5971BEA1CD7943A00C6B263 /* TabbedScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabbedScrollViewController.h; path = Utils/TabbedScrollViewController.h; sourceTree = "<group>"; };
 		C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabbedScrollViewController.m; path = Utils/TabbedScrollViewController.m; sourceTree = "<group>"; };
+		C5A1C7B71CEC7A93004634D8 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PushNotification.h; path = Notification/PushNotification.h; sourceTree = "<group>"; };
+		C5A1C7B81CEC7A93004634D8 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PushNotification.m; path = Notification/PushNotification.m; sourceTree = "<group>"; };
+		C5A1C7BA1CEC7AC4004634D8 /* AppleMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMessage.h; path = Notification/AppleMessage.h; sourceTree = "<group>"; };
+		C5A1C7BB1CEC7AC4004634D8 /* AppleMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMessage.m; path = Notification/AppleMessage.m; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -447,6 +453,7 @@
 		C500E2341CD0A49200DF960B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C5A1C7B61CEC7A64004634D8 /* Notification */,
 				D1E9C3C91CE5A50500109870 /* Utils */,
 				D1E9C3C21CE5A4E100109870 /* BaseViewController */,
 				D1E9C3AF1CE5A3F500109870 /* Menu */,
@@ -711,6 +718,17 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		C5A1C7B61CEC7A64004634D8 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				C5A1C7B71CEC7A93004634D8 /* PushNotification.h */,
+				C5A1C7B81CEC7A93004634D8 /* PushNotification.m */,
+				C5A1C7BA1CEC7AC4004634D8 /* AppleMessage.h */,
+				C5A1C7BB1CEC7AC4004634D8 /* AppleMessage.m */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
 		D18B46F31CCFAB8300FEA8E8 = {
 			isa = PBXGroup;
 			children = (
@@ -956,7 +974,7 @@
 				TargetAttributes = {
 					D18B46FB1CCFAB8300FEA8E8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = JXJ9ZF6R76;
+						DevelopmentTeam = FD84BCBE2D;
 					};
 					D18B47141CCFAB8300FEA8E8 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1141,6 +1159,7 @@
 				D1E9C3791CE42AD900109870 /* AddGroupTVC.m in Sources */,
 				C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */,
 				D1E9C37C1CE43E3200109870 /* AddRoleTVC.m in Sources */,
+				C5A1C7BC1CEC7AC4004634D8 /* AppleMessage.m in Sources */,
 				C5971BB41CD4F88500C6B263 /* LoadMoreCell.m in Sources */,
 				D1E9C3981CE5A24C00109870 /* ActivityTVC.m in Sources */,
 				C5557FAD1CD0F15E006EC41D /* NotifyVO.m in Sources */,
@@ -1171,6 +1190,7 @@
 				C5557FA41CD0F15E006EC41D /* ActivityVO.m in Sources */,
 				D1E9C3BE1CE5A42200109870 /* SignInViewController.m in Sources */,
 				C56E55491CDB462A00C608B9 /* ReportRejectedTVC.m in Sources */,
+				C5A1C7B91CEC7A93004634D8 /* PushNotification.m in Sources */,
 				D1E9C3821CE4981800109870 /* RoleCell.m in Sources */,
 				D1E9C3BB1CE5A42200109870 /* LeftMenuViewController.m in Sources */,
 				C514306E1CE1C2F900448BD1 /* File.m in Sources */,
@@ -1333,7 +1353,7 @@
 				INFOPLIST_FILE = CHManagement/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ChuHuai.CHManagement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chuhuai.management;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1349,7 +1369,7 @@
 				INFOPLIST_FILE = CHManagement/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ChuHuai.CHManagement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chuhuai.management;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
