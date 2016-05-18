@@ -22,6 +22,7 @@
 #import "CheckMaterialPurchaseVC.h"
 #import "GroupManagementTVC.h"
 #import "UserInfo.h"
+#import "PushNotification.h"
 
 #define SECTION_HEADER_HEIGHT 28.0
 #define TOP_MENU_CELL_HEIGHT 84.0
@@ -59,12 +60,38 @@
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"SignIn" object:nil]];
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification) name:@"SignIn" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePushNotification:) name:@"PushNotification" object:nil];
 }
 
 - (void)handleNotification
 {
     NSLog(@"Content got notification");
     [self refresh];
+}
+
+- (void)handlePushNotification:(NSNotification *)notification
+{
+    NSDictionary *userInfo = notification.userInfo;
+    PushNotification *pushNotification = [[PushNotification alloc] initWithDictionary:userInfo error:nil];
+    switch (pushNotification.code) {
+        case NotificationTypeMessage:
+            [self performSegueWithIdentifier:@"Email" sender:nil];
+            break;
+        case NotificationTypeOthers:
+            [self.navigationController pushViewController:[[ReportFundsVC alloc] init] animated:YES];
+            break;
+        case NotificationTypeMaterials:
+            [self.navigationController pushViewController:[[ReportMaterialVC alloc] init] animated: YES];
+            break;
+        case NotificationTypeCheckOthers:
+            [self.navigationController pushViewController:[[CheckFundsVC alloc] init] animated: YES];
+            break;
+        case NotificationTypeCheckMaterials:
+            [self.navigationController pushViewController:[[CheckMaterialPurchaseVC alloc] init] animated: YES];
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - UITableViewDataSource

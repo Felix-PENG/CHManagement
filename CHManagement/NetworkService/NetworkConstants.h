@@ -87,5 +87,6 @@
 #define getBillOthersListByGroupIdAndStatusUrl @"api/getBillOthersListByGroupIdAndStatus"
 #define getBillOthersByIdUrl @"api/getBillOthersById"
 #define finishBillOthersUrl @"api/finishBillOthers"
+#define setDeviceTokenUrl @"api/setNotifyToken"
 
 @end

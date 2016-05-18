@@ -56,6 +56,18 @@
     
 }
 
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _dataList.count > 0 ? _dataList.count + 1 : 0;
+}
+
 #pragma mark - AddBuildingMaterialsDelegate
 
 - (void)needRefresh

@@ -166,7 +166,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _fileList.count + 1;
+    return _fileList.count > 0 ? _fileList.count + 1 : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

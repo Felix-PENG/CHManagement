@@ -744,4 +744,12 @@
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 
+- (void)setDeviceToken:(NSUInteger)userId token:(NSString *)token completionHandler:(void (^)(NSDictionary *))handler
+{
+    RequestParameter *parameter = [RequestParameter getRequest];
+    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, setDeviceTokenUrl];
+    parameter.json = @{@"user_id" : @(userId), @"notify_token": token};
+    [self httpActionWithParameter:parameter completionHandler:handler];
+}
+
 @end
