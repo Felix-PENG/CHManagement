@@ -975,6 +975,14 @@
 					D18B46FB1CCFAB8300FEA8E8 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = FD84BCBE2D;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					D18B47141CCFAB8300FEA8E8 = {
 						CreatedOnToolsVersion = 7.3;

@@ -752,4 +752,12 @@
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 
+- (void)deleteDeviceToken:(NSUInteger)userId completionHandler:(void (^)(NSDictionary *))handler
+{
+    RequestParameter *parameter = [RequestParameter getRequest];
+    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, deleteDeviceTokenUrl];
+    parameter.json = @{@"user_id" : @(userId)};
+    [self httpActionWithParameter:parameter completionHandler:handler];
+}
+
 @end

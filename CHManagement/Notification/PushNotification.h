@@ -9,6 +9,9 @@
 #import <JSONModel/JSONModel.h>
 #import "AppleMessage.h"
 
+#define NOTIFICATION_TYPE @"notification_type"
+#define DEVICE_TOKEN_KEY @"device_key"
+
 enum NotificationType {
     NotificationTypeUnknown,
     NotificationTypeMessage,

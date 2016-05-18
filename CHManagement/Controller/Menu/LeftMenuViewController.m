@@ -111,11 +111,15 @@
 
 - (IBAction)logOffButtonPressed:(id)sender
 {
-//    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
-    [self HomeButtonPressed:nil];
-    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SignInVC"] animated:YES completion:nil];
-    
-    [UserInfo remove];
+    [[NetworkManager sharedInstance] deleteDeviceToken:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
+        ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+        if(resultVO.success == 0){
+            [self HomeButtonPressed:nil];
+            [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SignInVC"] animated:YES completion:nil];
+            
+            [UserInfo remove];
+        }
+    }];
 }
 
 @end

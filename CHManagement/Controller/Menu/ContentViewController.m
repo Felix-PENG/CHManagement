@@ -72,8 +72,7 @@
 - (void)handlePushNotification:(NSNotification *)notification
 {
     NSDictionary *userInfo = notification.userInfo;
-    PushNotification *pushNotification = [[PushNotification alloc] initWithDictionary:userInfo error:nil];
-    switch (pushNotification.code) {
+    switch ([userInfo[NOTIFICATION_TYPE] integerValue]) {
         case NotificationTypeMessage:
             [self performSegueWithIdentifier:@"Email" sender:nil];
             break;
