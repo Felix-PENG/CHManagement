@@ -88,5 +88,5 @@
 #define getBillOthersByIdUrl @"api/getBillOthersById"
 #define finishBillOthersUrl @"api/finishBillOthers"
 #define setDeviceTokenUrl @"api/setNotifyToken"
-
+#define deleteDeviceTokenUrl @"api/deleteNotifyToken"
 @end

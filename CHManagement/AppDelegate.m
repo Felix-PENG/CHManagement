@@ -15,7 +15,7 @@
 #import "PushNotification.h"
 
 @interface AppDelegate ()
-@property (nonatomic, assign) BOOL launchedByNotification;
+@property (nonatomic, assign) NSInteger notificationType;
 @end
 
 @implementation AppDelegate
@@ -39,7 +39,7 @@
     
     NSDictionary *notificationInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if (notificationInfo) {
-        self.launchedByNotification = YES;
+        self.notificationType = [[PushNotification alloc] initWithDictionary:notificationInfo error:nil].code;
     }
     
     return YES;
@@ -54,9 +54,13 @@
 {
     NSString *tokenStr = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSLog(@"Device token: %@", tokenStr);
-    [[NetworkManager sharedInstance] setDeviceToken:[UserInfo sharedInstance].id token:tokenStr completionHandler:^(NSDictionary *response) {
-        NSLog(@"%@", response);
-    }];
+    // 已登录且token不同或没有时，设置token
+    if (![[[NSUserDefaults standardUserDefaults] objectForKey:DEVICE_TOKEN_KEY] isEqualToString:tokenStr] && [UserInfo sharedInstance]) {
+        [[NetworkManager sharedInstance] setDeviceToken:[UserInfo sharedInstance].id token:tokenStr completionHandler:^(NSDictionary *response) {
+            NSLog(@"%@", response);
+        }];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:tokenStr forKey:DEVICE_TOKEN_KEY];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
@@ -67,8 +71,8 @@
     if (application.applicationState == UIApplicationStateActive) { // 应用在前台时收到通知
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"通知" message:notification.aps.alert delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
         [alertView show];
-    } else { // 应用在后台、或关闭时收到通知
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"PushNotification" object:self userInfo:notification.toDictionary];
+    } else { // 应用在后台收到通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"PushNotification" object:self userInfo:@{NOTIFICATION_TYPE : @(notification.code)}];
     }
 }
 

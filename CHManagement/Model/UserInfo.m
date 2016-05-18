@@ -10,6 +10,7 @@
 #import "NetworkManager.h"
 #import "ResultVO.h"
 #import "SignInResultVO.h"
+#import "PushNotification.h"
 
 #define EXPIRE_DAY 7
 
@@ -62,6 +63,11 @@ static NSString * const LastSignInKey = @"last_sign_in";
             [UserInfo remove];
             [userInfo persist];
             signedIn = YES;
+            
+            // 设置device_token
+            [[NetworkManager sharedInstance] setDeviceToken:[UserInfo sharedInstance].id token:[[NSUserDefaults standardUserDefaults] objectForKey:DEVICE_TOKEN_KEY] completionHandler:^(NSDictionary *response) {
+                NSLog(@"%@", response);
+            }];
             
             successHandler();
         } else {

@@ -191,4 +191,6 @@
 
 - (void)setDeviceToken:(NSUInteger)userId token:(NSString *)token completionHandler:(void (^)(NSDictionary *))handler;
 
+- (void)deleteDeviceToken:(NSUInteger)userId completionHandler:(void (^)(NSDictionary *))handler;
+
 @end
