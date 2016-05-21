@@ -45,7 +45,7 @@
 +(instancetype)getRequest{
     RequestParameter *parameter = [[self alloc] init];
     parameter.header = @{HEADER_CONTENT_TYPE:HEADER_SINGER};
-    parameter.httpMethod = METHOD_GET;
+    parameter.httpMethod = METHOD_POST;
     parameter.needResend = NO;
     return parameter;
 }

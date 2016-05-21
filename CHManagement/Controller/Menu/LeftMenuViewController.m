@@ -55,6 +55,7 @@
             
             if(signStatusVO.status == 0){
                 [self.signInButton setTitle:@"未签到" forState:UIControlStateNormal];
+                [self.signInButton setEnabled:YES];
             }else{
                 [self.signInButton setTitle:@"已签到" forState:UIControlStateNormal];
                 [self.signInButton setEnabled:NO];
