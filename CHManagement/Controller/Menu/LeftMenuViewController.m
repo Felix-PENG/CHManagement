@@ -13,12 +13,13 @@
 #import "SignStatusVO.h"
 #import "ErrorHandler.h"
 #import "UserInfo.h"
+#import "AboutView.h"
 
 @interface LeftMenuViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *creditLabel;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
-
+@property (nonatomic, strong) AboutView *aboutView;
 @end
 
 @implementation LeftMenuViewController{
@@ -121,6 +122,20 @@
             [UserInfo remove];
         }
     }];
+}
+
+- (AboutView *)aboutView
+{
+    if (!_aboutView) {
+        _aboutView = [[[NSBundle mainBundle] loadNibNamed:@"AboutView" owner:nil options:nil] firstObject];
+        _aboutView.frame = [UIScreen mainScreen].applicationFrame;
+    }
+    return _aboutView;
+}
+
+- (IBAction)aboutButtonPressed:(id)sender
+{
+    [self.aboutView showToView:[UIApplication sharedApplication].keyWindow];
 }
 
 @end

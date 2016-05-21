@@ -93,6 +93,9 @@
 		C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BEB1CD7943A00C6B263 /* TabbedScrollViewController.m */; };
 		C5A1C7B91CEC7A93004634D8 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A1C7B81CEC7A93004634D8 /* PushNotification.m */; };
 		C5A1C7BC1CEC7AC4004634D8 /* AppleMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A1C7BB1CEC7AC4004634D8 /* AppleMessage.m */; };
+		C5A1C7C11CF0BA8F004634D8 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A1C7C01CF0BA8F004634D8 /* AboutView.xib */; };
+		C5A1C7C41CF0BAFE004634D8 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A1C7C31CF0BAFE004634D8 /* AboutView.m */; };
+		C5A1C7C61CF0C694004634D8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A1C7C51CF0C694004634D8 /* icon.png */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -323,6 +326,10 @@
 		C5A1C7B81CEC7A93004634D8 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PushNotification.m; path = Notification/PushNotification.m; sourceTree = "<group>"; };
 		C5A1C7BA1CEC7AC4004634D8 /* AppleMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleMessage.h; path = Notification/AppleMessage.h; sourceTree = "<group>"; };
 		C5A1C7BB1CEC7AC4004634D8 /* AppleMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleMessage.m; path = Notification/AppleMessage.m; sourceTree = "<group>"; };
+		C5A1C7C01CF0BA8F004634D8 /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutView.xib; path = View/AboutView.xib; sourceTree = "<group>"; };
+		C5A1C7C21CF0BAFE004634D8 /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutView.h; path = View/AboutView.h; sourceTree = "<group>"; };
+		C5A1C7C31CF0BAFE004634D8 /* AboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutView.m; path = View/AboutView.m; sourceTree = "<group>"; };
+		C5A1C7C51CF0C694004634D8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../../Downloads/icon.png; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -703,6 +710,9 @@
 				D1E9C3801CE4981800109870 /* RoleCell.h */,
 				D1E9C3811CE4981800109870 /* RoleCell.m */,
 				D1E9C3831CE4992100109870 /* RoleCell.xib */,
+				C5A1C7C01CF0BA8F004634D8 /* AboutView.xib */,
+				C5A1C7C21CF0BAFE004634D8 /* AboutView.h */,
+				C5A1C7C31CF0BAFE004634D8 /* AboutView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -754,6 +764,7 @@
 		D18B46FE1CCFAB8300FEA8E8 /* CHManagement */ = {
 			isa = PBXGroup;
 			children = (
+				C5A1C7C51CF0C694004634D8 /* icon.png */,
 				C500E2341CD0A49200DF960B /* Controller */,
 				C514306B1CE1C2DA00448BD1 /* Model */,
 				C5971BDD1CD755EF00C6B263 /* Utils */,
@@ -1027,9 +1038,11 @@
 				D18B470C1CCFAB8300FEA8E8 /* Assets.xcassets in Resources */,
 				C5971BBC1CD5DA8A00C6B263 /* FileCell.xib in Resources */,
 				D1E9C3841CE4992100109870 /* RoleCell.xib in Resources */,
+				C5A1C7C61CF0C694004634D8 /* icon.png in Resources */,
 				C56E552F1CDB3BB800C608B9 /* ReportGoingCell.xib in Resources */,
 				C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */,
 				C56E556C1CDC6E6000C608B9 /* RegisterCell.xib in Resources */,
+				C5A1C7C11CF0BA8F004634D8 /* AboutView.xib in Resources */,
 				D18B470A1CCFAB8300FEA8E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1196,6 +1209,7 @@
 				C56E55851CDC7D4B00C608B9 /* BuildingMaterialPurchaseVC.m in Sources */,
 				C5557FB21CD0F15E006EC41D /* SignStatusVO.m in Sources */,
 				C5557FA41CD0F15E006EC41D /* ActivityVO.m in Sources */,
+				C5A1C7C41CF0BAFE004634D8 /* AboutView.m in Sources */,
 				D1E9C3BE1CE5A42200109870 /* SignInViewController.m in Sources */,
 				C56E55491CDB462A00C608B9 /* ReportRejectedTVC.m in Sources */,
 				C5A1C7B91CEC7A93004634D8 /* PushNotification.m in Sources */,
@@ -1362,7 +1376,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chuhuai.management;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "楚淮集团内部管理系统";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -1378,7 +1392,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chuhuai.management;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "楚淮集团内部管理系统";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

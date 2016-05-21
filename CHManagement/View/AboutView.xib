@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="vD7-nW-4IQ" customClass="AboutView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2016 江苏楚淮建设集团" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx4-PC-N6Z">
+                    <rect key="frame" x="136" y="288" width="328" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="楚淮集团内部管理系统1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpe-Gp-p3r">
+                    <rect key="frame" x="187" y="256" width="227" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Rights Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2W-O9-T8F">
+                    <rect key="frame" x="214" y="320" width="173" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Hx4-PC-N6Z" firstAttribute="top" secondItem="qpe-Gp-p3r" secondAttribute="bottom" constant="8" id="CFb-vp-EHg"/>
+                <constraint firstItem="A2W-O9-T8F" firstAttribute="centerX" secondItem="Hx4-PC-N6Z" secondAttribute="centerX" id="Dqq-Sh-JEC"/>
+                <constraint firstItem="Hx4-PC-N6Z" firstAttribute="centerX" secondItem="vD7-nW-4IQ" secondAttribute="centerX" id="MPP-vr-TxU"/>
+                <constraint firstItem="A2W-O9-T8F" firstAttribute="top" secondItem="Hx4-PC-N6Z" secondAttribute="bottom" constant="8" id="XLU-MW-FdX"/>
+                <constraint firstItem="Hx4-PC-N6Z" firstAttribute="centerY" secondItem="vD7-nW-4IQ" secondAttribute="centerY" id="jGt-Qa-Sxg"/>
+                <constraint firstItem="qpe-Gp-p3r" firstAttribute="centerX" secondItem="Hx4-PC-N6Z" secondAttribute="centerX" id="tqy-ZE-ZqS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="522" y="377"/>
+        </view>
+    </objects>
+</document>
