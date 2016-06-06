@@ -81,6 +81,7 @@
 		C56E55C11CDCD74900C608B9 /* CheckMaterialPurchaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55C01CDCD74900C608B9 /* CheckMaterialPurchaseVC.m */; };
 		C56E55C41CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55C31CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m */; };
 		C56E55C71CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E55C61CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m */; };
+		C58172E81D05C881007EFF71 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C58172E71D05C881007EFF71 /* icon.png */; };
 		C5971B9B1CD39A7200C6B263 /* MBProgressHUD+Extends.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */; };
 		C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5971BA61CD3B83500C6B263 /* ActivityCell.xib */; };
 		C5971BAA1CD3B8C500C6B263 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5971BA91CD3B8C500C6B263 /* ActivityCell.m */; };
@@ -96,7 +97,6 @@
 		C5A1C7BC1CEC7AC4004634D8 /* AppleMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A1C7BB1CEC7AC4004634D8 /* AppleMessage.m */; };
 		C5A1C7C11CF0BA8F004634D8 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A1C7C01CF0BA8F004634D8 /* AboutView.xib */; };
 		C5A1C7C41CF0BAFE004634D8 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A1C7C31CF0BAFE004634D8 /* AboutView.m */; };
-		C5A1C7C61CF0C694004634D8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A1C7C51CF0C694004634D8 /* icon.png */; };
 		C77588897E5F93D6E9FDB819 /* libPods-CHManagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */; };
 		D18B47011CCFAB8300FEA8E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47001CCFAB8300FEA8E8 /* main.m */; };
 		D18B47041CCFAB8300FEA8E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */; };
@@ -307,6 +307,7 @@
 		C56E55C31CDCD77200C608B9 /* CheckMaterialPurchaseUndealTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMaterialPurchaseUndealTVC.m; path = Controller/Check/CheckMaterialPurchaseUndealTVC.m; sourceTree = "<group>"; };
 		C56E55C51CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMaterialPurchaseDealedTVC.h; path = Controller/Check/CheckMaterialPurchaseDealedTVC.h; sourceTree = "<group>"; };
 		C56E55C61CDCD78600C608B9 /* CheckMaterialPurchaseDealedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMaterialPurchaseDealedTVC.m; path = Controller/Check/CheckMaterialPurchaseDealedTVC.m; sourceTree = "<group>"; };
+		C58172E71D05C881007EFF71 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = img/icon.png; sourceTree = "<group>"; };
 		C5971B991CD39A7200C6B263 /* MBProgressHUD+Extends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+Extends.h"; path = "Extends/MBProgressHUD+Extends.h"; sourceTree = "<group>"; };
 		C5971B9A1CD39A7200C6B263 /* MBProgressHUD+Extends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+Extends.m"; path = "Extends/MBProgressHUD+Extends.m"; sourceTree = "<group>"; };
 		C5971BA61CD3B83500C6B263 /* ActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityCell.xib; path = View/ActivityCell.xib; sourceTree = "<group>"; };
@@ -767,7 +768,7 @@
 		D18B46FE1CCFAB8300FEA8E8 /* CHManagement */ = {
 			isa = PBXGroup;
 			children = (
-				C5A1C7C51CF0C694004634D8 /* icon.png */,
+				C58172E71D05C881007EFF71 /* icon.png */,
 				C500E2341CD0A49200DF960B /* Controller */,
 				C514306B1CE1C2DA00448BD1 /* Model */,
 				C5971BDD1CD755EF00C6B263 /* Utils */,
@@ -1043,7 +1044,7 @@
 				D18B470C1CCFAB8300FEA8E8 /* Assets.xcassets in Resources */,
 				C5971BBC1CD5DA8A00C6B263 /* FileCell.xib in Resources */,
 				D1E9C3841CE4992100109870 /* RoleCell.xib in Resources */,
-				C5A1C7C61CF0C694004634D8 /* icon.png in Resources */,
+				C58172E81D05C881007EFF71 /* icon.png in Resources */,
 				C56E552F1CDB3BB800C608B9 /* ReportGoingCell.xib in Resources */,
 				C5971BA71CD3B83500C6B263 /* ActivityCell.xib in Resources */,
 				C56E556C1CDC6E6000C608B9 /* RegisterCell.xib in Resources */,
