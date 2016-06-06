@@ -12,6 +12,7 @@
 #import "SignInResultVO.h"
 #import "MBProgressHUD+Extends.h"
 #import "UserInfo.h"
+#import "RegisterViewController.h"
 
 @interface SignInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
@@ -72,6 +73,12 @@
             self.hintLabel.hidden = NO;
         }];
     }
+}
+
+
+- (IBAction)registerButtonPressed:(id)sender {
+    RegisterViewController *rgstView = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterViewController"];
+    [self.navigationController pushViewController:rgstView animated:YES];
 }
 
 

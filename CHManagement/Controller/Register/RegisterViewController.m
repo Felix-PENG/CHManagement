@@ -55,6 +55,8 @@
         self.navigationItem.rightBarButtonItems = [self rightNavigationItems];
     }
 }
+- (IBAction)registerButtonPressed:(id)sender {
+}
 
 - (void)roleButtonPressed
 {

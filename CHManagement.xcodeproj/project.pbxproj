@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51D322331D05D056006CE262 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D322321D05D056006CE262 /* RegisterViewController.m */; };
 		C514306E1CE1C2F900448BD1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = C514306D1CE1C2F900448BD1 /* File.m */; };
 		C51430801CE479E400448BD1 /* ImagePickPreviewTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */; };
 		C51430841CE75A5400448BD1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C51430831CE75A5400448BD1 /* UserInfo.m */; };
@@ -158,6 +159,8 @@
 
 /* Begin PBXFileReference section */
 		2C70A178924B476A49005E9F /* Pods-CHManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHManagement.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHManagement/Pods-CHManagement.release.xcconfig"; sourceTree = "<group>"; };
+		51D322311D05D056006CE262 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controller/Menu/RegisterViewController.h; sourceTree = "<group>"; };
+		51D322321D05D056006CE262 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Controller/Menu/RegisterViewController.m; sourceTree = "<group>"; };
 		788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHManagement.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B0AC6DBE4E10D816EC340 /* Pods-CHManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHManagement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHManagement/Pods-CHManagement.debug.xcconfig"; sourceTree = "<group>"; };
 		C514306C1CE1C2F900448BD1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = Model/File.h; sourceTree = "<group>"; };
@@ -330,7 +333,7 @@
 		C5A1C7C21CF0BAFE004634D8 /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutView.h; path = View/AboutView.h; sourceTree = "<group>"; };
 		C5A1C7C31CF0BAFE004634D8 /* AboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutView.m; path = View/AboutView.m; sourceTree = "<group>"; };
 		C5A1C7C51CF0C694004634D8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../../Downloads/icon.png; sourceTree = "<group>"; };
-		D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18B46FC1CCFAB8300FEA8E8 /* 楚淮集团内部管理系统.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "楚淮集团内部管理系统.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D18B47031CCFAB8300FEA8E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -754,7 +757,7 @@
 		D18B46FD1CCFAB8300FEA8E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */,
+				D18B46FC1CCFAB8300FEA8E8 /* 楚淮集团内部管理系统.app */,
 				D18B47151CCFAB8300FEA8E8 /* CHManagementTests.xctest */,
 				D18B47201CCFAB8300FEA8E8 /* CHManagementUITests.xctest */,
 			);
@@ -889,6 +892,8 @@
 				D1E9C3B71CE5A42200109870 /* ModifyPasswordVC.m */,
 				D1E9C3B81CE5A42200109870 /* SignInViewController.h */,
 				D1E9C3B91CE5A42200109870 /* SignInViewController.m */,
+				51D322311D05D056006CE262 /* RegisterViewController.h */,
+				51D322321D05D056006CE262 /* RegisterViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -935,7 +940,7 @@
 			);
 			name = CHManagement;
 			productName = CHManagement;
-			productReference = D18B46FC1CCFAB8300FEA8E8 /* CHManagement.app */;
+			productReference = D18B46FC1CCFAB8300FEA8E8 /* 楚淮集团内部管理系统.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D18B47141CCFAB8300FEA8E8 /* CHManagementTests */ = {
@@ -1219,6 +1224,7 @@
 				C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */,
 				C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */,
 				D1E9C39E1CE5A27200109870 /* AddPlanVC.m in Sources */,
+				51D322331D05D056006CE262 /* RegisterViewController.m in Sources */,
 				D1E9C37F1CE45FB200109870 /* AddUserTVC.m in Sources */,
 				C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */,
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,
