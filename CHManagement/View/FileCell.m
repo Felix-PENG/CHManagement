@@ -8,16 +8,34 @@
 
 #import "FileCell.h"
 
+#define ANIMATE_DURATION 0.3
+
 @interface FileCell()
 @property (weak, nonatomic) IBOutlet UILabel *sizeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *uploaderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fileNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *downloadedImageView;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIButton *reportButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end
 
 @implementation FileCell
+
+- (void)setContainerView:(UIView *)containerView
+{
+    _containerView = containerView;
+    
+    UISwipeGestureRecognizer *swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [_containerView addGestureRecognizer:swipeLeftRecognizer];
+    
+    UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [_containerView addGestureRecognizer:swipeRightRecognizer];
+}
 
 - (void)setSize:(NSString *)size dateTime:(NSUInteger)dateTime uploader:(NSString *)uploaderName file:(NSString *)fileName
 {
@@ -40,15 +58,58 @@
     self.downloadedImageView.hidden = !downloaded;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)swipe:(UISwipeGestureRecognizer *)recognizer
+{
+    if (self.swipeBlock) {
+        self.swipeBlock();
+    }
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+        [self openMenu];
+    } else if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self closeMenu];
+    }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)openMenu
+{
+    if (!self.open) {
+        __weak typeof(self) weakSelf = self;
+        [UIView animateWithDuration:ANIMATE_DURATION animations:^{
+            weakSelf.containerView.center = CGPointMake(weakSelf.frame.size.width / 2 - weakSelf.reportButton.frame.size.width - weakSelf.deleteButton.frame.size.width, weakSelf.frame.size.height / 2);
+        } completion:^(BOOL finished) {
+            if (finished) {
+                _open = YES;
+            }
+        }];
+    }
+}
 
-    // Configure the view for the selected state
+- (void)closeMenu
+{
+    if (self.open) {
+        __weak typeof(self) weakSelf = self;
+        [UIView animateWithDuration:ANIMATE_DURATION animations:^{
+            weakSelf.containerView.center = CGPointMake(weakSelf.frame.size.width / 2, weakSelf.frame.size.height / 2);
+        } completion:^(BOOL finished) {
+            if (finished) {
+                _open = NO;
+            }
+        }];
+    }
+}
+
+- (IBAction)reportButtonPressed:(id)sender
+{
+    if (self.reportBlock) {
+        self.reportBlock();
+    }
+}
+
+- (IBAction)deleteButtonPressed:(id)sender
+{
+    if (self.deleteBlock) {
+        self.deleteBlock();
+    }
 }
 
 @end
