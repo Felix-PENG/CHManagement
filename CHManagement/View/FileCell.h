@@ -10,8 +10,15 @@
 
 @interface FileCell : UITableViewCell
 
+@property (nonatomic, assign, readonly) BOOL open;
+@property (nonatomic, strong) void (^reportBlock)();
+@property (nonatomic, strong) void (^deleteBlock)();
+@property (nonatomic, strong) void (^swipeBlock)();
+
 - (void)setSize:(NSString *)size dateTime:(NSUInteger)dateTime uploader:(NSString *)uploaderName file:(NSString *)fileName;
 
 - (void)setDownloaded:(BOOL)downloaded;
+
+- (void)closeMenu;
 
 @end

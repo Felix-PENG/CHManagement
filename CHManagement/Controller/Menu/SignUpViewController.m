@@ -1,28 +1,27 @@
 //
-//  RegisterViewController.m
+//  SignUpViewController.m
 //  CHManagement
 //
-//  Created by harveyprince on 16/6/6.
+//  Created by 黄嘉伟 on 16/6/7.
 //  Copyright © 2016年 楚淮集团. All rights reserved.
 //
 
-#import "RegisterViewController.h"
+#import "SignUpViewController.h"
 
-@interface RegisterViewController ()
+@interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 
 @property (weak, nonatomic) IBOutlet UITextField *pwdField;
 @property (weak, nonatomic) IBOutlet UITextField *pwdAgainField;
 @property (weak, nonatomic) IBOutlet UITextField *companyCodeField;
 @property (weak, nonatomic) IBOutlet UILabel *hintLabel;
-
 @end
 
-@implementation RegisterViewController
+@implementation SignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    // Do any additional setup after loading the view.
 }
 
 - (IBAction)registerButtonPressed:(id)sender {
@@ -41,6 +40,5 @@
         
     }
 }
-
 
 @end

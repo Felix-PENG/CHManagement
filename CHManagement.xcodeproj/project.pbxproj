@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51D322331D05D056006CE262 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D322321D05D056006CE262 /* RegisterViewController.m */; };
+		C51239D61D06E90400122516 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51239D51D06E90400122516 /* SignUpViewController.m */; };
 		C514306E1CE1C2F900448BD1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = C514306D1CE1C2F900448BD1 /* File.m */; };
 		C51430801CE479E400448BD1 /* ImagePickPreviewTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C514307F1CE479E400448BD1 /* ImagePickPreviewTVC.m */; };
 		C51430841CE75A5400448BD1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C51430831CE75A5400448BD1 /* UserInfo.m */; };
@@ -159,10 +159,10 @@
 
 /* Begin PBXFileReference section */
 		2C70A178924B476A49005E9F /* Pods-CHManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHManagement.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHManagement/Pods-CHManagement.release.xcconfig"; sourceTree = "<group>"; };
-		51D322311D05D056006CE262 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controller/Menu/RegisterViewController.h; sourceTree = "<group>"; };
-		51D322321D05D056006CE262 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Controller/Menu/RegisterViewController.m; sourceTree = "<group>"; };
 		788E4E2103EA159DBCEBA920 /* libPods-CHManagement.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHManagement.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B0AC6DBE4E10D816EC340 /* Pods-CHManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHManagement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHManagement/Pods-CHManagement.debug.xcconfig"; sourceTree = "<group>"; };
+		C51239D41D06E90400122516 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = Controller/Menu/SignUpViewController.h; sourceTree = "<group>"; };
+		C51239D51D06E90400122516 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = Controller/Menu/SignUpViewController.m; sourceTree = "<group>"; };
 		C514306C1CE1C2F900448BD1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = Model/File.h; sourceTree = "<group>"; };
 		C514306D1CE1C2F900448BD1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = Model/File.m; sourceTree = "<group>"; };
 		C514306F1CE1F2FF00448BD1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -333,7 +333,6 @@
 		C5A1C7C01CF0BA8F004634D8 /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutView.xib; path = View/AboutView.xib; sourceTree = "<group>"; };
 		C5A1C7C21CF0BAFE004634D8 /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutView.h; path = View/AboutView.h; sourceTree = "<group>"; };
 		C5A1C7C31CF0BAFE004634D8 /* AboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutView.m; path = View/AboutView.m; sourceTree = "<group>"; };
-		C5A1C7C51CF0C694004634D8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../../Downloads/icon.png; sourceTree = "<group>"; };
 		D18B46FC1CCFAB8300FEA8E8 /* 楚淮集团内部管理系统.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "楚淮集团内部管理系统.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18B47001CCFAB8300FEA8E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D18B47021CCFAB8300FEA8E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -893,8 +892,8 @@
 				D1E9C3B71CE5A42200109870 /* ModifyPasswordVC.m */,
 				D1E9C3B81CE5A42200109870 /* SignInViewController.h */,
 				D1E9C3B91CE5A42200109870 /* SignInViewController.m */,
-				51D322311D05D056006CE262 /* RegisterViewController.h */,
-				51D322321D05D056006CE262 /* RegisterViewController.m */,
+				C51239D41D06E90400122516 /* SignUpViewController.h */,
+				C51239D51D06E90400122516 /* SignUpViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -1163,6 +1162,7 @@
 				C5971BE01CD7561D00C6B263 /* TabItem.m in Sources */,
 				D1E9C39F1CE5A27200109870 /* PlanTVC.m in Sources */,
 				C56E55B91CDCAF6700C608B9 /* CheckFundsDealedTVC.m in Sources */,
+				C51239D61D06E90400122516 /* SignUpViewController.m in Sources */,
 				C5557FB31CD0F15E006EC41D /* UserShortVO.m in Sources */,
 				C5557FA81CD0F15E006EC41D /* BillMaterialsVO.m in Sources */,
 				D19EF8451CE1E86A0044BA84 /* ReportMaterialRegisterTVC.m in Sources */,
@@ -1225,7 +1225,6 @@
 				C5557FAA1CD0F15E006EC41D /* BillVO.m in Sources */,
 				C5971BEC1CD7943A00C6B263 /* TabbedScrollViewController.m in Sources */,
 				D1E9C39E1CE5A27200109870 /* AddPlanVC.m in Sources */,
-				51D322331D05D056006CE262 /* RegisterViewController.m in Sources */,
 				D1E9C37F1CE45FB200109870 /* AddUserTVC.m in Sources */,
 				C5557FAE1CD0F15E006EC41D /* QiNiuVO.m in Sources */,
 				C5557F721CD0F143006EC41D /* NetworkManager.m in Sources */,

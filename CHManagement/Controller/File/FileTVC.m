@@ -175,6 +175,35 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
         File *file = _fileList[indexPath.row];
         [cell setSize:file.fileVO.size dateTime:file.fileVO.time uploader:file.fileVO.uploader_name file:file.fileVO.name];
         [cell setDownloaded:file.existed];
+        cell.swipeBlock = ^{
+            for (FileCell *cell in self.tableView.visibleCells) {
+                if([cell isKindOfClass:[FileCell class]]) {
+                    [cell closeMenu];
+                }
+            }
+        };
+        cell.reportBlock = ^{
+            NSLog(@"Report: %ld", (long)indexPath.row);
+        };
+        cell.deleteBlock = ^{
+            File *file = _fileList[indexPath.row];
+            [[NetworkManager sharedInstance] deleteFileWithFileId:file.fileVO.id withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
+                ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+                if (result.success == 0) {
+                    [_fileList removeObject:file];
+                    if (_fileList.count > 0) {
+                        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                    } else {
+                        [self.tableView reloadData];
+                    }
+                    // 删除本地文件
+                    [file delete];
+                } else {
+                    [ErrorHandler showErrorAlert:@"删除失败"];
+                }
+            }];
+        };
+        [cell closeMenu];
         return cell;
     } else {
         LoadMoreCell *cell = [self.tableView dequeueReusableCellWithIdentifier:LoadMoreCellIdentifier];
@@ -189,6 +218,15 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < _fileList.count) {
+        BOOL someoneOpen = NO;
+        for (FileCell *cell in self.tableView.visibleCells) {
+            if([cell isKindOfClass:[FileCell class]] && cell.open) {
+                [cell closeMenu];
+                someoneOpen = YES;
+            }
+        }
+        if (someoneOpen) return;
+        
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         File *file = _fileList[indexPath.row];
         if (file.existed) {
@@ -206,32 +244,32 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     }
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return indexPath.row < _fileList.count;
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return indexPath.row < _fileList.count;
+//}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        File *file = _fileList[indexPath.row];
-        [[NetworkManager sharedInstance] deleteFileWithFileId:file.fileVO.id withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
-            ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-            if (result.success == 0) {
-                [_fileList removeObject:file];
-                if (_fileList.count > 0) {
-                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-                } else {
-                    [self.tableView reloadData];
-                }
-                // 删除本地文件
-                [file delete];
-            } else {
-                [ErrorHandler showErrorAlert:@"删除失败"];
-            }
-        }];
-    }
-}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        File *file = _fileList[indexPath.row];
+//        [[NetworkManager sharedInstance] deleteFileWithFileId:file.fileVO.id withUserId:[UserInfo sharedInstance].id completionHandler:^(NSDictionary *response) {
+//            ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+//            if (result.success == 0) {
+//                [_fileList removeObject:file];
+//                if (_fileList.count > 0) {
+//                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//                } else {
+//                    [self.tableView reloadData];
+//                }
+//                // 删除本地文件
+//                [file delete];
+//            } else {
+//                [ErrorHandler showErrorAlert:@"删除失败"];
+//            }
+//        }];
+//    }
+//}
 
 #pragma mark - UIImagePickerControllerDelegate
 
