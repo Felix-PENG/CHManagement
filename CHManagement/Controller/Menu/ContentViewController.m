@@ -222,7 +222,7 @@
 {
     [_permissionDict removeAllObjects];
     
-    if ([array isKindOfClass:[NSDictionary class]]) {
+    if ([array isKindOfClass:[NSArray class]]) {
         for (NSDictionary *dict in array) {
             Permission *permission = [[Permission alloc] initWithDictionary:dict error:nil];
             

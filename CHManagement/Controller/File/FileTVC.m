@@ -26,6 +26,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 
 @interface FileTVC () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
+@property (nonatomic, strong) UIAlertView *reportAlertView;
 @end
 
 @implementation FileTVC
@@ -34,6 +35,16 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     NSMutableArray *_fileList;
     BOOL _noMoreData;
     NSInteger _reportingID;
+}
+
+- (UIAlertView *)reportAlertView
+{
+    if (!_reportAlertView) {
+        _reportAlertView = [[UIAlertView alloc] initWithTitle:@"举报理由" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [_reportAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    }
+    [_reportAlertView textFieldAtIndex:0].text = @"";
+    return _reportAlertView;
 }
 
 - (void)viewDidLoad {
@@ -188,15 +199,15 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
         File *file = _fileList[indexPath.row];
         [cell setSize:file.fileVO.size dateTime:file.fileVO.time uploader:file.fileVO.uploader_name file:file.fileVO.name];
         [cell setDownloaded:file.existed];
+        
         __weak typeof(self) weakSelf = self;
+        
         cell.swipeBlock = ^{
             [weakSelf closeMenues];
         };
         cell.reportBlock = ^{
-            UIAlertView *reasonAlertView = [[UIAlertView alloc] initWithTitle:@"举报理由" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-            [reasonAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
             _reportingID = file.fileVO.id;
-            [reasonAlertView show];
+            [weakSelf.reportAlertView show];
         };
         cell.deleteBlock = ^{
             File *file = _fileList[indexPath.row];
