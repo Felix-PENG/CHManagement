@@ -19,6 +19,7 @@
 @implementation RegisterViewController
 {
     UIAlertController *_sheetAlert;
+    NSInteger admin_group_id;
 }
 
 - (void)viewDidLoad {
@@ -27,7 +28,11 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    if ([UserInfo sharedInstance].groupId == 0) {
+    [[NetworkManager sharedInstance] getAdminGroupIdWithCompletionHandler:^(NSDictionary *response) {
+        admin_group_id = [[response objectForKey:@"id"]integerValue];
+    }];
+    
+    if ([UserInfo sharedInstance].groupId == admin_group_id) {
         _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择部门" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         // get groups
         [[NetworkManager sharedInstance] getAllGroupsWithCompletionHandler:^(NSDictionary *response) {

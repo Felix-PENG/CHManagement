@@ -192,6 +192,13 @@
     [self httpActionWithParameter:parameter completionHandler:handler];
 }
 
+- (void)signUpWithEmail:(NSString*)email withPswd:(NSString*)pswd withName:(NSString*)name withCompanyCode:(NSString*)company_code completionHandler:(void (^)(NSDictionary *))handler
+{
+    RequestParameter *parameter = [RequestParameter postRequest];
+    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, signUpNewUrl];
+    parameter.json = @{@"email": email, @"pswd": pswd, @"name": name, @"company_code": company_code};
+    [self httpActionWithParameter:parameter completionHandler:handler];}
+
 - (void)registerWithEmail:(NSString*)email withPswd:(NSString*)pswd withName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter postRequest];
     parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, signUpUrl];
@@ -207,6 +214,11 @@
 }
 
 #pragma mark Group api
+- (void)getAdminGroupIdWithCompletionHandler:(void (^)(NSDictionary *))handler{
+    RequestParameter *parameter = [RequestParameter postRequest];
+    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, getAdminGroupIdUrl];
+    [self httpActionWithParameter:parameter completionHandler:handler];}
+
 - (void)createGroupWithName:(NSString*)name completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter postRequest];
     parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, createGroupUrl];

@@ -25,6 +25,7 @@
     UIAlertController* _sheetAlert;
     ReportFundsGoingTVC * _rfgtvc;
     ReportFundsRejectedTVC * _rfrtvc;
+    NSInteger admin_group_id;
 }
 
 - (void)viewDidLoad {
@@ -52,7 +53,11 @@
     
     NSInteger group_id = [UserInfo sharedInstance].groupId;
     
-    if(group_id == 0){
+    [[NetworkManager sharedInstance] getAdminGroupIdWithCompletionHandler:^(NSDictionary *response) {
+        admin_group_id = [[response objectForKey:@"id"]integerValue];
+    }];
+    
+    if(group_id == admin_group_id){
         self.navigationItem.rightBarButtonItems = @[addItem, roleItem];
         
         _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择部门" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
