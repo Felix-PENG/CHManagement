@@ -20,11 +20,15 @@
 #pragma mark Account api
 - (void)signIn:(NSString *)email pswd:(NSString *)pswd completionHandler:(void (^)(NSDictionary *))handler;
 
+- (void)signUpWithEmail:(NSString*)email withPswd:(NSString*)pswd withName:(NSString*)name withCompanyCode:(NSString*)company_code completionHandler:(void (^)(NSDictionary *))handler;
+
 - (void)registerWithEmail:(NSString*)email withPswd:(NSString*)pswd withName:(NSString*)name withRoleId:(NSInteger)role_id withGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)changePswd:(NSString*)pswd withNewPswd:(NSString*)n_pswd withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 
 #pragma mark Group api
+- (void)getAdminGroupIdWithCompletionHandler:(void (^)(NSDictionary *))handler;
+
 - (void)createGroupWithName:(NSString*)name completionHandler:(void (^)(NSDictionary *))handler;
 
 - (void)changeGroupName:(NSString*)name withGroupId:(NSInteger)group_id completionHandler:(void (^)(NSDictionary *))handler;

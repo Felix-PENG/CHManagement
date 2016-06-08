@@ -77,7 +77,7 @@
 
 
 - (IBAction)registerButtonPressed:(id)sender {
-    RegisterViewController *rgstView = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RegisterViewController"];
+    RegisterViewController *rgstView = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SignUpViewController"];
     [self.navigationController pushViewController:rgstView animated:YES];
 }
 

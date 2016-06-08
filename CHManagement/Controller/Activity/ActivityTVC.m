@@ -33,6 +33,7 @@ static NSString * const AddActivitySegue = @"AddActivity";
     NSMutableArray *_activityList;
     BOOL _noMoreData;
     NSNumber* _choosedGroupId;
+    NSInteger admin_group_id;
 }
 
 - (void)viewDidLoad {
@@ -46,7 +47,11 @@ static NSString * const AddActivitySegue = @"AddActivity";
     
     NSInteger group_id = [UserInfo sharedInstance].groupId;
     
-    if(group_id == 0){
+    [[NetworkManager sharedInstance] getAdminGroupIdWithCompletionHandler:^(NSDictionary *response) {
+        admin_group_id = [[response objectForKey:@"id"]integerValue];
+    }];
+    
+    if(group_id == admin_group_id){
         _sheetAlert = [UIAlertController alertControllerWithTitle:@"选择部门" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         
         [[NetworkManager sharedInstance]getAllGroupsWithCompletionHandler:^(NSDictionary *response) {
