@@ -222,18 +222,20 @@
 {
     [_permissionDict removeAllObjects];
     
-    for (NSDictionary *dict in array) {
-        Permission *permission = [[Permission alloc] initWithDictionary:dict error:nil];
-        
-        for (NSString *sectionHead in [Constants kPermissionDictionary].allKeys) {
-            NSArray *ids = [Constants kPermissionDictionary][sectionHead];
-            if ([ids containsObject: @(permission.id)]) {
-                if (!_permissionDict[sectionHead]) {
-                    _permissionDict[sectionHead] = [NSMutableArray array];
+    if ([array isKindOfClass:[NSDictionary class]]) {
+        for (NSDictionary *dict in array) {
+            Permission *permission = [[Permission alloc] initWithDictionary:dict error:nil];
+            
+            for (NSString *sectionHead in [Constants kPermissionDictionary].allKeys) {
+                NSArray *ids = [Constants kPermissionDictionary][sectionHead];
+                if ([ids containsObject: @(permission.id)]) {
+                    if (!_permissionDict[sectionHead]) {
+                        _permissionDict[sectionHead] = [NSMutableArray array];
+                    }
+                    [_permissionDict[sectionHead] addObject:permission];
+                    
+                    break;
                 }
-                [_permissionDict[sectionHead] addObject:permission];
-                
-                break;
             }
         }
     }

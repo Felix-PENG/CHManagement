@@ -46,7 +46,7 @@ static NSString * const LastSignInKey = @"last_sign_in";
 {
     [[NetworkManager sharedInstance] signIn:userName pswd:password completionHandler:^(NSDictionary * response) {
         ResultVO* resultVO = [[ResultVO alloc]initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
-        NSLog(@"%@",[resultVO message]);
+        NSLog(@"%@",response);
         
         if (resultVO.success == 0) {
             SignInResultVO* signResultVO = [[SignInResultVO alloc]initWithDictionary:[response objectForKey:@"signInResultVO"] error:nil];
@@ -65,10 +65,12 @@ static NSString * const LastSignInKey = @"last_sign_in";
             signedIn = YES;
             
             // 设置device_token
-            [[NetworkManager sharedInstance] setDeviceToken:[UserInfo sharedInstance].id token:[[NSUserDefaults standardUserDefaults] objectForKey:DEVICE_TOKEN_KEY] completionHandler:^(NSDictionary *response) {
-                NSLog(@"%@", response);
-            }];
-            
+            if ([UserInfo sharedInstance].id) {
+                [[NetworkManager sharedInstance] setDeviceToken:[UserInfo sharedInstance].id token:[[NSUserDefaults standardUserDefaults] objectForKey:DEVICE_TOKEN_KEY] completionHandler:^(NSDictionary *response) {
+                    NSLog(@"%@", response);
+                }];
+            }
+ 
             successHandler();
         } else {
             errorHandler(resultVO.message);

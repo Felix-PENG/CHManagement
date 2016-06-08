@@ -80,6 +80,8 @@
 
 - (void)downloadFile:(File *)file success:(void (^)(id))success failure:(void (^)(NSError *))failure progress:(void (^)(float))progress;
 
+- (void)reportFile_:(NSInteger)file_id reason:(NSString *)reason completionHandler:(void (^)(NSDictionary *))handler;
+
 #pragma mark Message api
 - (void)createMessageWithIdList:(NSString*)id_list withContent:(NSString*)content withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler;
 

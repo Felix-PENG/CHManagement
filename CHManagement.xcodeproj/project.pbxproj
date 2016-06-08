@@ -1382,7 +1382,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chuhuai.management;
-				PRODUCT_NAME = "楚淮集团内部管理系统";
+				PRODUCT_NAME = "楚淮";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -1398,7 +1398,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chuhuai.management;
-				PRODUCT_NAME = "楚淮集团内部管理系统";
+				PRODUCT_NAME = "楚淮";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

@@ -24,7 +24,7 @@
 static NSString * const CellIdentifier = @"FileCell";
 static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 
-@interface FileTVC () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate>
+@interface FileTVC () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @end
 
@@ -33,6 +33,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     NSUInteger _page;
     NSMutableArray *_fileList;
     BOOL _noMoreData;
+    NSInteger _reportingID;
 }
 
 - (void)viewDidLoad {
@@ -159,6 +160,18 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
     return [NSString stringWithFormat:@"%@_%@.%@", [imageName substringToIndex:splitRange.location], timeStr, [imageName substringFromIndex:splitRange.location + 1]];
 }
 
+- (BOOL)closeMenues
+{
+    BOOL someoneOpen = NO;
+    for (UITableViewCell *cell in self.tableView.visibleCells) {
+        if([cell isKindOfClass:[FileCell class]] && ((FileCell *)cell).open) {
+            [(FileCell *)cell closeMenu];
+            someoneOpen = YES;
+        }
+    }
+    return someoneOpen;
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -175,15 +188,15 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
         File *file = _fileList[indexPath.row];
         [cell setSize:file.fileVO.size dateTime:file.fileVO.time uploader:file.fileVO.uploader_name file:file.fileVO.name];
         [cell setDownloaded:file.existed];
+        __weak typeof(self) weakSelf = self;
         cell.swipeBlock = ^{
-            for (FileCell *cell in self.tableView.visibleCells) {
-                if([cell isKindOfClass:[FileCell class]]) {
-                    [cell closeMenu];
-                }
-            }
+            [weakSelf closeMenues];
         };
         cell.reportBlock = ^{
-            NSLog(@"Report: %ld", (long)indexPath.row);
+            UIAlertView *reasonAlertView = [[UIAlertView alloc] initWithTitle:@"举报理由" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+            [reasonAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            _reportingID = file.fileVO.id;
+            [reasonAlertView show];
         };
         cell.deleteBlock = ^{
             File *file = _fileList[indexPath.row];
@@ -199,7 +212,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
                     // 删除本地文件
                     [file delete];
                 } else {
-                    [ErrorHandler showErrorAlert:@"删除失败"];
+                    [ErrorHandler showErrorAlert:result.message];
                 }
             }];
         };
@@ -218,14 +231,7 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < _fileList.count) {
-        BOOL someoneOpen = NO;
-        for (FileCell *cell in self.tableView.visibleCells) {
-            if([cell isKindOfClass:[FileCell class]] && cell.open) {
-                [cell closeMenu];
-                someoneOpen = YES;
-            }
-        }
-        if (someoneOpen) return;
+        if ([self closeMenues]) return;
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         File *file = _fileList[indexPath.row];
@@ -318,6 +324,31 @@ static NSString * const LoadMoreCellIdentifier = @"LoadMoreCell";
 - (IBAction)addButtonPressed:(id)sender
 {
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        NSString *reason = [alertView textFieldAtIndex:0].text;
+        if (![reason isEqualToString:@""]) {
+            [self closeMenues];
+            [[NetworkManager sharedInstance] reportFile_:_reportingID reason:reason completionHandler:^(NSDictionary *response) {
+                ResultVO *result = [[ResultVO alloc] initWithDictionary:[response objectForKey:@"resultVO"] error:nil];
+                if (result.success == 0) {
+                    [MBProgressHUD showSuccessWithMessage:@"举报成功" toView:self.view completion:nil];
+                } else {
+                    [ErrorHandler showErrorAlert:result.message];
+                }
+            }];
+        }
+    }
+}
+
+- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+{
+    return ![[alertView textFieldAtIndex:0].text isEqualToString:@""];
 }
 
 @end
