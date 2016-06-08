@@ -91,4 +91,5 @@
 #define finishBillOthersUrl @"api/finishBillOthers"
 #define setDeviceTokenUrl @"api/setNotifyToken"
 #define deleteDeviceTokenUrl @"api/deleteNotifyToken"
+#define reportFileUrl @"api/reportFile"
 @end

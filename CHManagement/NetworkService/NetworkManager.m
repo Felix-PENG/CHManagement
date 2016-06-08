@@ -402,6 +402,14 @@
                        progress:progress];
 }
 
+- (void)reportFile_:(NSInteger)file_id reason:(NSString *)reason completionHandler:(void (^)(NSDictionary *))handler
+{
+    RequestParameter *parameter = [RequestParameter postRequest];
+    parameter.url = [NSString stringWithFormat:@"%@%@", baseUrl, reportFileUrl];
+    parameter.json = @{@"file_id": @(file_id), @"reason": reason};
+    [self httpActionWithParameter:parameter completionHandler:handler];
+}
+
 #pragma mark Message api
 - (void)createMessageWithIdList:(NSString*)id_list withContent:(NSString*)content withUserId:(NSInteger)user_id completionHandler:(void (^)(NSDictionary *))handler{
     RequestParameter *parameter = [RequestParameter postRequest];

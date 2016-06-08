@@ -120,6 +120,8 @@
             [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SignInVC"] animated:YES completion:nil];
             
             [UserInfo remove];
+        } else {
+            [ErrorHandler showErrorAlert:resultVO.message];
         }
     }];
 }
